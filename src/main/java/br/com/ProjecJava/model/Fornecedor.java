@@ -6,12 +6,18 @@ public class Fornecedor {
 	private String nomeFornecedor;
 	private Endereco endereco;
 	private String email;
+	private String telefone;
+	private String cnpj;
 	
-	public Fornecedor(int codigo, String nomeFornecedor, Endereco endereco, String email) {
+		public Fornecedor(int codigo, String nomeFornecedor, Endereco endereco, String email, String telefone,
+			String cnpj) {
+		super();
 		this.codigo = codigo;
 		this.nomeFornecedor = nomeFornecedor;
 		this.endereco = endereco;
 		this.email = email;
+		this.telefone = telefone;
+		this.cnpj = cnpj;
 	}
 
 	public int getCodigo() {
@@ -44,6 +50,22 @@ public class Fornecedor {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 	
 	

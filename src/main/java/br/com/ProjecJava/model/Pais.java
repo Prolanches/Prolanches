@@ -3,11 +3,11 @@ package br.com.ProjecJava.model;
 public class Pais {
 
 	private int codigo;
-	private String nomePais;
+	private String pais;
 	
 	public Pais(int codigo, String pais) {
 		this.codigo = codigo;
-		this.nomePais = pais;
+		this.pais = pais;
 	}
 
 	public int getCodigo() {
@@ -19,11 +19,11 @@ public class Pais {
 	}
 
 	public String getPais() {
-		return nomePais;
+		return pais;
 	}
 
 	public void setPais(String pais) {
-		this.nomePais = pais;
+		this.pais = pais;
 	}
 	
 	

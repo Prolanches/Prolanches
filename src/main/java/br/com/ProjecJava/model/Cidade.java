@@ -3,12 +3,12 @@ package br.com.ProjecJava.model;
 public class Cidade {
 
 	private int codigo;
-	private String nomeCidade;
+	private String cidade;
 	private Estado estado;
 	
 	public Cidade(int codigo, String nomeCidade, Estado nomeEstado) {
 		this.codigo = codigo;
-		this.nomeCidade = nomeCidade;
+		this.cidade = nomeCidade;
 		this.estado = nomeEstado;
 	}
 
@@ -21,11 +21,11 @@ public class Cidade {
 	}
 
 	public String getNomeCidade() {
-		return nomeCidade;
+		return cidade;
 	}
 
 	public void setNomeCidade(String nomeCidade) {
-		this.nomeCidade = nomeCidade;
+		this.cidade = nomeCidade;
 	}
 
 	public Estado getNomeEstado() {

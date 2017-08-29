@@ -5,13 +5,13 @@ import java.sql.Date;
 public class ContasAPagar {
 	
 	private int codigo;
-	private Suprimento nomeConta;
+	private Suprimento suprimento;
 	private double valorConta;
 	private Date data;
 	
 	public ContasAPagar(int codigo, Suprimento nomeConta, double valorConta, Date data) {
 		this.codigo = codigo;
-		this.nomeConta = nomeConta;
+		this.suprimento = nomeConta;
 		this.valorConta = valorConta;
 		this.data = data;
 	}
@@ -25,11 +25,11 @@ public class ContasAPagar {
 	}
 
 	public Suprimento getNomeConta() {
-		return nomeConta;
+		return suprimento;
 	}
 
 	public void setNomeConta(Suprimento nomeConta) {
-		this.nomeConta = nomeConta;
+		this.suprimento = nomeConta;
 	}
 
 	public double getValorConta() {

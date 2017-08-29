@@ -5,7 +5,7 @@ public class Empresa {
 	private int codigo;
 	private String nomeEmpresa;
 	private Endereco endereco;
-	private String cpfCnpj;
+	private String cnpj;
 	private String telefone;
 	private String email;
 	
@@ -13,7 +13,7 @@ public class Empresa {
 		this.codigo = codigo;
 		this.nomeEmpresa = nomeEmpresa;
 		this.endereco = endereco;
-		this.cpfCnpj = cpfCnpj;
+		this.cnpj = cpfCnpj;
 		this.telefone = telefone;
 		this.email = email;
 	}
@@ -43,11 +43,11 @@ public class Empresa {
 	}
 
 	public String getCpfCnpj() {
-		return cpfCnpj;
+		return cnpj;
 	}
 
 	public void setCpfCnpj(String cpfCnpj) {
-		this.cpfCnpj = cpfCnpj;
+		this.cnpj = cpfCnpj;
 	}
 
 	public String getTelefone() {

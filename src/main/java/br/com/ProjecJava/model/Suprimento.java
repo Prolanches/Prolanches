@@ -4,17 +4,15 @@ public class Suprimento {
 
 	private int codigo;
 	private String nomeSurpimento;
-	private FornecedorSuprimento fornecedor;
 	private Marca marca;
 	private TipoUnidade tipoUnidade;
 	private int quantidade;
 	private double custo;
 	
-	public Suprimento(int codigo, String nomeSurpimento, FornecedorSuprimento fornecedor, Marca marca,
+	public Suprimento(int codigo, String nomeSurpimento,  Marca marca,
 			TipoUnidade tipoUnidade, int quantidade, double custo) {
 		this.codigo = codigo;
 		this.nomeSurpimento = nomeSurpimento;
-		this.fornecedor = fornecedor;
 		this.marca = marca;
 		this.tipoUnidade = tipoUnidade;
 		this.quantidade = quantidade;
@@ -35,14 +33,6 @@ public class Suprimento {
 
 	public void setNomeSurpimento(String nomeSurpimento) {
 		this.nomeSurpimento = nomeSurpimento;
-	}
-
-	public FornecedorSuprimento getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(FornecedorSuprimento fornecedor) {
-		this.fornecedor = fornecedor;
 	}
 
 	public Marca getMarca() {

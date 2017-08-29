@@ -7,7 +7,7 @@ public class ProdutoSuprimento {
 	private Suprimento suprimento;
 	private int quantidade;
 	private double custo;
-	private TipoUnidade tipounidade;
+	private TipoUnidade tipoUnidade;
 	
 	public ProdutoSuprimento(int codigo, Produto produto, Suprimento suprimento, int quantidade, double custo,
 			TipoUnidade tipounidade) {
@@ -16,7 +16,7 @@ public class ProdutoSuprimento {
 		this.suprimento = suprimento;
 		this.quantidade = quantidade;
 		this.custo = custo;
-		this.tipounidade = tipounidade;
+		this.tipoUnidade = tipounidade;
 	}
 
 	public int getCodigo() {
@@ -60,11 +60,11 @@ public class ProdutoSuprimento {
 	}
 
 	public TipoUnidade getTipounidade() {
-		return tipounidade;
+		return tipoUnidade;
 	}
 
 	public void setTipounidade(TipoUnidade tipounidade) {
-		this.tipounidade = tipounidade;
+		this.tipoUnidade = tipounidade;
 	}
 	
 	
