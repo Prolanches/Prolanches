@@ -1,22 +1,55 @@
+/**
+ * Este é o pacote responsavel pelas Classes Model
+ *
+ */
 package br.com.ProjecJava.model;
 
+/**
+ * Esta é a classe responsavel pelo Suprimento
+ * 
+ * @author Noturno
+ *
+ */
 public class Suprimento {
-
+	/**
+	 * Este são os atributos do Suprimento
+	 */
 	private int codigo;
-	private String nomeSurpimento;
-	private Marca marca;
-	private TipoUnidade tipoUnidade;
+	private String nome;
+	private Tipo_Unidade tipoUnidade;
 	private int quantidade;
 	private double custo;
-	
-	public Suprimento(int codigo, String nomeSurpimento,  Marca marca,
-			TipoUnidade tipoUnidade, int quantidade, double custo) {
+	private Fornecedor fornecedor;
+	private Marca marca;
+
+	/**
+	 * Este é o construtor da classe Suprimento, abaixo estão seus parametros
+	 * 
+	 * @param codigo
+	 *            id do Bando de Dados
+	 * @param nome
+	 *            nome do Suprimento
+	 * @param tipoUnidade
+	 *            implementação do Tipo de Unidade (Kg, Litro, Gramas)
+	 * @param quantidade
+	 *            quantidade do estoque do Suprimento comprado
+	 * @param custo
+	 *            custo total do Suprimento comprado
+	 * @param fornecedor
+	 *            implementação da classe Fornecedor
+	 * @param marca
+	 *            implementação da classe Marca
+	 */
+	public Suprimento(int codigo, String nome, Tipo_Unidade tipoUnidade, int quantidade, double custo,
+			Fornecedor fornecedor, Marca marca) {
+		super();
 		this.codigo = codigo;
-		this.nomeSurpimento = nomeSurpimento;
-		this.marca = marca;
+		this.nome = nome;
 		this.tipoUnidade = tipoUnidade;
 		this.quantidade = quantidade;
 		this.custo = custo;
+		this.fornecedor = fornecedor;
+		this.marca = marca;
 	}
 
 	public int getCodigo() {
@@ -27,27 +60,19 @@ public class Suprimento {
 		this.codigo = codigo;
 	}
 
-	public String getNomeSurpimento() {
-		return nomeSurpimento;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeSurpimento(String nomeSurpimento) {
-		this.nomeSurpimento = nomeSurpimento;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public Marca getMarca() {
-		return marca;
-	}
-
-	public void setMarca(Marca marca) {
-		this.marca = marca;
-	}
-
-	public TipoUnidade getTipoUnidade() {
+	public Tipo_Unidade getTipoUnidade() {
 		return tipoUnidade;
 	}
 
-	public void setTipoUnidade(TipoUnidade tipoUnidade) {
+	public void setTipoUnidade(Tipo_Unidade tipoUnidade) {
 		this.tipoUnidade = tipoUnidade;
 	}
 
@@ -66,7 +91,21 @@ public class Suprimento {
 	public void setCusto(double custo) {
 		this.custo = custo;
 	}
-	
-	
-	
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
+	public Marca getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+
 }

@@ -1,41 +1,49 @@
+/**
+ * Este pacote é responsavel pelas classes model
+ */
 package br.com.ProjecJava.model;
+/**
+ * Esta classe é responsavel pela criação das Cidades 
+ * @author Noturno
+ *
+ */
 
 public class Cidade {
-
+/**
+ * Estes são os atributos das cidades 
+ */
 	private int codigo;
-	private String cidade;
+	private String nome;
 	private Estado estado;
-	
-	public Cidade(int codigo, String nomeCidade, Estado nomeEstado) {
+	/**
+	 * Este é o construtor de cidades, abaixo são os parametros
+	 * @param codigo id codigo banco de dados
+	 * @param nome nome das cidades
+	 * @param estado implementação classe Estados
+	 */
+	public Cidade(int codigo, String nome, Estado estado) {
+		super();
 		this.codigo = codigo;
-		this.cidade = nomeCidade;
-		this.estado = nomeEstado;
+		this.nome = nome;
+		this.estado = estado;
 	}
-
 	public int getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-
-	public String getNomeCidade() {
-		return cidade;
+	public String getNome() {
+		return nome;
 	}
-
-	public void setNomeCidade(String nomeCidade) {
-		this.cidade = nomeCidade;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-
-	public Estado getNomeEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
-
-	public void setNomeEstado(Estado nomeEstado) {
-		this.estado = nomeEstado;
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
-	
-	
 	
 }

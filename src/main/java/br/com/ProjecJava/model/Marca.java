@@ -1,31 +1,42 @@
+/**
+ * Este é o pacote responsavel pelas classe model
+ */
 package br.com.ProjecJava.model;
 
+/**
+ * Esta é a classe resposanvel pelas Marcas do Fornecedor 
+ * @author Noturno
+ *
+ */
+
 public class Marca {
+	/**
+	 * Estes são os atributos da Marca 
+	 */
 
 	private int codigo;
-	private String nomeMarca;
+	private String nome;
 	
-	public Marca(int codigo, String nomeMarca) {
+	/**
+	 * Este é o construtor da Marca, abaixo estão os paramentros 
+	 * @param codigo id do Banco de Dados 
+	 * @param nome nome da Marca 
+	 */
+	public Marca(int codigo, String nome) {
+		super();
 		this.codigo = codigo;
-		this.nomeMarca = nomeMarca;
+		this.nome = nome;
 	}
-
 	public int getCodigo() {
 		return codigo;
 	}
-
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-
-	public String getNomeMarca() {
-		return nomeMarca;
+	public String getNome() {
+		return nome;
 	}
-
-	public void setNomeMarca(String nomeMarca) {
-		this.nomeMarca = nomeMarca;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-		
-	
 }

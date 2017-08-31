@@ -1,19 +1,39 @@
+/**
+ * Este é o pacote responsavel pelas Classes Model
+ */
 package br.com.ProjecJava.model;
 
-public class Empresa {
+/**
+ * Esta é a classe responsavel pelo cadastro de Empresa usuária do Software
+ * @author Noturno
+ *
+ */
 
+public class Empresa {
+/**
+ * Este são os atributos da Empresa usuária do Software
+ */
 	private int codigo;
-	private String nomeEmpresa;
+	private String nome;
 	private Endereco endereco;
 	private String cnpj;
 	private String telefone;
 	private String email;
-	
-	public Empresa(int codigo, String nomeEmpresa, Endereco endereco, String cpfCnpj, String telefone, String email) {
+	/**
+	 * Este é o construtor da Empresa, abaixo estão os paramentros
+	 * @param codigo id do Banco de Dados 
+	 * @param nome nome da Empresa usuária do Software
+	 * @param endereco endereço da Empresa usuária do Software
+	 * @param cnpj cnpj da Empresa usuária do Software
+	 * @param telefone telefone da Empresa usuária do Software
+	 * @param email e-mail da Empresa usuária do Software
+	 */
+	public Empresa(int codigo, String nome, Endereco endereco, String cnpj, String telefone, String email) {
+		super();
 		this.codigo = codigo;
-		this.nomeEmpresa = nomeEmpresa;
+		this.nome = nome;
 		this.endereco = endereco;
-		this.cnpj = cpfCnpj;
+		this.cnpj = cnpj;
 		this.telefone = telefone;
 		this.email = email;
 	}
@@ -26,12 +46,12 @@ public class Empresa {
 		this.codigo = codigo;
 	}
 
-	public String getNomeEmpresa() {
-		return nomeEmpresa;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeEmpresa(String nomeEmpresa) {
-		this.nomeEmpresa = nomeEmpresa;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Endereco getEndereco() {
@@ -42,12 +62,12 @@ public class Empresa {
 		this.endereco = endereco;
 	}
 
-	public String getCpfCnpj() {
+	public String getCnpj() {
 		return cnpj;
 	}
 
-	public void setCpfCnpj(String cpfCnpj) {
-		this.cnpj = cpfCnpj;
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	public String getTelefone() {
@@ -64,8 +84,5 @@ public class Empresa {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	
-	
-	
+	}	
 }
