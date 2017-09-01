@@ -1,7 +1,46 @@
 
+#body{
+	margin: 0px;
+}
+
 #topoIndex{
 	width: 100%;
-	height: 195px;
-	background-color: #33455c;
-	position: relative;
+	height: 194px;
+	position: absolute;
+	background-color: #39455c;	
+	
 }
+
+#logo{
+	width: auto;
+	height: auto;
+	top:50%;
+	left:50%;
+	margin-top: 30px;
+	text-align: center;
+	
+}
+
+#barraSuperior{	
+	width: 100%;
+	height: 5px;
+	top: 195px;
+	position: relative;
+	background: linear-gradient(#e0e0e0 , #39455c);
+}
+
+#corpo{
+	width: 100%;
+	height: 670px;
+	top: 200px;
+	background: #39455c ;
+}
+
+#barraGradiente{
+	width: 100%;
+	height: 20px;	
+	top: 670px;
+	position: absolute;
+	background: linear-gradient( #39455c, #e0e0e0);
+}
+
