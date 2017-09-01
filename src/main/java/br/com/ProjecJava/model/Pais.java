@@ -29,6 +29,9 @@ public class Pais {
 		this.nome = nome;
 		this.sigla = sigla;
 	}
+	public Pais() {
+		
+	}
 
 	public int getCodigo() {
 		return codigo;
@@ -54,3 +57,4 @@ public class Pais {
 		this.sigla = sigla;
 	}
 }
+

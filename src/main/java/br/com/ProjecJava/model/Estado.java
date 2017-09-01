@@ -30,6 +30,7 @@ public class Estado {
 		this.uf = uf;
 		this.pais = pais;
 	}
+	
 
 	public int getCodigo() {
 		return codigo;
