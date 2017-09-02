@@ -1,23 +1,50 @@
+/**
+ * Este é o pacote responsavel pelas Classes Model 
+ */
 package br.com.ProjecJava.model;
 
-public class Fornecedor {
+/**
+ * Esta é a classe responsavel pelos Fornecedores
+ * 
+ * @author Noturno
+ *
+ */
 
+public class Fornecedor {
+	/**
+	 * Este são os atributos dos Fornecedores
+	 */
 	private int codigo;
-	private String nomeFornecedor;
-	private Endereco endereco;
-	private String email;
-	private String telefone;
+	private String nome;
 	private String cnpj;
-	
-		public Fornecedor(int codigo, String nomeFornecedor, Endereco endereco, String email, String telefone,
-			String cnpj) {
+	private Endereco endereco;
+	private String telefone;
+	private String email;
+
+	/**
+	 * Este é o construtor de Fornecedores, abaixo estão seus parametros
+	 * 
+	 * @param codigo
+	 *            id do Bando de Dados
+	 * @param nome
+	 *            nome do Fornecedor
+	 * @param cnpj
+	 *            cnpj do Fornecedor
+	 * @param endereco
+	 *            implementação da Classe Endereco
+	 * @param telefone
+	 *            telefone do Fornecedor
+	 * @param email
+	 *            e-mail do Fornecedor
+	 */
+	public Fornecedor(int codigo, String nome, String cnpj, Endereco endereco, String telefone, String email) {
 		super();
 		this.codigo = codigo;
-		this.nomeFornecedor = nomeFornecedor;
-		this.endereco = endereco;
-		this.email = email;
-		this.telefone = telefone;
+		this.nome = nome;
 		this.cnpj = cnpj;
+		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
 	}
 
 	public int getCodigo() {
@@ -28,12 +55,20 @@ public class Fornecedor {
 		this.codigo = codigo;
 	}
 
-	public String getNomeFornecedor() {
-		return nomeFornecedor;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeFornecedor(String nomeFornecedor) {
-		this.nomeFornecedor = nomeFornecedor;
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 
 	public Endereco getEndereco() {
@@ -44,14 +79,6 @@ public class Fornecedor {
 		this.endereco = endereco;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getTelefone() {
 		return telefone;
 	}
@@ -60,14 +87,11 @@ public class Fornecedor {
 		this.telefone = telefone;
 	}
 
-	public String getCnpj() {
-		return cnpj;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	
-	
-	
 }

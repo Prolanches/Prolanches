@@ -1,13 +1,27 @@
+/**
+ * Este pacote é responsavel pelas Classes Model
+ */
 package br.com.ProjecJava.model;
-
+/**
+ * Esta classe é responsavel pela criação de Funções do Funcionários
+ * @author Noturno
+ *
+ */
 public class Funcao {
-
+/**
+ * Este são os atributos das Funções 
+ */
 	private int codigo;
-	private String nomeFuncao;
-	
-	public Funcao(int codigo, String nomeFuncao) {
+	private String nome;
+	/**
+	 * Este é o construtor da Função, abaixo segue parametros
+	 * @param codigo id do Bando de Dados 
+	 * @param nome nome da Função
+	 */
+	public Funcao(int codigo, String nome) {
+		super();
 		this.codigo = codigo;
-		this.nomeFuncao = nomeFuncao;
+		this.nome = nome;
 	}
 
 	public int getCodigo() {
@@ -18,12 +32,12 @@ public class Funcao {
 		this.codigo = codigo;
 	}
 
-	public String getNomeFuncao() {
-		return nomeFuncao;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeFuncao(String nomeFuncao) {
-		this.nomeFuncao = nomeFuncao;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	

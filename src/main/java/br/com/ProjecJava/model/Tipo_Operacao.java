@@ -1,11 +1,11 @@
 package br.com.ProjecJava.model;
 
-public class TipoOperacao {
+public class Tipo_Operacao {
 
 	private int codigo;
 	private String nomeOPeracao;
 	
-	public TipoOperacao(int codigo, String nomeOPeracao) {
+	public Tipo_Operacao(int codigo, String nomeOPeracao) {
 		this.codigo = codigo;
 		this.nomeOPeracao = nomeOPeracao;
 	}

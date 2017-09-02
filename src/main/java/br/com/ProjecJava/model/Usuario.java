@@ -1,17 +1,48 @@
+/**
+ * Este é o pacote responsavel pelas Classes Model
+ */
 package br.com.ProjecJava.model;
 
+/**
+ * Esta é a classe responsavel pelo Usuário do sistema
+ * 
+ * @author Noturno
+ *
+ */
+
 public class Usuario {
+	/**
+	 * Este são os atributos do Usuário
+	 */
 
 	private int codigo;
-	private Funcionario nomeFuncionario;
+	private String login;
+	private Funcionario funcionario;
 	private String senha;
-	private NivelAcesso nivelAcesso;
-	
-	public Usuario(int codigo, Funcionario nomeFuncionario, String senha, NivelAcesso nivelAcesso) {
+	private Perfil perfil;
+
+	/**
+	 * Este é o construtor da classe Usuário, abaixo estão os parametros
+	 * 
+	 * @param codigo
+	 *            id do Bando de Dados
+	 * @param login
+	 *            login do Usuário
+	 * @param funcionario
+	 *            implementação da classe Funcionários
+	 * @param senha
+	 *            senha do Usuário
+	 * @param perfil
+	 *            implementação da classe Perfil em relação aos niveis de acesso do
+	 *            sistema
+	 */
+	public Usuario(int codigo, String login, Funcionario funcionario, String senha, Perfil perfil) {
+		super();
 		this.codigo = codigo;
-		this.nomeFuncionario = nomeFuncionario;
+		this.login = login;
+		this.funcionario = funcionario;
 		this.senha = senha;
-		this.nivelAcesso = nivelAcesso;
+		this.perfil = perfil;
 	}
 
 	public int getCodigo() {
@@ -22,12 +53,20 @@ public class Usuario {
 		this.codigo = codigo;
 	}
 
-	public Funcionario getNomeFuncionario() {
-		return nomeFuncionario;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setNomeFuncionario(Funcionario nomeFuncionario) {
-		this.nomeFuncionario = nomeFuncionario;
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 
 	public String getSenha() {
@@ -38,14 +77,11 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public NivelAcesso getNivelAcesso() {
-		return nivelAcesso;
+	public Perfil getPerfil() {
+		return perfil;
 	}
 
-	public void setNivelAcesso(NivelAcesso nivelAcesso) {
-		this.nivelAcesso = nivelAcesso;
+	public void setPerfil(Perfil perfil) {
+		this.perfil = perfil;
 	}
-	
-	
-	
 }

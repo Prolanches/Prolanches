@@ -1,13 +1,36 @@
+/**
+ * Este é pacote responsavel pelo pacote model
+ */
 package br.com.ProjecJava.model;
 
-public class Pais {
+/**
+ * Esta é a classe responsavel pela criação de paises
+ * @author Noturno
+ *
+ */
 
+public class Pais {
+ /**
+  * Este são os atributos do Pais
+  */
 	private int codigo;
-	private String pais;
+	private String nome;
+	private String sigla;
+/**
+ * Este é o construtor da Classe Pais, abaixo são os parametros
+ * @param codigo pelo cod id do pais 
+ * @param nome pelo nome do pais
+ * @param sigla pela sigla do pais
+ */
 	
-	public Pais(int codigo, String pais) {
+	public Pais(int codigo, String nome, String sigla) {
+		super();
 		this.codigo = codigo;
-		this.pais = pais;
+		this.nome = nome;
+		this.sigla = sigla;
+	}
+	public Pais() {
+		
 	}
 
 	public int getCodigo() {
@@ -18,14 +41,20 @@ public class Pais {
 		this.codigo = codigo;
 	}
 
-	public String getPais() {
-		return pais;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setPais(String pais) {
-		this.pais = pais;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	
-	
+
+	public String getSigla() {
+		return sigla;
+	}
+
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
 }
+

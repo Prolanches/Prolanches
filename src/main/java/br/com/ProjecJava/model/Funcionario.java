@@ -1,19 +1,38 @@
+/**
+ * Este é o pacote resposanvel pelas Classes Model 
+ */
 package br.com.ProjecJava.model;
 
+/**
+ * Esta é a classe responsavel pelos Funcionários que iram utilizar o sistema
+ * @author Noturno
+ *
+ */
+
 public class Funcionario {
+	/**
+	 * Estes são os atributos do Funcionário
+	 */
+	
 
 	private int codigo;
-	private String nomeFuncionario;
-	private Empresa empresa;
+	private String nome;
 	private Funcao funcao;
-	private Usuario usuario;
+	private Empresa empresa;
+	/**
+	 * Este é o construtor da classe Funcionário, abaixo estão seus parametros
+	 * @param codigo id Banco de Dados 
+	 * @param nome nome do Funcionário 
+	 * @param funcao função do Funcionário implementado pela classe Funcao 
+	 * @param empresa empresa do Funcionário implementado pela classe Empresa
+	 */
 	
-	public Funcionario(int codigo, String nomeFuncionario, Empresa empresa, Funcao funcao, Usuario usuario) {
+	public Funcionario(int codigo, String nome, Funcao funcao, Empresa empresa) {
+		super();
 		this.codigo = codigo;
-		this.nomeFuncionario = nomeFuncionario;
-		this.empresa = empresa;
+		this.nome = nome;
 		this.funcao = funcao;
-		this.usuario = usuario;
+		this.empresa = empresa;
 	}
 
 	public int getCodigo() {
@@ -24,20 +43,12 @@ public class Funcionario {
 		this.codigo = codigo;
 	}
 
-	public String getNomeFuncionario() {
-		return nomeFuncionario;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeFuncionario(String nomeFuncionario) {
-		this.nomeFuncionario = nomeFuncionario;
-	}
-
-	public Empresa getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Funcao getFuncao() {
@@ -48,14 +59,12 @@ public class Funcionario {
 		this.funcao = funcao;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Empresa getEmpresa() {
+		return empresa;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
-	
-	
 	
 }
