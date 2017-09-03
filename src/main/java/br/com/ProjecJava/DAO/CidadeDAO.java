@@ -11,8 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ProjecJava.model.Cidade;
+
 /**
- * Classe responsável em buscar os dados
+ * Classe responsável em buscar os dados da cidade
+ * 
  * @author Itamar Havenstein
  *
  */
@@ -25,32 +27,35 @@ public class CidadeDAO {
 	public CidadeDAO(Connection con) {
 		this.conex = con;
 	}
+
 	/**
-	 * metodo que listará as cidades do banco de dados
-	 * @return retornará as cidades do banco de dados
+	 * Método de listagem das cidades
+	 * 
+	 * @param id
+	 *            codigo do estado para selecionar as cidades referente ao estado
+	 *            selecionado
+	 * @return retorna as cidades do estado selecionado
 	 * @throws SQLException
 	 */
 
-	public List<Cidade> lista() throws SQLException {
+	public List<Cidade> lista(int id) throws SQLException {
 		List<Cidade> lCidade = new ArrayList<>();
-
-		String sql = "SELECT * FROM CIDADE "
-				+ "INNER CIDADE ON CIDADE.CIDADE_UF_COD  = ESTADO.ESTADO_COD"
-				+ "WHERE CIDADE_UF_COD = ?";
+		String sql = "SELECT * FROM CIDADE INNER JOIN ESTADO ON (CIDADE.CIDADE_UF_COD  = ESTADO.ESTADO_COD) WHERE CIDADE_UF_COD IN ?";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
+			stmt.setInt(1, id);
 			stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
 				while (rs.next()) {
 					int codigo = rs.getInt("CIDADE_COD");
 					String nome = rs.getString("CIDADE_NOME");
-					
 					Cidade cidade = new Cidade(codigo, nome, null);
 					lCidade.add(cidade);
 				}
+				rs.close();
 			}
+			stmt.close();
 		}
-
 		return lCidade;
-}
-	
+	}
+
 }

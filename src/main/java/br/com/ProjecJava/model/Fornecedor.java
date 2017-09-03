@@ -47,6 +47,29 @@ public class Fornecedor {
 		this.email = email;
 	}
 
+	/**
+	 * Este é o construtor de Fornecedores, abaixo estão seus parametros
+	 * 
+	 * @param nome
+	 *            - nome do Fornecedor
+	 * @param cnpj
+	 *            - cnpj do Fornecedor
+	 * @param endereco
+	 *            - implementação da Classe Endereco
+	 * @param telefone
+	 *            - telefone do Fornecedor
+	 * @param email
+	 *            - e-mail do Fornecedor
+	 */
+	public Fornecedor(String nome, String cnpj, Endereco endereco, String telefone, String email) {
+		super();
+		this.nome = nome;
+		this.cnpj = cnpj;
+		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+	}
+
 	public int getCodigo() {
 		return codigo;
 	}

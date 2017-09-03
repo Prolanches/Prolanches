@@ -5,6 +5,7 @@ package br.com.ProjecJava.model;
 
 /**
  * Esta é a classe responsavel pelos Endereços
+ * 
  * @author Noturno
  *
  */
@@ -17,13 +18,32 @@ public class Endereco {
 	private int codigo;
 	private String rua;
 	private Cidade cidade;
+
 	/**
 	 * Este é o construtor dos Endereços, abaixo são os parametros
-	 * @param codigo id do banco de dados
-	 * @param rua nome da rua 
-	 * @param cidade implementação da classe Cidades
+	 * 
+	 * @param rua
+	 *            nome da rua
+	 * @param cidade
+	 *            implementação da classe Cidades
 	 */
-	
+
+	public Endereco(String rua, Cidade cidade) {
+		super();
+		this.rua = rua;
+		this.cidade = cidade;
+	}
+
+	/**
+	 * Este é o construtor ??
+	 * 
+	 * @param codigo
+	 *            - registro do endereço
+	 * @param rua
+	 *            - nome da rua
+	 * @param cidade-
+	 *            implementação da classe Cidades
+	 */
 	public Endereco(int codigo, String rua, Cidade cidade) {
 		super();
 		this.codigo = codigo;
