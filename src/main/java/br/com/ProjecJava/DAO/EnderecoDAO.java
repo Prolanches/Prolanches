@@ -50,39 +50,24 @@ public class EnderecoDAO {
 	}
 
 	/**
-	 * Método de alteração da rua
+	 * Método utilizado para alteração do endereço de um determinado fornecedor ou
+	 * empresa
 	 * 
 	 * @param codigo
-	 *            - numero do registro
+	 *            - parametro utilizado para alteração do endereço
 	 * @param rua
-	 *            - nova informação para ser adicionado
+	 *            - nova informação para ser inserida
+	 * @param cidade
+	 *            - nova informação para ser inserida
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean alterarRua(Integer codigo, String rua) throws SQLException {
-		String sql = "UPDATE ENDERECO SET END_RUA = ? WHERE END_COD = ?";
+	public boolean alterar(int codigo, String rua, Cidade cidade) throws SQLException {
+		String sql = "UPDATE ENDERECO SET END_RUA = ?, END_CIDADE_COD = ? WHERE END_COD = ?";
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setString(1, rua);
-		statement.setInt(2, codigo);
-
-		return statement.executeUpdate() > 0;
-	}
-
-	/**
-	 * Método de alteração da cidade
-	 * 
-	 * @param codigo
-	 *            - numero do registro
-	 * @param cidade
-	 *            - nova informação para ser adicionado
-	 * @return
-	 * @throws SQLException
-	 */
-	public boolean alterarCidade(Integer codigo, Integer cidade) throws SQLException {
-		String sql = "UPDATE ENDERECO SET END_CIDADE_COD = ? WHERE END_COD = ?";
-		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setInt(1, cidade);
-		statement.setInt(2, codigo);
+		statement.setInt(2, cidade.getCodigo());
+		statement.setInt(3, codigo);
 
 		return statement.executeUpdate() > 0;
 	}
@@ -95,7 +80,7 @@ public class EnderecoDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean excluir(Integer codigo) throws SQLException {
+	public boolean excluir(int codigo) throws SQLException {
 		String sql = "DELETE ENDERECO WHERE END_COD = ?";
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setInt(1, codigo);
@@ -112,8 +97,7 @@ public class EnderecoDAO {
 	public List<Endereco> listarEnderecos() throws SQLException {
 		List<Endereco> lEnderecos = new ArrayList<>();
 
-		String sql = "SELECT * FROM ENDERECO"
-				+ " INNER JOIN CIDADE ON ENDERECO.END_CIDADE_COD = CIDADE.CIDADE_COD"
+		String sql = "SELECT * FROM ENDERECO" + " INNER JOIN CIDADE ON ENDERECO.END_CIDADE_COD = CIDADE.CIDADE_COD"
 				+ " INNER JOIN ESTADO ON CIDADE.CIDADE_UF_COD = ESTADO.ESTADO_COD"
 				+ " INNER JOIN PAIS ON ESTADO.ESTADO_PAIS_COD = PAIS.PAIS_COD";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {

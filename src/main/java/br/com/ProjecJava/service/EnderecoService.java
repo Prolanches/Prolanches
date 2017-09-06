@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.ProjecJava.DAO.EnderecoDAO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Endereco;
 
 /**
@@ -32,32 +33,18 @@ public class EnderecoService {
 	}
 
 	/**
-	 * Método responsável por alterar o nome da rua de um determinado endereço
+	 * Método responsável pela alteração do endereço
 	 * 
 	 * @param codigo
-	 *            - parametro utilizado para saber qual endereço alterar
+	 *            - parametro utilizado para alteração do endereço
 	 * @param rua
-	 *            - nova informação
-	 * @throws SQLException
-	 */
-	public void alterarRua(Integer codigo, String rua) throws SQLException {
-		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new EnderecoDAO(conex).alterarRua(codigo, rua);
-		}
-	}
-
-	/**
-	 * Método responsável por alterar a cidade do endereço
-	 * 
-	 * @param codigo
-	 *            - parametro utilizado para saber qual endereço alterar
+	 *            - nova informação a ser inserida no endereço
 	 * @param cidade
-	 *            - nova informação
 	 * @throws SQLException
 	 */
-	public void alterarCidade(Integer codigo, Integer cidade) throws SQLException {
+	public void alterar(int codigo, String rua, Cidade cidade) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new EnderecoDAO(conex).alterarCidade(codigo, cidade);
+			new EnderecoDAO(conex).alterar(codigo, rua, cidade);
 		}
 	}
 
@@ -68,7 +55,7 @@ public class EnderecoService {
 	 *            - parametro utilizado para a exclusão do endereço
 	 * @throws SQLException
 	 */
-	public void excluir(Integer codigo) throws SQLException {
+	public void excluir(int codigo) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			new EnderecoDAO(conex).excluir(codigo);
 		}

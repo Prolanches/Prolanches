@@ -17,16 +17,15 @@ public class Endereco_Teste {
 
 		Pais pais = new Pais(1, "Brasil", "BR");
 		Estado estado = new Estado(24, "Santa Catarina", "SC", pais);
-		Cidade cidade = new Cidade(4449, "Blumenau", estado);
+		Cidade cidade = new Cidade(4435, "Ascurra", estado);
 
 		// inserindo o endereço funcionando
 		Endereco endereco = new Endereco("jacarepagua 216", cidade);
 		enderecoService.inserir(endereco);
 
-		// alterando a cidade funcionando
-		enderecoService.alterarCidade(1, 4448);
+		
 		// alterando a rua funcionando
-		enderecoService.alterarRua(1, "rua Pomerode");
+		enderecoService.alterar(2, "rua Tapajos", cidade);
 
 		// listando os endereços funcionando
 		List<Endereco> lendereco = EnderecoService.listarEnderecos();
@@ -35,7 +34,7 @@ public class Endereco_Teste {
 		}
 
 		// excluindo o endereço funcionando
-		enderecoService.excluir(1);
+		//enderecoService.excluir(1);
 	}
 
 	private static void imprimirEndereco(Endereco endereco) {
