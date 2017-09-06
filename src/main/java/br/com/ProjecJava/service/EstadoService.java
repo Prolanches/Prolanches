@@ -21,7 +21,7 @@ import br.com.ProjecJava.model.Pais;
 public class EstadoService {
 	/**
 	 * Este é o metodo responsavel pela listagem dos Estados
-	 * @param id codigo do Estado
+	 * 
 	 * @return retornará à lista de Estados
 	 * @throws SQLException
 	 */

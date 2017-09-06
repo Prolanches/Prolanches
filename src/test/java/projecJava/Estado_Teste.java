@@ -8,6 +8,8 @@ import java.util.List;
 
 import br.com.ProjecJava.model.Estado;
 import br.com.ProjecJava.service.EstadoService;
+import br.com.ProjecJava.service.PaisService;
+import br.com.ProjecJava.model.Pais;
 
 /**
  * Esta classe é responsavel pelos Testes dos Estados 
@@ -30,9 +32,11 @@ public class Estado_Teste {
 		for (Estado uf : lEstado) {
 			imprimirEstado(uf);
 		}	
-
+		
+	
     }
+    
 	private static void imprimirEstado(Estado uf) {
-		System.out.println("Codígo: "+ uf.getCodigo()+", Nome: "+ uf.getNome() + ", UF: "+uf.getUf());
+		System.out.println("Codígo: "+ uf.getCodigo()+", Nome: "+ uf.getNome() + ", UF: "+uf.getUf() +", País: "+uf.getPais().getNome());
 	}
 }
