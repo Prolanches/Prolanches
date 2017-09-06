@@ -21,6 +21,7 @@ public class Endereco_Teste {
 
 		// inserindo o endereço funcionando
 		Endereco endereco = new Endereco("jacarepagua 216", cidade);
+		
 		enderecoService.inserir(endereco);
 
 		// alterando a cidade funcionando
