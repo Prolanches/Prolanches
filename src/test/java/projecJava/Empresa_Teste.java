@@ -24,7 +24,9 @@ import br.com.ProjecJava.service.EnderecoService;
 public class Empresa_Teste {
 
 	public static void main(String[] args) throws SQLException {
-		// Instância da classe Service
+		/**
+		 * Instância da classe Service
+		 */
 		EnderecoService enderecoService = new EnderecoService();
 		EmpresaService empresaService = new EmpresaService();
 
@@ -33,15 +35,26 @@ public class Empresa_Teste {
 		Cidade cidade = new Cidade(4449, "Blumenau", estado);
 		Endereco endereco = new Endereco(22, "2 de Setembro", cidade);
 
-		// inserindo a empresa funcionando
-		// Empresa empresa = new Empresa(1, "Snack Lanches", endereco,
-		// "02.722.800/0001-50","(47)3035-2650","projecjava@gmail.com");
-		// empresaService.inserir(empresa);
+		/**
+		 *  inserindo a empresa 
+		 */
+		Empresa empresa = new Empresa(2, "Snack Time", endereco,
+	    "02.722.800/0001-50","(47)3035-2650","projecjava@gmail.com");
+		empresaService.inserir(empresa);
 		
-		// alterando a empresa funcionando
-		empresaService.alterar(24, "Snack Time", 1, "77.666.555/0002-20", "(47) 3333-7777", "lucas.brazbr@bol.com.br");
+		/**
+		 * alterando a empresa 
+		 */
+		//empresaService.alterar(new Empresa(24, "Snack Time",endereco, "77.666.555/0002-20", "(47) 3333-7777", "lucas.brazbr@bol.com.br"));
+		
+		/**
+		 * excluindo a empresa 
+		 */
+		//empresaService.excluir(24);
 
-		// Listagem dos Estados
+		/**
+		 *  Listagem das Empresas
+		 */
 		List<Empresa> lEmpresa = EmpresaService.listarEmpresas();
 		for (Empresa emp : lEmpresa) {
 			imprimirEmpresa(emp);

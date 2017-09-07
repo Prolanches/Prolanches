@@ -20,10 +20,14 @@ public class Pais_Teste {
 	 * @throws SQLException
 	 */
         public static void main(String[] args) throws SQLException {
-		//Instância da classe Service
+		/**
+		 * Instância da classe Service
+		 */
 		PaisService paisService = new PaisService();
 		
-		// Listagem dos Paises
+		/**
+		 *  Listagem dos Paises
+		 */
 		List<Pais> lPais = paisService.listarPais();
 		for (Pais br : lPais) {
 			imprimirPais(br);
