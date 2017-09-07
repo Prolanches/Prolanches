@@ -20,7 +20,7 @@ public class SuprimentoDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Suprimento suprimento) throws SQLException {
-		String sql = "INSERT INTO SUPRIMENTO(SUPRI_COD,SUPRI_NOME,SUPRI_TIPO_UND_COD,SUPRI_QUANTIDADE,SUPRI_CUSTO,SUPRI_FORNECEDOR,SUPRI_MARCA_COD) VALUES(SEQ_SUPRIMENTO.nextval,?,?,?,?,?,?)";
+		String sql = "INSERT INTO SUPRIMENTO(SUPRI_COD,SUPRI_NOME,SUPRI_TIPO_UND_COD,SUPRI_QUANTIDADE,SUPRI_CUSTO,SUPRI_FORNECEDOR_COD,SUPRI_MARCA_COD) VALUES(SEQ_SUPRIMENTO.nextval,?,?,?,?,?,?)";
 		
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setString(1, suprimento.getNome());
@@ -33,7 +33,7 @@ public class SuprimentoDAO {
 		return statement.executeUpdate() > 0;
 	}
 	public boolean alterar(Suprimento suprimento) throws SQLException {
-		String sql = "UPDATE SUPRIMENTO SET SUPRI_NOME = ?, SUPRI_TIPO_UND_COD = ?, SUPRI_QUANTIDADE = ?, SUPRI_CUSTO = ?, SUPRI_FORNECEDOR = ?, SUPRI_MARCA_COD = ? WHERE SUPRI_COD = ?";
+		String sql = "UPDATE SUPRIMENTO SET SUPRI_NOME = ?, SUPRI_TIPO_UND_COD = ?, SUPRI_QUANTIDADE = ?, SUPRI_CUSTO = ?, SUPRI_FORNECEDOR_COD = ?, SUPRI_MARCA_COD = ? WHERE SUPRI_COD = ?";
 		
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setString(1, suprimento.getNome());

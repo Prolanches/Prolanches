@@ -10,7 +10,7 @@ import br.com.ProjecJava.model.Fornecedor;
 import br.com.ProjecJava.model.Fornecedor_Suprimento;
 import br.com.ProjecJava.model.Suprimento;
 
-public class FornecedorSuprimentoService {
+public class Fornecedor_SuprimentoService {
 
 	public void inserir(Fornecedor_Suprimento fornesupri) throws SQLException {
 		try(Connection conex = new ConnectionPoolOracle().getConnection()){

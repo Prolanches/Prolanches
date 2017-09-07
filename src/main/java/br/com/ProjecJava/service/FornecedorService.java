@@ -24,7 +24,7 @@ import br.com.ProjecJava.model.Fornecedor;
 public class FornecedorService {
 
 	/**
-	 * Método responsável por inserir os endereços no banco
+	 * Método responsável por inserir os Fornecedores no banco
 	 * 
 	 * @param fornecedor
 	 *            - construtor utilizado para inserir os dados
