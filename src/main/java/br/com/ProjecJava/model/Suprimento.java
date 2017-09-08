@@ -19,7 +19,6 @@ public class Suprimento {
 	private Tipo_Unidade tipoUnidade;
 	private int quantidade;
 	private double custo;
-	private Fornecedor fornecedor;
 	private Marca marca;
 
 	/**
@@ -40,15 +39,13 @@ public class Suprimento {
 	 * @param marca
 	 *            implementação da classe Marca
 	 */
-	public Suprimento(int codigo, String nome, Tipo_Unidade tipoUnidade, int quantidade, double custo,
-			Fornecedor fornecedor, Marca marca) {
+	public Suprimento(int codigo, String nome, Tipo_Unidade tipoUnidade, int quantidade, double custo, Marca marca) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
 		this.tipoUnidade = tipoUnidade;
 		this.quantidade = quantidade;
 		this.custo = custo;
-		this.fornecedor = fornecedor;
 		this.marca = marca;
 	}
 
@@ -90,14 +87,6 @@ public class Suprimento {
 
 	public void setCusto(double custo) {
 		this.custo = custo;
-	}
-
-	public Fornecedor getFornecedor() {
-		return fornecedor;
-	}
-
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
 	}
 
 	public Marca getMarca() {

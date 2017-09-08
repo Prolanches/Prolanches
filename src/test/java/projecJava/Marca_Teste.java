@@ -20,8 +20,8 @@ public class Marca_Teste {
 		
 		//listando as marcas FUNCIONANDO
 		List<Marca> lMarca = MarcaService.listarMarca();
-		for (Marca marca : lMarca) {
-			imprimeMarca(marca);
+		for (Marca marca1 : lMarca) {
+			imprimeMarca(marca1);
 		}
 		
 	}
