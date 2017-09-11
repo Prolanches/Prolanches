@@ -3,7 +3,7 @@
  */
 package br.com.ProjecJava.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Esta é a classe responsavel pelo Contas à Pagar para geração de relatórios
@@ -19,6 +19,7 @@ public class Contas_Pagar {
 	private double custo;
 	private Suprimento suprimento;
 	private Date data;
+	private Fornecedor fornecedor;
 
 	/**
 	 * Este é o construtor Contas_Pagar, abaixo estão seus parametros
@@ -34,12 +35,13 @@ public class Contas_Pagar {
 	 *            registro de data para geração de relatórios
 	 */
 
-	public Contas_Pagar(int codigo, double custo, Suprimento suprimento, Date data) {
+	public Contas_Pagar(int codigo, double custo, Suprimento suprimento, Date data,Fornecedor fornecedor) {
 		super();
 		this.codigo = codigo;
 		this.custo = custo;
 		this.suprimento = suprimento;
 		this.data = data;
+		this.fornecedor = fornecedor;
 	}
 
 	public int getCodigo() {
@@ -73,4 +75,13 @@ public class Contas_Pagar {
 	public void setData(Date data) {
 		this.data = data;
 	}
+
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
+
 }
