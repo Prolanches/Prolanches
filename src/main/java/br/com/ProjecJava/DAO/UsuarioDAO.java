@@ -34,7 +34,7 @@ public class UsuarioDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Usuario usuario) throws SQLException{
-		String sql = "INSERT INTO USUARIO (USU_COD, USU_LOGIN, USU_FUNCIONARIO_COD, USU_SENHA, USU_NIVEL_COD) VALUES (SEQ_USUARIO.nextval, ?,?,?,?)";
+		String sql = "INSERT INTO USUARIO (USU_COD, USU_NOME, USU_FUNCIONARIO_COD, USU_SENHA, USU_NIVEL_COD) VALUES (SEQ_USUARIO.nextval, ?,?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setString(1, usuario.getLogin());
@@ -46,7 +46,7 @@ public class UsuarioDAO {
 	}
 	
 	public boolean alterar(Usuario usuario) throws SQLException{
-		String sql = "UPDATE USUARIO SET USU_LOGIN = ?, USU_FUNCIONARIO_COD = ?, USU_SENHA = ?, USU_NIVEL_COD = ? WHERE USU_COD = ?";
+		String sql = "UPDATE USUARIO SET USU_NOME = ?, USU_FUNCIONARIO_COD = ?, USU_SENHA = ?, USU_NIVEL_COD = ? WHERE USU_COD = ?";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setString(1, usuario.getLogin());
@@ -79,7 +79,7 @@ public class UsuarioDAO {
 			try (ResultSet rs = stmt.getResultSet()) {
 				while (rs.next()) {
 					int codigo = rs.getInt("USU_COD");
-					String login = rs.getString("USU_LOGIN");
+					String login = rs.getString("USU_NOME");
 					int codigoFuncionario = rs.getInt("FUN_COD");
 					String nomeFuncionario = rs.getString("FUN_NOME");
 					int codigoEmpresa = rs.getInt("EMP_COD");

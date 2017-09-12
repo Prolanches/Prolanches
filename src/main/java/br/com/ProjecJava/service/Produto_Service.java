@@ -7,55 +7,57 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.DAO.PedidoDAO;
+import br.com.ProjecJava.DAO.ProdutoDAO;
+
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Pedido;
+import br.com.ProjecJava.model.Produto;
+
 
 /**
  * 
- * Esta classe é responsavel pela Classe PedidoService
+ * Esta classe é responsavel pela Classe ProdutoService
  * @author Lucas Braz
  *
  */
-public class PedidoService {
+public class Produto_Service {
 	/**
-	 * Este é o metodo responsavel pela listagem dos Pedidos
-	 * @return mostrará o Pedido
+	 * Este é o metodo responsavel pela listagem do Produto
+	 * @return mostrará o Produto
 	 * @throws SQLException 
 	 */
-	public static List<Pedido> listarPedido() throws SQLException {
+	public static List<Produto> listarProduto() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			return new PedidoDAO(conex).lista();
+			return new ProdutoDAO(conex).lista();
 		}
 	}
 	/**
 	 * Metodo para inserir 
-	 * @param pedido
+	 * @param produto
 	 * @throws SQLException
 	 */
-	public void inserir(Pedido pedido) throws SQLException{
+	public void inserir(Produto produto) throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).inserir(pedido);
+			new ProdutoDAO(conex).inserir(produto);
 		}
 	}
 	/**
 	 * Metodo alterar
-	 * @param pedido
+	 * @param produto
 	 * @throws SQLException
 	 */
-	public void alterar(Pedido pedido)throws SQLException{
+	public void alterar(Produto produto)throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).alterar(pedido);
+			new ProdutoDAO(conex).alterar(produto);
 		}
 	}
 	/**
 	 * Metodo excluir 
-	 * @param pedido
+	 * @param produto
 	 * @throws SQLException
 	 */
 	public void excluir(int codigo) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).excluir(codigo);
+			new ProdutoDAO(conex).excluir(codigo);
 		}
 	}
 }
