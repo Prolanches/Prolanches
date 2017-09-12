@@ -56,6 +56,6 @@ public class UsuarioService {
 	public void excluir(int codigo) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			new UsuarioDAO(conex).excluir(codigo);
-		}
+	}
 	}
 }

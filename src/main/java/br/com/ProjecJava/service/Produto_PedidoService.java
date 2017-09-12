@@ -7,55 +7,56 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.DAO.PedidoDAO;
+import br.com.ProjecJava.DAO.Produto_PedidoDAO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Pedido;
+import br.com.ProjecJava.model.Produto_Pedido;
+
 
 /**
  * 
- * Esta classe é responsavel pela Classe PedidoService
+ * Esta classe é responsavel pela Classe Produto_PedidoService
  * @author Lucas Braz
  *
  */
-public class PedidoService {
+public class Produto_PedidoService {
 	/**
-	 * Este é o metodo responsavel pela listagem dos Pedidos
-	 * @return mostrará o Pedido
+	 * Este é o metodo responsavel pela listagem do Produto_Pedido
+	 * @return mostrará o Produto_Pedido
 	 * @throws SQLException 
 	 */
-	public static List<Pedido> listarPedido() throws SQLException {
+	public static List<Produto_Pedido> listarProduto_Pedido() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			return new PedidoDAO(conex).lista();
+			return new Produto_PedidoDAO(conex).lista();
 		}
 	}
 	/**
 	 * Metodo para inserir 
-	 * @param pedido
+	 * @param Produto_Pedido
 	 * @throws SQLException
 	 */
-	public void inserir(Pedido pedido) throws SQLException{
+	public void inserir(Produto_Pedido produto_pedido) throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).inserir(pedido);
+			new Produto_PedidoDAO(conex).inserir(produto_pedido);
 		}
 	}
 	/**
 	 * Metodo alterar
-	 * @param pedido
+	 * @param Produto_Pedido
 	 * @throws SQLException
 	 */
-	public void alterar(Pedido pedido)throws SQLException{
+	public void alterar(Produto_Pedido produto_pedido)throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).alterar(pedido);
+			new Produto_PedidoDAO(conex).alterar(produto_pedido);
 		}
 	}
 	/**
 	 * Metodo excluir 
-	 * @param pedido
+	 * @param Produto_Pedido
 	 * @throws SQLException
 	 */
 	public void excluir(int codigo) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).excluir(codigo);
-		}
+			new Produto_PedidoDAO(conex).excluir(codigo);
+	}
 	}
 }

@@ -31,11 +31,11 @@ public class Funcionario_Teste {
 		EmpresaService empresaService = new EmpresaService();
 		FuncionarioService funcionarioService = new FuncionarioService();
 
-		Funcao funcao = new Funcao(2,"Gerente");
+		Funcao funcao = new Funcao(1,"Gerente");
 		Pais pais = new Pais(1, "Brasil", "BR");
 		Estado estado = new Estado(24, "Santa Catarina", "SC", pais);
 		Cidade cidade = new Cidade(4449, "Blumenau", estado);
-		Endereco endereco = new Endereco(22, "7 de Setembro", cidade);
+		Endereco endereco = new Endereco(2, "2 de Setembro", cidade);
 		Empresa empresa = new Empresa(2, "Snack Time", endereco,"02.722.800/0001-50","(47)3035-2650","projecjava@gmail.com");
 		
 

@@ -11,9 +11,7 @@
 
 
 button:hover {
-  background-color: #39455c;
-  color: #e0e0e0;
-  text-decoration: none;
+  
 }
 
 button{
@@ -27,17 +25,26 @@ button{
 }
 
 .botao{
-  background-color: #39455c;
-  color: #e0e0e0;
-  text-align: center;
-  margin-left: 20px;
-  cursor: pointer;
+  	background-color: #39455c;
+  	color: #e0e0e0;
+  	text-align: center;
+  	margin-left: 20px;
+  	cursor: pointer;
+ 	opacity: 0.95;
+  	text-decoration:none;
+	border-radius: 5%;
 }
+
+.botao: hover{
+	opacity: 1;
+	text-decoration:none;
+}
+
 
 
 .rodape{
   height: 4%;
-  background: linear-gradient(0deg, #fff, #39455c);
+  background: linear-gradient(0deg, #fff , #39455c);
 }
 
 p{
@@ -45,6 +52,9 @@ p{
   font-size: 20px;
 }
 
+.opcAdm{
+	 width: 250px;
+}
 
 
 nav ul {
@@ -54,12 +64,19 @@ nav ul {
   padding: 0;
   margin: 0;
 }
-
 nav li {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 20px;
+  background-color: #e0e0e0;
   line-height: 40px;
   text-align: left;
+  border-right: 1px solid #39455c; 
+  opacity: 1;
+}
+
+nav li:hover{
+  border-right: 1px solid #e0e0e0;	
+ 
 }
 
 nav a {
@@ -67,7 +84,6 @@ nav a {
   display: block;
   color: #39455c;
   padding-left: 15px;
-  border-right: 1px solid #39455c;
   transition: .3s background-color;
   text-decoration:none;
 }
@@ -75,7 +91,8 @@ nav a {
 nav a:hover {
   background-color: #39455c;
   color: #e0e0e0;
-  border-right: 1px solid #e0e0e0;
+  text-decoration: none;
+  opacity: 1;
 }
 
 
