@@ -17,9 +17,8 @@ public class Contas_Pagar {
 	 */
 	private int codigo;
 	private double custo;
-	private Suprimento suprimento;
+	private Fornecedor_Suprimento forneSupri;
 	private Date data;
-	private Fornecedor fornecedor;
 
 	/**
 	 * Este é o construtor Contas_Pagar, abaixo estão seus parametros
@@ -31,17 +30,16 @@ public class Contas_Pagar {
 	 *            relatórios
 	 * @param suprimento
 	 *            implementação da Classe Suprimento para geração de relatórios
-	 * @param data
+	 * @param date
 	 *            registro de data para geração de relatórios
 	 */
 
-	public Contas_Pagar(int codigo, double custo, Suprimento suprimento, Date data,Fornecedor fornecedor) {
+	public Contas_Pagar(int codigo, double custo, Fornecedor_Suprimento forSup, Date data) {
 		super();
 		this.codigo = codigo;
 		this.custo = custo;
-		this.suprimento = suprimento;
+		this.forneSupri = forSup;
 		this.data = data;
-		this.fornecedor = fornecedor;
 	}
 
 	public int getCodigo() {
@@ -60,14 +58,6 @@ public class Contas_Pagar {
 		this.custo = custo;
 	}
 
-	public Suprimento getSuprimento() {
-		return suprimento;
-	}
-
-	public void setSuprimento(Suprimento suprimento) {
-		this.suprimento = suprimento;
-	}
-
 	public Date getData() {
 		return data;
 	}
@@ -76,12 +66,12 @@ public class Contas_Pagar {
 		this.data = data;
 	}
 
-	public Fornecedor getFornecedor() {
-		return fornecedor;
+	public Fornecedor_Suprimento getForneSupri() {
+		return forneSupri;
 	}
 
-	public void setFornecedor(Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
+	public void setForneSupri(Fornecedor_Suprimento forneSupri) {
+		this.forneSupri = forneSupri;
 	}
 
 }

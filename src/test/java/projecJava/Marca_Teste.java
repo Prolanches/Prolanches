@@ -12,8 +12,8 @@ public class Marca_Teste {
 		MarcaService marcaService = new MarcaService();
 		
 		//inserindo marca FUNCIONANDO
-		//Marca marca = new Marca( "Coca-Cola");
-		//marcaService.inserir(marca);
+		Marca marca = new Marca( "Coca-Cola");
+		marcaService.inserir(marca);
 		
 		//excluindo marca FUNCIONANDO
 		//marcaService.excluir(2);

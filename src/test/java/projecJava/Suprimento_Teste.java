@@ -19,8 +19,8 @@ public class Suprimento_Teste {
 		Marca marca = new Marca(1, "thabrulai");
 		
 		//inserindo Suprimento FUNCIONANDO
-		//Suprimento suprimento = new Suprimento(0, "Hamburgue", tipoUnidade, 100, 1.35, marca);
-		//suprimentoService.inserir(suprimento);
+		Suprimento suprimento = new Suprimento(0, "Hamburgue", tipoUnidade, 100, 1.35, marca);
+		suprimentoService.inserir(suprimento);
 		
 		//alterando Suprimento FUNCIONANDO
 		//Suprimento suprimento1 = new Suprimento(2, "Frango", tipoUnidade, 50, 1.05, fornecedor, marca);
