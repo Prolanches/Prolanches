@@ -53,22 +53,27 @@ public class Contas_PagarDAO {
 					String tipoUnd = rs.getString("TIPO_UND_NOME");
 					double tipoPeso = rs.getDouble("TIPO_UND_UNIDADE");
 					Tipo_Unidade tipoUni = new Tipo_Unidade(tipoCod, tipoUnd, tipoPeso);
+					
 					int marcaCod = rs.getInt("MARCA_COD");
 					String marcaNome = rs.getString("MARCA_NOME");
 					Marca marca = new Marca(marcaCod, marcaNome);
+					
 					int supriCod = rs.getInt("SUPRI_COD");
 					String supriNome = rs.getString("SUPRI_NOME");
 					int supriQTD = rs.getInt("SUPRI_QUANTIDADE");
 					double supriCusto = rs.getDouble("SUPRI_CUSTO");
 					Suprimento supri = new Suprimento(supriCod, supriNome, tipoUni, supriQTD, supriCusto, marca);
+					
 					int forCod = rs.getInt("FOR_COD");
 					String nomeFor = rs.getString("FOR_NOME");
 					String cnpj = rs.getString("FOR_CNPJ");
 					String telefone = rs.getString("FOR_TELEFONE");
 					String email = rs.getString("FOR_EMAIL");
 					Fornecedor fornecedor = new Fornecedor(forCod, nomeFor, cnpj, null, telefone, email);
+					
 					int foSuCod = rs.getInt("FOR_SUP_COD");
 					Fornecedor_Suprimento forneSupri = new Fornecedor_Suprimento(foSuCod, fornecedor, supri);
+					
 					double contPag = rs.getDouble("CONT_PAG_CUSTO");
 					Date data = rs.getDate("CONT_PAG_DATA");
 					Contas_Pagar contasPag = new Contas_Pagar(0, contPag, forneSupri, data);
