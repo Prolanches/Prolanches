@@ -7,14 +7,29 @@
 
 .body{
 	background-color: #fff;
+    background: fixed;
 }
 
 
 .barra{
 	height: 2%;
-  background: linear-gradient(0deg, #9d8343, #fff);
+    background: linear-gradient(0deg, #9d8343, #fff);
 }
 
+.topo{
+    background-image: url(("../images/topo.png");
+ 
+   
+
+}
+
+.meio1{
+    text-align: center;
+}
+
+.meio{
+   height: auto;
+}
 
 section#page-inicio, section#page-o-que-e-o-portal, section#page-dados-abertos, section#page-o-parana-em-numeros, section#page-glossario, section#page-perguntas-frequentes, section#page-contato {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif}
@@ -307,7 +322,7 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu>li>ul.dropdown-menu {
     text-transform: none!important;
 }
 #explicacao1, #explicacao2 {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif";
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     color: #FFF;
     font-size: 20px!important;
     text-shadow: 0 0 3px rgba(100, 100, 100, 1);

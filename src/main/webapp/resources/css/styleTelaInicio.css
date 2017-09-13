@@ -53,7 +53,8 @@ p{
 }
 
 .opcAdm{
-	 width: 250px;
+	width: 250px;
+	border-right: 1px solid #39455c; 
 }
 
 

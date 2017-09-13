@@ -15,8 +15,6 @@ import br.com.ProjecJava.model.Funcionario;
 import br.com.ProjecJava.model.Pais;
 import br.com.ProjecJava.model.Perfil;
 import br.com.ProjecJava.model.Usuario;
-import br.com.ProjecJava.service.EmpresaService;
-import br.com.ProjecJava.service.FuncionarioService;
 import br.com.ProjecJava.service.UsuarioService;
 
 /**
@@ -31,7 +29,7 @@ public class Usuario_Teste {
 		 * Instância da classe Service
 		 */
 		UsuarioService usuarioService = new UsuarioService();
-		FuncionarioService funcionarioService = new FuncionarioService();
+		
 
 		
 		Pais pais = new Pais(1, "Brasil", "BR");

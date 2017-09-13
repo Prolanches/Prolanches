@@ -3,7 +3,7 @@
  */
 package br.com.ProjecJava.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Esta é a classe responsavel pelo Contas à Receber aonde será gerado

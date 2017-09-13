@@ -32,14 +32,15 @@ public class Pedido_Teste {
 		/**
 		 *  inserindo o Pedido FUNCIONANDO FALTA ARRUMAR DATA
 		 */
+
 	  // Pedido pedido = new Pedido(1,sdf.parse("11/09/2017 18:30:00"),tipooperacao,150.00);
 	  // pedidoService.inserir(pedido);
-		
-		/**
-		 * alterando o Pedido FUNCIONANDO FALTA ARRUMAR DATA
-		 */
+
+	    Pedido pedido = new Pedido(1,sdf.parse("11/09/2017"),tipooperacao,150.00);
+	    pedidoService.inserir(pedido);
+
 		pedidoService.alterar(new Pedido(3,sdf.parse("10/05/2015 10:35:00"),tipooperacao,212.00));
-		
+
 		/**
 		 * excluindo a Pedido  FUNCIONANDO
 		 */

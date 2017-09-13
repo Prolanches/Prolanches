@@ -36,7 +36,6 @@ public class FuncaoDAO {
 		statement.setString(1, funcao.getNome());
 		
 		
-		 
 		return statement.executeUpdate() > 0;
 	}
 	
