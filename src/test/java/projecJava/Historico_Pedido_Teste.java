@@ -1,3 +1,6 @@
+/**
+ * Este pacote é responsavel pelas Classes Testes 
+ */
 package projecJava;
 
 import java.sql.SQLException;
@@ -17,10 +20,18 @@ import br.com.ProjecJava.model.Pedido;
 import br.com.ProjecJava.model.Status_Pedido;
 import br.com.ProjecJava.model.Tipo_Operacao;
 import br.com.ProjecJava.service.Historico_PedidoService;
-
+/**
+ * Esta classe é responsavel pelos Testes dos Historico_Pedido 
+ * 
+ * @author Lucas Braz
+ *
+ */
 public class Historico_Pedido_Teste {
 
 	public static void main(String[] args) throws SQLException, ParseException {
+		/**
+		 * Instância da classe Service
+		 */
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 
 		Historico_PedidoService historico_pedidoService = new Historico_PedidoService();
@@ -35,14 +46,16 @@ public class Historico_Pedido_Teste {
 		Funcao funcao = new Funcao(1, "Gerente");
 		Funcionario funcionario = new Funcionario(1, "Itamar Rockfeller", funcao, empresa);
 		Tipo_Operacao tipooperacao = new Tipo_Operacao(1, "Mesa");
-		Pedido pedido = new Pedido(1, sdf.parse("12/09/2017"), tipooperacao, 250.00);
+		Pedido pedido = new Pedido(1, sdf.parse("11/09/2017"), tipooperacao, 150.00);
 
 		/**
 		 * inserir Historico_Pedido
 		 */
 		Historico_Pedido historico_pedido = new Historico_Pedido(1, pedido, funcionario, status);
 		historico_pedidoService.inserir(historico_pedido);
-
+		/**
+		 * Listagem do Historico_Pedido
+		 */
 		List<Historico_Pedido> lHistorico_Pedido = Historico_PedidoService.listarHistorico_Pedido();
 		for (Historico_Pedido hit_pedido : lHistorico_Pedido) {
 			imprimeHistorico_Pedido(hit_pedido);

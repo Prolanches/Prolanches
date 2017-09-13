@@ -20,9 +20,9 @@ public class Endereco_Teste {
 		Cidade cidade = new Cidade(4449, "Blumenau", estado);
 
 		// inserindo o endereço funcionando
-		//Endereco endereco = new Endereco("2 de Setembro", cidade);
+		Endereco endereco = new Endereco("2 de Setembro", cidade);
 		
-		//enderecoService.inserir(endereco);
+		enderecoService.inserir(endereco);
 
 		
 		// alterando a rua funcionando

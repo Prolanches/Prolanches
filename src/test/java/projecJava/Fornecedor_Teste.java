@@ -19,7 +19,7 @@ public class Fornecedor_Teste {
 		Pais pais = new Pais(1, "Brasil", "BR");
 		Estado estado = new Estado(24, "Santa Catarina", "SC", pais);
 		Cidade cidade = new Cidade(4449, "Blumenau", estado);
-		Endereco endereco = new Endereco(6, "rua jacarepagua, 216", cidade);
+		Endereco endereco = new Endereco(1, "2 de Setembro", cidade);
 		
 		//inserindo fornecedor FUNCIONANDO
 		Fornecedor fornecedor = new Fornecedor("forne2", "1235.356.326/589", endereco, "3333-2325", "forne2@gmail.com.br");

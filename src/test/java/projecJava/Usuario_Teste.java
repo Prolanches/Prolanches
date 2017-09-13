@@ -15,8 +15,6 @@ import br.com.ProjecJava.model.Funcionario;
 import br.com.ProjecJava.model.Pais;
 import br.com.ProjecJava.model.Perfil;
 import br.com.ProjecJava.model.Usuario;
-import br.com.ProjecJava.service.EmpresaService;
-import br.com.ProjecJava.service.FuncionarioService;
 import br.com.ProjecJava.service.UsuarioService;
 
 /**
@@ -31,24 +29,24 @@ public class Usuario_Teste {
 		 * Instância da classe Service
 		 */
 		UsuarioService usuarioService = new UsuarioService();
-		FuncionarioService funcionarioService = new FuncionarioService();
+		
 
 		
 		Pais pais = new Pais(1, "Brasil", "BR");
 		Estado estado = new Estado(24, "Santa Catarina", "SC", pais);
 		Cidade cidade = new Cidade(4449, "Blumenau", estado);
-		Endereco endereco = new Endereco(2, "2 de Setembro", cidade);
-		Empresa empresa = new Empresa(2, "Snack Time", endereco,"02.722.800/0001-50","(47)3035-2650","projecjava@gmail.com");
+		Endereco endereco = new Endereco(1, "2 de Setembro", cidade);
+		Empresa empresa = new Empresa(1, "Snack Time", endereco,"02.722.800/0001-50","(47)3035-2650","projecjava@gmail.com");
 		Funcao funcao = new Funcao(1,"Gerente");
-		Funcionario funcionario = new Funcionario(1,"Itamar Rockfeller", funcao, empresa);
+		Funcionario funcionario = new Funcionario(2,"Itamar Rockfeller", funcao, empresa);
 		Perfil perfil = new Perfil(1,"Administrador");
 		
 
 		/**
 		 *  inserindo o Usuário 
 		 */
-		//Usuario usuario = new Usuario(5,"Vinicius", funcionario,"vale123", perfil);
-		//suarioService.inserir(usuario);
+		Usuario usuario = new Usuario(5,"tipo", funcionario,"vale1233", perfil);
+		usuarioService.inserir(usuario);
 		
 		/**
 		 * alterando o Usuário 

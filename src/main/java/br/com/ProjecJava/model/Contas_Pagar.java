@@ -21,17 +21,11 @@ public class Contas_Pagar {
 	private Date data;
 
 	/**
-	 * Este é o construtor Contas_Pagar, abaixo estão seus parametros
-	 * 
-	 * @param codigo
-	 *            ID do Bando de Dados
-	 * @param custo
-	 *            custo do agrupamento de valores do Suprimento para geração de
-	 *            relatórios
-	 * @param suprimento
-	 *            implementação da Classe Suprimento para geração de relatórios
-	 * @param date
-	 *            registro de data para geração de relatórios
+	 * Método de inserção das contas á pagar
+	 * @param codigo - para identificar o pacote de dados inseridos
+	 * @param custo - custo da nota fiscal
+	 * @param forSup - codigo da tabela fornecedor suprimentos
+	 * @param data - data da compra
 	 */
 
 	public Contas_Pagar(int codigo, double custo, Fornecedor_Suprimento forSup, Date data) {

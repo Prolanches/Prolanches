@@ -38,7 +38,7 @@ public class Pedido_Teste {
 		/**
 		 * alterando o Pedido 
 		 */
-		//pedidoService.alterar(new Pedido(1,sdf.parse("11/09/2017"),tipooperacao,200.00));
+		//pedidoService.alterar(new Pedido(1,sdf.parse("11/06/2017"),tipooperacao,212.00));
 		
 		/**
 		 * excluindo a Pedido  
@@ -54,7 +54,9 @@ public class Pedido_Teste {
 		}
 	}
 
+	static SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+	
 	private static void imprimirPedido(Pedido ped) {
-		System.out.println("Codígo: "+ped.getCodigo()+"\nData: "+ped.getDataPedido()+"\nTipo de Operação: "+ped.getTipoOperacao().getCodigo()+"\nValor: "+ped.getValor());
+		System.out.println("Codígo: "+ped.getCodigo()+"\nData: "+sdf.format(ped.getDataPedido())+"\nTipo de Operação: "+ped.getTipoOperacao().getCodigo()+"\nValor: "+ped.getValor());
 	}
 }

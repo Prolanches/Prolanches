@@ -33,7 +33,7 @@ public class Empresa_Teste {
 		Pais pais = new Pais(1, "Brasil", "BR");
 		Estado estado = new Estado(24, "Santa Catarina", "SC", pais);
 		Cidade cidade = new Cidade(4449, "Blumenau", estado);
-		Endereco endereco = new Endereco(2, "2 de Setembro", cidade);
+		Endereco endereco = new Endereco(1, "2 de Setembro", cidade);
 
 		/**
 		 *  inserindo a empresa 

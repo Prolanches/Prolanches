@@ -28,8 +28,8 @@ public class Produto_Teste {
 		/**
 		 *  inserindo o Produto 
 		 */
-		//Produto produto = new Produto(1,"X-Burguer",1.60,15.50);
-		//produtoService.inserir(produto);
+		Produto produto = new Produto(1,"X-Burguer",1.60,15.50);
+		produtoService.inserir(produto);
 		
 		/**
 		 * alterando o Produto 
@@ -39,15 +39,15 @@ public class Produto_Teste {
 		/**
 		 * excluindo a Produto 
 		 */
-		produtoService.excluir(1);
+		//produtoService.excluir(1);
 
 		/**
 		 * Listagem dos Funcionarios
 		 */
-		List<Produto> lProduto = Produto_Service.listarProduto();
-		for (Produto prod : lProduto) {
-			imprimirProduto(prod);
-		}
+		//List<Produto> lProduto = Produto_Service.listarProduto();
+		//for (Produto prod : lProduto) {
+		//	imprimirProduto(prod);
+		//}
 	}
 
 	private static void imprimirProduto(Produto prod) {
