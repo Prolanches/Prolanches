@@ -25,25 +25,25 @@ public class Pedido_Teste {
 		/**
 		 * Instância da classe Service
 		 */
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		PedidoService pedidoService = new PedidoService();
 		Tipo_Operacao tipooperacao = new Tipo_Operacao(1,"Mesa");
 		
 		/**
-		 *  inserindo o Pedido 
+		 *  inserindo o Pedido FUNCIONANDO FALTA ARRUMAR DATA
 		 */
-	    //Pedido pedido = new Pedido(1,sdf.parse("11/09/2017"),tipooperacao,150.00);
-	   // pedidoService.inserir(pedido);
+	  // Pedido pedido = new Pedido(1,sdf.parse("11/09/2017 18:30:00"),tipooperacao,150.00);
+	  // pedidoService.inserir(pedido);
 		
 		/**
-		 * alterando o Pedido 
+		 * alterando o Pedido FUNCIONANDO FALTA ARRUMAR DATA
 		 */
-		pedidoService.alterar(new Pedido(1,sdf.parse("11/06/2017"),tipooperacao,212.00));
+		pedidoService.alterar(new Pedido(3,sdf.parse("10/05/2015 10:35:00"),tipooperacao,212.00));
 		
 		/**
-		 * excluindo a Pedido  
+		 * excluindo a Pedido  FUNCIONANDO
 		 */
-		//pedidoService.excluir(1);
+		//pedidoService.excluir(2);
 
 		/**
 		 * Listagem dos Funcionarios
@@ -54,7 +54,7 @@ public class Pedido_Teste {
 		}
 	}
 
-	static SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
 	private static void imprimirPedido(Pedido ped) {
 		System.out.println("Codígo: "+ped.getCodigo()+"\nData: "+sdf.format(ped.getDataPedido())+"\nTipo de Operação: "+ped.getTipoOperacao().getCodigo()+"\nValor: "+ped.getValor());

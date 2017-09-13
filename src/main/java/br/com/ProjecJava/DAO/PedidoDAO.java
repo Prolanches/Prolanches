@@ -45,7 +45,7 @@ public class PedidoDAO {
 	}
 	
 	public boolean alterar(Pedido pedido) throws SQLException{
-		String sql = "UPDATE PEDIDO SET PED_DATA = ?, PED_TIPO_OP_COD = ?, PED_VALOR = ? WHERE PED_COD = ?";
+		String sql = "UPDATE PEDIDO SET PED_DATA =	?, PED_TIPO_OP_COD = ?, PED_VALOR = ? WHERE PED_COD = ?";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
 		java.sql.Date sqlDate = new java.sql.Date(pedido.getDataPedido().getTime());
