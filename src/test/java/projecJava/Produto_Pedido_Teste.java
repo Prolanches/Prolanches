@@ -39,8 +39,8 @@ public class Produto_Pedido_Teste {
 		/**
 		 *  inserindo o Produto_Pedido
 		 */
-		//Produto_Pedido produto_pedido = new Produto_Pedido(2,pedido, produto,"Lucas Braz");
-		//produto_pedidoService.inserir(produto_pedido);
+		Produto_Pedido produto_pedido = new Produto_Pedido(2,pedido, produto,"Lucas Braz");
+		produto_pedidoService.inserir(produto_pedido);
 		
 		/**
 		 * alterando o Produto_Pedido 

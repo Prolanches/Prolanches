@@ -16,7 +16,7 @@ public class Suprimento_Teste {
 		SuprimentoService suprimentoService = new SuprimentoService();
 		
 		Tipo_Unidade tipoUnidade = new Tipo_Unidade(1, "kG", 1);
-		Marca marca = new Marca(1, "thabrulai");
+		Marca marca = new Marca(2, "thabrulai");
 		
 		//inserindo Suprimento FUNCIONANDO
 		Suprimento suprimento = new Suprimento(0, "Hamburgue", tipoUnidade, 100, 1.35, marca);

@@ -13,8 +13,8 @@ public class Fornecedor_Suprimento_Teste {
 	public static void main(String[] args) throws SQLException {
 		Fornecedor_SuprimentoService forneSupriServi = new Fornecedor_SuprimentoService();
 		
-		Fornecedor fornecedor = new Fornecedor(4, "forne1", "1235.2359.98", null, "3030-6598", "forne1@hotmail.com");
-		Suprimento suprimento = new Suprimento(21, "Hamburgue", null, 100, 1.35d, null);
+		Fornecedor fornecedor = new Fornecedor(1, "forne2", "1235.356.326/589", null, "3333-2325", "forne2@gmail.com.br");
+		Suprimento suprimento = new Suprimento(2, "Hamburgue", null, 100, 1.35d, null);
 		
 		//inserindo fornecedor_suprimento FUNCIONANDO
 		Fornecedor_Suprimento forneSupri = new Fornecedor_Suprimento(0, fornecedor, suprimento);

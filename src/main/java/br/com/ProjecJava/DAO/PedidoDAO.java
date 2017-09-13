@@ -35,7 +35,8 @@ public class PedidoDAO {
 		String sql = "INSERT INTO PEDIDO (PED_COD, PED_DATA, PED_TIPO_OP_COD, PED_VALOR) VALUES (SEQ_PEDIDO.nextval, ?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setDate(1, (java.sql.Date)(pedido.getDataPedido()));
+		java.sql.Date sqlDate = new java.sql.Date(pedido.getDataPedido().getTime());
+		statement.setDate(1, sqlDate);
 		statement.setInt(2, pedido.getTipoOperacao().getCodigo());
 		statement.setDouble(3, pedido.getValor());
 		
@@ -47,7 +48,8 @@ public class PedidoDAO {
 		String sql = "UPDATE PEDIDO SET PED_DATA = ?, PED_TIPO_OP_COD = ?, PED_VALOR = ? WHERE PED_COD = ?";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setDate(1, (java.sql.Date)(pedido.getDataPedido()));
+		java.sql.Date sqlDate = new java.sql.Date(pedido.getDataPedido().getTime());
+		statement.setDate(1, sqlDate);
 		statement.setInt(2, pedido.getTipoOperacao().getCodigo());
 		statement.setDouble(3, pedido.getValor());
 		statement.setInt(4, pedido.getCodigo());
@@ -68,8 +70,8 @@ public class PedidoDAO {
 	public List<Pedido> lista() throws SQLException {
 		List<Pedido> lPedido = new ArrayList<>();
 
-		String sql = "SELECT * FROM PEDIDO"
-				+ "INNER JOIN TIPO_OPERACAO ON PEDIDO.PED_TIPO_OP_COD = TIPO_OPERACAO.TIPO_OP_COD";;
+		String sql = "SELECT * FROM PEDIDO "
+				+ " INNER JOIN TIPO_OPERACAO ON PEDIDO.PED_TIPO_OP_COD = TIPO_OPERACAO.TIPO_OP_COD ";;
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
 			stmt.execute();
 			try (ResultSet rs = stmt.getResultSet()) {
