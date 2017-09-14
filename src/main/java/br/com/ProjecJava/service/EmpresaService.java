@@ -5,11 +5,16 @@ package br.com.ProjecJava.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.EmpresaDAO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Empresa;
+import br.com.vinicius.signo.model.Pessoa;
+import br.com.vinicius.signo.model.Signo;
+import br.com.vinicius.signo.service.SignoService;
 
 
 
@@ -60,7 +65,15 @@ public class EmpresaService {
 			new EmpresaDAO(conex).excluir(codigo);
 		}
 	}
-	
+	private void definirEndereco(Empresa Empresa) throws SQLException {
+		List<Endereco> lEndereco = new EnderecoService().listarEndereco();
+		for (Endereco Endereco : lEndereco) {
+			if((dtNascimento.getMonthValue() == signo.getMesInicial() && dtNascimento.getDayOfMonth() >= signo.getDiaInicial())
+					|| (dtNascimento.getMonthValue() == signo.getMesFinal() && dtNascimento.getDayOfMonth() <= signo.getDiaFinal())){
+				pessoa.setSigno(signo);
+				break;
+			}
+		}
 		
 	}
 

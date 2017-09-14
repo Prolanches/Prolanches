@@ -5,6 +5,10 @@ package br.com.ProjecJava.model;
 
 import java.util.Date;
 
+
+import br.com.ProjecJava.dto.Contas_ReceberDTO;
+import br.com.ProjecJava.utils.DateUtils;
+
 /**
  * Esta é a classe responsavel pelo Contas à Receber aonde será gerado
  * relatórios
@@ -71,5 +75,9 @@ public class Contas_Receber {
 
 	public void setValor(double valor) {
 		this.valor = valor;
+	}
+	public Contas_ReceberDTO toDTO() {
+		return new Contas_ReceberDTO(this.getCodigo(), this.getPedido().getCodigo(),
+				DateUtils.formatData(this.getData(), DateUtils.PATTERN_DATA_PADRAO), this.getValor());
 	}
 }

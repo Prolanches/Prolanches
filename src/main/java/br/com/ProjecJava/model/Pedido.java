@@ -5,6 +5,10 @@ package br.com.ProjecJava.model;
 
 import java.util.Date;
 
+
+import br.com.ProjecJava.dto.PedidoDTO;
+import br.com.ProjecJava.utils.DateUtils;
+
 /**
  * Esta é a classe responsavel pelo Pedido
  * 
@@ -73,4 +77,9 @@ public class Pedido {
 		this.valor = valor;
 	}
 
+	public PedidoDTO toDTO() {
+		return new PedidoDTO(this.getCodigo(),
+				DateUtils.formatData(this.getDataPedido(), DateUtils.PATTERN_DATA_PADRAO),
+				this.getTipoOperacao().getNomeOPeracao(), this.getValor());
+	}
 }
