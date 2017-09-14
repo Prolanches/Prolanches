@@ -68,12 +68,15 @@ public class EmpresaService {
 	private void definirEndereco(Empresa Empresa) throws SQLException {
 		List<Endereco> lEndereco = new EnderecoService().listarEndereco();
 		for (Endereco Endereco : lEndereco) {
-			if((dtNascimento.getMonthValue() == signo.getMesInicial() && dtNascimento.getDayOfMonth() >= signo.getDiaInicial())
-					|| (dtNascimento.getMonthValue() == signo.getMesFinal() && dtNascimento.getDayOfMonth() <= signo.getDiaFinal())){
-				pessoa.setSigno(signo);
+		
 				break;
 			}
 		}
 		
 	}
 
+if((dtNascimento.getMonthValue() == signo.getMesInicial() && dtNascimento.getDayOfMonth() >= signo.getDiaInicial())
+		|| (dtNascimento.getMonthValue() == signo.getMesFinal() && dtNascimento.getDayOfMonth() <= signo.getDiaFinal())){
+	pessoa.setSigno(signo);
+}
+}
