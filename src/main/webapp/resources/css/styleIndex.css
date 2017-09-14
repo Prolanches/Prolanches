@@ -6,7 +6,7 @@
 }
 
 
-.body{
+.meio{
 	background-color: #39455c;
 }
 
@@ -19,7 +19,9 @@
 
 }
 
-
+.caixa-icones{
+	background-color: #39455c;
+}
 .botoes{
 	font-size: 1.5em;
 	background-color: #e0e0e0;
