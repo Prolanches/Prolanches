@@ -5,6 +5,10 @@ package br.com.ProjecJava.model;
 
 import java.util.Date;
 
+import br.com.ProjecJava.dto.Contas_PagarDTO;
+import br.com.ProjecJava.utils.DateUtils;
+
+
 /**
  * Esta é a classe responsavel pelo Contas à Pagar para geração de relatórios
  * 
@@ -67,5 +71,8 @@ public class Contas_Pagar {
 	public void setForneSupri(Fornecedor_Suprimento forneSupri) {
 		this.forneSupri = forneSupri;
 	}
-
+	public Contas_PagarDTO toDTO() {
+		return new Contas_PagarDTO(this.getCodigo(), this.getCusto(),this.getForneSupri().getCodigo(),
+				DateUtils.formatData(this.getData(), DateUtils.PATTERN_DATA_PADRAO));
+	}
 }
