@@ -4,16 +4,19 @@
 	text-align: center;
 	
 }
-
+body{
+    background-color: #39455c;
+    background: fixed;
+}
 .body{
-	background-color: #fff;
+	background-color: #39455c;
     background: fixed;
 }
 
 
 .barra{
 	height: 2%;
-    background: linear-gradient(0deg, #9d8343, #fff);
+    background: linear-gradient(0deg, #39455c, #fff);
 }
 
 .topo{
@@ -23,12 +26,24 @@
 
 }
 
+.linha{
+    border: 0px;
+    align-items: left; 
+    width:1px ;
+    height:800px;
+    background-color: #000;
+}
+
 .meio1{
     text-align: center;
+    background-color: #39455c;
+    background: fixed;
 }
 
 .meio{
    height: auto;
+   background-color: #39455c;
+    background: fixed;
 }
 
 section#page-inicio, section#page-o-que-e-o-portal, section#page-dados-abertos, section#page-o-parana-em-numeros, section#page-glossario, section#page-perguntas-frequentes, section#page-contato {
@@ -40,11 +55,13 @@ section#page-inicio, section#page-o-que-e-o-portal, section#page-dados-abertos, 
     width: 100%!important;
     height: 100%!important;
 }
+
 #page-inicio .bg-cover-fade img {
     float: left;
     width: 100%!important;
     height: 100%!important;
 }
+
 section#page-inicio h1 {
     font-size: 2.8em;
     text-align: left;
@@ -56,6 +73,7 @@ section#page-inicio h1 {
     z-index: 1;
     position: relative;
 }
+
 #info-desenvolvimento {
     font-size: 1.5em;
     color: #FFF;
@@ -64,6 +82,7 @@ section#page-inicio h1 {
     margin: 0 auto;
     margin-top: 30px;
 }
+
 #info-desenvolvimento .versao {
     position: relative;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
@@ -75,16 +94,20 @@ section#page-inicio h1 {
     text-shadow: 0 0 3px rgba(100, 100, 100, 1);
     text-decoration: none;
 }
+
 #modal-versao-beta .modal-body {
     padding-bottom: 150px;
 }
+
 #info-desenvolvimento .versao img {
     margin: -5px 0 0 5px;
 }
+
 #info-desenvolvimento .modal-dialog {
     width: 700px;
     margin-top: 8%!important;
 }
+
 #info-desenvolvimento .modal-content {
     background-image: url(../../images/bg-modal-versao-beta.jpg);
     background-size: 100% 100%;
@@ -92,6 +115,7 @@ section#page-inicio h1 {
     padding: 0 2% 0 19%;
     float: left;
 }
+
 #info-desenvolvimento .close {
     position: absolute;
     float: right;
@@ -105,20 +129,24 @@ section#page-inicio h1 {
     background: url(../../images/icon-fechar-modal.png);
     z-index: 10;
 }
+
 #info-desenvolvimento h3 {
     font-family:"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     text-transform: uppercase;
     color: #2472B2;
     font-size: 1.25em;
 }
+
 #info-desenvolvimento .modal-content p {
     color: #303030;
     font-size: .8em;
     text-align: justify;
 }
+
 #info-desenvolvimento .modal-content p:nth-child(2), #info-desenvolvimento .modal-content p:nth-child(4) {
     margin-bottom: 0;
 }
+
 #info-desenvolvimento .modal-content button {
     background: #1CAB51;
     color: #fff;
@@ -128,16 +156,19 @@ section#page-inicio h1 {
     float: right;
     margin: 7% 26% 15% 0;
 }
+
 #info-desenvolvimento .ultima-atualizacao {
     float: right;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: .9em;
 }
+
 section#page-inicio ul#list-icones, section#page-inicio ul#list-icones li {
     list-style: none;
     margin: 0;
     padding: 0;
 }
+
 section#page-inicio ul#list-icones {
     display: block;
     position: relative;
@@ -145,7 +176,9 @@ section#page-inicio ul#list-icones {
     text-align: center;
     font-family:"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: 1.4em;
-    width: 100%}
+    width: 100%
+}
+
 section#page-inicio ul#list-icones li {
     display: inline-block;
     width: 150px;
@@ -153,10 +186,12 @@ section#page-inicio ul#list-icones li {
     position: relative;
     vertical-align: top;
     margin: 0;
+
 }
 section#page-inicio ul#list-icones li i {
     font-size: .7em;
 }
+
 section#page-inicio ul#list-icones li .icone {
     color: #FFF;
     text-align: center;
@@ -166,6 +201,7 @@ section#page-inicio ul#list-icones li .icone {
     -khtml-opacity: .9;
     opacity: .9;
 }
+
 section#page-inicio ul#list-icones li .icone:hover {
     color: #FFF;
     text-align: center;
@@ -176,6 +212,7 @@ section#page-inicio ul#list-icones li .icone:hover {
     opacity: 1;
     text-decoration: none;
 }
+
 section#page-inicio ul#list-icones li .icone img {
     width: 150px;
     height: 100px;
@@ -186,6 +223,7 @@ section#page-inicio ul#list-icones li .icone img {
     margin-bottom: 10px;
     box-shadow: 0 0 10px 3px rgba(51, 51, 51, .5);
 }
+
 section#page-inicio ul#list-icones li .icone span {
     display: block;
     clear: both;
@@ -196,11 +234,13 @@ section#page-inicio ul#list-icones li .icone span {
     -o-box-decoration-break: clone;
     text-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
+
 section#page-inicio ul#list-icones li ul.submenu {
     position: absolute;
     z-index: 9999;
     top: 0;
 }
+
 section#page-inicio ul#list-icones li ul.submenu li {
     display: block;
     clear: both;
@@ -210,17 +250,21 @@ section#page-inicio ul#list-icones li ul.submenu li {
     border-top: 1px solid #176AB3;
     margin: 0;
 }
+
 section#page-inicio ul#list-icones li ul.submenu li:first-child {
     border: none;
 }
+
 section#page-inicio ul#list-icones li ul.submenu li {
     line-height: 100%;
     height: auto;
     width: auto;
 }
+
 section#page-inicio ul#list-icones li>.arrow-tema-icones, section {
     display: block;
 }
+
 section#page-inicio ul#list-icones li:hover>.arrow-tema-icones {
     background: url(../../images/arrow-tema-icones-bottom.png);
     width: 25px;
@@ -231,12 +275,15 @@ section#page-inicio ul#list-icones li:hover>.arrow-tema-icones {
     position: absolute;
     z-index: 300;
 }
+
 section#page-inicio ul#list-icones li:hover>ul.dropdown-menu {
     display: block;
 }
+
 section#page-inicio ul#list-icones li:not (:hover)>ul.dropdown-menu {
     display: block;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu {
     background: #1D7DC3;
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=90)";
@@ -250,6 +297,7 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu {
     margin: 135px -75px;
     width: 290px;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu a {
     padding: 10px 15px;
     color: #FFF;
@@ -259,30 +307,37 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu a {
     font-family:"Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: 14px;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu a:hover {
     background: #033D95;
     text-decoration: none;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu a:focus {
     background: none;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu ul li, section#page-inicio ul#list-icones li>ul.dropdown-menu ul li a {
     display: block;
     clear: both;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu ul li {
     border-color: #1461AC;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu ul li a {
     font-size: .833em;
     background: #0F4882;
 }
+
 section#page-inicio ul#list-icones li>ul.dropdown-menu>li>ul.dropdown-menu {
     position: absolute;
     margin: 0!important;
     top: 0;
     left: 290px;
 }
+
 .container-nav-button {
     position: fixed;
     bottom: 20px;
@@ -292,26 +347,32 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu>li>ul.dropdown-menu {
     height: 60px;
     z-index: 1000;
 }
+
 .container-nav-button a.nav-button-bottom, .container-nav-button a.nav-button-top {
     position: relative;
     display: block;
     width: 60px;
     height: 60px;
 }
+
 .container-nav-button a.nav-button-bottom {
     float: left;
     background: url(../../images/icon-arrow-home-down.png) 0 0 no-repeat;
 }
+
 .container-nav-button a.nav-button-top {
     float: right;
     background: url(../../images/icon-arrow-home-up.png) 0 0 no-repeat;
 }
+
 .container-nav-button a.nav-button-bottom.disabled {
     background: url(../../images/icon-arrow-home-down-disabled.png) 0 0 no-repeat;
 }
+
 .container-nav-button a.nav-button-top.disabled {
     background: url(../../images/icon-arrow-home-up-disabled.png) 0 0 no-repeat;
 }
+
 .descricao-menu {
     background: #2F7DBB none repeat scroll 0 0;
     border-bottom: 2px solid #2570AA;
@@ -321,6 +382,7 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu>li>ul.dropdown-menu {
     padding: 8px;
     text-transform: none!important;
 }
+
 #explicacao1, #explicacao2 {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     color: #FFF;
@@ -331,19 +393,21 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu>li>ul.dropdown-menu {
     text-align: center;
     z-index: 1;
 }
+
 #explicacao2 {
     text-transform: uppercase;
-}
-#explicacao1 {
-    margin: 30px 0 -10px;
-}
-#explicacao2 {
     text-align: center;
     margin-top: 50px;
 }
+
+#explicacao1 {
+    margin: 30px 0 -10px;
+}
+
 #container-destaque-pesquisa {
     display: none;
 }
+
 #container-destaque-pesquisa.active {
     position: fixed;
     width: 100%;
@@ -355,4 +419,3 @@ section#page-inicio ul#list-icones li>ul.dropdown-menu>li>ul.dropdown-menu {
     overflow-y: hidden;
     z-index: 2001;
 }
-
