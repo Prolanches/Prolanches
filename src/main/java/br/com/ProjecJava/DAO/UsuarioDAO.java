@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ProjecJava.model.Empresa;
-import br.com.ProjecJava.model.Funcao;
 import br.com.ProjecJava.model.Funcionario;
 import br.com.ProjecJava.model.Perfil;
 import br.com.ProjecJava.model.Usuario;
