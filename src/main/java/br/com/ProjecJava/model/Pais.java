@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.CidadeDTO;
+import br.com.ProjecJava.dto.PaisDTO;
+
 /**
  * Esta é a classe responsavel pela criação de paises
  * @author Noturno
@@ -55,6 +58,10 @@ public class Pais {
 
 	public void setSigla(String sigla) {
 		this.sigla = sigla;
+	}
+	public PaisDTO toDTO() {
+		return new PaisDTO(this.getCodigo(),this.getNome(),this.getSigla());
+		
 	}
 }
 

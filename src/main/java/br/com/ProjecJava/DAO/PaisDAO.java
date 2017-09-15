@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.PaisDTO;
 import br.com.ProjecJava.model.Pais;
 
 /**
@@ -36,8 +37,8 @@ public class PaisDAO {
  * @return Retorna a lista de Paises 
  * @throws SQLException
  */
-	public List<Pais> lista() throws SQLException {
-		List<Pais> lPais = new ArrayList<>();
+	public List<PaisDTO> lista() throws SQLException {
+		List<PaisDTO> lPais = new ArrayList<>();
 
 		String sql = "select * from PAIS";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -48,7 +49,7 @@ public class PaisDAO {
 					String nome = rs.getString("PAIS_NOME");
 					String sigla = rs.getString("PAIS_SIGLA");
 					Pais pais = new Pais(codigo, nome, sigla);
-					lPais.add(pais);
+					lPais.add(pais.toDTO());
 				}
 			}
 

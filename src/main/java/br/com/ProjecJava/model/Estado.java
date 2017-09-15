@@ -2,6 +2,9 @@
  * Este é pacote responsavel pelas classe model
  */
 package br.com.ProjecJava.model;
+
+import br.com.ProjecJava.dto.EstadoDTO;
+
 /**
  * Esta é a classe responsavel pela criação de Estados
  * @author Noturno
@@ -62,5 +65,10 @@ public class Estado {
 
 	public void setPais(Pais pais) {
 		this.pais = pais;
+	}
+
+
+	public EstadoDTO toDTO() {
+		return new EstadoDTO(this.getCodigo(),this.getNome(),this.getPais().getNome(),this.getUf());
 	}
 }

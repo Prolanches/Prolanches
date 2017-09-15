@@ -2,21 +2,15 @@ package br.com.ProjecJava.dto;
 
 public class EnderecoDTO {
 
-	private int codigo;
+	private Integer codigo;
 	private String rua;
 	private String cidade;
-	
-	public EnderecoDTO() {
-	}
-	public EnderecoDTO(String rua, String cidade) {
-		this.rua = rua;
-		this.cidade = cidade;
-	}
-	public int getCodigo() {
+
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

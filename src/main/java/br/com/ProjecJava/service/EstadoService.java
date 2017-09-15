@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.ProjecJava.DAO.EstadoDAO;
 import br.com.ProjecJava.DAO.PaisDAO;
+import br.com.ProjecJava.dto.EstadoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Estado;
 import br.com.ProjecJava.model.Pais;
@@ -25,7 +26,7 @@ public class EstadoService {
 	 * @return retornará à lista de Estados
 	 * @throws SQLException
 	 */
-	public List<Estado> listarEstado() throws SQLException{
+	public List<EstadoDTO> listarEstado() throws SQLException{
 		try (Connection con = new ConnectionPoolOracle().getConnection()) {
             return new EstadoDAO(con).lista();
 		}

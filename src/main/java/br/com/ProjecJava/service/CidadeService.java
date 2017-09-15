@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.CidadeDAO;
+import br.com.ProjecJava.dto.CidadeDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Cidade;
 
@@ -28,7 +29,7 @@ public class CidadeService {
 	 * @return mostrará as cidades selecionadas
 	 * @throws SQLException
 	 */
-	public static List<Cidade> listarCidades(int id) throws SQLException {
+	public static List<CidadeDTO> listarCidades(int id) throws SQLException {
 		try (Connection con = new ConnectionPoolOracle().getConnection()) {
 			return new CidadeDAO(con).lista(id);
 		}
