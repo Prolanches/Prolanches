@@ -44,7 +44,7 @@ public class EnderecoDAO {
 		String sql = "INSERT INTO ENDERECO (END_COD,END_RUA,END_CIDADE_COD)VALUES(SEQ_ENDERECO.nextval,?,?)";
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setString(1, endereco.getRua());
-		statement.setInt(2, endereco.getNomeCidade().getCodigo());
+		statement.setInt(2, endereco.getCidade().getCodigo());
 
 		return statement.executeUpdate() > 0;
 	}

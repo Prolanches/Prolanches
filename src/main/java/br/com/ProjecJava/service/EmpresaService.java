@@ -5,16 +5,18 @@ package br.com.ProjecJava.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.EmpresaDAO;
+import br.com.ProjecJava.DAO.EnderecoDAO;
+import br.com.ProjecJava.dto.EmpresaDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Empresa;
-import br.com.vinicius.signo.model.Pessoa;
-import br.com.vinicius.signo.model.Signo;
-import br.com.vinicius.signo.service.SignoService;
+import br.com.ProjecJava.model.Endereco;
+import br.com.ProjecJava.model.Estado;
+import br.com.ProjecJava.model.Pais;
+
 
 
 
@@ -40,11 +42,41 @@ public class EmpresaService {
 	 * @param empresa
 	 * @throws SQLException
 	 */
-	public void inserir(Empresa empresa) throws SQLException{
+	public void inserir(EmpresaDTO empresaDTO) throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			Pais pais = new Pais();
+			pais.setCodigo(empresaDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(empresaDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(empresaDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(empresaDTO.getCodigoEndereco());
+			endereco.setRua(empresaDTO.getRua());
+			endereco.setCidade(cidade);
+			
+			new EnderecoDAO(conex).inserir(endereco);
+			
+			Empresa empresa = new Empresa();
+			empresa.setNome(empresaDTO.getNome());
+			empresa.setEndereco(endereco);
+			empresa.setCnpj(empresaDTO.getCnpj());
+			empresa.setTelefone(empresaDTO.getTelefone());
+			empresa.setEmail(empresaDTO.getEmail());
+			
+			
 			new EmpresaDAO(conex).inserir(empresa);
+			
 		}
 	}
+
 	/**
 	 * Metodo alterar
 	 * @param empresa
@@ -65,18 +97,6 @@ public class EmpresaService {
 			new EmpresaDAO(conex).excluir(codigo);
 		}
 	}
-	private void definirEndereco(Empresa Empresa) throws SQLException {
-		List<Endereco> lEndereco = new EnderecoService().listarEndereco();
-		for (Endereco Endereco : lEndereco) {
-		
-				break;
-			}
-		}
-		
-	}
 
-if((dtNascimento.getMonthValue() == signo.getMesInicial() && dtNascimento.getDayOfMonth() >= signo.getDiaInicial())
-		|| (dtNascimento.getMonthValue() == signo.getMesFinal() && dtNascimento.getDayOfMonth() <= signo.getDiaFinal())){
-	pessoa.setSigno(signo);
 }
-}
+		

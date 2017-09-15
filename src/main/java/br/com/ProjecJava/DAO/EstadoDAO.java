@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.EstadoDTO;
 import br.com.ProjecJava.model.Estado;
 import br.com.ProjecJava.model.Pais;
 
@@ -43,8 +44,8 @@ public class EstadoDAO {
 	 * @return retorno dos Estados
 	 * @throws SQLException
 	 */
-	public List<Estado> lista() throws SQLException {
-		List<Estado> lEstado = new ArrayList<>();
+	public List<EstadoDTO> lista() throws SQLException {
+		List<EstadoDTO> lEstado = new ArrayList<>();
 
 		String sql = "SELECT ESTADO_COD,ESTADO_NOME,ESTADO_UF,PAIS_COD,PAIS_NOME,PAIS_SIGLA "
 				+ "FROM ESTADO "
@@ -61,7 +62,7 @@ public class EstadoDAO {
 					String siglaPais = rs.getString(6);
 					
 					Estado estado = new Estado(codigo, nome, uf, new Pais(codigoPais, nomePais,siglaPais));
-					lEstado.add(estado);
+					lEstado.add(estado.toDTO());
 				}
 			}
 

@@ -2,6 +2,9 @@
  * Este pacote é responsavel pelas classes model
  */
 package br.com.ProjecJava.model;
+
+import br.com.ProjecJava.dto.CidadeDTO;
+
 /**
  * Esta classe é responsavel pela criação das Cidades 
  * @author Noturno
@@ -21,6 +24,8 @@ public class Cidade {
 	 * @param nome nome das cidades
 	 * @param estado implementação classe Estados
 	 */
+	public Cidade() {	
+	}
 	public Cidade(int codigo, String nome, Estado estado) {
 		super();
 		this.codigo = codigo;
@@ -45,5 +50,12 @@ public class Cidade {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+	public CidadeDTO toDTO() {
+		return new CidadeDTO(this.getCodigo(),this.getNome(),this.getEstado().getNome() );
+		
+	}
+	
+		
+	
 	
 }

@@ -2,41 +2,36 @@ package br.com.ProjecJava.dto;
 
 public class PaisDTO {
 
-	private int codigo;
-	private String nome;
-	private String sigla;
+	private int codigoPais;
+	private String nomePais;
+	private String siglaPais;
 
 
 	public PaisDTO() {
 	}
-
-	public PaisDTO(int codigo, String nome, String sigla) {
-		this.codigo = codigo;
-		this.nome = nome;
-		this.sigla = sigla;
+	public PaisDTO(int codigoPais, String nomePais, String siglaPais) {
+		super();
+		this.codigoPais = codigoPais;
+		this.nomePais = nomePais;
+		this.siglaPais = siglaPais;
 	}
-
-	public int getCodigo() {
-		return codigo;
+	public int getCodigoPais() {
+		return codigoPais;
 	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoPais(int codigoPais) {
+		this.codigoPais = codigoPais;
 	}
-
-	public String getNome() {
-		return nome;
+	public String getNomePais() {
+		return nomePais;
 	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomePais(String nomePais) {
+		this.nomePais = nomePais;
 	}
-
-	public String getSigla() {
-		return sigla;
+	public String getSiglaPais() {
+		return siglaPais;
 	}
-
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setSiglaPais(String siglaPais) {
+		this.siglaPais = siglaPais;
 	}
 }
+

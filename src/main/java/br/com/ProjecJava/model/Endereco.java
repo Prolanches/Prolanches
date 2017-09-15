@@ -27,7 +27,8 @@ public class Endereco {
 	 * @param cidade
 	 *            implementação da classe Cidades
 	 */
-
+	public Endereco() {
+	}
 	public Endereco(String rua, Cidade cidade) {
 		super();
 		this.rua = rua;
@@ -67,11 +68,11 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public Cidade getNomeCidade() {
+	public Cidade getCidade() {
 		return cidade;
 	}
 
-	public void setNomeCidade(Cidade nomeCidade) {
-		this.cidade = nomeCidade;
+	public void setCidade(Cidade Cidade) {
+		this.cidade = Cidade;
 	}
 }
