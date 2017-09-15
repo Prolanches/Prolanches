@@ -13,6 +13,7 @@ import br.com.ProjecJava.model.Estado;
 import br.com.ProjecJava.model.Pais;
 import br.com.ProjecJava.service.EmpresaService;
 import br.com.ProjecJava.service.EnderecoService;
+import br.com.ProjecJava.dto.EmpresaDTO;
 
 /**
  * Esta classe é responsavel pelos Testes das Empresas
@@ -27,33 +28,27 @@ public class Empresa_Teste {
 		/**
 		 * Instância da classe Service
 		 */
-		EnderecoService enderecoService = new EnderecoService();
 		EmpresaService empresaService = new EmpresaService();
-
-		Pais pais = new Pais(1, "Brasil", "BR");
-		Estado estado = new Estado(24, "Santa Catarina", "SC", pais);
-		Cidade cidade = new Cidade(4449, "Blumenau", estado);
-		Endereco endereco = new Endereco(1, "2 de Setembro", cidade);
-
 		/**
-		 *  inserindo a empresa 
+		 * inserindo a empresa
 		 */
-		Empresa empresa = new Empresa(2, "Snack Time", endereco,
-	    "02.722.800/0001-50","(47)3035-2650","projecjava@gmail.com");
+		EmpresaDTO empresa = new EmpresaDTO(null, "Snack Time", 2, "2 de Setembro",4449,"Blumenau", 24, "Santa Catarina", "SC", 1,
+				"Brasil", "BR", "77.666.555/0002-40", "(47) 3333-7777", "lucas.brazbr@bol.com.br");
 		empresaService.inserir(empresa);
-		
-		/**
-		 * alterando a empresa 
-		 */
-		//empresaService.alterar(new Empresa(24, "Snack Time",endereco, "77.666.555/0002-20", "(47) 3333-7777", "lucas.brazbr@bol.com.br"));
-		
-		/**
-		 * excluindo a empresa 
-		 */
-		//empresaService.excluir(24);
 
 		/**
-		 *  Listagem das Empresas
+		 * alterando a empresa
+		 */
+		// empresaService.alterar(new Empresa(24, "Snack Time",endereco,
+		// "77.666.555/0002-20", "(47) 3333-7777", "lucas.brazbr@bol.com.br"));
+
+		/**
+		 * excluindo a empresa
+		 */
+		// empresaService.excluir(24);
+
+		/**
+		 * Listagem das Empresas
 		 */
 		List<Empresa> lEmpresa = EmpresaService.listarEmpresas();
 		for (Empresa emp : lEmpresa) {
@@ -63,9 +58,9 @@ public class Empresa_Teste {
 
 	private static void imprimirEmpresa(Empresa emp) {
 		System.out.println("Codígo: " + emp.getCodigo() + "\nEmpresa Nome: " + emp.getNome() + "\nEndereço: "
-				+ emp.getEndereco().getRua() + "\nCidade: " + emp.getEndereco().getNomeCidade().getNome() + "\nEstado: "
-				+ emp.getEndereco().getNomeCidade().getEstado().getUf() + "\nPais: "
-				+ emp.getEndereco().getNomeCidade().getEstado().getPais().getSigla() + "\nCNPJ: " + emp.getCnpj()
+				+ emp.getEndereco().getRua() + "\nCidade: " + emp.getEndereco().getCidade().getNome() + "\nEstado: "
+				+ emp.getEndereco().getCidade().getEstado().getUf() + "\nPais: "
+				+ emp.getEndereco().getCidade().getEstado().getPais().getSigla() + "\nCNPJ: " + emp.getCnpj()
 				+ "\nTelefone: " + emp.getTelefone() + "\nE-mail: " + emp.getEmail() + "\n");
 	}
 }

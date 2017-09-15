@@ -23,6 +23,8 @@ public class Estado {
 	 * @param uf sigla do estado
 	 * @param pais implementação da classe pais 
 	 */
+	public Estado() {
+	}
 	public Estado(int codigo, String nome, String uf, Pais pais) {
 		super();
 		this.codigo = codigo;

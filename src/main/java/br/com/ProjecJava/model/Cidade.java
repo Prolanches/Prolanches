@@ -21,6 +21,8 @@ public class Cidade {
 	 * @param nome nome das cidades
 	 * @param estado implementação classe Estados
 	 */
+	public Cidade() {	
+	}
 	public Cidade(int codigo, String nome, Estado estado) {
 		super();
 		this.codigo = codigo;

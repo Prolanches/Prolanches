@@ -28,6 +28,9 @@ public class Empresa {
 	 * @param telefone telefone da Empresa usuária do Software
 	 * @param email e-mail da Empresa usuária do Software
 	 */
+	public Empresa() {
+	}
+	
 	public Empresa(int codigo, String nome, Endereco endereco, String cnpj, String telefone, String email) {
 		super();
 		this.codigo = codigo;
