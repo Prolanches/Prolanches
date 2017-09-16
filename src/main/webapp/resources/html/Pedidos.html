@@ -11,7 +11,9 @@
     <title>Freelancer - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
+    
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../libs/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,8 +31,10 @@
   </head>
 
   <body id="page-top" style="background-color: #fff; height: 100%;">
-
-    <!-- Navigation -->
+<div class="container-fluid">
+  <div class="row-fluid">
+    
+     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="" style="cursor: default;">Snack Time - Pedidos</a>
@@ -42,23 +46,23 @@
       </div>
     </nav>
 
+
     
 
+  </div>
+   
 
-
-
-    <div class="row">
-
-    <section class="content">
-      <h1>Table Filter</h1>
+    <div class="row-fluid">
+      <div class="span12">
+        <section class="content">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="pull-right">
               <div class="btn-group">
-                <button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
-                <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
-                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
+                <button type="button" class="btn btn-success btn-filter" data-target="pagado">Concluído</button>
+                <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Em andamento</button>
+                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Em espera</button>
                 <button type="button" class="btn btn-default btn-filter" data-target="all">Todos</button>
               </div>
             </div>
@@ -210,16 +214,14 @@
             </div>
           </div>
         </div>
-        <div class="content-footer">
-          <p>
-            Page © - 2016 <br>
-            Powered By <a href="https://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a>
-          </p>
-        </div>
-      </div>
+        
     </section>
-    
-  </div>
+      </div>
+    </div>
+
+
+
+</div>
 
 
 
@@ -246,7 +248,5 @@
 
  });
 </script>  
-
-
   </body>
 </html>
