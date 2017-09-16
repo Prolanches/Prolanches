@@ -14,8 +14,7 @@ public class EstadoDTO {
 	private String nomePais;
 	private String siglaPais;
 		
-		public EstadoDTO() {
-		}
+	
 
 
 
@@ -35,7 +34,7 @@ public class EstadoDTO {
 			this.codigoPais = codigoPais;
 			this.nomePais = nomePais;
 			this.siglaPais = siglaPais;
-		}
+		} 
 
 		public int getCodigoUF() {
 			return codigoUF;

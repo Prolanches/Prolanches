@@ -39,8 +39,8 @@ public class CidadeDAO {
 	 * @throws SQLException
 	 */
 
-	public List<CidadeDTO> lista(int id) throws SQLException {
-		List<CidadeDTO> lCidade = new ArrayList<>();
+	public List<Cidade> lista(int id) throws SQLException {
+		List<Cidade> lCidade = new ArrayList<>();
 		String sql = "SELECT * FROM CIDADE INNER JOIN ESTADO ON (CIDADE.CIDADE_UF_COD  = ESTADO.ESTADO_COD) WHERE CIDADE_UF_COD IN ?";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
 			stmt.setInt(1, id);
@@ -49,8 +49,8 @@ public class CidadeDAO {
 				while (rs.next()) {
 					int codigo = rs.getInt("CIDADE_COD");
 					String nome = rs.getString("CIDADE_NOME");
-					
-					lCidade.add(new Cidade(codigo, nome, null).toDTO());
+					Cidade cidade = new Cidade(codigo, nome, null);
+					lCidade.add(cidade);
 				}
 				rs.close();
 			}

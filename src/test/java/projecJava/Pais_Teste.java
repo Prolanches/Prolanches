@@ -6,6 +6,7 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
+import br.com.ProjecJava.dto.PaisDTO;
 import br.com.ProjecJava.model.Pais;
 import br.com.ProjecJava.service.PaisService;
 /**
@@ -28,13 +29,13 @@ public class Pais_Teste {
 		/**
 		 *  Listagem dos Paises
 		 */
-		List<Pais> lPais = paisService.listarPais();
-		for (Pais br : lPais) {
+		List<PaisDTO> lPais = paisService.listarPais();
+		for (PaisDTO br : lPais) {
 			imprimirPais(br);
 		}	
 	}
-	private static void imprimirPais(Pais br) {
-		System.out.println("Codígo: "+ br.getCodigo()+", Nome: "+ br.getNome() + ", Sigla: "+br.getSigla());
+	private static void imprimirPais(PaisDTO br) {
+		System.out.println("Codígo: "+ br.getCodigoPais()+", Nome: "+ br.getNomePais() + ", Sigla: "+br.getSiglaPais());
 	}
 	
 }

@@ -41,8 +41,8 @@ public class Fornecedor_Teste {
 		private static void imprimeFornecedor(Fornecedor fornecedor){
 			System.out.println("codigo: " + fornecedor.getCodigo()+" \nNome: "+fornecedor.getNome()
 					+ " \ncnpj: " + fornecedor.getCnpj()+"\ntelefone: "+fornecedor.getTelefone()+"\nE-mail: "+fornecedor.getEmail()
-					+ " \nEndereço \nRua: "+fornecedor.getEndereco().getRua()+"\nCidade: "+fornecedor.getEndereco().getNomeCidade().getNome()
-					+ " \nEstado: "+fornecedor.getEndereco().getNomeCidade().getEstado().getUf()
-					+ " \nPaís: "+fornecedor.getEndereco().getNomeCidade().getEstado().getPais().getSigla());
+					+ " \nEndereço \nRua: "+fornecedor.getEndereco().getRua()+"\nCidade: "+fornecedor.getEndereco().getCidade().getNome()
+					+ " \nEstado: "+fornecedor.getEndereco().getCidade().getEstado().getUf()
+					+ " \nPaís: "+fornecedor.getEndereco().getCidade().getEstado().getPais().getSigla());
 		}
 }

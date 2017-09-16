@@ -50,10 +50,7 @@ public class Cidade {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-	public CidadeDTO toDTO() {
-		return new CidadeDTO(this.getCodigo(),this.getNome(),this.getEstado().getNome() );
-		
-	}
+	
 	
 		
 	
