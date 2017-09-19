@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.ProjecJava.DAO.CidadeDAO;
 import br.com.ProjecJava.dto.CidadeDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Cidade;
+
 
 /**
  * esta é a classe responsável pela service da cidade
@@ -29,9 +29,9 @@ public class CidadeService {
 	 * @return mostrará as cidades selecionadas
 	 * @throws SQLException
 	 */
-	public static List<CidadeDTO> listarCidades(int id) throws SQLException {
+	public static List<CidadeDTO> listarCidades() throws SQLException {
 		try (Connection con = new ConnectionPoolOracle().getConnection()) {
-			return new CidadeDAO(con).lista(id);
+			return new CidadeDAO(con).lista();
 		}
 	}
 }

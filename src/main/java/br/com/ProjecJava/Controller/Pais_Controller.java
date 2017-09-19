@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import br.com.ProjecJava.dto.PaisDTO;
 import br.com.ProjecJava.service.PaisService;
 
-@Path("Pais")
+@Path("pais")
 public class Pais_Controller {
 
 	@GET

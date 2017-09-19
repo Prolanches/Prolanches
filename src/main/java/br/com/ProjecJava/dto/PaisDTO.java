@@ -2,23 +2,23 @@ package br.com.ProjecJava.dto;
 
 public class PaisDTO {
 
-	private int codigoPais;
+	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
 
 
 	public PaisDTO() {
 	}
-	public PaisDTO(int codigoPais, String nomePais, String siglaPais) {
+	public PaisDTO(Integer codigoPais, String nomePais, String siglaPais) {
 		super();
 		this.codigoPais = codigoPais;
 		this.nomePais = nomePais;
 		this.siglaPais = siglaPais;
 	}
-	public int getCodigoPais() {
+	public Integer getCodigoPais() {
 		return codigoPais;
 	}
-	public void setCodigoPais(int codigoPais) {
+	public void setCodigoPais(Integer codigoPais) {
 		this.codigoPais = codigoPais;
 	}
 	public String getNomePais() {

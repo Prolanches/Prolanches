@@ -3,7 +3,7 @@
  */
 package br.com.ProjecJava.model;
 
-import br.com.ProjecJava.dto.CidadeDTO;
+
 import br.com.ProjecJava.dto.PaisDTO;
 
 /**
@@ -16,7 +16,7 @@ public class Pais {
  /**
   * Este são os atributos do Pais
   */
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private String sigla;
 /**
@@ -26,7 +26,7 @@ public class Pais {
  * @param sigla pela sigla do pais
  */
 	
-	public Pais(int codigo, String nome, String sigla) {
+	public Pais(Integer codigo, String nome, String sigla) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -36,11 +36,11 @@ public class Pais {
 		
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

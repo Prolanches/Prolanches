@@ -5,20 +5,19 @@ import java.util.List;
 
 import br.com.ProjecJava.dto.CidadeDTO;
 
-
 import br.com.ProjecJava.service.CidadeService;
-
 
 public class Cidade_Teste {
 
 	public static void main(String[] args) throws SQLException {
-		List<CidadeDTO> lcidade = CidadeService.listarCidades(24);
+		List<CidadeDTO> lcidade = CidadeService.listarCidades();
 		for (CidadeDTO cidade : lcidade) {
 			imprimirCidade(cidade);
 		}
-		
+
 	}
+
 	private static void imprimirCidade(CidadeDTO cidade) {
-		System.out.println("codigo: "+cidade.getCodigo()+" Nome: "+ cidade.getNome());
+		System.out.println("codigo: " + cidade.getCodigo() + " Nome: " + cidade.getNomeCidade());
 	}
 }
