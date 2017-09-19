@@ -71,6 +71,6 @@ public class Estado {
 
 
 	public EstadoDTO toDTO() {
-		return new EstadoDTO(this.getCodigo(),this.getNome(),this.getPais().getNome(),this.getUf());
+		return new EstadoDTO(this.getCodigo(),this.getNome(),this.getUf(),this.getPais().getNome());
 	}
 }

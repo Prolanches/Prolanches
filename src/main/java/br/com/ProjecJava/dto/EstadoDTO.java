@@ -7,28 +7,23 @@ public class EstadoDTO {
 	private String nome;
 	private String uf;
 	private String pais;
-	private int codigoUF;
+	private Integer codigoUF;
 	private String nomeUF;
 	private String siglaUF;
-	private int codigoPais;
+	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
 		
 		public EstadoDTO() {
 		}
 
-
-
-	public EstadoDTO(int codigo, String estado, String pais, String sigla) {
-		this.codigo = codigo;
-		this.nome = estado;
-		this.uf = sigla;
-		this.pais = pais;
-	}
-
-		public EstadoDTO(int codigoUF, String nomeUF, String siglaUF, int codigoPais, String nomePais,
-				String siglaPais) {
+		public EstadoDTO(Integer codigo, String nome, String uf, String pais, Integer codigoUF, String nomeUF,
+				String siglaUF, Integer codigoPais, String nomePais, String siglaPais) {
 			super();
+			this.codigo = codigo;
+			this.nome = nome;
+			this.uf = uf;
+			this.pais = pais;
 			this.codigoUF = codigoUF;
 			this.nomeUF = nomeUF;
 			this.siglaUF = siglaUF;
@@ -37,11 +32,43 @@ public class EstadoDTO {
 			this.siglaPais = siglaPais;
 		}
 
-		public int getCodigoUF() {
+		public Integer getCodigo() {
+			return codigo;
+		}
+
+		public void setCodigo(Integer codigo) {
+			this.codigo = codigo;
+		}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+
+		public String getUf() {
+			return uf;
+		}
+
+		public void setUf(String uf) {
+			this.uf = uf;
+		}
+
+		public String getPais() {
+			return pais;
+		}
+
+		public void setPais(String pais) {
+			this.pais = pais;
+		}
+
+		public Integer getCodigoUF() {
 			return codigoUF;
 		}
 
-		public void setCodigoUF(int codigoUF) {
+		public void setCodigoUF(Integer codigoUF) {
 			this.codigoUF = codigoUF;
 		}
 
@@ -61,11 +88,11 @@ public class EstadoDTO {
 			this.siglaUF = siglaUF;
 		}
 
-		public int getCodigoPais() {
+		public Integer getCodigoPais() {
 			return codigoPais;
 		}
 
-		public void setCodigoPais(int codigoPais) {
+		public void setCodigoPais(Integer codigoPais) {
 			this.codigoPais = codigoPais;
 		}
 
@@ -85,36 +112,5 @@ public class EstadoDTO {
 			this.siglaPais = siglaPais;
 		}
 
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getUf() {
-		return uf;
-	}
-
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
-
-	public String getPais() {
-		return pais;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
-	}
 }
+		

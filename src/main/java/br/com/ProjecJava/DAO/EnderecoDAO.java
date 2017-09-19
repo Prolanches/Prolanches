@@ -62,12 +62,12 @@ public class EnderecoDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean alterar(int codigo, String rua, Cidade cidade) throws SQLException {
+	public boolean alterar(Endereco endereco) throws SQLException {
 		String sql = "UPDATE ENDERECO SET END_RUA = ?, END_CIDADE_COD = ? WHERE END_COD = ?";
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setString(1, rua);
-		statement.setInt(2, cidade.getCodigo());
-		statement.setInt(3, codigo);
+		statement.setString(1, endereco.getRua());
+		statement.setInt(2, endereco.getCidade().getCodigo());
+		statement.setInt(3, endereco.getCodigo());
 
 		return statement.executeUpdate() > 0;
 	}

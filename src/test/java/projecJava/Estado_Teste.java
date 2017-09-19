@@ -6,6 +6,7 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
+import br.com.ProjecJava.dto.EstadoDTO;
 import br.com.ProjecJava.model.Estado;
 import br.com.ProjecJava.service.EstadoService;
 import br.com.ProjecJava.service.PaisService;
@@ -28,15 +29,15 @@ public class Estado_Teste {
 		EstadoService estadoService = new EstadoService();
 		
 		// Listagem dos Estados
-		List<Estado> lEstado = estadoService.listarEstado();
-		for (Estado uf : lEstado) {
+		List<EstadoDTO> lEstado = estadoService.listarEstado();
+		for (EstadoDTO uf : lEstado) {
 			imprimirEstado(uf);
 		}	
 		
 	
     }
     
-	private static void imprimirEstado(Estado uf) {
-		System.out.println("Codígo: "+ uf.getCodigo()+", Nome: "+ uf.getNome() + ", UF: "+uf.getUf() +", País: "+uf.getPais().getNome());
+	private static void imprimirEstado(EstadoDTO uf) {
+		System.out.println("Codígo: "+ uf.getCodigo()+", Nome: "+ uf.getNome() + ", UF: "+uf.getUf() +", País: "+uf.getPais());
 	}
 }

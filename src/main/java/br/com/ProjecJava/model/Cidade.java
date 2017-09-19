@@ -51,11 +51,8 @@ public class Cidade {
 		this.estado = estado;
 	}
 	public CidadeDTO toDTO() {
-		return new CidadeDTO(this.getCodigo(),this.getNome(),this.getEstado().getNome() );
+		return new CidadeDTO(this.getCodigo(),this.getNome(),this.getEstado().getNome(),this.);
 		
 	}
-	
-		
-	
-	
+
 }
