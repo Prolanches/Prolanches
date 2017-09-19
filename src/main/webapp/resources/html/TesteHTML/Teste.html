@@ -4,31 +4,29 @@
         <title>Snack Time</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-	<body data-ng-app="MyApp">
+	<body data-ng-app="projecJava">
 		<div data-ng-controller="PaisController as controller">
-		</div>
 			<h1>Snack Time</h1>
-				
-                <table border="1">
-                    <tr>
-                        <th>Código</th>
-                        <th>Nome</th>
-                        <th>Sigla</th>
-                        
-                    </tr>
-                    <tr data-ng-repeat="pais in controller.paises">
-                        <td>{{pais.codigoPais}}</td>
-                        <td>{{pais.nomePais}}</td>
-                        <td>{{pais.siglaPais}}</td>
-                        <td>
-                            <button type="button" data-ng-click="controller.alterar(pessoa)">Alterar</button>
-                            <button type="button" data-ng-click="controller.deletar(pessoa)">Excluir</button>
-                        </td>
-                    </tr>
-                </table>
-                       
+            <table border="1">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Sigla</th>
+                    
+                </tr>
+                <tr data-ng-repeat="pais in controller.paises">
+                    <td>{{pais.codigoPais}}</td>
+                    <td>{{pais.nomePais}}</td>
+                    <td>{{pais.siglaPais}}</td>
+                    <td>
+                        <button type="button" data-ng-click="controller.alterar(pais)">Alterar</button>
+                        <button type="button" data-ng-click="controller.deletar(pais)">Excluir</button>
+                    </td>
+                </tr>
+            </table>
+		</div>                       
 
      	<script src="../../angular.js"></script>
-		<script src="../../Class_js/pais.js"></script>
+		<script src="../../Class_js/Pais.js"></script>
 	</body>
 </html>      
