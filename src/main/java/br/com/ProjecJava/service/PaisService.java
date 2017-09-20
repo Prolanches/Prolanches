@@ -10,7 +10,6 @@ import java.util.List;
 import br.com.ProjecJava.DAO.PaisDAO;
 import br.com.ProjecJava.dto.PaisDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Pais;
 
 /**
  * Esta é a classe Service dos Paises

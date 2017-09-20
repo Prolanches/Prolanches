@@ -6,13 +6,9 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.model.Cidade;
+
 import br.com.ProjecJava.model.Empresa;
-import br.com.ProjecJava.model.Endereco;
-import br.com.ProjecJava.model.Estado;
-import br.com.ProjecJava.model.Pais;
 import br.com.ProjecJava.service.EmpresaService;
-import br.com.ProjecJava.service.EnderecoService;
 import br.com.ProjecJava.dto.EmpresaDTO;
 
 /**

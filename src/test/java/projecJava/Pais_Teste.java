@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.dto.PaisDTO;
-import br.com.ProjecJava.model.Pais;
 import br.com.ProjecJava.service.PaisService;
 /**
  * Esta é a Classe Teste responsavel pelos Paises

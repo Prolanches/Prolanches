@@ -4,7 +4,6 @@ public class EnderecoDTO {
 
 	private Integer codigo;
 	private String rua;
-	private String cidade;
 	private int codigoCidade;
 	private String nomeCidade;
 	private int codigoUF;
@@ -17,7 +16,7 @@ public class EnderecoDTO {
 	public EnderecoDTO() {
 	}
 
-	public EnderecoDTO(int codigo, String rua, int codigoCidade, String nomeCidade, int codigoUF, String nomeUF,
+	public EnderecoDTO(Integer codigo, String rua, int codigoCidade, String nomeCidade, int codigoUF, String nomeUF,
 			String siglaUF, int codigoPais, String nomePais, String siglaPais) {
 		super();
 		this.codigo = codigo;

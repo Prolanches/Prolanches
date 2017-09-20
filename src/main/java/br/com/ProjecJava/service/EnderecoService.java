@@ -8,9 +8,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.EnderecoDAO;
+import br.com.ProjecJava.dto.EnderecoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Endereco;
+import br.com.ProjecJava.model.Estado;
+import br.com.ProjecJava.model.Pais;
 
 /**
  * Esta classe é responsável pela Service do endereco
@@ -26,8 +29,26 @@ public class EnderecoService {
 	 * @param endereco
 	 * @throws SQLException
 	 */
-	public void inserir(Endereco endereco) throws SQLException {
+	public void inserir(EnderecoDTO enderecoDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			
+			Pais pais = new Pais();
+			pais.setCodigo(enderecoDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(enderecoDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(enderecoDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			
+			Endereco endereco = new Endereco();
+			endereco.setRua(enderecoDTO.getRua());
+			endereco.setCidade(cidade);
+			
 			new EnderecoDAO(conex).inserir(endereco);
 		}
 	}
@@ -42,9 +63,27 @@ public class EnderecoService {
 	 * @param cidade
 	 * @throws SQLException
 	 */
-	public void alterar(int codigo, String rua, Cidade cidade) throws SQLException {
+	public void alterar(EnderecoDTO enderecoDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new EnderecoDAO(conex).alterar(codigo, rua, cidade);
+			
+			Pais pais = new Pais();
+			pais.setCodigo(enderecoDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(enderecoDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(enderecoDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(enderecoDTO.getCodigo());
+			endereco.setRua(enderecoDTO.getRua());
+			endereco.setCidade(cidade);
+			
+			new EnderecoDAO(conex).alterar(endereco);
 		}
 	}
 
@@ -72,4 +111,6 @@ public class EnderecoService {
 			return new EnderecoDAO(conex).listarEnderecos();
 		}
 	}
-}
+
+	}
+
