@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.EmpresaDTO;
 import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Empresa;
 import br.com.ProjecJava.model.Endereco;
@@ -69,8 +70,8 @@ public class EmpresaDAO {
 			return statement.executeUpdate() > 0;
 		}
 
-		public List<Empresa> lista() throws SQLException {
-			List<Empresa> lEmpresa = new ArrayList<>();
+		public List<EmpresaDTO> lista() throws SQLException {
+			List<EmpresaDTO> lEmpresa = new ArrayList<>();
 
 			String sql = "SELECT * FROM EMPRESA"
 					+ " INNER JOIN ENDERECO ON EMPRESA.EMP_ENDERECO_COD = ENDERECO.END_COD"
@@ -97,7 +98,7 @@ public class EmpresaDAO {
 						String telefone= rs.getString("EMP_TELEFONE");
 						String email = rs.getString("EMP_EMAIL");
 						Empresa empresa = new Empresa(codigo, nome, new Endereco (codigoEndereco, ruaEndereco, new Cidade (codigoCidade, nomeCidade, new Estado(codigoEstado, nomeEstado,ufEstado, new Pais(codigoPais, nomePais, siglaPais)))), cnpj, telefone, email);
-						lEmpresa.add(empresa);
+						lEmpresa.add(empresa.toDTO());
 					}
 				}
 			}

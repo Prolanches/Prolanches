@@ -4,20 +4,20 @@ public class EnderecoDTO {
 
 	private Integer codigo;
 	private String rua;
-	private int codigoCidade;
+	private Integer codigoCidade;
 	private String nomeCidade;
-	private int codigoUF;
+	private Integer codigoUF;
 	private String nomeUF;
 	private String siglaUF;
-	private int codigoPais;
+	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
 	
 	public EnderecoDTO() {
 	}
 
-	public EnderecoDTO(Integer codigo, String rua, int codigoCidade, String nomeCidade, int codigoUF, String nomeUF,
-			String siglaUF, int codigoPais, String nomePais, String siglaPais) {
+	public EnderecoDTO(Integer codigo, String rua, Integer codigoCidade, String nomeCidade, Integer codigoUF, String nomeUF,
+			String siglaUF, Integer codigoPais, String nomePais, String siglaPais) {
 		super();
 		this.codigo = codigo;
 		this.rua = rua;
@@ -31,7 +31,7 @@ public class EnderecoDTO {
 		this.siglaPais = siglaPais;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
@@ -47,11 +47,11 @@ public class EnderecoDTO {
 		this.rua = rua;
 	}
 
-	public int getCodigoCidade() {
+	public Integer getCodigoCidade() {
 		return codigoCidade;
 	}
 
-	public void setCodigoCidade(int codigoCidade) {
+	public void setCodigoCidade(Integer codigoCidade) {
 		this.codigoCidade = codigoCidade;
 	}
 
@@ -63,11 +63,11 @@ public class EnderecoDTO {
 		this.nomeCidade = nomeCidade;
 	}
 
-	public int getCodigoUF() {
+	public Integer getCodigoUF() {
 		return codigoUF;
 	}
 
-	public void setCodigoUF(int codigoUF) {
+	public void setCodigoUF(Integer codigoUF) {
 		this.codigoUF = codigoUF;
 	}
 
@@ -87,11 +87,11 @@ public class EnderecoDTO {
 		this.siglaUF = siglaUF;
 	}
 
-	public int getCodigoPais() {
+	public Integer getCodigoPais() {
 		return codigoPais;
 	}
 
-	public void setCodigoPais(int codigoPais) {
+	public void setCodigoPais(Integer codigoPais) {
 		this.codigoPais = codigoPais;
 	}
 

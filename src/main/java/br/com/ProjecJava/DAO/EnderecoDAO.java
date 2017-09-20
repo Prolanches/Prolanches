@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import br.com.ProjecJava.dto.EnderecoDTO;
 import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Endereco;
 import br.com.ProjecJava.model.Estado;
@@ -94,8 +94,8 @@ public class EnderecoDAO {
 	 * @return - retorna os endereços do adicionados no banco
 	 * @throws SQLException
 	 */
-	public List<Endereco> listarEnderecos() throws SQLException {
-		List<Endereco> lEnderecos = new ArrayList<>();
+	public List<EnderecoDTO> listarEnderecos() throws SQLException {
+		List<EnderecoDTO> lEnderecos = new ArrayList<>();
 
 		String sql = "SELECT * FROM ENDERECO" + " INNER JOIN CIDADE ON ENDERECO.END_CIDADE_COD = CIDADE.CIDADE_COD"
 				+ " INNER JOIN ESTADO ON CIDADE.CIDADE_UF_COD = ESTADO.ESTADO_COD"
@@ -108,17 +108,20 @@ public class EnderecoDAO {
 					int codigo = rs.getInt("PAIS_COD");
 					String sigla = rs.getString("PAIS_SIGLA");
 					Pais pais = new Pais(codigo, nome, sigla);
+					
 					int codigoEstado = rs.getInt("ESTADO_COD");
 					String nomeEstado = rs.getString("ESTADO_NOME");
 					String siglaEstado = rs.getString("ESTADO_UF");
 					Estado estado = new Estado(codigoEstado, nomeEstado, siglaEstado, pais);
+					
 					int codigoCidade = rs.getInt("CIDADE_COD");
 					String nomeCidade = rs.getString("CIDADE_NOME");
 					Cidade cidade = new Cidade(codigoCidade, nomeCidade, estado);
+					
 					int codigoEndereco = rs.getInt("END_COD");
 					String ruaEndereco = rs.getString("END_RUA");
 					Endereco endereco = new Endereco(codigoEndereco, ruaEndereco, cidade);
-					lEnderecos.add(endereco);
+					lEnderecos.add(endereco.toDTO());
 				}
 			}
 		}

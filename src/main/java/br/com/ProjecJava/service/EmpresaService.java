@@ -32,7 +32,7 @@ public class EmpresaService {
 	 * @return mostrará a empresa
 	 * @throws SQLException 
 	 */
-	public static List<Empresa> listarEmpresas() throws SQLException {
+	public static List<EmpresaDTO> listarEmpresas() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new EmpresaDAO(conex).lista();
 		}

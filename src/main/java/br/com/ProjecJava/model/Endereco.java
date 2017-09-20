@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.EnderecoDTO;
+
+
 /**
  * Esta é a classe responsavel pelos Endereços
  * 
@@ -15,7 +18,7 @@ public class Endereco {
 	 * Estes são os atributos do Endereço
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private String rua;
 	private Cidade cidade;
 
@@ -29,6 +32,7 @@ public class Endereco {
 	 */
 	public Endereco() {
 	}
+
 	public Endereco(String rua, Cidade cidade) {
 		super();
 		this.rua = rua;
@@ -45,18 +49,18 @@ public class Endereco {
 	 * @param cidade-
 	 *            implementação da classe Cidades
 	 */
-	public Endereco(int codigo, String rua, Cidade cidade) {
+	public Endereco(Integer codigo, String rua, Cidade cidade) {
 		super();
 		this.codigo = codigo;
 		this.rua = rua;
 		this.cidade = cidade;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -74,5 +78,14 @@ public class Endereco {
 
 	public void setCidade(Cidade Cidade) {
 		this.cidade = Cidade;
+	}
+
+	public EnderecoDTO toDTO() {
+		return new EnderecoDTO(this.getCodigo(), this.getRua(), this.getCidade().getCodigo(),
+				this.getCidade().getNome(), this.getCidade().getEstado().getCodigo(),
+				this.getCidade().getEstado().getNome(), this.getCidade().getEstado().getUf(),
+				this.getCidade().getEstado().getPais().getCodigo(), this.getCidade().getEstado().getPais().getNome(),
+				this.getCidade().getEstado().getPais().getSigla());
+
 	}
 }

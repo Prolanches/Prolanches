@@ -106,7 +106,7 @@ public class EnderecoService {
 	 * @return - retorna lista de endereços
 	 * @throws SQLException
 	 */
-	public static List<Endereco> listarEnderecos() throws SQLException {
+	public static List<EnderecoDTO> listarEnderecos() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new EnderecoDAO(conex).listarEnderecos();
 		}

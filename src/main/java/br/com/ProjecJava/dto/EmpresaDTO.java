@@ -6,14 +6,14 @@ public class EmpresaDTO {
 
 		private Integer codigo;
 		private String nome;
-		private int  codigoEndereco;
+		private Integer codigoEndereco;
 		private String rua;
-		private int codigoCidade;
+		private Integer codigoCidade;
 		private String nomeCidade;
-		private int codigoUF;
+		private Integer codigoUF;
 		private String nomeUF;
 		private String siglaUF;
-		private int codigoPais;
+		private Integer codigoPais;
 		private String nomePais;
 		private String siglaPais;
 		private String cnpj;
@@ -23,10 +23,9 @@ public class EmpresaDTO {
 		public EmpresaDTO() {
 		}
 
-		public EmpresaDTO(Integer codigo, String nome, int codigoEndereco, String rua, int codigoCidade, String nomeCidade,
-				int codigoUF, String nomeUF, String siglaUF, int codigoPais, String nomePais, String siglaPais,
-				String cnpj, String telefone, String email) {
-			super();
+		public EmpresaDTO(Integer codigo, String nome, Integer codigoEndereco, String rua, Integer codigoCidade,
+				String nomeCidade, Integer codigoUF, String nomeUF, String siglaUF, Integer codigoPais, String nomePais,
+				String siglaPais, String cnpj, String telefone, String email) {
 			this.codigo = codigo;
 			this.nome = nome;
 			this.codigoEndereco = codigoEndereco;
@@ -60,11 +59,11 @@ public class EmpresaDTO {
 			this.nome = nome;
 		}
 
-		public int getCodigoEndereco() {
+		public Integer getCodigoEndereco() {
 			return codigoEndereco;
 		}
 
-		public void setCodigoEndereco(int codigoEndereco) {
+		public void setCodigoEndereco(Integer codigoEndereco) {
 			this.codigoEndereco = codigoEndereco;
 		}
 
@@ -76,11 +75,11 @@ public class EmpresaDTO {
 			this.rua = rua;
 		}
 
-		public int getCodigoCidade() {
+		public Integer getCodigoCidade() {
 			return codigoCidade;
 		}
 
-		public void setCodigoCidade(int codigoCidade) {
+		public void setCodigoCidade(Integer codigoCidade) {
 			this.codigoCidade = codigoCidade;
 		}
 
@@ -92,11 +91,11 @@ public class EmpresaDTO {
 			this.nomeCidade = nomeCidade;
 		}
 
-		public int getCodigoUF() {
+		public Integer getCodigoUF() {
 			return codigoUF;
 		}
 
-		public void setCodigoUF(int codigoUF) {
+		public void setCodigoUF(Integer codigoUF) {
 			this.codigoUF = codigoUF;
 		}
 
@@ -116,11 +115,11 @@ public class EmpresaDTO {
 			this.siglaUF = siglaUF;
 		}
 
-		public int getCodigoPais() {
+		public Integer getCodigoPais() {
 			return codigoPais;
 		}
 
-		public void setCodigoPais(int codigoPais) {
+		public void setCodigoPais(Integer codigoPais) {
 			this.codigoPais = codigoPais;
 		}
 
@@ -163,6 +162,6 @@ public class EmpresaDTO {
 		public void setEmail(String email) {
 			this.email = email;
 		}
-		
+
 }
 
