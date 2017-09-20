@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Snack Time</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+	<body data-ng-app="projecJava">
+		<div data-ng-controller="CidadeController as controller">
+			<h1>Snack Time</h1>
+            <table border="1">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome da Cidade</th>
+                    <th>Código UF</th>
+                    <th>Nome UF</th>
+                    <th>Sigla UF</th>
+                    <th>Código País</th>
+                    <th>Nome País</th>
+                    <th>Sigla País</th>
+                    
+                </tr>
+                <tr data-ng-repeat="cidade in controller.cidades">
+                    <td>{{cidade.codigo}}</td>
+                    <td>{{cidade.nomeCidade}}</td>
+                    <td>{{cidade.codigoUF}}</td>
+                    <td>{{cidade.nomeUF}}</td>
+                    <td>{{cidade.siglaUF}}</td>
+                    <td>{{cidade.codigoPais}}</td>
+                    <td>{{cidade.nomePais}}</td>
+                    <td>{{cidade.siglaPais}}</td>
+                    
+                </tr>
+            </table>
+		</div>                       
+
+     	<script src="../../angular.js"></script>
+		<script src="../../Class_js/Cidade.js"></script>
+	</body>
+</html>    

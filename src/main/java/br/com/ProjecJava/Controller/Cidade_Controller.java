@@ -10,12 +10,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.com.ProjecJava.dto.CidadeDTO;
-import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.service.CidadeService;
 
 
 
-@Path("Cidade")
+@Path("cidade")
 public class Cidade_Controller {
 
 	@GET
@@ -24,7 +23,7 @@ public class Cidade_Controller {
 	public List<CidadeDTO>  listaCidade() {
 		CidadeService cidadeService = new CidadeService();
 		try {
-			return cidadeService.listarCidades(2);
+			return cidadeService.listarCidades();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();

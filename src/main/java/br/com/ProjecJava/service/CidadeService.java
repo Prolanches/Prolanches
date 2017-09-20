@@ -29,7 +29,7 @@ public class CidadeService {
 	 * @return mostrará as cidades selecionadas
 	 * @throws SQLException
 	 */
-	public static List<CidadeDTO> listarCidades() throws SQLException {
+	public List<CidadeDTO> listarCidades() throws SQLException {
 		try (Connection con = new ConnectionPoolOracle().getConnection()) {
 			return new CidadeDAO(con).lista();
 		}

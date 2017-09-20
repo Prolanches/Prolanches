@@ -4,9 +4,11 @@ public class CidadeDTO {
 
 	private Integer codigo;
 	private String nomeCidade;
+	
 	private Integer codigoUF;
 	private String nomeUF;
 	private String siglaUF;
+	
 	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
