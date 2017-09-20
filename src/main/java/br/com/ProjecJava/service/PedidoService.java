@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.PedidoDAO;
+import br.com.ProjecJava.DAO.Produto_PedidoDAO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Pedido;
 
@@ -53,9 +54,10 @@ public class PedidoService {
 	 * @param pedido
 	 * @throws SQLException
 	 */
-	public void excluir(int codigo) throws SQLException {
+	public void excluir(int codigo1,int codigo2) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).excluir(codigo);
+			new Produto_PedidoDAO(conex).excluirporpedido(codigo1);
+			new PedidoDAO(conex).excluir(codigo2);
 		}
 	}
 }
