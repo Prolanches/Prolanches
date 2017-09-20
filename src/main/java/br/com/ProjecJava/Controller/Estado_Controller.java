@@ -14,7 +14,7 @@ import br.com.ProjecJava.service.EstadoService;
 
 
 
-@Path("Estado")
+@Path("estado")
 public class Estado_Controller {
 
 	@GET
