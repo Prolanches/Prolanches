@@ -20,8 +20,8 @@ angular.module("projecJava",[])
 				   self.ocorreuErro();
 			   });
 		   };
-		   self.active = function() {
+		   self.activate = function() {
 			   self.atualizarTabela();
 		   };
-		   self.active();
+		   self.activate();
 	   });
