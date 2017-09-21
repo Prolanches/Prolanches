@@ -8,11 +8,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.EstadoDAO;
-import br.com.ProjecJava.DAO.PaisDAO;
+
 import br.com.ProjecJava.dto.EstadoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Estado;
-import br.com.ProjecJava.model.Pais;
+
 
 /**
  * Esta é a classe responsavel pela Service dos Estados 

@@ -1,4 +1,5 @@
-package br.com.ProjecJava.SnackTime;
+package br.com.ProjecJava;
+
 
 import javax.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;

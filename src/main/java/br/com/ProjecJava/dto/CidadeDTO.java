@@ -3,47 +3,70 @@ package br.com.ProjecJava.dto;
 public class CidadeDTO {
 
 	private Integer codigo;
-	private String nome;
-	private String nomeEst;
-	private Integer codigoEst;
-	private String ufEst;
+	private String nomeCidade;
+	
+	private Integer codigoUF;
+	private String nomeUF;
+	private String siglaUF;
+	
 	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
-	
 
-	
+	public CidadeDTO() {
+	}
 
-	public CidadeDTO(Integer codigo, String nome, String nomeEst, Integer codigoEst) {
+	public CidadeDTO(Integer codigo, String nomeCidade, Integer codigoUF, String nomeUF, String siglaUF,
+			Integer codigoPais, String nomePais, String siglaPais) {
 		super();
 		this.codigo = codigo;
-		this.nome = nome;
-		this.nomeEst = nomeEst;
-		
+		this.nomeCidade = nomeCidade;
+		this.codigoUF = codigoUF;
+		this.nomeUF = nomeUF;
+		this.siglaUF = siglaUF;
+		this.codigoPais = codigoPais;
+		this.nomePais = nomePais;
+		this.siglaPais = siglaPais;
 	}
 
-	public String getNomeEst() {
-		return nomeEst;
+	public Integer getCodigo() {
+		return codigo;
 	}
 
-	public void setNomeEst(String nomeEst) {
-		this.nomeEst = nomeEst;
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
 	}
 
-	public Integer getCodigoEst() {
-		return codigoEst;
+	public String getNomeCidade() {
+		return nomeCidade;
 	}
 
-	public void setCodigoEst(Integer codigoEst) {
-		this.codigoEst = codigoEst;
+	public void setNomeCidade(String nomeCidade) {
+		this.nomeCidade = nomeCidade;
 	}
 
-	public String getUfEst() {
-		return ufEst;
+	public Integer getCodigoUF() {
+		return codigoUF;
 	}
 
-	public void setUfEst(String ufEst) {
-		this.ufEst = ufEst;
+	public void setCodigoUF(Integer codigoUF) {
+		this.codigoUF = codigoUF;
+	}
+
+	public String getNomeUF() {
+		return nomeUF;
+	}
+
+	public void setNomeUF(String nomeUF) {
+		this.nomeUF = nomeUF;
+	}
+
+	public String getSiglaUF() {
+		return siglaUF;
+	}
+
+	public void setSiglaUF(String siglaUF) {
+		this.siglaUF = siglaUF;
 	}
 
 	public Integer getCodigoPais() {
@@ -69,21 +92,4 @@ public class CidadeDTO {
 	public void setSiglaPais(String siglaPais) {
 		this.siglaPais = siglaPais;
 	}
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 }

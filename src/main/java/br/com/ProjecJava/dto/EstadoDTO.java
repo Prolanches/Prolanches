@@ -2,118 +2,72 @@ package br.com.ProjecJava.dto;
 
 public class EstadoDTO {
 
-
-	private Integer codigo;
-	private String nome;
-	private String uf;
-	private String pais;
-	private int codigoUF;
+	private Integer codigoUF;
 	private String nomeUF;
 	private String siglaUF;
-	private int codigoPais;
+
+	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
-		
-	
 
-
-
-	public EstadoDTO(int codigo, String estado, String pais, String sigla) {
-		this.codigo = codigo;
-		this.nome = estado;
-		this.uf = sigla;
-		this.pais = pais;
+	public EstadoDTO() {
 	}
 
-		public EstadoDTO(int codigoUF, String nomeUF, String siglaUF, int codigoPais, String nomePais,
-				String siglaPais) {
-			super();
-			this.codigoUF = codigoUF;
-			this.nomeUF = nomeUF;
-			this.siglaUF = siglaUF;
-			this.codigoPais = codigoPais;
-			this.nomePais = nomePais;
-			this.siglaPais = siglaPais;
-		} 
+	public EstadoDTO(Integer codigoUF, String nomeUF, String siglaUF, Integer codigoPais, String nomePais,
+			String siglaPais) {
+		this.codigoUF = codigoUF;
+		this.nomeUF = nomeUF;
+		this.siglaUF = siglaUF;
+		this.codigoPais = codigoPais;
+		this.nomePais = nomePais;
+		this.siglaPais = siglaPais;
+	}
 
-		public int getCodigoUF() {
-			return codigoUF;
-		}
+	public Integer getCodigoUF() {
+		return codigoUF;
+	}
 
-		public void setCodigoUF(int codigoUF) {
+	public void setCodigoUF(Integer codigoUF) {
 			this.codigoUF = codigoUF;
 		}
 
-		public String getNomeUF() {
-			return nomeUF;
-		}
-
-		public void setNomeUF(String nomeUF) {
-			this.nomeUF = nomeUF;
-		}
-
-		public String getSiglaUF() {
-			return siglaUF;
-		}
-
-		public void setSiglaUF(String siglaUF) {
-			this.siglaUF = siglaUF;
-		}
-
-		public int getCodigoPais() {
-			return codigoPais;
-		}
-
-		public void setCodigoPais(int codigoPais) {
-			this.codigoPais = codigoPais;
-		}
-
-		public String getNomePais() {
-			return nomePais;
-		}
-
-		public void setNomePais(String nomePais) {
-			this.nomePais = nomePais;
-		}
-
-		public String getSiglaPais() {
-			return siglaPais;
-		}
-
-		public void setSiglaPais(String siglaPais) {
-			this.siglaPais = siglaPais;
-		}
-
-
-	public int getCodigo() {
-		return codigo;
+	public String getNomeUF() {
+		return nomeUF;
 	}
 
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
+	public void setNomeUF(String nomeUF) {
+		this.nomeUF = nomeUF;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getSiglaUF() {
+		return siglaUF;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setSiglaUF(String siglaUF) {
+		this.siglaUF = siglaUF;
 	}
 
-	public String getUf() {
-		return uf;
+	public Integer getCodigoPais() {
+		return codigoPais;
 	}
 
-	public void setUf(String uf) {
-		this.uf = uf;
+	public void setCodigoPais(Integer codigoPais) {
+		this.codigoPais = codigoPais;
 	}
 
-	public String getPais() {
-		return pais;
+	public String getNomePais() {
+		return nomePais;
 	}
 
-	public void setPais(String pais) {
-		this.pais = pais;
+	public void setNomePais(String nomePais) {
+		this.nomePais = nomePais;
+	}
+
+	public String getSiglaPais() {
+		return siglaPais;
+	}
+
+	public void setSiglaPais(String siglaPais) {
+		this.siglaPais = siglaPais;
 	}
 }

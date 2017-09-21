@@ -3,21 +3,24 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.model.Cidade;
+import br.com.ProjecJava.dto.CidadeDTO;
 
 import br.com.ProjecJava.service.CidadeService;
-
+import br.com.ProjecJava.service.EstadoService;
 
 public class Cidade_Teste {
 
-	public static void main(String[] args) throws SQLException {
-		List<Cidade> lcidade = CidadeService.listarCidades(24);
-		for (Cidade cidade : lcidade) {
+	public  void main(String[] args) throws SQLException {
+		CidadeService cidadeService = new CidadeService();
+		
+		List<CidadeDTO> lcidade = cidadeService.listarCidades();
+		for (CidadeDTO cidade : lcidade) {
 			imprimirCidade(cidade);
 		}
-		
+
 	}
-	private static void imprimirCidade(Cidade cidade) {
-		System.out.println("codigo: "+cidade.getCodigo()+" Nome: "+ cidade.getNome());
+
+	private  void imprimirCidade(CidadeDTO cidade) {
+		System.out.println("codigo: " + cidade.getCodigo() + " Nome: " + cidade.getNomeCidade());
 	}
 }

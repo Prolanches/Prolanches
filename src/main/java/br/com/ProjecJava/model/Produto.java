@@ -3,6 +3,8 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.ProdutoDTO;
+
 /**
  * Esta é a classe responsavel pelo Produto
  * 
@@ -71,5 +73,10 @@ public class Produto {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	public ProdutoDTO toDTO() {
+		return new ProdutoDTO(this.getCodigo(), this.getNome(), this.getMargemLucro(), this.getPreco());
+		
 	}
 }

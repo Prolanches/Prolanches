@@ -15,7 +15,7 @@ public class Estado {
 /**
  * Estes são os atributos do Estado
  */
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private String uf;
 	private Pais pais;
@@ -28,7 +28,7 @@ public class Estado {
 	 */
 	public Estado() {
 	}
-	public Estado(int codigo, String nome, String uf, Pais pais) {
+	public Estado(Integer codigo, String nome, String uf, Pais pais) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -37,11 +37,11 @@ public class Estado {
 	}
 	
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -71,6 +71,6 @@ public class Estado {
 
 
 	public EstadoDTO toDTO() {
-		return new EstadoDTO(this.getCodigo(),this.getNome(),this.getPais().getNome(),this.getUf());
+		return new EstadoDTO(this.getCodigo(),this.getNome(),this.getUf(),this.getPais().getCodigo(),this.getPais().getNome(),this.getPais().getSigla());
 	}
 }

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.ProdutoDAO;
-
+import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Produto;
 
@@ -25,7 +25,7 @@ public class Produto_Service {
 	 * @return mostrará o Produto
 	 * @throws SQLException 
 	 */
-	public static List<Produto> listarProduto() throws SQLException {
+	public List<ProdutoDTO> listarProduto() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new ProdutoDAO(conex).lista();
 		}
