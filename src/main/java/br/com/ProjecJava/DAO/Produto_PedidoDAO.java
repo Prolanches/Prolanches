@@ -65,6 +65,15 @@ public class Produto_PedidoDAO {
 		 
 		return statement.executeUpdate() > 0;
 	}
+	
+	public boolean excluirporpedido(int codigo) throws SQLException{
+		String sql = "DELETE PRODUTO_PEDIDO WHERE PROD_PED_PEDIDO_COD = ?";
+		 
+		PreparedStatement statement = conex.prepareStatement(sql);
+		statement.setInt(1, codigo);
+		 
+		return statement.executeUpdate() > 0;
+	}
 
 	public List<Produto_Pedido> lista() throws SQLException {
 		List<Produto_Pedido> lProduto_Pedido = new ArrayList<>();

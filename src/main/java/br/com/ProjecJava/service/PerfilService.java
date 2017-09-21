@@ -8,8 +8,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.PerfilDAO;
+import br.com.ProjecJava.dto.PerfilDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Perfil;
+
 /**
  * Esta é a classe Service do Perfil
  * @author Lucas Braz
@@ -22,7 +23,7 @@ public class PerfilService {
 	 * @return retornará uma lista de Perfil
 	 * @throws SQLException
 	 */
-	public List<Perfil> listarPerfil() throws SQLException{
+	public List<PerfilDTO> listarPerfil() throws SQLException{
 		try (Connection con = new ConnectionPoolOracle().getConnection()) {
             return new PerfilDAO(con).lista();
 		}

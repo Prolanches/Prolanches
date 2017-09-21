@@ -6,11 +6,12 @@ import java.util.List;
 import br.com.ProjecJava.dto.CidadeDTO;
 
 import br.com.ProjecJava.service.CidadeService;
-import br.com.ProjecJava.service.EstadoService;
 
 public class Cidade_Teste {
 
+
 	public  void main(String[] args) throws SQLException {
+
 		CidadeService cidadeService = new CidadeService();
 		
 		List<CidadeDTO> lcidade = cidadeService.listarCidades();

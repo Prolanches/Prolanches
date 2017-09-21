@@ -2,31 +2,32 @@ package br.com.ProjecJava.dto;
 
 public class PerfilDTO {
 
-		private int codigo;
-		private String nivel;
+		private Integer codigoPerfil;
+		private String nivelPerfil;
 		
 		public PerfilDTO() {
 		}
 
-		public PerfilDTO(int codigo, String nivel) {
-
-			this.codigo = codigo;
-			this.nivel = nivel;
+		public PerfilDTO(Integer codigoPerfil, String nivelPerfil) {
+	
+			this.codigoPerfil = codigoPerfil;
+			this.nivelPerfil = nivelPerfil;
 		}
 
-		public int getCodigo() {
-			return codigo;
+		public Integer getCodigoPerfil() {
+			return codigoPerfil;
 		}
 
-		public void setCodigo(int codigo) {
-			this.codigo = codigo;
+		public void setCodigoPerfil(Integer codigoPerfil) {
+			this.codigoPerfil = codigoPerfil;
 		}
 
-		public String getNivel() {
-			return nivel;
+		public String getNivelPerfil() {
+			return nivelPerfil;
 		}
 
-		public void setNivel(String nivel) {
-			this.nivel = nivel;
+		public void setNivelPerfil(String nivelPerfil) {
+			this.nivelPerfil = nivelPerfil;
 		}
-	}
+}
+	

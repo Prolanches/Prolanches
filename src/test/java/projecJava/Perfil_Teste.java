@@ -6,7 +6,7 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.model.Perfil;
+import br.com.ProjecJava.dto.PerfilDTO;
 import br.com.ProjecJava.service.PerfilService;
 /**
  * Esta é a Classe Teste responsavel pelos Perfis
@@ -28,12 +28,12 @@ public class Perfil_Teste {
 		/**
 		 *  Listagem dos Perfis
 		 */
-		List<Perfil> lPerfil = perfilService.listarPerfil();
-		for (Perfil pf : lPerfil) {
+		List<PerfilDTO> lPerfil = perfilService.listarPerfil();
+		for (PerfilDTO pf : lPerfil) {
 			imprimirPerfil(pf);
 		}	
 	}
-	private static void imprimirPerfil(Perfil pf) {
-		System.out.println("Codígo: "+ pf.getCodigo()+"\nNome: "+ pf.getNivel());
+	private static void imprimirPerfil(PerfilDTO pf) {
+		System.out.println("Codígo: "+ pf.getCodigoPerfil()+"\nNome: "+ pf.getNivelPerfil());
 	}
 }
