@@ -1,11 +1,13 @@
 package br.com.ProjecJava.dto;
 
+import br.com.ProjecJava.model.Produto;
+
 public class ProdutoDTO {
 
-	private int codigo;
+	private Integer codigo;
 	private String nome;
-	private double margemLucro;
-	private double preco;
+	private Double margemLucro;
+	private Double preco;
 
 	public ProdutoDTO() {
 	}
@@ -47,5 +49,8 @@ public class ProdutoDTO {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+	public Produto toProduto() {
+		return new Produto(this.codigo, this.nome, this.margemLucro, this.preco);
 	}
 }
