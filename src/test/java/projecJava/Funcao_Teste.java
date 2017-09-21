@@ -6,6 +6,7 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
+import br.com.ProjecJava.dto.FuncaoDTO;
 import br.com.ProjecJava.model.Funcao;
 import br.com.ProjecJava.service.FuncaoService;
 /**
@@ -25,8 +26,8 @@ public class Funcao_Teste {
 		/**
 		 *  inserindo a Função 
 		 */
-		Funcao funcao = new Funcao(2,"Gerente");
-		funcaoService.inserir(funcao);
+		//Funcao funcao = new Funcao(1,"Administrador");
+		//funcaoService.inserir(funcao);
 		
 		/**
 		 * alterando a Função 
@@ -41,13 +42,13 @@ public class Funcao_Teste {
 		/**
 		 *  Listagem das Funções
 		 */
-		List<Funcao> lFuncao = FuncaoService.listarFuncao();
-		for (Funcao func : lFuncao) {
+		List<FuncaoDTO> lFuncao = funcaoService.listarFuncao();
+		for (FuncaoDTO func : lFuncao) {
 			imprimirFuncao(func);
 		}
 	}
 
-	private static void imprimirFuncao(Funcao func) {
-		System.out.println("Codígo: "+func.getCodigo()+"\nNome: "+func.getNome());
+	private static void imprimirFuncao(FuncaoDTO func) {
+		System.out.println("Codígo: "+func.getCodigoFuncao()+"\nNome: "+func.getNomeFuncao());
 	}
 }

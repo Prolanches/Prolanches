@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.FuncaoDAO;
+import br.com.ProjecJava.dto.FuncaoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Funcao;
 /**
@@ -23,7 +24,7 @@ public class FuncaoService {
 	 * @return mostrará a funcao
 	 * @throws SQLException 
 	 */
-	public static List<Funcao> listarFuncao() throws SQLException {
+	public List<FuncaoDTO> listarFuncao() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new FuncaoDAO(conex).lista();
 		}

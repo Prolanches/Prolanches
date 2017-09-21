@@ -3,11 +3,15 @@ package br.com.ProjecJava.dto;
 
 public class UsuarioDTO {
 
-	private int codigo;
-	private String login;
-	private String funcionario;
-	private String senha;
-	private String perfil;
+	private Integer codigoUsuario;
+	private String loginUsuario;
+	private Integer codigoFuncionario;
+	
+	
+	private String senhaUsuario;
+	
+	private Integer codigoPerfil;
+	private String nivelPerfil;
 	
 	public UsuarioDTO() {
 	}

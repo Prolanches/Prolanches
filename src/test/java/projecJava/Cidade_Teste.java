@@ -10,7 +10,9 @@ import br.com.ProjecJava.service.CidadeService;
 public class Cidade_Teste {
 
 	public static void main(String[] args) throws SQLException {
-		List<CidadeDTO> lcidade = CidadeService.listarCidades();
+		CidadeService cidadeService = new CidadeService();
+		
+		List<CidadeDTO> lcidade = cidadeService.listarCidades();
 		for (CidadeDTO cidade : lcidade) {
 			imprimirCidade(cidade);
 		}

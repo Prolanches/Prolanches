@@ -27,25 +27,25 @@ public class Empresa_Teste {
 		/**
 		 * inserindo a empresa
 		 */
-		//EmpresaDTO empresa = new EmpresaDTO(null, "Snack Time", 2, "2 de Setembro",4449,"Blumenau", 24, "Santa Catarina", "SC", 1,
-			//	"Brasil", "BR", "77.666.555/0002-40", "(47) 3333-7777", "lucas.brazbr@bol.com.br");
-		//empresaService.inserir(empresa);
+		EmpresaDTO empresa = new EmpresaDTO(null, "Snack Time", 100, "2 de Setembro",4449,"Blumenau", 24, "Santa Catarina", "SC", 1,
+			"Brasil", "BR", "77.666.555/0002-40", "(47) 3333-7777", "lucas.brazbr@bol.com.br");
+		empresaService.inserir(empresa);
 
 		/**
 		 * alterando a empresa
 		 */
-		// empresaService.alterar(new Empresa(24, "Snack Time",endereco,
+		//empresaService.alterar(new EmpresaDTO(41, "Teste Empresa", 81,"7 de Setembro",4449,"Blumenau", 24, "Santa Catarina", "SC", 1, "Brasil", "BR", 
 		// "77.666.555/0002-20", "(47) 3333-7777", "lucas.brazbr@bol.com.br"));
 
 		/**
 		 * excluindo a empresa
 		 */
-	   empresaService.excluir(2);
+	   //empresaService.excluir(41);
 
 		/**
 		 * Listagem das Empresas
 		 */
-		List<EmpresaDTO> lEmpresa = EmpresaService.listarEmpresas();
+		List<EmpresaDTO> lEmpresa = empresaService.listarEmpresas();
 		for (EmpresaDTO emp : lEmpresa) {
 			imprimirEmpresa(emp);
 		}

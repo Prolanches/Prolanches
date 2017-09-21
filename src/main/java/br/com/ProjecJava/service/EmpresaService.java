@@ -32,7 +32,7 @@ public class EmpresaService {
 	 * @return mostrará a empresa
 	 * @throws SQLException 
 	 */
-	public static List<EmpresaDTO> listarEmpresas() throws SQLException {
+	public List<EmpresaDTO> listarEmpresas() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new EmpresaDAO(conex).lista();
 		}
@@ -82,8 +82,36 @@ public class EmpresaService {
 	 * @param empresa
 	 * @throws SQLException
 	 */
-	public void alterar(Empresa empresa)throws SQLException{
+	public void alterar(EmpresaDTO empresaDTO)throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			Pais pais = new Pais();
+			pais.setCodigo(empresaDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(empresaDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(empresaDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(empresaDTO.getCodigoEndereco());
+			endereco.setRua(empresaDTO.getRua());
+			endereco.setCidade(cidade);
+			
+			new EnderecoDAO(conex).alterar(endereco);
+			
+			Empresa empresa = new Empresa();
+			empresa.setCodigo(empresaDTO.getCodigo());
+			empresa.setNome(empresaDTO.getNome());
+			empresa.setEndereco(endereco);
+			empresa.setCnpj(empresaDTO.getCnpj());
+			empresa.setTelefone(empresaDTO.getTelefone());
+			empresa.setEmail(empresaDTO.getEmail());
+			
 			new EmpresaDAO(conex).alterar(empresa);
 		}
 	}

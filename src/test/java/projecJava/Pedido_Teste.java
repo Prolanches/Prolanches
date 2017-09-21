@@ -38,7 +38,7 @@ public class Pedido_Teste {
 
 	   
 
-		pedidoService.alterar(3,sdf.parse("10/05/2015 10:35:00"),tipooperacao,212.00);
+		//pedidoService.alterar(3,sdf.parse("10/05/2015 10:35:00"),tipooperacao,212.00);
 		
 		
 

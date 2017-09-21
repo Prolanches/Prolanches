@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import br.com.ProjecJava.dto.FuncaoDTO;
 import br.com.ProjecJava.model.Funcao;
 /**
  * Esta é a Classe responsavel pelas Funções
@@ -58,8 +58,8 @@ public class FuncaoDAO {
 		return statement.executeUpdate() > 0;
 	}
 
-	public List<Funcao> lista() throws SQLException {
-		List<Funcao> lFuncao = new ArrayList<>();
+	public List<FuncaoDTO> lista() throws SQLException {
+		List<FuncaoDTO> lFuncao = new ArrayList<>();
 
 		String sql = "SELECT * FROM FUNCAO";;
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -71,7 +71,7 @@ public class FuncaoDAO {
 				
 					
 					Funcao funcao = new Funcao(codigo, nome);
-					lFuncao.add(funcao);
+					lFuncao.add(funcao.toDTO());
 				}
 			}
 		}

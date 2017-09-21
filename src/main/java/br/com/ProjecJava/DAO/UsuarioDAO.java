@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.UsuarioDTO;
 import br.com.ProjecJava.model.Empresa;
 import br.com.ProjecJava.model.Funcionario;
 import br.com.ProjecJava.model.Perfil;
@@ -66,8 +67,8 @@ public class UsuarioDAO {
 		return statement.executeUpdate() > 0;
 	}
 
-	public List<Usuario> lista() throws SQLException {
-		List<Usuario> lUsuario = new ArrayList<>();
+	public List<UsuarioDTO> lista() throws SQLException {
+		List<UsuarioDTO> lUsuario = new ArrayList<>();
 
 		String sql = "SELECT * FROM USUARIO"
 				+ " INNER JOIN FUNCIONARIO ON USUARIO.USU_FUNCIONARIO_COD = FUNCIONARIO.FUN_COD"
@@ -90,7 +91,7 @@ public class UsuarioDAO {
 				
 					
 					Usuario usuario = new Usuario(codigo, login, new Funcionario (codigoFuncionario, nomeFuncionario,null, new Empresa(codigoEmpresa,nomeEmpresa,null,null,null,null)), senha, new Perfil(codigoPerfil,nomePerfil));
-					lUsuario.add(usuario);
+					lUsuario.add(usuario.toDTO());
 				}
 			}
 		}

@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.PerfilDTO;
 import br.com.ProjecJava.model.Perfil;
 /**
  * Classe responsavel pela pesquisa de Perfil
@@ -34,8 +35,8 @@ public class PerfilDAO {
  * @return Retorna a lista de Perfil 
  * @throws SQLException
  */
-	public List<Perfil> lista() throws SQLException {
-		List<Perfil> lPerfil = new ArrayList<>();
+	public List<PerfilDTO> lista() throws SQLException {
+		List<PerfilDTO> lPerfil = new ArrayList<>();
 
 		String sql = "select * from PERFIL";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -45,7 +46,7 @@ public class PerfilDAO {
 					int codigo = rs.getInt("PERFIL_COD");
 					String nivel = rs.getString("PERFIL_NIVEIS");
 					Perfil perfil = new Perfil(codigo, nivel);
-					lPerfil.add(perfil);
+					lPerfil.add(perfil.toDTO());
 				}
 			}
 
