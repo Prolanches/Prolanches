@@ -9,7 +9,9 @@ import br.com.ProjecJava.service.CidadeService;
 
 public class Cidade_Teste {
 
-	public static void main(String[] args) throws SQLException {
+
+	public  void main(String[] args) throws SQLException {
+
 		CidadeService cidadeService = new CidadeService();
 		
 		List<CidadeDTO> lcidade = cidadeService.listarCidades();
@@ -19,7 +21,7 @@ public class Cidade_Teste {
 
 	}
 
-	private static void imprimirCidade(CidadeDTO cidade) {
+	private  void imprimirCidade(CidadeDTO cidade) {
 		System.out.println("codigo: " + cidade.getCodigo() + " Nome: " + cidade.getNomeCidade());
 	}
 }

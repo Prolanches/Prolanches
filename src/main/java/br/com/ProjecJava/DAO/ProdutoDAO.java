@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.model.Produto;
 
 
@@ -65,8 +65,8 @@ public class ProdutoDAO {
 		return statement.executeUpdate() > 0;
 	}
 
-	public List<Produto> lista() throws SQLException {
-		List<Produto> lProduto = new ArrayList<>();
+	public List<ProdutoDTO> lista() throws SQLException {
+		List<ProdutoDTO> lProduto = new ArrayList<>();
 
 		String sql = "SELECT * FROM PRODUTO";;
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -82,7 +82,7 @@ public class ProdutoDAO {
 				
 					
 					Produto produto = new Produto(codigo, nome, margemLucro, preco); 
-					lProduto.add(produto);
+					lProduto.add((produto).toDTO());
 				}
 			}
 		}

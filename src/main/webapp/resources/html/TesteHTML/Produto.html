@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Snack Time</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+	<body data-ng-app="projecJava">
+		<div data-ng-controller="ProdutoController as controller">
+			<h1>Snack Time</h1>
+			
+			<div style="border: 1px solid black;" data-ng-show="controller.produto">
+                <label for="produtoCod">Código: </label>
+                <input type="number" 
+                       id="produtoCod" 
+                       data-ng-model="controller.produto.codigo"
+                       disabled><br>
+
+                <label for="assunto">Nome: </label>
+                <input type="text" id="nomeProduto" data-ng-model="controller.produto.nome"><br>
+                
+                <label for="assunto">Margem de Lucro:  </label>
+                <input type="text" id="margemLucro" data-ng-model="controller.produto.margemLucro"><br>
+                
+                 <label for="assunto">Preço:  </label>
+                <input type="text" id="preco" data-ng-model="controller.produto.preco"><br>
+
+
+                <button type="button" data-ng-click="controller.salvar()">Salvar</button>
+                <button type="button" data-ng-click="controller.produto = undefined">Cancelar</button>
+            </div>
+            
+            <div style="border: 1px solid black;"
+                 data-ng-show="!controller.produto">
+                <button type="button" data-ng-click="controller.novo()">Novo produto</button><br>
+                <br>
+                <table border="1">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Margem de Lucro</th>
+                        <th>Preço</th>
+                       
+                    </tr>
+                    <tr data-ng-repeat="produto in controller.produtos">
+                        <td>{{produto.codigo}}</td>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.margemLucro}}</td>
+                        <td>{{produto.preco}}</td>
+                        <td>
+                            <button type="button" data-ng-click="controller.alterar(produto)">Alterar</button>
+                            <button type="button" data-ng-click="controller.deletar(produto)">Excluir</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+		
+		
+		<script src="../../angular.js"></script>
+		<script src="../../Class_js/Produto.js"></script>
+	</body>
+</html>
