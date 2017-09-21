@@ -114,7 +114,7 @@ public class FuncionarioService {
 		}
 	}
 	/**
-	 * Metodo excluir 
+	 * Meetodo excluir 
 	 * @param Funcionario
 	 * @throws SQLException
 	 */
