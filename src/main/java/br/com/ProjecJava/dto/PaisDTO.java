@@ -1,24 +1,26 @@
 package br.com.ProjecJava.dto;
 
+import br.com.ProjecJava.model.Pais;
+
 public class PaisDTO {
 
-	private int codigoPais;
+	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
 
 
 	public PaisDTO() {
 	}
-	public PaisDTO(int codigoPais, String nomePais, String siglaPais) {
+	public PaisDTO(Integer codigoPais, String nomePais, String siglaPais) {
 		super();
 		this.codigoPais = codigoPais;
 		this.nomePais = nomePais;
 		this.siglaPais = siglaPais;
 	}
-	public int getCodigoPais() {
+	public Integer getCodigoPais() {
 		return codigoPais;
 	}
-	public void setCodigoPais(int codigoPais) {
+	public void setCodigoPais(Integer codigoPais) {
 		this.codigoPais = codigoPais;
 	}
 	public String getNomePais() {
@@ -33,5 +35,8 @@ public class PaisDTO {
 	public void setSiglaPais(String siglaPais) {
 		this.siglaPais = siglaPais;
 	}
+	public Pais toPais() {
+		return new Pais(this.codigoPais, this.nomePais, this.siglaPais);
+}
 }
 
