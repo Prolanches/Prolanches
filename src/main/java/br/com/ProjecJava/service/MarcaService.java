@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.MarcaDAO;
+import br.com.ProjecJava.dto.MarcaDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Marca;
 
@@ -26,8 +27,11 @@ public class MarcaService {
 	 *            - marca a ser inserida
 	 * @throws SQLException
 	 */
-	public void inserir(Marca marca) throws SQLException {
+	public void inserir(MarcaDTO marcaDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			Marca marca = new Marca();
+			marca.setCodigo(marcaDTO.getCodigoMarca());
+			marca.setNome(marcaDTO.getNomeMarca());
 			new MarcaDAO(conex).inserir(marca);
 		}
 	}
@@ -51,7 +55,7 @@ public class MarcaService {
 	 * @return - mostra todas as marcas que estão cadastradas no banco de dados
 	 * @throws SQLException
 	 */
-	public static List<Marca> listarMarca() throws SQLException {
+	public static List<MarcaDTO> listarMarca() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new MarcaDAO(conex).listarMarca();
 		}

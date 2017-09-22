@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.MarcaDTO;
+
+
 /**
  * Esta é a classe resposanvel pelas Marcas do Fornecedor
  * 
@@ -15,7 +18,7 @@ public class Marca {
 	 * Estes são os atributos da Marca
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 
 	/**
@@ -26,7 +29,9 @@ public class Marca {
 	 * @param nome
 	 *            nome da Marca
 	 */
-	public Marca(int codigo, String nome) {
+	public Marca() {
+	}
+	public Marca(Integer codigo, String nome) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -38,16 +43,12 @@ public class Marca {
 	 * @param nome
 	 *            - parametro a ser adicionado
 	 */
-	public Marca(String nome) {
-		super();
-		this.nome = nome;
-	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -58,4 +59,7 @@ public class Marca {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	public MarcaDTO toDTO() {
+		return new MarcaDTO(this.getCodigo(),this.getNome());
+}
 }

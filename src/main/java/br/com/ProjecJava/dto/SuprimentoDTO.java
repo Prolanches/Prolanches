@@ -2,31 +2,47 @@ package br.com.ProjecJava.dto;
 
 public class SuprimentoDTO {
 
-	private int codigo;
+	private Integer codigo;
 	private String nome;
-	private String tipoUnidade;
+	private Integer codigoTipo_Unidade;
+	private String nomeTipo_Unidade;
+	private double unidadeTipo_Unidade;
 	private int quantidade;
 	private double custo;
-	private String marca;
+	private Integer codigoMarca;
+	private String nomeMarca;
 
 	public SuprimentoDTO() {
 	}
+	public SuprimentoDTO(Integer codigo, String nome, Integer codigoTipo_Unidade,int quantidade, double custo, Integer codigoMarca) {
+	this.codigo=codigo;
+	this.nome=nome;
+	this.codigoTipo_Unidade=codigoTipo_Unidade;
+	this.quantidade=quantidade;
+	this.custo=custo;
+	this.codigoMarca=codigoMarca;
+	}
+	
 
-	public SuprimentoDTO(int codigo, String nome, String tipoUnidade, int quantidade, double custo, String marca) {
-
+	public SuprimentoDTO(Integer codigo, String nome, Integer codigoTipo_Unidade, String nomeTipo_Unidade,
+			double unidadeTipo_Unidade, int quantidade, double custo, Integer codigoMarca, String nomeMarca) {
+		super();
 		this.codigo = codigo;
 		this.nome = nome;
-		this.tipoUnidade = tipoUnidade;
+		this.codigoTipo_Unidade = codigoTipo_Unidade;
+		this.nomeTipo_Unidade = nomeTipo_Unidade;
+		this.unidadeTipo_Unidade = unidadeTipo_Unidade;
 		this.quantidade = quantidade;
 		this.custo = custo;
-		this.marca = marca;
+		this.codigoMarca = codigoMarca;
+		this.nomeMarca = nomeMarca;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -38,12 +54,28 @@ public class SuprimentoDTO {
 		this.nome = nome;
 	}
 
-	public String getTipoUnidade() {
-		return tipoUnidade;
+	public Integer getCodigoTipo_Unidade() {
+		return codigoTipo_Unidade;
 	}
 
-	public void setTipoUnidade(String tipoUnidade) {
-		this.tipoUnidade = tipoUnidade;
+	public void setCodigoTipo_Unidade(Integer codigoTipo_Unidade) {
+		this.codigoTipo_Unidade = codigoTipo_Unidade;
+	}
+
+	public String getNomeTipo_Unidade() {
+		return nomeTipo_Unidade;
+	}
+
+	public void setNomeTipo_Unidade(String nomeTipo_Unidade) {
+		this.nomeTipo_Unidade = nomeTipo_Unidade;
+	}
+
+	public double getUnidadeTipo_Unidade() {
+		return unidadeTipo_Unidade;
+	}
+
+	public void setUnidadeTipo_Unidade(double unidadeTipo_Unidade) {
+		this.unidadeTipo_Unidade = unidadeTipo_Unidade;
 	}
 
 	public int getQuantidade() {
@@ -62,12 +94,22 @@ public class SuprimentoDTO {
 		this.custo = custo;
 	}
 
-	public String getMarca() {
-		return marca;
+	public Integer getCodigoMarca() {
+		return codigoMarca;
 	}
 
-	public void setMarca(String marca) {
-		this.marca = marca;
+	public void setCodigoMarca(Integer codigoMarca) {
+		this.codigoMarca = codigoMarca;
 	}
+
+	public String getNomeMarca() {
+		return nomeMarca;
+	}
+
+	public void setNomeMarca(String nomeMarca) {
+		this.nomeMarca = nomeMarca;
+	}
+
+
 }
 

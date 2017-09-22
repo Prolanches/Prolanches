@@ -8,8 +8,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.SuprimentoDAO;
+import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Marca;
 import br.com.ProjecJava.model.Suprimento;
+import br.com.ProjecJava.model.Tipo_Unidade;
 
 /**
  * Esta classe é responsável pela Service do Suprimento
@@ -26,8 +29,22 @@ public class SuprimentoService {
 	 *            - construtor utilizado para inserir os novos dados
 	 * @throws SQLException
 	 */
-	public void inserir(Suprimento suprimento) throws SQLException {
+	public void inserir(SuprimentoDTO suprimentoDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			Tipo_Unidade tipounidade = new Tipo_Unidade();
+			tipounidade.setCodigo(suprimentoDTO.getCodigoTipo_Unidade());
+			
+			Marca marca = new Marca();
+			marca.setCodigo(suprimentoDTO.getCodigoMarca());
+			
+			Suprimento suprimento = new Suprimento();
+			suprimento.setNome(suprimentoDTO.getNome());
+			suprimento.setTipoUnidade(tipounidade);
+			suprimento.setQuantidade(suprimentoDTO.getQuantidade());
+			suprimento.setCusto(suprimentoDTO.getCusto());
+			suprimento.setMarca(marca);
+			
 			new SuprimentoDAO(conex).inserir(suprimento);
 		}
 	}
@@ -39,8 +56,21 @@ public class SuprimentoService {
 	 *            - construtor utilizado para fazer as alterações de dados
 	 * @throws SQLException
 	 */
-	public void alterar(Suprimento suprimento) throws SQLException {
+	public void alterar(SuprimentoDTO suprimentoDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			Tipo_Unidade tipounidade = new Tipo_Unidade();
+			tipounidade.setCodigo(suprimentoDTO.getCodigoTipo_Unidade());
+			
+			Marca marca = new Marca();
+			marca.setCodigo(suprimentoDTO.getCodigoMarca());
+			
+			Suprimento suprimento = new Suprimento();
+			suprimento.setCodigo(suprimentoDTO.getCodigo());
+			suprimento.setNome(suprimentoDTO.getNome());
+			suprimento.setQuantidade(suprimentoDTO.getQuantidade());
+			suprimento.setCusto(suprimentoDTO.getCusto());
+			
 			new SuprimentoDAO(conex).alterar(suprimento);
 		}
 	}
@@ -64,7 +94,7 @@ public class SuprimentoService {
 	 * @return - retorna todos os suprimentos cadastrados no banco
 	 * @throws SQLException
 	 */
-	public static List<Suprimento> listarSuprimentos() throws SQLException {
+	public static List<SuprimentoDTO> listarSuprimentos() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new SuprimentoDAO(conex).listarSuprimentos();
 		}

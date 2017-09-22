@@ -9,11 +9,15 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.DAO.EnderecoDAO;
+
 import br.com.ProjecJava.DAO.FornecedorDAO;
+import br.com.ProjecJava.dto.FornecedorDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Endereco;
+import br.com.ProjecJava.model.Estado;
 import br.com.ProjecJava.model.Fornecedor;
+import br.com.ProjecJava.model.Pais;
 
 /**
  * Esta classe é responsável pela Service do Fornecedor
@@ -30,8 +34,33 @@ public class FornecedorService {
 	 *            - construtor utilizado para inserir os dados
 	 * @throws SQLException
 	 */
-	public void inserir(Fornecedor fornecedor) throws SQLException {
+	public void inserir(FornecedorDTO fornecedorDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			Pais pais = new Pais();
+			pais.setCodigo(fornecedorDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(fornecedorDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(fornecedorDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(fornecedorDTO.getCodigoEndereco());
+			endereco.setRua(fornecedorDTO.getRua());
+			endereco.setCidade(cidade);
+			
+			Fornecedor fornecedor = new Fornecedor();
+			fornecedor.setNome(fornecedorDTO.getNome());
+			fornecedor.setCnpj(fornecedorDTO.getCnpj());
+			fornecedor.setEndereco(endereco);
+			fornecedor.setTelefone(fornecedorDTO.getTelefone());
+			fornecedor.setEmail(fornecedorDTO.getEmail());
+			
 			new FornecedorDAO(conex).inserir(fornecedor);
 		}
 	}
@@ -53,10 +82,34 @@ public class FornecedorService {
 	 *            - novo e-mail do fornecedor
 	 * @throws SQLException
 	 */
-	public void alterar(int codigo, String nome, String cnpj, Endereco endereco, String telefone, String email)
-			throws SQLException {
+	public void alterar(FornecedorDTO fornecedorDTO)throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new FornecedorDAO(conex).alterar(codigo, nome, cnpj, endereco, telefone, email);
+			
+			Pais pais = new Pais();
+			pais.setCodigo(fornecedorDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(fornecedorDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(fornecedorDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(fornecedorDTO.getCodigoEndereco());
+			endereco.setCidade(cidade);
+			
+			Fornecedor fornecedor = new Fornecedor();
+			fornecedor.setCodigo(fornecedorDTO.getCodigo());
+			fornecedor.setNome(fornecedorDTO.getNome());
+			fornecedor.setCnpj(fornecedorDTO.getCnpj());
+			fornecedor.setEndereco(endereco);
+			fornecedor.setTelefone(fornecedorDTO.getTelefone());
+			fornecedor.setEmail(fornecedorDTO.getEmail());
+			
+			new FornecedorDAO(conex).alterar(fornecedor);
 		}
 	}
 
@@ -79,7 +132,7 @@ public class FornecedorService {
 	 * @return - retorna todos os fornecedores cadastrados
 	 * @throws SQLException
 	 */
-	public static List<Fornecedor> listarFornecedores() throws SQLException {
+	public static List<FornecedorDTO> listarFornecedores() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new FornecedorDAO(conex).listarFornecedores();
 		}

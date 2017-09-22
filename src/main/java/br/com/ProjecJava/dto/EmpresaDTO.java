@@ -22,6 +22,17 @@ public class EmpresaDTO {
 		
 		public EmpresaDTO() {
 		}
+		public EmpresaDTO(Integer codigo,String nome,Integer codigoEndereco,String rua, Integer codigoCidade,String cnpj,String telefone,String email) {
+			this.codigo=codigo;
+			this.nome=nome;
+			this.codigoEndereco=codigoEndereco;
+			this.rua=rua;
+			this.codigoCidade=codigoCidade;
+			this.cnpj=cnpj;
+			this.telefone=telefone;
+			this.email=email;
+		}
+
 
 		public EmpresaDTO(Integer codigo, String nome, Integer codigoEndereco, String rua, Integer codigoCidade,
 				String nomeCidade, Integer codigoUF, String nomeUF, String siglaUF, Integer codigoPais, String nomePais,

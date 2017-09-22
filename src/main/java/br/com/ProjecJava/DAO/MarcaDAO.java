@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.MarcaDTO;
 import br.com.ProjecJava.model.Marca;
 
 /**
@@ -66,8 +67,8 @@ public class MarcaDAO {
 	 * @return - retorna as marcas cadastradas no banco de dados
 	 * @throws SQLException
 	 */
-	public List<Marca> listarMarca() throws SQLException {
-		List<Marca> lMarca = new ArrayList<>();
+	public List<MarcaDTO> listarMarca() throws SQLException {
+		List<MarcaDTO> lMarca = new ArrayList<>();
 
 		String sql = "SELECT * FROM MARCA";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -77,7 +78,7 @@ public class MarcaDAO {
 					int codigo = rs.getInt("MARCA_COD");
 					String nome = rs.getString("MARCA_NOME");
 					Marca marca = new Marca(codigo, nome);
-					lMarca.add(marca);
+					lMarca.add(marca.toDTO());
 				}
 			}
 		}

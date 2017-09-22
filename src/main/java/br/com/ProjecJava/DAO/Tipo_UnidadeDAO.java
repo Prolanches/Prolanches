@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Tipo_UnidadeDTO;
 import br.com.ProjecJava.model.Tipo_Unidade;
 
 /**
@@ -34,8 +35,8 @@ public class Tipo_UnidadeDAO {
 	 * @return - retorna uma lista de tipos de unidades
 	 * @throws SQLException
 	 */
-	public List<Tipo_Unidade> listarTiposUnidades() throws SQLException {
-		List<Tipo_Unidade> lTipoUnidade = new ArrayList<>();
+	public List<Tipo_UnidadeDTO> listarTiposUnidades() throws SQLException {
+		List<Tipo_UnidadeDTO> lTipoUnidade = new ArrayList<>();
 
 		String sql = "SELECT * FROM TIPO_UNIDADE";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -46,7 +47,7 @@ public class Tipo_UnidadeDAO {
 					String nome = rs.getString("TIPO_UND_NOME");
 					double tipoU = rs.getDouble("TIPO_UND_UNIDADE");
 					Tipo_Unidade tipoUni = new Tipo_Unidade(codigo, nome, tipoU);
-					lTipoUnidade.add(tipoUni);
+					lTipoUnidade.add(tipoUni.toDTO());
 				}
 			}
 		}

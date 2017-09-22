@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ProjecJava.model.Fornecedor;
+import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.model.Marca;
 import br.com.ProjecJava.model.Suprimento;
 import br.com.ProjecJava.model.Tipo_Unidade;
@@ -98,8 +98,8 @@ public class SuprimentoDAO {
 	 * @return - retorna os suprimentos encontrados no banco de dados
 	 * @throws SQLException
 	 */
-	public List<Suprimento> listarSuprimentos() throws SQLException {
-		List<Suprimento> lSuprimento = new ArrayList<>();
+	public List<SuprimentoDTO> listarSuprimentos() throws SQLException {
+		List<SuprimentoDTO> lSuprimento = new ArrayList<>();
 
 		String sql = " SELECT * FROM SUPRIMENTO " + " INNER JOIN MARCA ON MARCA.MARCA_COD = SUPRIMENTO.SUPRI_MARCA_COD "
 				+ " INNER JOIN TIPO_UNIDADE ON TIPO_UNIDADE.TIPO_UND_COD = SUPRIMENTO.SUPRI_TIPO_UND_COD ";
@@ -110,16 +110,18 @@ public class SuprimentoDAO {
 					int marcaCod = rs.getInt("MARCA_COD");
 					String marcaNome = rs.getString("MARCA_NOME");
 					Marca marca = new Marca(marcaCod, marcaNome);
+					
 					int tipoCod = rs.getInt("TIPO_UND_COD");
 					String tipoNome = rs.getString("TIPO_UND_NOME");
 					int tipoUni = rs.getInt("TIPO_UND_UNIDADE");
 					Tipo_Unidade tipoUnid = new Tipo_Unidade(tipoCod, tipoNome, tipoUni);
+					
 					int supriCod = rs.getInt("SUPRI_COD");
 					String supriNome = rs.getString("SUPRI_NOME");
 					int supriQuant = rs.getInt("SUPRI_QUANTIDADE");
 					int supriCusto = rs.getInt("SUPRI_CUSTO");
 					Suprimento supri = new Suprimento(supriCod, supriNome, tipoUnid, supriQuant, supriCusto, marca);
-					lSuprimento.add(supri);
+					lSuprimento.add(supri.toDTO());
 				}
 			}
 		}

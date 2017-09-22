@@ -7,9 +7,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.DAO.EmpresaDAO;
-import br.com.ProjecJava.DAO.EnderecoDAO;
-import br.com.ProjecJava.DAO.FuncaoDAO;
+
 import br.com.ProjecJava.DAO.FuncionarioDAO;
 import br.com.ProjecJava.dto.FuncionarioDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
