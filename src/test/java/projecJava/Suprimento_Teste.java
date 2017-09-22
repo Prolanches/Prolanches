@@ -32,7 +32,7 @@ public class Suprimento_Teste {
 			imprimeSuprimento(suprimento2);
 		}
 	}
-   public static DecimalFormat df = new DecimalFormat("#,##0.00"); 
+   public static DecimalFormat df = new DecimalFormat("###0.00"); 
     	
 	private static void imprimeSuprimento(SuprimentoDTO supri) {
 		System.out.println("Código: " + supri.getCodigo() + "\nNome Suprimento: " + supri.getNome() + "\nTipo_Unidade: "
