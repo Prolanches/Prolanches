@@ -28,7 +28,7 @@ public class Produto_Teste {
 		/**
 		 *  inserindo o Produto 
 		 */
-		Produto produto = new Produto(1,"X-Burguer",1.60,15.50);
+		Produto produto = new Produto(1,"X-Salada",1.60,15.50);
 		produtoService.inserir(produto);
 		
 		/**

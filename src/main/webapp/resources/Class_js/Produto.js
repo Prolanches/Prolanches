@@ -23,6 +23,7 @@ angular.module("projecJava", [])
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
+                	console.log(response);
                     self.ocorreuErro();
                 });
             };

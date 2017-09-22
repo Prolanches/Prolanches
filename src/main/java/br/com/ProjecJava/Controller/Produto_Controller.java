@@ -26,7 +26,7 @@ public class Produto_Controller {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<ProdutoDTO> listPessoas() {
+	public List<ProdutoDTO> listProduto() {
 		Produto_Service produtoService = new Produto_Service();
 		try {
 			return produtoService.listarProduto();
@@ -39,10 +39,10 @@ public class Produto_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(ProdutoDTO pessoa) {
+	public Response create(ProdutoDTO produto) {
 		Produto_Service produtoService = new Produto_Service();
 		try {
-			produtoService.inserir(pessoa.toProduto());
+			produtoService.inserir(produto.toProduto());
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -53,10 +53,10 @@ public class Produto_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(ProdutoDTO pessoa) {
+	public Response update(ProdutoDTO produto) {
 		Produto_Service produtoService = new Produto_Service();
 		try {
-			produtoService.alterar(pessoa.toProduto());
+			produtoService.alterar(produto.toProduto());
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
