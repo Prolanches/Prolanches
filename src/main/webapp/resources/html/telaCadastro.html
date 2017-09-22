@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Snack Time</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,35 +20,167 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/styleIndex.css" rel="stylesheet">
+    <link href="../css/styleCadastro.css" rel="stylesheet">
 
   </head>
 
-  <body >
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <body style="background-color: #fff; font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center;"      data-ng-app="projecJava" >
+      <div class="container-fluid" >
+        <!-- Navigation -->
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="position: fixed;">
       <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time - cadastro</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time</a>
         
-        
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../../index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+          
+            <!-- =============== DADOS GERAIS =================== -->
+          <div class="row-fluid" style="margin-top: 100px; font-variant: small-caps;">
+             <span class="name titulo" > Efetuar Cadastro</span>
+
+            <div class="span12" style="background-color: rgb(44,62,80);margin-bottom: : 1px ;  text-align: center; color: #fff;  ">
+              
+              <p style="color:  rgb(44,62,80);font-size: 2px;">sdtsergtrdgh</p>
+              <label for="" style="text-decoration: bold; font-weight: 600; font-size: 30px;font-variant: small-caps;">Dados Gerais</label><br>
+
+              <label style="color:  rgb(44,62,80);">....</label>
+              <label for="">Nome da Empresa:   </label>
+              <input type="text"  name="nomeEmpresa" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+              <label style="color:  rgb(44,62,80);">...............................</label>
+              <label for="">Cnpj:   </label>
+              
+              <input type="text"  name="cnpj" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+              <label style="color:  rgb(44,62,80);">............................</label>
+              <label for="">E-mail:   </label>
+              <input type="text"  name="email" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+              
+              <label style="color:  rgb(44,62,80);">.......................</label>
+              <label for="">Telefone:   </label>
+              <input type="text"  name="telefone" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+              <p style="color:  rgb(44,62,80);font-size: 5px;">111111</p>
+              
+            </div>
+            </div>
+                    <!-- ==================== FIM DADGERAIS =================== -->
+
+
+
+                    <!-- =============== CADASTRO ENDERECO ===================== -->
+            <div class="row-fluid" style="margin-top: 15px; font-variant: small-caps;">
+            <div class="span12" style="background-color: #fff; border: 2px solid rgb(44,62,80);  text-align: center;">
+
+              
+              <label for="" style="color: rgb(44,62,80); font-weight: 600; font-size: 30px; ">Endereço</label>
+              <div class="comboBox" >
+                 <!--COMBOBOX PAIS -->
+                <label style="color:  #fff;">..................................</label>
+                <label for="">País:   </label>
+                 <select data-ng-controller="PaisController as controller" style="width: 200px; height: 30px; color: rgb(44,62,80);font-variant: small-caps;">
+                  <option data-ng-repeat="pais in controller.paises">{{pais.nomePais}}</option>
+                </select><br>
+
+                <!--COMBOBOX ESTADO -->
+                <label style="color:  #fff;">..............................</label>
+                <label for="">Estado:   </label>
+                 <select data-ng-controller="EstadoController as controller"  style="width: 200px; height: 30px; color: rgb(44,62,80);font-variant: small-caps;">
+                  <option data-ng-repeat="estado in controller.estados">{{estado.nomeUF}}</option>
+                </select>
+                <br>
+                 <!--COMBOBOX CIDADE -->
+                 <label style="color:  #fff;">...............................</label>
+                <label for="">Cidade:   </label>
+                <select  data-ng-controller="CidadeController as controller" style="width: 200px; height: 30px; font-variant: small-caps;">
+                  <option  data-ng-repeat="cidade in controller.cidades" style="color: rgb(44,62,80); "> {{cidade.nomeCidade}} - {{cidade.siglaUF}}</option>
+
+                </select>
+                <br>
+              </div>
+              <label style="color:  #fff;">...................</label>
+                <label for="">Logradouro:   </label>
+              <input type="text"  name="ruaEmpresa" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+              <p style="color: #fff;font-size: 5px;">111111</p>
+            </div>
+            
+            
+          </div>
+
+          <!-- =======================FIM ENDERECO ===================== -->
+
+         <!-- =============== DADOS FUN =================== -->
+                  <div class="row-fluid" style=" font-variant: small-caps; margin-top: 18px;">
+
+                    <div class="span12" style="background-color: rgb(44,62,80);margin-bottom: : 1px ;  text-align: center; color: #fff;  ">
+                      
+                      <p style="color:  rgb(44,62,80);font-size: 2px;">sdtsergtrdgh</p>
+                      <label for="" style="font-weight: 600; font-size: 30px;font-variant: small-caps;">Dados fuicionário Administrador</label><br>
+
+                      <label style="color:  rgb(44,62,80);">.....</label>
+                      <label for="">Nome:   </label>
+                      <input type="text"  name="nomeFuncionario" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+                      <label style="color:  rgb(44,62,80);">.</label>
+                      <label for="">Função:   </label>
+                      
+                      <input type="text"  name="funcao" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+                      <label style="color:  rgb(44,62,80); margin-left: -44px;"></label>
+                      <label for="">Login Usuário:   </label>
+                      <input type="text"  name="login" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+                      
+                      <label style="color:  rgb(44,62,80);">...</label>
+                      <label for="">Senha:   </label>
+                      <input type="text"  name="senha" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+
+                      <label style="color:  rgb(44,62,80); margin-left: -70px;">.</label>
+                      <label for="">Confirmar Senha:   </label>
+                      <input type="text"  name="confirSenha" style="width: 200px; height: 30px;font-variant: small-caps;"><br>
+
+                      <label style="color:  rgb(44,62,80); margin-left: -65px;">...</label>
+                      <label for="">Tipo de Usuário:   </label>
+                      <input type="text"  name="tipoUs" value="Administrador" readonly="true" style="width: 200px; height: 30px; font-variant: small-caps;"></input><br>
+                      <p style="color:  rgb(44,62,80);font-size: 10px;">111111</p>
+                      
+                    </div>
+
+      <!-- ==================== FIM DADGERAIS =================== -->
+
+            <button  type="button" class=" botao" >  Cancelar </button> 
+            <button  type="button" class=" botao" >  Cadastrar </button> 
+            <br><br><br>
+
       </div>
 
+      
+        <!-- IMPORT ANGULAR-->
+      <script src="../angular.js"></script>
 
-   <input type="text" style="width: 200px; height: 50px;">
+        <!-- IMPORT JS PAIS -->
+      <script src="../Class_js/Pais.js"></script>
 
-    
+        <!-- IMPORT JS ESTADO -->
+      <script src="../Class_js/Estado.js"></script>
 
-<select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-
-
-    </nav>
-
-
+        <!-- IMPORT JS CIDADE -->
+      <script src="../Class_js/Cidade.js"></script>
 
 </body>
 </html>
