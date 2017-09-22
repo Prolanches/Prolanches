@@ -29,24 +29,24 @@ public class EnderecoService {
 	 * @param endereco
 	 * @throws SQLException
 	 */
-	public void inserir(EnderecoDTO enderecoDTO) throws SQLException {
+	public void inserir(EnderecoDTO endereco2) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			
 			
 			Pais pais = new Pais();
-			pais.setCodigo(enderecoDTO.getCodigoPais());
+			pais.setCodigo(endereco2.getCodigoPais());
 			
 			Estado estado = new Estado();
-			estado.setCodigo(enderecoDTO.getCodigoUF());
+			estado.setCodigo(endereco2.getCodigoUF());
 			estado.setPais(pais);
 			
 			Cidade cidade = new Cidade();
-			cidade.setCodigo(enderecoDTO.getCodigoCidade());
+			cidade.setCodigo(endereco2.getCodigoCidade());
 			cidade.setEstado(estado);
 			
 			
 			Endereco endereco = new Endereco();
-			endereco.setRua(enderecoDTO.getRua());
+			endereco.setRua(endereco2.getRua());
 			endereco.setCidade(cidade);
 			
 			new EnderecoDAO(conex).inserir(endereco);

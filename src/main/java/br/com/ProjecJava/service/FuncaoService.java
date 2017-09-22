@@ -34,9 +34,12 @@ public class FuncaoService {
 	 * @param funcao
 	 * @throws SQLException
 	 */
-	public void inserir(Funcao funcao) throws SQLException{
+	public void inserir(FuncaoDTO funcaoDTO) throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			Funcao funcao = new Funcao();
+			funcao.setNome(funcaoDTO.getNomeFuncao());
 			new FuncaoDAO(conex).inserir(funcao);
+			
 		}
 	}
 	/**
@@ -44,9 +47,13 @@ public class FuncaoService {
 	 * @param funcao
 	 * @throws SQLException
 	 */
-	public void alterar(Funcao funcao)throws SQLException{
+	public void alterar(FuncaoDTO funcaoDTO)throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			Funcao funcao = new Funcao();
+			funcao.setCodigo(funcaoDTO.getCodigoFuncao());
+			funcao.setNome(funcaoDTO.getNomeFuncao());
 			new FuncaoDAO(conex).alterar(funcao);
+			
 		}
 	}
 	/**

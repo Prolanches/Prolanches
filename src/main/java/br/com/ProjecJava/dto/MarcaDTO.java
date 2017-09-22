@@ -2,30 +2,30 @@ package br.com.ProjecJava.dto;
 
 public class MarcaDTO {
 
-	private int codigo;
-	private String nome;
+	private Integer codigoMarca;
+	private String nomeMarca;
 	
 	public MarcaDTO() {
 	}
 
-	public MarcaDTO(int codigo, String nome) {
-
-		this.codigo = codigo;
-		this.nome = nome;
-	}
-	public int getCodigo() {
-		return codigo;
+	public MarcaDTO(Integer codigoMarca, String nomeMarca) {
+		this.codigoMarca = codigoMarca;
+		this.nomeMarca = nomeMarca;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public Integer getCodigoMarca() {
+		return codigoMarca;
 	}
 
-	public String getNome() {
-		return nome;
+	public void setCodigoMarca(Integer codigoMarca) {
+		this.codigoMarca = codigoMarca;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String getNomeMarca() {
+		return nomeMarca;
+	}
+
+	public void setNomeMarca(String nomeMarca) {
+		this.nomeMarca = nomeMarca;
 	}
 }

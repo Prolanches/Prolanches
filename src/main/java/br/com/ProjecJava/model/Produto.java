@@ -16,7 +16,7 @@ public class Produto {
 	 * Este são os atributos do Produto
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private double margemLucro;
 	private double preco;
@@ -35,7 +35,7 @@ public class Produto {
 	 *            custo*margem de lucro
 	 */
 
-	public Produto(int codigo, String nome, double margemLucro, double preco) {
+	public Produto(Integer codigo, String nome, double margemLucro, double preco) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -43,11 +43,11 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

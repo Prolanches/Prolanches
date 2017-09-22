@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+
+import br.com.ProjecJava.dto.FornecedorDTO;
+
 /**
  * Esta é a classe responsavel pelos Fornecedores
  * 
@@ -14,7 +17,7 @@ public class Fornecedor {
 	/**
 	 * Este são os atributos dos Fornecedores
 	 */
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private String cnpj;
 	private Endereco endereco;
@@ -37,7 +40,10 @@ public class Fornecedor {
 	 * @param email
 	 *            e-mail do Fornecedor
 	 */
-	public Fornecedor(int codigo, String nome, String cnpj, Endereco endereco, String telefone, String email) {
+	public Fornecedor() {
+	}
+
+	public Fornecedor(Integer codigo, String nome, String cnpj, Endereco endereco, String telefone, String email) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -47,34 +53,11 @@ public class Fornecedor {
 		this.email = email;
 	}
 
-	/**
-	 * Este é o construtor de Fornecedores, abaixo estão seus parametros
-	 * 
-	 * @param nome
-	 *            - nome do Fornecedor
-	 * @param cnpj
-	 *            - cnpj do Fornecedor
-	 * @param endereco
-	 *            - implementação da Classe Endereco
-	 * @param telefone
-	 *            - telefone do Fornecedor
-	 * @param email
-	 *            - e-mail do Fornecedor
-	 */
-	public Fornecedor(String nome, String cnpj, Endereco endereco, String telefone, String email) {
-		super();
-		this.nome = nome;
-		this.cnpj = cnpj;
-		this.endereco = endereco;
-		this.telefone = telefone;
-		this.email = email;
-	}
-
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -116,5 +99,16 @@ public class Fornecedor {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public FornecedorDTO toDTO() {
+		return new FornecedorDTO(this.getCodigo(), this.getNome(), this.getCnpj(), this.getEndereco().getCodigo(),
+				this.getEndereco().getRua(), this.getEndereco().getCidade().getCodigo(),
+				this.getEndereco().getCidade().getNome(), this.getEndereco().getCidade().getEstado().getCodigo(),
+				this.getEndereco().getCidade().getEstado().getNome(),
+				this.getEndereco().getCidade().getEstado().getUf(),
+				this.getEndereco().getCidade().getEstado().getPais().getCodigo(),
+				this.getEndereco().getCidade().getEstado().getPais().getNome(),
+				this.getEndereco().getCidade().getEstado().getPais().getSigla(), this.getTelefone(), this.getEmail());
 	}
 }

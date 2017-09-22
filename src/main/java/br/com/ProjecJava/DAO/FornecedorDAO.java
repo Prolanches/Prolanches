@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.FornecedorDTO;
 import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Endereco;
 import br.com.ProjecJava.model.Estado;
@@ -71,16 +72,15 @@ public class FornecedorDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public boolean alterar(int codigo, String nome, String cnpj, Endereco endereco, String telefone, String email)
-			throws SQLException {
+	public boolean alterar(Fornecedor fornecedor)throws SQLException {
 		String sql = "UPDATE FORNECEDOR SET FOR_NOME = ?, FOR_CNPJ = ?, FOR_ENDERECO_COD = ?, FOR_TELEFONE = ?, FOR_EMAIL = ? WHERE FOR_COD = ?";
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setString(1, nome);
-		statement.setString(2, cnpj);
-		statement.setInt(3, endereco.getCodigo());
-		statement.setString(4, telefone);
-		statement.setString(5, email);
-		statement.setInt(6, codigo);
+		statement.setString(1, fornecedor.getNome());
+		statement.setString(2, fornecedor.getCnpj());
+		statement.setInt(3, fornecedor.getEndereco().getCodigo());
+		statement.setString(4, fornecedor.getTelefone());
+		statement.setString(5, fornecedor.getEmail());
+		statement.setInt(6, fornecedor.getCodigo());
 
 		return statement.executeUpdate() > 0;
 	}
@@ -107,8 +107,8 @@ public class FornecedorDAO {
 	 * @return - retorna a lista de fornecedores da empresa
 	 * @throws SQLException
 	 */
-	public List<Fornecedor> listarFornecedores() throws SQLException {
-		List<Fornecedor> lFornecedores = new ArrayList<>();
+	public List<FornecedorDTO> listarFornecedores() throws SQLException {
+		List<FornecedorDTO> lFornecedores = new ArrayList<>();
 
 		String sql = "SELECT * FROM FORNECEDOR"
 				+ " INNER JOIN ENDERECO ON FORNECEDOR.FOR_ENDERECO_COD = ENDERECO.END_COD"
@@ -123,23 +123,27 @@ public class FornecedorDAO {
 					int codigo = rs.getInt("PAIS_COD");
 					String sigla = rs.getString("PAIS_SIGLA");
 					Pais pais = new Pais(codigo, nome, sigla);
+					
 					int codigoEstado = rs.getInt("ESTADO_COD");
 					String nomeEstado = rs.getString("ESTADO_NOME");
 					String siglaEstado = rs.getString("ESTADO_UF");
 					Estado estado = new Estado(codigoEstado, nomeEstado, siglaEstado, pais);
+					
 					int codigoCidade = rs.getInt("CIDADE_COD");
 					String nomeCidade = rs.getString("CIDADE_NOME");
 					Cidade cidade = new Cidade(codigoCidade, nomeCidade, estado);
+					
 					int codigoEndereco = rs.getInt("END_COD");
 					String ruaEndereco = rs.getString("END_RUA");
 					Endereco endereco = new Endereco(codigoEndereco, ruaEndereco, cidade);
+					
 					int codigoFor = rs.getInt("FOR_COD");
 					String nomeFor = rs.getString("FOR_NOME");
 					String cnpj = rs.getString("FOR_CNPJ");
 					String telefone = rs.getString("FOR_TELEFONE");
 					String email = rs.getString("FOR_EMAIL");
 					Fornecedor fornecedor = new Fornecedor(codigoFor, nomeFor, cnpj, endereco, telefone, email);
-					lFornecedores.add(fornecedor);
+					lFornecedores.add(fornecedor.toDTO());
 				}
 			}
 		}

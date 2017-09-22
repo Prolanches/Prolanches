@@ -1,5 +1,7 @@
 package br.com.ProjecJava.dto;
 
+
+
 public class EnderecoDTO {
 
 	private Integer codigo;
@@ -12,12 +14,18 @@ public class EnderecoDTO {
 	private Integer codigoPais;
 	private String nomePais;
 	private String siglaPais;
-	
+
+
 	public EnderecoDTO() {
 	}
+	public EnderecoDTO(Integer codigo, String rua, Integer codigoCidade) {
+		this.codigo=codigo;
+		this.rua=rua;
+		this.codigoCidade=codigoCidade;
+	}
 
-	public EnderecoDTO(Integer codigo, String rua, Integer codigoCidade, String nomeCidade, Integer codigoUF, String nomeUF,
-			String siglaUF, Integer codigoPais, String nomePais, String siglaPais) {
+	public EnderecoDTO(Integer codigo, String rua, Integer codigoCidade, String nomeCidade, Integer codigoUF,
+			String nomeUF, String siglaUF, Integer codigoPais, String nomePais, String siglaPais) {
 		super();
 		this.codigo = codigo;
 		this.rua = rua;
@@ -54,6 +62,8 @@ public class EnderecoDTO {
 	public void setCodigoCidade(Integer codigoCidade) {
 		this.codigoCidade = codigoCidade;
 	}
+
+	
 
 	public String getNomeCidade() {
 		return nomeCidade;
@@ -111,4 +121,5 @@ public class EnderecoDTO {
 		this.siglaPais = siglaPais;
 	}
 	
+
 }

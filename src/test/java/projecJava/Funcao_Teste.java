@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.dto.FuncaoDTO;
-import br.com.ProjecJava.model.Funcao;
 import br.com.ProjecJava.service.FuncaoService;
 /**
  * Esta classe é responsavel pelos Testes das Funções
@@ -26,18 +25,18 @@ public class Funcao_Teste {
 		/**
 		 *  inserindo a Função 
 		 */
-		//Funcao funcao = new Funcao(1,"Administrador");
+		//FuncaoDTO funcao = new FuncaoDTO(null,"Balconista");
 		//funcaoService.inserir(funcao);
 		
 		/**
 		 * alterando a Função 
 		 */
-		//funcaoService.alterar(new Funcao(1,"Atendente"));
+		//funcaoService.alterar(new FuncaoDTO(24,"Gerente"));
 		
 		/**
 		 * excluindo a Função 
 		 */
-		//funcaoService.excluir(1);
+		//funcaoService.excluir(41);
 
 		/**
 		 *  Listagem das Funções
