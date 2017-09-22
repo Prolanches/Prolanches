@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+
+import br.com.ProjecJava.dto.Tipo_UnidadeDTO;
+
 /**
  * Esta é a classe responsavel pela criação dos Tipos de Unidades (Kg, Litro, Gramas)
  * @author Noturno
@@ -13,7 +16,7 @@ public class Tipo_Unidade {
 /**
  * Este são os atributos do Tipo de Unidade
  */
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private double unidade;
 	/**
@@ -23,18 +26,21 @@ public class Tipo_Unidade {
 	 * @param unidade valores das unidades (Kg, Litro, Gramas)
 	 */
 	
-	public Tipo_Unidade(int codigo, String nome, double unidade) {
+	public Tipo_Unidade() {
+	}
+	
+	public Tipo_Unidade(Integer codigo, String nome, double unidade) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
 		this.unidade = unidade;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -52,6 +58,10 @@ public class Tipo_Unidade {
 
 	public void setUnidade(double unidade) {
 		this.unidade = unidade;
+	}
+	public Tipo_UnidadeDTO toDTO() {
+		return new Tipo_UnidadeDTO(this.getCodigo(),this.getNome(),this.getUnidade());
+		
 	}
 	
 }

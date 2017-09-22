@@ -4,6 +4,8 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.SuprimentoDTO;
+
 /**
  * Esta é a classe responsavel pelo Suprimento
  * 
@@ -14,7 +16,7 @@ public class Suprimento {
 	/**
 	 * Este são os atributos do Suprimento
 	 */
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 	private Tipo_Unidade tipoUnidade;
 	private int quantidade;
@@ -39,7 +41,12 @@ public class Suprimento {
 	 * @param marca
 	 *            implementação da classe Marca
 	 */
-	public Suprimento(int codigo, String nome, Tipo_Unidade tipoUnidade, int quantidade, double custo, Marca marca) {
+	public Suprimento() {
+
+	}
+
+	public Suprimento(Integer codigo, String nome, Tipo_Unidade tipoUnidade, int quantidade, double custo,
+			Marca marca) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
@@ -97,4 +104,9 @@ public class Suprimento {
 		this.marca = marca;
 	}
 
+	public SuprimentoDTO toDTO() {
+		return new SuprimentoDTO(this.getCodigo(), this.getNome(), this.getTipoUnidade().getCodigo(),
+				this.getTipoUnidade().getNome(), this.getTipoUnidade().getUnidade(), this.getQuantidade(),
+				this.getCusto(), this.getMarca().getCodigo(), this.getMarca().getNome());
+	}
 }

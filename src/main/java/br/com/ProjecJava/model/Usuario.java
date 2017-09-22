@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+
+import br.com.ProjecJava.dto.UsuarioDTO;
+
 /**
  * Esta é a classe responsavel pelo Usuário do sistema
  * 
@@ -15,7 +18,7 @@ public class Usuario {
 	 * Este são os atributos do Usuário
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private String login;
 	private Funcionario funcionario;
 	private String senha;
@@ -36,7 +39,10 @@ public class Usuario {
 	 *            implementação da classe Perfil em relação aos niveis de acesso do
 	 *            sistema
 	 */
-	public Usuario(int codigo, String login, Funcionario funcionario, String senha, Perfil perfil) {
+	public Usuario() {
+	}
+
+	public Usuario(Integer codigo, String login, Funcionario funcionario, String senha, Perfil perfil) {
 		super();
 		this.codigo = codigo;
 		this.login = login;
@@ -45,11 +51,11 @@ public class Usuario {
 		this.perfil = perfil;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -83,5 +89,25 @@ public class Usuario {
 
 	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
+	}
+
+	public UsuarioDTO toDTO() {
+		return new UsuarioDTO(this.getCodigo(), this.getLogin(), this.getFuncionario().getCodigo(),
+				this.getFuncionario().getNome(), this.getFuncionario().getFuncao().getCodigo(),
+				this.getFuncionario().getFuncao().getNome(), this.getFuncionario().getEmpresa().getCodigo(),
+				this.getFuncionario().getEmpresa().getNome(),
+				this.getFuncionario().getEmpresa().getEndereco().getCodigo(),
+				this.getFuncionario().getEmpresa().getEndereco().getRua(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getCodigo(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getNome(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getEstado().getCodigo(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getEstado().getNome(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getEstado().getUf(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getEstado().getPais().getCodigo(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getEstado().getPais().getNome(),
+				this.getFuncionario().getEmpresa().getEndereco().getCidade().getEstado().getPais().getSigla(),
+				this.getFuncionario().getEmpresa().getCnpj(), this.getFuncionario().getEmpresa().getTelefone(),
+				this.getFuncionario().getEmpresa().getEmail(), this.getSenha(), this.getPerfil().getCodigo(),
+				this.getPerfil().getNivel());
 	}
 }

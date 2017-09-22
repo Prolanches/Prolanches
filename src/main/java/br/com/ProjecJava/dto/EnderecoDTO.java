@@ -18,6 +18,11 @@ public class EnderecoDTO {
 
 	public EnderecoDTO() {
 	}
+	public EnderecoDTO(Integer codigo, String rua, Integer codigoCidade) {
+		this.codigo=codigo;
+		this.rua=rua;
+		this.codigoCidade=codigoCidade;
+	}
 
 	public EnderecoDTO(Integer codigo, String rua, Integer codigoCidade, String nomeCidade, Integer codigoUF,
 			String nomeUF, String siglaUF, Integer codigoPais, String nomePais, String siglaPais) {

@@ -3,7 +3,7 @@ package projecJava;
 import java.sql.SQLException;
 import java.util.List;
 
-import br.com.ProjecJava.model.Marca;
+import br.com.ProjecJava.dto.MarcaDTO;
 import br.com.ProjecJava.service.MarcaService;
 
 public class Marca_Teste {
@@ -12,20 +12,20 @@ public class Marca_Teste {
 		MarcaService marcaService = new MarcaService();
 		
 		//inserindo marca FUNCIONANDO
-		Marca marca = new Marca( "Thabrulai");
-		marcaService.inserir(marca);
+		//MarcaDTO marca = new MarcaDTO(null,"Thabrulai");
+		//marcaService.inserir(marca);
 		
 		//excluindo marca FUNCIONANDO
-		//marcaService.excluir(2);
+		//marcaService.excluir(1);
 		
 		//listando as marcas FUNCIONANDO
-		List<Marca> lMarca = MarcaService.listarMarca();
-		for (Marca marca1 : lMarca) {
+		List<MarcaDTO> lMarca = MarcaService.listarMarca();
+		for (MarcaDTO marca1 : lMarca) {
 			imprimeMarca(marca1);
 		}
 		
 	}
-	private static void imprimeMarca(Marca marca) {
-		System.out.println("Código: "+marca.getCodigo()+ " Nome: "+marca.getNome());
+	private static void imprimeMarca(MarcaDTO marca) {
+		System.out.println("Código: "+marca.getCodigoMarca()+ " Nome: "+marca.getNomeMarca());
 	}
 }

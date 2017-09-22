@@ -8,7 +8,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.UsuarioDAO;
+import br.com.ProjecJava.dto.UsuarioDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Cidade;
+import br.com.ProjecJava.model.Empresa;
+import br.com.ProjecJava.model.Endereco;
+import br.com.ProjecJava.model.Estado;
+import br.com.ProjecJava.model.Funcao;
+import br.com.ProjecJava.model.Funcionario;
+import br.com.ProjecJava.model.Pais;
+import br.com.ProjecJava.model.Perfil;
 import br.com.ProjecJava.model.Usuario;
 /**
  * 
@@ -23,9 +32,9 @@ public class UsuarioService {
 	 * @return mostrará o Usuario
 	 * @throws SQLException 
 	 */
-	public static List<Usuario> listarUsuario() throws SQLException {
+	public static List<UsuarioDTO> listarUsuario() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			return new UsuarioDAO(conex).lista();
+	           return new UsuarioDAO(conex).lista();
 		}
 	}
 	/**
@@ -33,8 +42,42 @@ public class UsuarioService {
 	 * @param usuario
 	 * @throws SQLException
 	 */
-	public void inserir(Usuario usuario) throws SQLException{
+	public void inserir(UsuarioDTO usuarioDTO) throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			Pais pais = new Pais();
+			pais.setCodigo(usuarioDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(usuarioDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(usuarioDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(usuarioDTO.getCodigoEndereco());
+			endereco.setCidade(cidade);
+			
+			Empresa empresa = new Empresa();
+			empresa.setCodigo(usuarioDTO.getCodigoEmpresa());
+			empresa.setEndereco(endereco);
+			
+			Funcao funcao = new Funcao();
+			funcao.setCodigo(usuarioDTO.getCodigoFuncao());
+			
+			Funcionario funcionario = new Funcionario();
+			funcionario.setCodigo(usuarioDTO.getCodigoFuncionario());
+			
+			Perfil perfil = new Perfil();
+			perfil.setCodigo(usuarioDTO.getCodigoPerfil());
+	
+			
+			Usuario usuario = new Usuario();
+			usuario.setLogin(usuarioDTO.getLoginUsuario());
+			usuario.setFuncionario(funcionario);
+			usuario.setSenha(usuarioDTO.getSenhaUsuario());
+			usuario.setPerfil(perfil);
 			new UsuarioDAO(conex).inserir(usuario);
 		}
 	}
@@ -43,8 +86,45 @@ public class UsuarioService {
 	 * @param usuario
 	 * @throws SQLException
 	 */
-	public void alterar(Usuario usuario)throws SQLException{
+	public void alterar(UsuarioDTO usuarioDTO)throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			
+			Pais pais = new Pais();
+			pais.setCodigo(usuarioDTO.getCodigoPais());
+			
+			Estado estado = new Estado();
+			estado.setCodigo(usuarioDTO.getCodigoUF());
+			estado.setPais(pais);
+			
+			Cidade cidade = new Cidade();
+			cidade.setCodigo(usuarioDTO.getCodigoCidade());
+			cidade.setEstado(estado);
+			
+			Endereco endereco = new Endereco();
+			endereco.setCodigo(usuarioDTO.getCodigoEndereco());
+			endereco.setCidade(cidade);
+			
+			Empresa empresa = new Empresa();
+			empresa.setCodigo(usuarioDTO.getCodigoEmpresa());
+			empresa.setEndereco(endereco);
+			
+			Funcao funcao = new Funcao();
+			funcao.setCodigo(usuarioDTO.getCodigoFuncao());
+			
+			Funcionario funcionario = new Funcionario();
+			funcionario.setCodigo(usuarioDTO.getCodigoFuncionario());
+			
+			Perfil perfil = new Perfil();
+			perfil.setCodigo(usuarioDTO.getCodigoPerfil());
+			
+			
+			Usuario usuario = new Usuario();
+			usuario.setCodigo(usuarioDTO.getCodigoUsuario());
+			usuario.setLogin(usuarioDTO.getLoginUsuario());
+			usuario.setFuncionario(funcionario);
+			usuario.setSenha(usuarioDTO.getSenhaUsuario());
+			usuario.setPerfil(perfil);
+			
 			new UsuarioDAO(conex).alterar(usuario);
 		}
 	}

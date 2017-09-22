@@ -23,6 +23,10 @@ public class Perfil {
 	 * @param codigo id do Banco de Dados
 	 * @param nivel nivel de acesso ao sistema de acordo com o usuário
 	 */
+	public Perfil() {
+		
+	}
+	
 	public Perfil(Integer codigo, String nivel) {
 		super();
 		this.codigo = codigo;
