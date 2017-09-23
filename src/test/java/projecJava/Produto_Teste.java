@@ -4,9 +4,12 @@
 package projecJava;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-
+import br.com.ProjecJava.dto.ProdutoDTO;
+import br.com.ProjecJava.dto.SuprimentoDTO;
+import br.com.ProjecJava.model.Fornecedor_Suprimento;
 import br.com.ProjecJava.model.Produto;
 
 import br.com.ProjecJava.service.Produto_Service;
@@ -28,8 +31,13 @@ public class Produto_Teste {
 		/**
 		 *  inserindo o Produto 
 		 */
-		Produto produto = new Produto(1,"X-Salada",1.60,15.50);
-		produtoService.inserir(produto);
+		public List<SuprimentoDTO> listarSuprimento() throws SQLException {
+		List<SuprimentoDTO> lSuprimentos = new ArrayList<>();
+		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Hamburger",1,100,10,100.0,2);
+		lSuprimento.add(suprimento);
+		
+		ProdutoDTO produto = new ProdutoDTO(null,"X-Teste",1.50,0);
+		produtoService.inserir(produto, suprimento);
 		
 		/**
 		 * alterando o Produto 

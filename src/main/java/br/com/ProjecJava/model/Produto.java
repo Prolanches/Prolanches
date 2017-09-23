@@ -34,7 +34,8 @@ public class Produto {
 	 *            preco gerado automaticamento pelo agrupamento da soma de
 	 *            custo*margem de lucro
 	 */
-
+	public Produto() {
+	}
 	public Produto(Integer codigo, String nome, double margemLucro, double preco) {
 		super();
 		this.codigo = codigo;

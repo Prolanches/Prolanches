@@ -8,31 +8,35 @@ public class SuprimentoDTO {
 	private String nomeTipo_Unidade;
 	private double unidadeTipo_Unidade;
 	private int quantidade;
+	private int quantidadeutilizada;
 	private double custo;
 	private Integer codigoMarca;
 	private String nomeMarca;
 
 	public SuprimentoDTO() {
 	}
-	public SuprimentoDTO(Integer codigo, String nome, Integer codigoTipo_Unidade,int quantidade, double custo, Integer codigoMarca) {
-	this.codigo=codigo;
-	this.nome=nome;
-	this.codigoTipo_Unidade=codigoTipo_Unidade;
-	this.quantidade=quantidade;
-	this.custo=custo;
-	this.codigoMarca=codigoMarca;
+
+	public SuprimentoDTO(Integer codigo, String nome, Integer codigoTipo_Unidade, int quantidade,int quantidadeutilizada, double custo,
+			Integer codigoMarca) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.codigoTipo_Unidade = codigoTipo_Unidade;
+		this.quantidade = quantidade;
+		this.quantidadeutilizada=quantidadeutilizada;
+		this.custo = custo;
+		this.codigoMarca = codigoMarca;
 	}
-	
 
 	public SuprimentoDTO(Integer codigo, String nome, Integer codigoTipo_Unidade, String nomeTipo_Unidade,
-			double unidadeTipo_Unidade, int quantidade, double custo, Integer codigoMarca, String nomeMarca) {
-		super();
+			double unidadeTipo_Unidade, int quantidade, int quantidadeutilizada, double custo, Integer codigoMarca,
+			String nomeMarca) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.codigoTipo_Unidade = codigoTipo_Unidade;
 		this.nomeTipo_Unidade = nomeTipo_Unidade;
 		this.unidadeTipo_Unidade = unidadeTipo_Unidade;
 		this.quantidade = quantidade;
+		this.quantidadeutilizada = quantidadeutilizada;
 		this.custo = custo;
 		this.codigoMarca = codigoMarca;
 		this.nomeMarca = nomeMarca;
@@ -86,6 +90,14 @@ public class SuprimentoDTO {
 		this.quantidade = quantidade;
 	}
 
+	public int getQuantidadeutilizada() {
+		return quantidadeutilizada;
+	}
+
+	public void setQuantidadeutilizada(int quantidadeutilizada) {
+		this.quantidadeutilizada = quantidadeutilizada;
+	}
+
 	public double getCusto() {
 		return custo;
 	}
@@ -110,6 +122,4 @@ public class SuprimentoDTO {
 		this.nomeMarca = nomeMarca;
 	}
 
-
 }
-
