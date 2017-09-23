@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.ProjecJava.DAO.PedidoDAO;
 import br.com.ProjecJava.DAO.Produto_PedidoDAO;
+import br.com.ProjecJava.dto.PedidoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Pedido;
 
@@ -24,7 +25,7 @@ public class PedidoService {
 	 * @return mostrará o Pedido
 	 * @throws SQLException 
 	 */
-	public static List<Pedido> listarPedido() throws SQLException {
+	public List<PedidoDTO> listarPedido() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new PedidoDAO(conex).lista();
 		}

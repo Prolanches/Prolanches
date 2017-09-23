@@ -18,10 +18,8 @@ import javax.ws.rs.core.Response;
 import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.service.Produto_Service;
 
-
 @Path("produto")
 public class Produto_Controller {
-	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -42,7 +40,7 @@ public class Produto_Controller {
 	public Response create(ProdutoDTO produto) {
 		Produto_Service produtoService = new Produto_Service();
 		try {
-			produtoService.inserir(produto.toProduto());
+			produtoService.inserir(produto, null);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -75,5 +73,5 @@ public class Produto_Controller {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-}
+	}
 }

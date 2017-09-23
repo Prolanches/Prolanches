@@ -24,7 +24,7 @@ public class Suprimento_Controller {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<SuprimentoDTO> listProduto() {
+	public List<SuprimentoDTO> listSuprimento() {
 		SuprimentoService suprimentoService = new SuprimentoService();
 		try {
 			return suprimentoService.listarSuprimentos();

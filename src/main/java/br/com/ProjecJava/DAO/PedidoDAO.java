@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import br.com.ProjecJava.dto.PedidoDTO;
 import br.com.ProjecJava.model.Pedido;
 import br.com.ProjecJava.model.Tipo_Operacao;
 
@@ -67,8 +68,8 @@ public class PedidoDAO {
 		return statement.executeUpdate() > 0;
 	}
 
-	public List<Pedido> lista() throws SQLException {
-		List<Pedido> lPedido = new ArrayList<>();
+	public List<PedidoDTO> lista() throws SQLException {
+		List<PedidoDTO> lPedido = new ArrayList<>();
 
 		String sql = "SELECT * FROM PEDIDO "
 				+ " INNER JOIN TIPO_OPERACAO ON PEDIDO.PED_TIPO_OP_COD = TIPO_OPERACAO.TIPO_OP_COD ";;
