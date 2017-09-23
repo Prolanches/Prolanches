@@ -94,7 +94,7 @@ public class SuprimentoService {
 	 * @return - retorna todos os suprimentos cadastrados no banco
 	 * @throws SQLException
 	 */
-	public static List<SuprimentoDTO> listarSuprimentos() throws SQLException {
+	public List<SuprimentoDTO> listarSuprimentos() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new SuprimentoDAO(conex).listarSuprimentos();
 		}
