@@ -1,0 +1,58 @@
+Ligacao de Fornecedor com Fornecedor Suprimento
+
+Ligacao de Suprimento com Produto Suprimento
+
+Ligacao de Produto com Produto Pedido
+
+
+
+quantidadeUtilizada na classe Suprimento Model e demais 
+
+
+
+Metodo alterar na SuprimentoService
+
+Suprimento Teste
+
+
+Metodo alterar na ProdutoService
+
+Produto Teste
+
+
+Metodo alterar na PedidoService
+
+PedidoService Nome Cliente
+
+PedidoService Inserir Data
+
+
+Decimal Format Tipo de Unidade Teste
+
+
+Contas ReceberService Inserir Data 
+
+
+
+Relacao de contas a pagar com Fornecedor Suprimento
+
+Relacao de calculo sobre baixa e soma de estoque.
+
+Relacao Suprimento com Tipo de Unidade 
+
+Relacao de soma de custo e formulacao de preço
+
+Relacao de soma de valor do pedido
+
+Relacao de filtros por data em Contas a Pagar e Receber
+
+Relacao historico do pedido com pedidos
+
+Relacao de login de usuario com niveis de acesso 
+
+ 
+
+
+
+
+

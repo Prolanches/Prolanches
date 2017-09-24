@@ -73,7 +73,7 @@ public class PedidoService {
 				produto_pedidoDAO.inserir(produto_pedido);
 				pedidoTotal += produtoDTO.getMargemLucro()*produtoDTO.getPreco();
 			}
-			
+		
 			
 			//realizar o calculo do valor do produto
 			double valorPedido = pedidoTotal + pedido.getValor();
@@ -83,6 +83,7 @@ public class PedidoService {
 			pedidoDAO.alterar(pedido);
 		}
 	}
+
 	/**
 	 * Metodo alterar
 	 * @param pedido

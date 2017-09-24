@@ -5,6 +5,9 @@ package br.com.ProjecJava.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 
@@ -32,6 +35,10 @@ public class Contas_ReceberService {
 	 */
 	public void inserir(Contas_ReceberDTO contas_receberDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+			GregorianCalendar gc=new GregorianCalendar();
+			Date d1=gc.getTime();
+			gc.setTime(d1);
 			
 			Tipo_Operacao tipo_operacao = new Tipo_Operacao();
 			tipo_operacao.setCodigo(contas_receberDTO.getCodigoTipoOP());
@@ -41,7 +48,7 @@ public class Contas_ReceberService {
 			pedido.setTipoOperacao(tipo_operacao);
 			
 			Contas_Receber contas_receber = new Contas_Receber();
-			contas_receber.setData(contas_receberDTO.getDataContasReceber());
+			gc.setTime((sdf.format(contas_receberDTO.getDataContasReceber())));
 			contas_receber.setPedido(pedido);
 			contas_receber.setValor(contas_receberDTO.getValorContasReceber());
 			

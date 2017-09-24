@@ -99,6 +99,7 @@ public class FornecedorService {
 			
 			Endereco endereco = new Endereco();
 			endereco.setCodigo(fornecedorDTO.getCodigoEndereco());
+			endereco.setRua(fornecedorDTO.getRua());
 			endereco.setCidade(cidade);
 			
 			Fornecedor fornecedor = new Fornecedor();

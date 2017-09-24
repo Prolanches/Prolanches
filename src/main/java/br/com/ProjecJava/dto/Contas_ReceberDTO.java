@@ -3,6 +3,8 @@ package br.com.ProjecJava.dto;
 import br.com.ProjecJava.model.Contas_Receber;
 import br.com.ProjecJava.utils.DateUtils;
 
+import java.util.Date;
+
 public class Contas_ReceberDTO {
 
 	private Integer codigoContasReceber;
