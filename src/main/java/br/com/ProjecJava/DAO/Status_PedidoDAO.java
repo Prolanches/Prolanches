@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Status_PedidoDTO;
 import br.com.ProjecJava.model.Status_Pedido;
 /**
  * Classe responsável pelo Status do Pedido
@@ -33,8 +34,8 @@ public class Status_PedidoDAO {
 	 * @return - retorna uma lista de todos os Status do Pedido
 	 * @throws SQLException
 	 */
-	public List<Status_Pedido> listarStatus_Pedido() throws SQLException {
-		List<Status_Pedido> lStatus_Pedido = new ArrayList<>();
+	public List<Status_PedidoDTO> listarStatus_Pedido() throws SQLException {
+		List<Status_PedidoDTO> lStatus_Pedido = new ArrayList<>();
 
 		String sql = "SELECT * FROM STATUS_PEDIDO";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {

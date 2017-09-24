@@ -32,7 +32,7 @@ public class UsuarioService {
 	 * @return mostrará o Usuario
 	 * @throws SQLException 
 	 */
-	public static List<UsuarioDTO> listarUsuario() throws SQLException {
+	public List<UsuarioDTO> listarUsuario() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 	           return new UsuarioDAO(conex).lista();
 		}

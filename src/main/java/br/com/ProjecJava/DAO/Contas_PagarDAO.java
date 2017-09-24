@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Contas_PagarDTO;
 import br.com.ProjecJava.model.Contas_Pagar;
 import br.com.ProjecJava.model.Fornecedor;
 import br.com.ProjecJava.model.Fornecedor_Suprimento;
@@ -61,8 +62,8 @@ public class Contas_PagarDAO {
 	 * @return
 	 * @throws SQLException
 	 */
-	public List<Contas_Pagar> listarContasPagar() throws SQLException {
-		List<Contas_Pagar> lConPagar = new ArrayList<>();
+	public List<Contas_PagarDTO> listarContasPagar() throws SQLException {
+		List<Contas_PagarDTO> lConPagar = new ArrayList<>();
 
 		String sql = " SELECT * FROM CONTAS_PAGAR "
 				+ " INNER JOIN FORNECEDOR_SUPRIMENTOS ON CONTAS_PAGAR.CONT_PAG_FOR_SUPRI_COD = FORNECEDOR_SUPRIMENTOS.FOR_SUP_COD "
@@ -103,7 +104,7 @@ public class Contas_PagarDAO {
 					double contPag = rs.getDouble("CONT_PAG_CUSTO");
 					Date data = rs.getDate("CONT_PAG_DATA");
 					Contas_Pagar contasPag = new Contas_Pagar(0, contPag, forneSupri, data);
-					lConPagar.add(contasPag);
+					lConPagar.add(contasPag.toDTO());
 				}
 			}
 		}

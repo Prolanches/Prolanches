@@ -132,7 +132,7 @@ public class FornecedorService {
 	 * @return - retorna todos os fornecedores cadastrados
 	 * @throws SQLException
 	 */
-	public static List<FornecedorDTO> listarFornecedores() throws SQLException {
+	public List<FornecedorDTO> listarFornecedores() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new FornecedorDAO(conex).listarFornecedores();
 		}

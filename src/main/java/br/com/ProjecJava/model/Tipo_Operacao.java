@@ -1,20 +1,27 @@
 package br.com.ProjecJava.model;
 
+
+import br.com.ProjecJava.dto.Tipo_OperacaoDTO;
+
 public class Tipo_Operacao {
 
-	private int codigo;
+	private Integer codigo;
 	private String nomeOPeracao;
 	
-	public Tipo_Operacao(int codigo, String nomeOPeracao) {
+	public Tipo_Operacao() {
+		
+	}
+	
+	public Tipo_Operacao(Integer codigo, String nomeOPeracao) {
 		this.codigo = codigo;
 		this.nomeOPeracao = nomeOPeracao;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -26,6 +33,9 @@ public class Tipo_Operacao {
 		this.nomeOPeracao = nomeOPeracao;
 	}
 	
-	
+	public Tipo_OperacaoDTO toDTO() {
+		return new Tipo_OperacaoDTO(this.getCodigo(),this.getNomeOPeracao());
+		
+	}
 	
 }

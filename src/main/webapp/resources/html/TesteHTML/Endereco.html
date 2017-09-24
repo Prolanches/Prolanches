@@ -41,14 +41,14 @@
                         <th>Preço</th>
                        
                     </tr>
-                    <tr data-ng-repeat="produto in controller.produtos">
-                        <td>{{produto.codigo}}</td>
-                        <td>{{produto.nome}}</td>
-                        <td>{{produto.margemLucro}}</td>
-                        <td>{{produto.preco}}</td>
+                    <tr data-ng-repeat="endereco in controller.enderecos">
+                        <td>{{endereco.codigo}}</td>
+                        <td>{{endereco.nome}}</td>
+                        <td>{{endereco.margemLucro}}</td>
+                        <td>{{endereco.preco}}</td>
                         <td>
-                            <button type="button" data-ng-click="controller.alterar(produto)">Alterar</button>
-                            <button type="button" data-ng-click="controller.deletar(produto)">Excluir</button>
+                            <button type="button" data-ng-click="controller.alterar(endereco)">Alterar</button>
+                            <button type="button" data-ng-click="controller.deletar(endereco)">Excluir</button>
                         </td>
                     </tr>
                 </table>

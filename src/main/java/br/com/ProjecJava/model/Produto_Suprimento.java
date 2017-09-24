@@ -14,7 +14,7 @@ public class Produto_Suprimento {
 	/**
 	 * Este são os atributos do Produto_Suprimento
 	 */
-	private int codigo;
+	private Integer codigo;
 	private Suprimento suprimento;
 	private Produto produto;
 	private double quantidade;
@@ -36,7 +36,10 @@ public class Produto_Suprimento {
 	 *            custo agrupado a soma automaticamente pelo rateio de suprimentos
 	 */
 
-	public Produto_Suprimento(int codigo, Suprimento suprimento, Produto produto, double quantidade, double custo) {
+	public Produto_Suprimento() {
+		
+	}
+	public Produto_Suprimento(Integer codigo, Suprimento suprimento, Produto produto, double quantidade, double custo) {
 		super();
 		this.codigo = codigo;
 		this.suprimento = suprimento;
@@ -45,11 +48,11 @@ public class Produto_Suprimento {
 		this.custo = custo;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

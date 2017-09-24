@@ -2,29 +2,32 @@ package br.com.ProjecJava.dto;
 
 public class Tipo_OperacaoDTO {
 
-	private int codigo;
-	private String nomeOPeracao;
+	private Integer codigoTipoOP;
+	private String nomeTipoOP;
 	
 	public Tipo_OperacaoDTO() {
 	}
-	public Tipo_OperacaoDTO(int codigo, String nomeOPeracao) {
-		this.codigo = codigo;
-		this.nomeOPeracao = nomeOPeracao;
+
+	public Tipo_OperacaoDTO(Integer codigoTipoOP, String nomeTipoOP) {
+		super();
+		this.codigoTipoOP = codigoTipoOP;
+		this.nomeTipoOP = nomeTipoOP;
 	}
 
-	public int getCodigo() {
-		return codigo;
+	public Integer getCodigoTipoOP() {
+		return codigoTipoOP;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoTipoOP(Integer codigoTipoOP) {
+		this.codigoTipoOP = codigoTipoOP;
 	}
 
-	public String getNomeOPeracao() {
-		return nomeOPeracao;
+	public String getNomeTipoOP() {
+		return nomeTipoOP;
 	}
 
-	public void setNomeOPeracao(String nomeOPeracao) {
-		this.nomeOPeracao = nomeOPeracao;
+	public void setNomeTipoOP(String nomeTipoOP) {
+		this.nomeTipoOP = nomeTipoOP;
 	}
+
 }

@@ -22,7 +22,7 @@ public class Tipo_UnidadeService {
  * @return - retorna os tipos de unidades
  * @throws SQLException
  */
-	public static List<Tipo_UnidadeDTO> listarTiposUnidades() throws SQLException {
+	public List<Tipo_UnidadeDTO> listarTiposUnidades() throws SQLException {
 		try(Connection conex = new ConnectionPoolOracle().getConnection()){
 			return new Tipo_UnidadeDAO(conex).listarTiposUnidades();
 		}

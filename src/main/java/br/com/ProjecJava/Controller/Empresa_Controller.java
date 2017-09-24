@@ -15,19 +15,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.ProdutoDTO;
-import br.com.ProjecJava.service.Produto_Service;
+import br.com.ProjecJava.dto.EmpresaDTO;
+import br.com.ProjecJava.service.EmpresaService;
 
-@Path("produto")
-public class Produto_Controller {
+@Path("empresa")
+public class Empresa_Controller {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<ProdutoDTO> listProduto() {
-		Produto_Service produtoService = new Produto_Service();
+	public List<EmpresaDTO> listProduto() {
+		EmpresaService empresaService = new EmpresaService();
 		try {
-			return produtoService.listarProduto();
+			return empresaService.listarEmpresas();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -37,10 +37,10 @@ public class Produto_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(ProdutoDTO produto) {
-		Produto_Service produtoService = new Produto_Service();
+	public Response create(EmpresaDTO empresa) {
+		EmpresaService empresaService = new EmpresaService();
 		try {
-			produtoService.inserir(produto, null);
+			empresaService.inserir(empresa);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,10 +51,10 @@ public class Produto_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(ProdutoDTO produto) {
-		Produto_Service produtoService = new Produto_Service();
+	public Response update(EmpresaDTO empresa) {
+		EmpresaService empresaService = new EmpresaService();
 		try {
-			produtoService.alterar(produto.toProduto());
+			empresaService.alterar(empresa);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,13 +65,14 @@ public class Produto_Controller {
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		Produto_Service produtoService = new Produto_Service();
+		EmpresaService empresaService = new EmpresaService();
 		try {
-			produtoService.excluir(codigo);
+		    empresaService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-	}
+}
+
 }

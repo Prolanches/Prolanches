@@ -15,19 +15,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.ProdutoDTO;
-import br.com.ProjecJava.service.Produto_Service;
+import br.com.ProjecJava.dto.FornecedorDTO;
+import br.com.ProjecJava.service.FornecedorService;
 
-@Path("produto")
-public class Produto_Controller {
-
+@Path("fornecedor")
+public class Fornecedor_Controller {
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<ProdutoDTO> listProduto() {
-		Produto_Service produtoService = new Produto_Service();
+	public List<FornecedorDTO> listProduto() {
+		FornecedorService fornecedorService = new FornecedorService();
 		try {
-			return produtoService.listarProduto();
+			return fornecedorService.listarFornecedores();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -37,10 +37,10 @@ public class Produto_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(ProdutoDTO produto) {
-		Produto_Service produtoService = new Produto_Service();
+	public Response create(FornecedorDTO fornecedor) {
+		FornecedorService fornecedorService = new FornecedorService();
 		try {
-			produtoService.inserir(produto, null);
+			fornecedorService.inserir(fornecedor);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,10 +51,10 @@ public class Produto_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(ProdutoDTO produto) {
-		Produto_Service produtoService = new Produto_Service();
+	public Response update(FornecedorDTO fornecedor) {
+		FornecedorService fornecedorService = new FornecedorService();
 		try {
-			produtoService.alterar(produto.toProduto());
+			fornecedorService.alterar(fornecedor);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,13 +65,14 @@ public class Produto_Controller {
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		Produto_Service produtoService = new Produto_Service();
+		FornecedorService fornecedorService = new FornecedorService();
 		try {
-			produtoService.excluir(codigo);
+		    fornecedorService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-	}
+}
+
 }

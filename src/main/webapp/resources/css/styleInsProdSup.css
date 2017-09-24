@@ -1,0 +1,27 @@
+.cadSupr{
+	margin-top: 100px; 
+	font-variant: small-caps;
+	background-color: rgb(44,62,80);
+	text-align: center; 
+	color: #fff;  
+}
+
+.labelSup{
+
+}
+
+.inputSup{
+	width: 200px; 
+	height: 30px;
+	font-variant: small-caps;
+}
+
+.titleSec{
+	color: rgb(44,62,80); 
+	font-weight: 600; 
+	font-size: 30px; 
+}
+
+.optionForn{
+	color: rgb(44,62,80);
+}
