@@ -35,6 +35,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="estoque.html">Pàgina de Estoque</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link js-scroll-trigger" href="produtos.html">Página de Produtos</a>
                     </li>
                   </ul>
@@ -50,7 +53,7 @@
             
             <div class="span6 cadSupr">
               <label class="titleSec" for="" style="">Inserir Suprimento</label>
-                <div class="div"></div>
+                <div id="div1" class="div"></div>
                 <br><br>
               <label class="labelSup" for="">Nome:   </label>
               <input class="inputSup" type="text"  name="nomeSuprimento"><br>
@@ -60,7 +63,7 @@
               <input class="inputSup" type="text"  name="custo"><br>
               <label class="labelSup" for="">?????:   </label>
               <input class="inputSup" type="text"  name=""><br>
-              <label class="labelSup" for="">Custo:   </label>
+              <label class="labelSup" for="">Marca:   </label>
               <input class="inputSup" type="text"  name="custo"><br>
               
               <label class="labelSup" for="">Fornecedor:   </label>
@@ -78,7 +81,7 @@
             </div> 
             <div class="span6 cadForn">
                 <label class="titleSec" for="">Inserir Fornecedor</label>
-                <div class="div"></div>
+                <div id="div2" class="div"></div>
                 <br><br>
                 <label class="labelSup" for="">Nome Social:   </label>
                   <input type="text"  name="nomeEmpresa" style=""><br>
@@ -120,9 +123,9 @@
             </div>            
         </div>
 
-        <div  class="row-fluid secaoProd" style="background-color: aqua;">
+        <div  class="row-fluid secaoProd">
             
-            <div class="span6 cadProd">
+            <div class="span12 cadProd">
               <label class="titleSec" for="" style="">Inserir Produto</label>
                 <div class="div"></div>
                 <br><br>
@@ -134,20 +137,19 @@
                 
 
             </div> 
-            <div class="span6 selSup">
+            <div class="span12 selSup">
                 <label class="titleSec" for="" style="">Selecione <br>os Suprimentos</label>
                 <div class="div"></div>
                 <br><br>
                 <table class="table">
                     <tr class="l1">
-                        <th></th>
+                        <th style="color: #18bc9c;"  class="check">......++... </th>
                         <th>Nome</th>
                        
                     </tr>
                     <tr class="ls">
-                        <td class="check"> <form action=""><input type="checkbox" name="vehicle" value= ""><br></form></td>
+                        <td class="check"> <form action=""><input type="checkbox" name="vehicle" value= ""></form></td>
                         <td class="nomeSup"></td>
-                        <td>
                     </tr>
                 </table>
                 <br>
