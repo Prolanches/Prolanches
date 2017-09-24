@@ -15,8 +15,8 @@ public class Suprimento_Teste {
 		SuprimentoService suprimentoService = new SuprimentoService();
 
 		// inserindo Suprimento FUNCIONANDO
-		//SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100, 1.35, 2);
-		//suprimentoService.inserir(suprimento);
+		SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100, 1.35, 2);
+		suprimentoService.inserir(suprimento);
 
 		// alterando Suprimento FUNCIONANDO
 		// Suprimento suprimento1 = new Suprimento(2, "Frango", tipoUnidade, 50, 1.05,
@@ -32,7 +32,7 @@ public class Suprimento_Teste {
 			imprimeSuprimento(suprimento2);
 		}
 	}
-   public static DecimalFormat df = new DecimalFormat("##0.00"); 
+   public static DecimalFormat df = new DecimalFormat("#0.00"); 
     	
 	private static void imprimeSuprimento(SuprimentoDTO supri) {
 		System.out.println("Código: " + supri.getCodigo() + "\nNome Suprimento: " + supri.getNome() + "\nTipo_Unidade: "

@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Tipo_OperacaoDTO;
 import br.com.ProjecJava.model.Tipo_Operacao;
 
 /**
@@ -34,8 +35,8 @@ public class Tipo_OperacaoDAO {
 	 * @return - retorna uma lista de tipos de operação
 	 * @throws SQLException
 	 */
-	public List<Tipo_Operacao> listarTipo_Operacao() throws SQLException {
-		List<Tipo_Operacao> lTipo_Operacao = new ArrayList<>();
+	public List<Tipo_OperacaoDTO> listarTipo_Operacao() throws SQLException {
+		List<Tipo_OperacaoDTO> lTipo_Operacao = new ArrayList<>();
 
 		String sql = "SELECT * FROM TIPO_OPERACAO";
 		try (PreparedStatement stmt = conex.prepareStatement(sql)) {
@@ -45,7 +46,7 @@ public class Tipo_OperacaoDAO {
 					int codigo = rs.getInt("TIPO_OP_COD");
 					String nome = rs.getString("TIPO_OP_NOME");
 					Tipo_Operacao tipooperacao = new Tipo_Operacao(codigo, nome);
-					lTipo_Operacao.add(tipooperacao);
+					lTipo_Operacao.add(tipooperacao.toDTO());
 				}
 			}
 		}
