@@ -5,57 +5,75 @@ import br.com.ProjecJava.utils.DateUtils;
 
 public class PedidoDTO {
 
-	private int codigo;
+	private Integer codigoPedido;
 	private String dataPedido;
-	private String tipoOperacao;
-	private double valor;
+	private Integer codigoTipoOP;
+	private String nomeTipoOP;
+	private double valorPedido;
 	
 	public PedidoDTO() {
 	}
 
-
-
-	public PedidoDTO(int codigo, String dataPedido, String tipoOperacao, double valor) {
-
-		this.codigo = codigo;
+		public PedidoDTO(Integer codigoPedido, String dataPedido, Integer codigoTipoOP, double valorPedido) {
+		super();
+		this.codigoPedido = codigoPedido;
 		this.dataPedido = dataPedido;
-		this.tipoOperacao = tipoOperacao;
-		this.valor = valor;
+		this.codigoTipoOP = codigoTipoOP;
+		this.valorPedido = valorPedido;
 	}
 
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getDataPedido() {
-		return dataPedido;
-	}
-
-	public void setDataPedido(String dataPedido) {
+		public PedidoDTO(Integer codigoPedido, String dataPedido, Integer codigoTipoOP, String nomeTipoOP,
+			double valorPedido) {
+		this.codigoPedido = codigoPedido;
 		this.dataPedido = dataPedido;
+		this.codigoTipoOP = codigoTipoOP;
+		this.nomeTipoOP = nomeTipoOP;
+		this.valorPedido = valorPedido;
 	}
+		
 
-	public String getTipoOperacao() {
-		return tipoOperacao;
-	}
+		public Integer getCodigoPedido() {
+			return codigoPedido;
+		}
 
-	public void setTipoOperacao(String tipoOperacao) {
-		this.tipoOperacao = tipoOperacao;
-	}
+		public void setCodigoPedido(Integer codigoPedido) {
+			this.codigoPedido = codigoPedido;
+		}
 
-	public double getValor() {
-		return valor;
-	}
+		public String getDataPedido() {
+			return dataPedido;
+		}
 
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
+		public void setDataPedido(String dataPedido) {
+			this.dataPedido = dataPedido;
+		}
+
+		public Integer getCodigoTipoOP() {
+			return codigoTipoOP;
+		}
+
+		public void setCodigoTipoOP(Integer codigoTipoOP) {
+			this.codigoTipoOP = codigoTipoOP;
+		}
+
+		public String getNomeTipoOP() {
+			return nomeTipoOP;
+		}
+
+		public void setNomeTipoOP(String nomeTipoOP) {
+			this.nomeTipoOP = nomeTipoOP;
+		}
+
+		public double getValorPedido() {
+			return valorPedido;
+		}
+
+		public void setValorPedido(double valorPedido) {
+			this.valorPedido = valorPedido;
+		}
+
 		public Pedido toPedido() {
-			return new Pedido(this.codigo,DateUtils.parseData(this.dataPedido, DateUtils.PATTERN_DATA_PADRAO),null,this.valor );
+			return new Pedido(this.codigoPedido,DateUtils.parseData(this.dataPedido, DateUtils.PATTERN_DATA_PADRAO),null,this.valorPedido );
 			
 		}
 	}

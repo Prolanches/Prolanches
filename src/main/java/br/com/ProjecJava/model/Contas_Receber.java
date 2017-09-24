@@ -5,7 +5,6 @@ package br.com.ProjecJava.model;
 
 import java.util.Date;
 
-
 import br.com.ProjecJava.dto.Contas_ReceberDTO;
 import br.com.ProjecJava.utils.DateUtils;
 
@@ -20,7 +19,7 @@ public class Contas_Receber {
 	/**
 	 * Este são os atributos de Contas à Receber
 	 */
-	private int codigo;
+	private Integer codigo;
 	private Pedido pedido;
 	private Date data;
 	private double valor;
@@ -37,7 +36,12 @@ public class Contas_Receber {
 	 * @param valor
 	 *            agrupamento de valores dos relatórios
 	 */
-	public Contas_Receber(int codigo, Pedido pedido, Date data, double valor) {
+
+	public Contas_Receber() {
+
+	}
+
+	public Contas_Receber(Integer codigo, Pedido pedido, Date data, double valor) {
 		super();
 		this.codigo = codigo;
 		this.pedido = pedido;
@@ -45,11 +49,11 @@ public class Contas_Receber {
 		this.valor = valor;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -76,8 +80,11 @@ public class Contas_Receber {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
+
 	public Contas_ReceberDTO toDTO() {
-		return new Contas_ReceberDTO(this.getCodigo(), this.getPedido().getCodigo(),
-				DateUtils.formatData(this.getData(), DateUtils.PATTERN_DATA_PADRAO), this.getValor());
+		return new Contas_ReceberDTO(this.getCodigo(), this.getPedido().getCodigo(), DateUtils.formatData(this.getPedido().getDataPedido(), DateUtils.PATTERN_DATA_PADRAO),
+				this.getPedido().getTipoOperacao().getCodigo(), this.getPedido().getTipoOperacao().getNomeOPeracao(),
+				this.getPedido().getValor(), DateUtils.formatData(this.getData(), DateUtils.PATTERN_DATA_PADRAO),
+				this.getValor());
 	}
 }

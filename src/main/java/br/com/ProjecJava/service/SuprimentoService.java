@@ -7,10 +7,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import br.com.ProjecJava.DAO.Fornecedor_SuprimentoDAO;
+import br.com.ProjecJava.DAO.ProdutoDAO;
+import br.com.ProjecJava.DAO.Produto_SuprimentoDAO;
 import br.com.ProjecJava.DAO.SuprimentoDAO;
+import br.com.ProjecJava.dto.FornecedorDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Fornecedor;
+import br.com.ProjecJava.model.Fornecedor_Suprimento;
 import br.com.ProjecJava.model.Marca;
+import br.com.ProjecJava.model.Produto_Suprimento;
 import br.com.ProjecJava.model.Suprimento;
 import br.com.ProjecJava.model.Tipo_Unidade;
 
@@ -29,8 +36,10 @@ public class SuprimentoService {
 	 *            - construtor utilizado para inserir os novos dados
 	 * @throws SQLException
 	 */
-	public void inserir(SuprimentoDTO suprimentoDTO) throws SQLException {
+	public void inserir(SuprimentoDTO suprimentoDTO,  List<FornecedorDTO> lFornecedores) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			SuprimentoDAO suprimentoDAO = new SuprimentoDAO(conex);
+			Fornecedor_SuprimentoDAO fornecedor_SuprimentoDAO = new Fornecedor_SuprimentoDAO(conex);
 			
 			Tipo_Unidade tipounidade = new Tipo_Unidade();
 			tipounidade.setCodigo(suprimentoDTO.getCodigoTipo_Unidade());
@@ -45,8 +54,25 @@ public class SuprimentoService {
 			suprimento.setCusto(suprimentoDTO.getCusto());
 			suprimento.setMarca(marca);
 			
-			new SuprimentoDAO(conex).inserir(suprimento);
+			suprimentoDAO.inserir(suprimento);
+			
+			
+			for (FornecedorDTO fornecedorDTO : lFornecedores) {
+				Fornecedor_Suprimento fornecedor_Suprimento = new Fornecedor_Suprimento();
+				Fornecedor fornecedor = new Fornecedor();
+				fornecedor.setCodigo(fornecedorDTO.getCodigo());
+				fornecedor.setNome(fornecedorDTO.getNome());
+				fornecedor.setCnpj(fornecedorDTO.getCnpj());
+				fornecedor.setTelefone(fornecedorDTO.getTelefone());
+				fornecedor.setEmail(fornecedorDTO.getEmail());
+				
+				
+				fornecedor_Suprimento.setFornecedor(fornecedor);
+				fornecedor_Suprimento.setSuprimento(suprimento);
+				fornecedor_SuprimentoDAO.inserir(fornecedor_Suprimento);
+			}
 		}
+		
 	}
 
 	/**

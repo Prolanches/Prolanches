@@ -8,9 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-import br.com.ProjecJava.model.Contas_Receber;
-import br.com.ProjecJava.model.Pedido;
-import br.com.ProjecJava.model.Tipo_Operacao;
+import br.com.ProjecJava.dto.Contas_ReceberDTO;
 import br.com.ProjecJava.service.Contas_ReceberService;
 
 /**
@@ -29,28 +27,25 @@ public class Contas_Receber_Teste {
 
 		Contas_ReceberService contas_receberService = new Contas_ReceberService();
 
-		Tipo_Operacao tipooperacao = new Tipo_Operacao(1, "Mesa");
-		Pedido pedido = new Pedido(1, sdf.parse("11/09/2017"), tipooperacao, 150.00);
-
 		/**
 		 * inserir Contas_Receber
 		 */
-		Contas_Receber contas_receber = new Contas_Receber(1, pedido, sdf.parse("12/09/2017"), 150.00);
+		Contas_ReceberDTO contas_receber = new Contas_ReceberDTO(null,1,1,"12/09/2017",150.00);
 		contas_receberService.inserir(contas_receber);
 		/**
 		 * Listagem do Contas_Receber
 		 */
-		List<Contas_Receber> lContas_Receber = Contas_ReceberService.listarContas_Receber();
-		for (Contas_Receber cont_rec : lContas_Receber) {
+		List<Contas_ReceberDTO> lContas_Receber = contas_receberService.listarContas_Receber();
+		for (Contas_ReceberDTO cont_rec : lContas_Receber) {
 			imprimeContas_Receber(cont_rec);
 		}
 	}
 
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-	private static void imprimeContas_Receber(Contas_Receber cont_rec) {
-		System.out.println("Código: " + cont_rec.getCodigo() + "\nCódigo do Pedido: " + cont_rec.getPedido().getCodigo()
-				+ "\nValor do Pedido: " + cont_rec.getPedido().getValor() + "\nPeriodo: " + cont_rec.getData()
-				+ "\nValores: " + cont_rec.getValor());
+	private static void imprimeContas_Receber(Contas_ReceberDTO cont_rec) {
+		System.out.println("Código: " + cont_rec.getCodigoContasReceber() + "\nCódigo do Pedido: " + cont_rec.getCodigoPedido()
+				+ "\nValor do Pedido: " + cont_rec.getValorPedido() + "\nPeriodo: " + cont_rec.getDataContasReceber()
+				+ "\nValores: " + cont_rec.getValorContasReceber());
 	}
 }

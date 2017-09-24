@@ -8,10 +8,19 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.PedidoDAO;
+import br.com.ProjecJava.DAO.ProdutoDAO;
 import br.com.ProjecJava.DAO.Produto_PedidoDAO;
+import br.com.ProjecJava.DAO.Produto_SuprimentoDAO;
 import br.com.ProjecJava.dto.PedidoDTO;
+import br.com.ProjecJava.dto.ProdutoDTO;
+import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Pedido;
+import br.com.ProjecJava.model.Produto;
+import br.com.ProjecJava.model.Produto_Pedido;
+import br.com.ProjecJava.model.Produto_Suprimento;
+import br.com.ProjecJava.model.Suprimento;
+import br.com.ProjecJava.model.Tipo_Operacao;
 
 /**
  * 
@@ -35,9 +44,43 @@ public class PedidoService {
 	 * @param pedido
 	 * @throws SQLException
 	 */
-	public void inserir(Pedido pedido) throws SQLException{
+	public void inserir(PedidoDTO pedidoDTO, List<ProdutoDTO> lProdutos) throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
-			new PedidoDAO(conex).inserir(pedido);
+			PedidoDAO pedidoDAO = new PedidoDAO(conex);
+			Produto_PedidoDAO produto_pedidoDAO = new Produto_PedidoDAO(conex);
+			
+			Tipo_Operacao tipo_op = new Tipo_Operacao();
+			tipo_op.setCodigo(pedidoDTO.getCodigoTipoOP());
+			
+			Pedido pedido = new Pedido();
+			pedido.setDataPedido(pedidoDTO.getDataPedido());
+			pedido.setTipoOperacao(tipo_op);
+			pedido.setValor(pedidoDTO.getValorPedido());
+			pedidoDAO.inserir(pedido);
+			
+			double pedidoTotal = 0;
+			for (ProdutoDTO produtoDTO : lProdutos) {
+				Produto_Pedido produto_pedido = new Produto_Pedido();
+				Produto produto = new Produto();
+				produto.setCodigo(produtoDTO.getCodigo());
+				produto.setNome(produtoDTO.getNome());
+				produto.setMargemLucro(produto.getMargemLucro());
+				produto.setPreco(produto.getPreco());
+				
+				produto_pedido.setProduto(produto);
+				produto_pedido.setPedido(pedido);
+				produto_pedido.setNomeCliente(pedidoDTO.);
+				produto_pedidoDAO.inserir(produto_pedido);
+				pedidoTotal += produtoDTO.getMargemLucro()*produtoDTO.getPreco();
+			}
+			
+			
+			//realizar o calculo do valor do produto
+			double valorPedido = pedidoTotal + pedido.getValor();
+			
+			pedido.setValor(valorPedido);
+			
+			pedidoDAO.alterar(pedido);
 		}
 	}
 	/**
@@ -45,8 +88,18 @@ public class PedidoService {
 	 * @param pedido
 	 * @throws SQLException
 	 */
-	public void alterar(Pedido pedido)throws SQLException{
+	public void alterar(PedidoDTO pedidoDTO)throws SQLException{
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
+			Tipo_Operacao tipo_op = new Tipo_Operacao();
+			tipo_op.setCodigo(pedidoDTO.getCodigoTipoOP());
+			
+			Pedido pedido = new Pedido();
+			pedido.setCodigo(pedidoDTO.getCodigoPedido());
+			pedido.setDataPedido(pedidoDTO.getDataPedido());
+			pedido.setTipoOperacao(tipo_op);
+			pedido.setValor(pedidoDTO.getValorPedido());
+			
+			
 			new PedidoDAO(conex).alterar(pedido);
 		}
 	}

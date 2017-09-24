@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Contas_ReceberDTO;
 import br.com.ProjecJava.model.Contas_Receber;
-import br.com.ProjecJava.model.Historico_Pedido;
 import br.com.ProjecJava.model.Pedido;
-import br.com.ProjecJava.model.Status_Pedido;
+
 /**
  * Esta é a Classe responsavel pelo Contas à Receber
  * @author Lucas Braz
@@ -46,8 +46,8 @@ public class Contas_ReceberDAO {
 		return statement.executeUpdate() > 0;
 	}
 	
-	public List<Contas_Receber> lista() throws SQLException {
-		List<Contas_Receber> lContas_Receber = new ArrayList<>();
+	public List<Contas_ReceberDTO> lista() throws SQLException {
+		List<Contas_ReceberDTO> lContas_Receber = new ArrayList<>();
 
 		String sql = "SELECT * FROM CONTAS_RECEBER"
 				+ " INNER JOIN PEDIDO ON CONTAS_RECEBER.CONT_REC_PEDIDO_COD = PEDIDO.PED_COD";;
@@ -65,7 +65,7 @@ public class Contas_ReceberDAO {
 					Date dtPedido = rs.getDate("CONT_REC_DATA");
 					double valor = rs.getDouble("CONT_REC_VALOR");
 					Contas_Receber contas_receber = new Contas_Receber(codigo, pedido, dtPedido, valor);
-					lContas_Receber.add(contas_receber);
+					lContas_Receber.add(contas_receber.toDTO());
 				}
 			}
 		}

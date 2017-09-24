@@ -87,7 +87,7 @@ public class PedidoDAO {
 				
 					
 					Pedido pedido = new Pedido(codigo, dataPedido, new Tipo_Operacao(codigoTipoOp, nomeTipoOp), valor); 
-					lPedido.add(pedido);
+					lPedido.add(pedido.toDTO());
 				}
 			}
 		}

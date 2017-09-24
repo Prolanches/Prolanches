@@ -9,10 +9,10 @@ import java.util.List;
 
 import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
-import br.com.ProjecJava.model.Fornecedor_Suprimento;
-import br.com.ProjecJava.model.Produto;
 
-import br.com.ProjecJava.service.Produto_Service;
+
+import br.com.ProjecJava.service.ProdutoService;
+
 
 
 /**
@@ -22,11 +22,14 @@ import br.com.ProjecJava.service.Produto_Service;
  *
  */
 public class Produto_Teste {
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException  {
+		
+	}
 		/**
 		 * Instância da classe Service
 		 */
-		Produto_Service produtoService = new Produto_Service();
+		
+		ProdutoService produtoService = new ProdutoService();
 		
 		/**
 		 *  inserindo o Produto 
@@ -34,10 +37,10 @@ public class Produto_Teste {
 		public List<SuprimentoDTO> listarSuprimento() throws SQLException {
 		List<SuprimentoDTO> lSuprimentos = new ArrayList<>();
 		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Hamburger",1,100,10,100.0,2);
-		lSuprimento.add(suprimento);
+		lSuprimentos.add(suprimento);
 		
 		ProdutoDTO produto = new ProdutoDTO(null,"X-Teste",1.50,0);
-		produtoService.inserir(produto, suprimento);
+		produtoService.inserir(produto, lSuprimentos);
 		
 		/**
 		 * alterando o Produto 
@@ -52,13 +55,14 @@ public class Produto_Teste {
 		/**
 		 * Listagem dos Funcionarios
 		 */
-		//List<Produto> lProduto = Produto_Service.listarProduto();
-		//for (Produto prod : lProduto) {
-		//	imprimirProduto(prod);
-		//}
-	}
+		List<ProdutoDTO> lProduto = produtoService.listarProduto();
+		for (ProdutoDTO prod : lProduto) {
+			imprimirProduto(prod);
+		}
+		return lSuprimentos;
+		}
 
-	private static void imprimirProduto(Produto prod) {
+	private static void imprimirProduto(ProdutoDTO prod) {
 		System.out.println("Codígo: "+prod.getCodigo()+"\nNome: "+prod.getNome()+"\nMargem de Lucro: "+prod.getMargemLucro()+"\nPreço: "+prod.getPreco());
 	}
 }

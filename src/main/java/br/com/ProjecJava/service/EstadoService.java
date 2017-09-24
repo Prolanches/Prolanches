@@ -20,7 +20,7 @@ import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
  */
 public class EstadoService {
 	/**
-	 * Este é o metodo responsavel pela listagem dos Estados
+	 * Este é o metodo responsavel pela listagem dos Estados do Brasil
 	 * 
 	 * @return retornará à lista de Estados
 	 * @throws SQLException

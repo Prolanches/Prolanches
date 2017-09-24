@@ -1,5 +1,7 @@
 package br.com.ProjecJava.dto;
 
+import br.com.ProjecJava.model.Pais;
+
 public class PaisDTO {
 
 	private Integer codigoPais;
@@ -33,5 +35,8 @@ public class PaisDTO {
 	public void setSiglaPais(String siglaPais) {
 		this.siglaPais = siglaPais;
 	}
+	public Pais toPais() {
+		return new Pais(this.codigoPais, this.nomePais, this.siglaPais);
+}
 }
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Historico_PedidoDTO;
 import br.com.ProjecJava.model.Funcionario;
 import br.com.ProjecJava.model.Historico_Pedido;
 import br.com.ProjecJava.model.Pedido;
@@ -44,8 +45,8 @@ public class Historico_PedidoDAO {
 		return statement.executeUpdate() > 0;
 	}
 	
-	public List<Historico_Pedido> lista() throws SQLException {
-		List<Historico_Pedido> lHistorico_Pedido = new ArrayList<>();
+	public List<Historico_PedidoDTO> lista() throws SQLException {
+		List<Historico_PedidoDTO> lHistorico_Pedido = new ArrayList<>();
 
 		String sql = "SELECT * FROM HISTORICO_PEDIDO"
 				+ " INNER JOIN PEDIDO ON HISTORICO_PEDIDO.HIT_PED_PEDIDO_COD = PEDIDO.PED_COD"
@@ -71,7 +72,7 @@ public class Historico_PedidoDAO {
 					
 					int codigo = rs.getInt("HIT_PED_COD");
 					Historico_Pedido historico_pedido = new Historico_Pedido(codigo, pedido, funcionario, statuspedido);
-					lHistorico_Pedido.add(historico_pedido);
+					lHistorico_Pedido.add(historico_pedido.toDTO());
 				}
 			}
 		}

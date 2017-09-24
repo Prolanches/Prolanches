@@ -20,7 +20,9 @@ public class Tipo_Operacao_Teste {
 		/**
 		 * listando tipo operação
 		 */
-		List<Tipo_OperacaoDTO> lTipo_Operacao = Tipo_OperacaoService.listarTipo_Operacao();
+		Tipo_OperacaoService tipo_operacaoService = new Tipo_OperacaoService();
+		
+		List<Tipo_OperacaoDTO> lTipo_Operacao = tipo_operacaoService.listarTipo_Operacao();
 		for (Tipo_OperacaoDTO tipoop : lTipo_Operacao) {
 			imprimeTipo_Operacao(tipoop);
 		}

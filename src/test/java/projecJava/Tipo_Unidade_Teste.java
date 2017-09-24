@@ -11,9 +11,9 @@ public class Tipo_Unidade_Teste {
 
 	public static void main(String[] args) throws SQLException {
 		
-		
+		Tipo_UnidadeService tipo_unidadeService = new Tipo_UnidadeService();
 		//listando tipo unidade FUNCIONANDO
-		List<Tipo_UnidadeDTO> lTipoUnidade = Tipo_UnidadeService.listarTiposUnidades();
+		List<Tipo_UnidadeDTO> lTipoUnidade = tipo_unidadeService.listarTiposUnidades();
 		for (Tipo_UnidadeDTO tipoUnidade : lTipoUnidade) {
 			imprimeTipoUnidade(tipoUnidade);
 		}

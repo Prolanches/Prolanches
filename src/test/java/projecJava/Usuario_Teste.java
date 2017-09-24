@@ -40,7 +40,7 @@ public class Usuario_Teste {
 		/**
 		 * Listagem dos Funcionarios
 		 */
-		List<UsuarioDTO> lUsuario = UsuarioService.listarUsuario();
+		List<UsuarioDTO> lUsuario = usuarioService.listarUsuario();
 		for (UsuarioDTO usu : lUsuario) {
 			imprimirUsuario(usu);
 		}

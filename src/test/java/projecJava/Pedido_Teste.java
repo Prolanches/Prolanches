@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import br.com.ProjecJava.dto.PedidoDTO;
 import br.com.ProjecJava.model.Pedido;
 import br.com.ProjecJava.model.Tipo_Operacao;
 import br.com.ProjecJava.service.PedidoService;
@@ -27,18 +28,18 @@ public class Pedido_Teste {
 		 */
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		PedidoService pedidoService = new PedidoService();
-		Tipo_Operacao tipooperacao = new Tipo_Operacao(1,"Mesa");
+		
 		
 		/**
 		 *  inserindo o Pedido FUNCIONANDO FALTA ARRUMAR DATA
 		 */
 
-	  //Pedido pedido = new Pedido(1,sdf.parse("11/09/2017 18:30:00"),tipooperacao,150.00);
-	  //pedidoService.inserir(pedido);
+	  PedidoDTO pedido = new PedidoDTO(1,"11/09/2017 18:30:00",1,150.00);
+	  pedidoService.inserir(pedido);
 
 	   
 
-		//pedidoService.alterar(3,sdf.parse("10/05/2015 10:35:00"),tipooperacao,212.00);
+		pedidoService.alterar(new PedidoDTO(3,"10/05/2015 10:35:00",2,212.00));
 		
 		
 
@@ -50,15 +51,15 @@ public class Pedido_Teste {
 		/**
 		 * Listagem dos Funcionarios
 		 */
-		List<Pedido> lPedido = PedidoService.listarPedido();
-		for (Pedido ped : lPedido) {
+		List<PedidoDTO> lPedido = pedidoService.listarPedido();
+		for (PedidoDTO ped : lPedido) {
 			imprimirPedido(ped);
 		}
 	}
 
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
-	private static void imprimirPedido(Pedido ped) {
-		System.out.println("Codígo: "+ped.getCodigo()+"\nData: "+sdf.format(ped.getDataPedido())+"\nTipo de Operação: "+ped.getTipoOperacao().getCodigo()+"\nValor: "+ped.getValor());
+	private static void imprimirPedido(PedidoDTO ped) {
+		System.out.println("Codígo: "+ped.getCodigoPedido()+"\nData: "+sdf.format(ped.getDataPedido())+"\nTipo de Operação: "+ped.getNomeTipoOP()+"\nValor: "+ped.getValorPedido());
 	}
 }

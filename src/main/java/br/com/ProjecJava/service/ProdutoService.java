@@ -12,11 +12,10 @@ import br.com.ProjecJava.DAO.Produto_SuprimentoDAO;
 import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Marca;
 import br.com.ProjecJava.model.Produto;
 import br.com.ProjecJava.model.Produto_Suprimento;
 import br.com.ProjecJava.model.Suprimento;
-import br.com.ProjecJava.model.Tipo_Unidade;
+
 
 
 /**
@@ -25,7 +24,7 @@ import br.com.ProjecJava.model.Tipo_Unidade;
  * @author Lucas Braz
  *
  */
-public class Produto_Service {
+public class ProdutoService {
 	/**
 	 * Este é o metodo responsavel pela listagem do Produto
 	 * @return mostrará o Produto
@@ -60,8 +59,8 @@ public class Produto_Service {
 				Suprimento suprimento = new Suprimento();
 				suprimento.setCodigo(suprimentoDTO.getCodigo());
 				suprimento.setNome(suprimentoDTO.getNome());
-				suprimento.setCusto(suprimentoDTO.getCusto());
 				suprimento.setQuantidade(suprimentoDTO.getQuantidade());
+				suprimento.setCusto(suprimentoDTO.getCusto());
 				
 				produto_Suprimento.setSuprimento(suprimento);
 				produto_Suprimento.setProduto(produto);

@@ -15,12 +15,13 @@ public class Fornecedor_Suprimento {
 	/**
 	 * Este são os atributos do Fornecedor_Suprimento
 	 */
-	private int codigo;
+	private Integer codigo;
 	private Fornecedor fornecedor;
 	private Suprimento suprimento;
 
 	/**
-	 * Este é o construtor do Fornecedor Suprimento, abaixo estão seus parametros
+	 * Este é o construtor do Fornecedor Suprimento, abaixo estão seus
+	 * parametros
 	 * 
 	 * @param codigo
 	 *            id do Banco de Dados
@@ -29,18 +30,22 @@ public class Fornecedor_Suprimento {
 	 * @param suprimento
 	 *            implementação da classe Suprimento
 	 */
-	public Fornecedor_Suprimento(int codigo, Fornecedor fornecedor, Suprimento suprimento) {
+	public Fornecedor_Suprimento() {
+
+	}
+
+	public Fornecedor_Suprimento(Integer codigo, Fornecedor fornecedor, Suprimento suprimento) {
 		super();
 		this.codigo = codigo;
 		this.fornecedor = fornecedor;
 		this.suprimento = suprimento;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
