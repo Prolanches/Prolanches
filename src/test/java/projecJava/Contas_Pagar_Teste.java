@@ -48,7 +48,7 @@ public class Contas_Pagar_Teste {
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 
 	private static void imprimeContasPagar(Contas_PagarDTO contPag) {
-		System.out.println("Fornecedor: " + contPag.getForneSupri().getFornecedor().getNome() + " CNPJ: "
+		System.out.println("Fornecedor: " + contPag.getForneSupri() + " CNPJ: "
 				+ contPag.getForneSupri().getFornecedor().getCnpj() + "                                       "
 				+ sdf.format(contPag.getData()) + " \n Telefone: "
 				+ contPag.getForneSupri().getFornecedor().getTelefone() + " E-mail: "
