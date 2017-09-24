@@ -20,195 +20,145 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/styleIndex.css" rel="stylesheet">
-    <link href="../css/styleCadastro.css" rel="stylesheet">
+    <link href="../css/styleInsProdSup.css" rel="stylesheet">
 
   </head>
  
-  <body style="background-color: #fff; font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; text-align: center;"      data-ng-app="projecJava" >
+  <body       data-ng-app="projecJava" >
       <div class="container-fluid" >
         <!-- Navigation -->
         <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="position: fixed;">
-      <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time</a>
-        
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="../../index.html">Home</a>
-            </li>
-          </ul>
-        </div>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="position: fixed;">
+              <div class="container-fluid">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time</a>
+
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="estoque.html">Pàgina de Estoque</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="produtos.html">Página de Produtos</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
       </div>
-    </nav>
+      <div class="container-fluid">
           
             <!-- =============== SUPRIMENTOS =================== -->
 
-          <div  class="row-fluid cadSupr" >
-            <br>
-            <label class="titleSec" for="" style="">Inserir Suprimento</label>
-            <br>
-            <div class="span6">
+          <div  class="row-fluid secaoSupr" >
+            
+            <div class="span6 cadSupr">
+              <label class="titleSec" for="" style="">Inserir Suprimento</label>
+                <div id="div1" class="div"></div>
+                <br><br>
               <label class="labelSup" for="">Nome:   </label>
-              <input class="inputSup" type="text"  name="nomeEmpresa" style=""><br>
+              <input class="inputSup" type="text"  name="nomeSuprimento"><br>
               <label class="labelSup" for="">Quantidade:   </label>
-              <input class="inputSup" type="text"  name="nomeEmpresa" style=""><br>
+              <input class="inputSup" type="text"  name="quantidade"><br>
               <label class="labelSup" for="">Custo:   </label>
-              <input class="inputSup" type="text"  name="nomeEmpresa" style=""><br>
+              <input class="inputSup" type="text"  name="custo"><br>
               <label class="labelSup" for="">?????:   </label>
-              <input class="inputSup" type="text"  name="nomeEmpresa" style=""><br>
-              <label class="labelSup" for="">Custo:   </label>
-              <input class="inputSup" type="text"  name="nomeEmpresa" style=""><br>
-              <select  style="width: 200px; height: 30px; font-variant: small-caps;">
-                  <option class="optionForn"> </option>
-                  <option> Forn 1</option>
-                  <option> Fonr 2</option>
-                  <option> Forn 3</option>
-              </select>
-             
+              <input class="inputSup" type="text"  name=""><br>
+              <label class="labelSup" for="">Marca:   </label>
+              <input class="inputSup" type="text"  name="custo"><br>
               
+              <label class="labelSup" for="">Fornecedor:   </label>
+              <select>
+                  <option> </option>
+                  <option> Forn 1</option>
+                  <option> Forn 2</option>
+                  <option> Forn 3</option>
+              </select><br><br><br><br><br>
+                
+                <button class="buttonSave">
+                    <a>Salvar Suprimento</a>  
+                </button>
 
             </div> 
-          </div>
-
-
-<!--           <div class="row-fluid" style="margin-top: 100px; font-variant: small-caps;"> -->
-<!--              <span class="name titulo" > Efetuar Cadastro</span> -->
-<!--              <div class="span4"> -->
-               
-             
-
-<!--               <label style="color:  rgb(44,62,80);">....</label> -->
-              
-
-
-<!--               <label style="color:  rgb(44,62,80);">...............................</label> -->
-<!--               <label for="">Cnpj:   </label> -->
-              
-<!--               <input type="text"  name="cnpj" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-
-<!--               <label style="color:  rgb(44,62,80);">............................</label> -->
-<!--               <label for="">E-mail:   </label> -->
-<!--               <input type="text"  name="email" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-
-              
-<!--               <label style="color:  rgb(44,62,80);">.......................</label> -->
-<!--               <label for="">Telefone:   </label> -->
-<!--               <input type="text"  name="telefone" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-<!--               <p style="color:  rgb(44,62,80);font-size: 5px;">111111</p> -->
-<!--              </div>  -->
-
-<!--             <div class="span12" style=""> -->
-              
-              
-              
-<!--             </div> -->
-<!--             </div> -->
-<!--                     ==================== FIM DADGERAIS =================== -->
-
-
-
-<!--                     =============== CADASTRO ENDERECO ===================== -->
-<!--             <div class="row-fluid" style="margin-top: 15px; font-variant: small-caps;"> -->
-<!--             <div class="span12" style="background-color: #fff; border: 2px solid rgb(44,62,80);  text-align: center;"> -->
-
-              
-<!--               <label for="" style="">Endereço</label> -->
-<!--               <div class="comboBox" > -->
-<!--                  COMBOBOX PAIS -->
-<!--                 <label style="color:  #fff;">..................................</label> -->
-<!--                 <label for="">País:   </label> -->
-<!--                  <select data-ng-controller="PaisController as controller" style="width: 200px; height: 30px; color: rgb(44,62,80);font-variant: small-caps;"> -->
-                  <option data-ng-repeat="pais in controller.paises">{{pais.nomePais}}</option>
-<!--                 </select><br> -->
-
-<!--                 COMBOBOX ESTADO -->
-<!--                 <label style="color:  #fff;">..............................</label> -->
-<!--                 <label for="">Estado:   </label> -->
-<!--                  <select data-ng-controller="EstadoController as controller"  style="width: 200px; height: 30px; color: rgb(44,62,80);font-variant: small-caps;"> -->
-                  <option data-ng-repeat="estado in controller.estados">{{estado.nomeUF}}</option>
-<!--                 </select> -->
-<!--                 <br> -->
-<!--                  COMBOBOX CIDADE -->
-<!--                  <label style="color:  #fff;">...............................</label> -->
-<!--                 <label for="">Cidade:   </label> -->
+            <div class="span6 cadForn">
+                <label class="titleSec" for="">Inserir Fornecedor</label>
+                <div id="div2" class="div"></div>
+                <br><br>
+                <label class="labelSup" for="">Nome Social:   </label>
+                  <input type="text"  name="nomeEmpresa" style=""><br>
+                  <label for="">CNPJ:   </label>
+                  <input type="text"  name="nomeEmpresa" style=""><br>
+                  <label for="">Telefone:   </label>
+                  <input type="text"  name="nomeEmpresa" style=""><br>
+                  <label for="">E-mail:   </label>
+                  <input type="text"  name="nomeEmpresa" style=""><br>
+                  
                 
-<!--                 <br> -->
-<!--               </div> -->
-<!--               <label style="color:  #fff;">...................</label> -->
-<!--                 <label for="">Logradouro:   </label> -->
-<!--               <input type="text"  name="ruaEmpresa" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-<!--               <p style="color: #fff;font-size: 5px;">111111</p> -->
-<!--             </div> -->
+                 <!--COMBOBOX PAIS -->
+                <label for="">País:   </label>
+                 <select data-ng-controller="PaisController as controller" >
+                  <option> </option>
+                  <option data-ng-repeat="pais in controller.paises">{{pais.nomePais}}</option>
+                </select><br>
+
+                <!--COMBOBOX ESTADO -->
+                <label for="">Estado:   </label>
+                 <select data-ng-controller="EstadoController as controller" >
+                  <option> </option>
+                  <option data-ng-repeat="estado in controller.estados">{{estado.nomeUF}}</option>
+                </select><br>
+                 <!--COMBOBOX CIDADE -->
+                <label for="">Cidade:   </label>
+                <select  data-ng-controller="CidadeController as controller">
+                  <option> </option>
+                  <option  data-ng-repeat="cidade in controller.cidades"> {{cidade.nomeCidade}} - {{cidade.siglaUF}}</option>
+
+                </select><br>                
+                <label class="labelSup" for="">Logradouro:   </label>
+                <input class="inputSup" type="text"  name="ruaEmpresa"><br> 
+                <br>
+                <button>
+                    <a>Salvar Fornecedor</a>  
+                  </button>
+              </div>   
+            </div>            
+        </div>
+
+        <div  class="row-fluid secaoProd">
             
-            
-<!--           </div> -->
+            <div class="span12 cadProd">
+              <label class="titleSec" for="" style="">Inserir Produto</label>
+                <div class="div"></div>
+                <br><br>
+              <label  for="">Nome:   </label>
+              <input  type="text"  name="nomeSuprimento"><br>
+              <label  for="">Margem De lucro:   </label>
+              <input  type="text"  name="nomeSuprimento"><br>
+                
+                
 
-<!--           =======================FIM ENDERECO ===================== -->
-
-<!--          =============== DADOS FUN =================== -->
-<!--                   <div class="row-fluid" style=" font-variant: small-caps; margin-top: 18px;"> -->
-
-<!--                     <div class="span12" style="background-color: rgb(44,62,80);margin-bottom: : 1px ;  text-align: center; color: #fff;  "> -->
-                      
-<!--                       <p style="color:  rgb(44,62,80);font-size: 2px;">sdtsergtrdgh</p> -->
-<!--                       <label for="" style="font-weight: 600; font-size: 30px;font-variant: small-caps;">Dados funcionário Administrador</label><br> -->
-
-<!--                       <label style="color:  rgb(44,62,80);">.....</label> -->
-<!--                       <label for="">Nome:   </label> -->
-<!--                       <input type="text"  name="nomeFuncionario" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-
-<!--                       <label style="color:  rgb(44,62,80);">.</label> -->
-<!--                       <label for="">Função:   </label> -->
-                      
-<!--                       <input type="text"  name="funcao" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-
-<!--                       <label style="color:  rgb(44,62,80); margin-left: -44px;"></label> -->
-<!--                       <label for="">Login Usuário:   </label> -->
-<!--                       <input type="text"  name="login" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-
-                      
-<!--                       <label style="color:  rgb(44,62,80);">...</label> -->
-<!--                       <label for="">Senha:   </label> -->
-<!--                       <input type="text"  name="senha" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-
-<!--                       <label style="color:  rgb(44,62,80); margin-left: -70px;">.</label> -->
-<!--                       <label for="">Confirmar Senha:   </label> -->
-<!--                       <input type="text"  name="confirSenha" style="width: 200px; height: 30px;font-variant: small-caps;"><br> -->
-
-<!--                       <label style="color:  rgb(44,62,80); margin-left: -65px;">...</label> -->
-<!--                       <label for="">Tipo de Usuário:   </label> -->
-<!--                       <input type="text"  name="tipoUs" value="Administrador" readonly="true" style="width: 200px; height: 30px; font-variant: small-caps;"></input><br> -->
-<!--                       <p style="color:  rgb(44,62,80);font-size: 10px;">111111</p> -->
-                      
-<!--                     </div> -->
-
-<!--       ==================== FIM DADGERAIS ====== Cancelar </button> 
-<!--             <button  type="button" class=" botao" >  C============= -->
-
-<!--             <button  type="button" class=" botao" > adastrar </button>  -->
-<!--             <br><br><br> -->
-
-      </div>
-
+            </div> 
+            <div class="span12 selSup">
+                <label class="titleSec" for="" style="">Selecione <br>os Suprimentos</label>
+                <div class="div"></div>
+                <br><br>
+                <table class="table">
+                    <tr class="l1">
+                        <th style="color: #18bc9c;"  class="check">......++... </th>
+                        <th>Nome</th>
+                       
+                    </tr>
+                    <tr class="ls">
+                        <td class="check"> <form action=""><input type="checkbox" name="vehicle" value= ""></form></td>
+                        <td class="nomeSup"></td>
+                    </tr>
+                </table>
+                <br>
+                <button class="buttonSave">
+                    <a>Salvar Produto</a>  
+                </button>
+            </div>   
+        </div>     
       
-        <!-- IMPORT ANGULAR-->
-      <script src="../angular.js"></script>
-
-        <!-- IMPORT JS PAIS -->
-      <script src="../Class_js/Pais.js"></script>
-
-        <!-- IMPORT JS ESTADO -->
-      <script src="../Class_js/Estado.js"></script>
-
-        <!-- IMPORT JS CIDADE -->
-      <script src="../Class_js/Cidade.js"></script>
-
+     
 </body>
 </html>
