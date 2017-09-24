@@ -56,11 +56,11 @@ public class Suprimento {
 		this.marca = marca;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -106,7 +106,7 @@ public class Suprimento {
 
 	public SuprimentoDTO toDTO() {
 		return new SuprimentoDTO(this.getCodigo(), this.getNome(), this.getTipoUnidade().getCodigo(),
-				this.getTipoUnidade().getNome(), this.getTipoUnidade().getUnidade(), this.getQuantidade(),
-				this.getCusto(), this.getMarca().getCodigo(), this.getMarca().getNome());
+				this.getTipoUnidade().getNome(), this.getTipoUnidade().getUnidade(), this.getQuantidade()
+				,this.getQuantidadeutilizada(),this.getCusto(), this.getMarca().getCodigo(), this.getMarca().getNome());
 	}
 }

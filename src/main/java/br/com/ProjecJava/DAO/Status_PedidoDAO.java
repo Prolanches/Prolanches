@@ -45,7 +45,7 @@ public class Status_PedidoDAO {
 					int codigo = rs.getInt("STA_PED_COD");
 					String nome = rs.getString("STA_PED_NOME");
 					Status_Pedido status = new Status_Pedido(codigo, nome);
-					lStatus_Pedido.add(status);
+					lStatus_Pedido.add(status.toDTO());
 				}
 			}
 		}

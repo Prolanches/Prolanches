@@ -15,7 +15,7 @@ public class Suprimento_Teste {
 		SuprimentoService suprimentoService = new SuprimentoService();
 
 		// inserindo Suprimento FUNCIONANDO
-		SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100, 1.35, 2);
+		SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100,10, 1.35, 2);
 		suprimentoService.inserir(suprimento);
 
 		// alterando Suprimento FUNCIONANDO
@@ -27,7 +27,7 @@ public class Suprimento_Teste {
 		// suprimentoService.excluir(1);
 
 		// listando suprimento FUNCIONANDO
-		List<SuprimentoDTO> lSuprimento = SuprimentoService.listarSuprimentos();
+		List<SuprimentoDTO> lSuprimento = suprimentoService.listarSuprimentos();
 		for (SuprimentoDTO suprimento2 : lSuprimento) {
 			imprimeSuprimento(suprimento2);
 		}

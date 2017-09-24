@@ -20,7 +20,7 @@ public class Pedido {
 	 * Este são os atributos do Pedido
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private Date dataPedido;
 	private Tipo_Operacao tipoOperacao;
 	private double valor;
@@ -37,7 +37,11 @@ public class Pedido {
 	 * @param valor
 	 *            valor do Pedido
 	 */
-	public Pedido(int codigo, Date dataPedido, Tipo_Operacao tipoOperacao, double valor) {
+	public Pedido(){
+		
+	}
+	
+	public Pedido(Integer codigo, Date dataPedido, Tipo_Operacao tipoOperacao, double valor) {
 		super();
 		this.codigo = codigo;
 		this.dataPedido = dataPedido;
@@ -45,11 +49,11 @@ public class Pedido {
 		this.valor = valor;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -80,6 +84,6 @@ public class Pedido {
 	public PedidoDTO toDTO() {
 		return new PedidoDTO(this.getCodigo(),
 				DateUtils.formatData(this.getDataPedido(), DateUtils.PATTERN_DATA_PADRAO),
-				this.getTipoOperacao().getNomeOPeracao(), this.getValor());
+				this.getTipoOperacao().getCodigo(),this.getTipoOperacao().getNomeOPeracao(), this.getValor());
 	}
 }

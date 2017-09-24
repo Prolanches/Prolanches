@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.ProjecJava.DAO.Status_PedidoDAO;
 import br.com.ProjecJava.dto.Status_PedidoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Status_Pedido;
+
 /**
  * 
  * Esta classe é responsavel pela Classe Status_PedidoService

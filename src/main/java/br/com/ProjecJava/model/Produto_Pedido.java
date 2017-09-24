@@ -14,7 +14,7 @@ public class Produto_Pedido {
 	/**
 	 * Este são os atributos do Produto_Pedido
 	 */
-	private int codigo;
+	private Integer codigo;
 	private Pedido pedido;
 	private Produto produto;
 	private String nomeCliente;
@@ -31,7 +31,10 @@ public class Produto_Pedido {
 	 * @param nomeCliente
 	 *            nome do Cliente do Pedido
 	 */
-	public Produto_Pedido(int codigo, Pedido pedido, Produto produto, String nomeCliente) {
+	public Produto_Pedido(){
+		
+	}
+	public Produto_Pedido(Integer codigo, Pedido pedido, Produto produto, String nomeCliente) {
 		super();
 		this.codigo = codigo;
 		this.pedido = pedido;
@@ -39,11 +42,11 @@ public class Produto_Pedido {
 		this.nomeCliente = nomeCliente;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 

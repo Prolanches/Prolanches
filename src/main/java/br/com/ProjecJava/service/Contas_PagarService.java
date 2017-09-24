@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.Contas_PagarDAO;
+import br.com.ProjecJava.dto.Contas_PagarDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Contas_Pagar;
 
@@ -38,7 +39,7 @@ public class Contas_PagarService {
 	 * @return - retornara todas as contas inseridas no banco
 	 * @throws SQLException
 	 */
-	public static List<Contas_Pagar> listarContasPagar() throws SQLException {
+	public static List<Contas_PagarDTO> listarContasPagar() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new Contas_PagarDAO(conex).listarContasPagar();
 		}

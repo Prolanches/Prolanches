@@ -25,7 +25,7 @@ public class Fornecedor_Teste {
 		//fornecedorService.excluir(21);
 		
 		//listando fornecedores FUNCIONANDO
-		List<FornecedorDTO> lfornecedor = FornecedorService.listarFornecedores();
+		List<FornecedorDTO> lfornecedor = fornecedorService.listarFornecedores();
 		for (FornecedorDTO fornecedor1 : lfornecedor) {
 			imprimeFornecedor(fornecedor1);
 		}
