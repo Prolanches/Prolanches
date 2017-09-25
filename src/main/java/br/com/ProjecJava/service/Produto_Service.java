@@ -57,6 +57,7 @@ public class Produto_Service {
 			double custoTotal = 0;
 			for (SuprimentoDTO suprimentoDTO : lSuprimentos) {
 				Produto_Suprimento produto_Suprimento = new Produto_Suprimento();
+				
 				Suprimento suprimento = new Suprimento();
 				suprimento.setCodigo(suprimentoDTO.getCodigo());
 				suprimento.setNome(suprimentoDTO.getNome());
@@ -68,6 +69,7 @@ public class Produto_Service {
 				produto_Suprimento.setQuantidade(suprimentoDTO.getQuantidadeutilizada());
 				produto_Suprimento.setCusto(suprimentoDTO.getCusto());
 				produto_SuprimentoDAO.inserir(produto_Suprimento);
+				
 				custoTotal += suprimentoDTO.getQuantidade()*suprimentoDTO.getCusto();
 			}
 			

@@ -14,51 +14,50 @@ import br.com.ProjecJava.model.Produto;
 
 import br.com.ProjecJava.service.Produto_Service;
 
-
 /**
- * Esta classe é responsavel pelos Testes dos Produtos 
+ * Esta classe é responsavel pelos Testes dos Produtos
  * 
  * @author Lucas Braz
  *
  */
 public class Produto_Teste {
 	public static void main(String[] args) throws SQLException {
+
 		/**
 		 * Instância da classe Service
 		 */
 		Produto_Service produtoService = new Produto_Service();
-		
+
 		/**
-		 *  inserindo o Produto 
+		 * inserindo o Produto
 		 */
-		public List<SuprimentoDTO> listarSuprimento() throws SQLException {
 		List<SuprimentoDTO> lSuprimentos = new ArrayList<>();
-		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Hamburger",1,100,10,100.0,2);
-		lSuprimento.add(suprimento);
-		
-		ProdutoDTO produto = new ProdutoDTO(null,"X-Teste",1.50,0);
-		produtoService.inserir(produto, suprimento);
-		
+		SuprimentoDTO suprimento = new SuprimentoDTO(1, "Hamburger", 1, 100, 10, 100.0, 2);
+		lSuprimentos.add(suprimento);
+
+		ProdutoDTO produto = new ProdutoDTO(null, "X-Teste", 1.50, 0);
+		produtoService.inserir(produto, lSuprimentos);
+
 		/**
-		 * alterando o Produto 
+		 * alterando o Produto
 		 */
-		//produtoService.alterar(new Produto(1, "X-Tudo",2.0,20.00));
-		
+		// produtoService.alterar(new Produto(1, "X-Tudo",2.0,20.00));
+
 		/**
-		 * excluindo a Produto 
+		 * excluindo a Produto
 		 */
-		//produtoService.excluir(1);
+		// produtoService.excluir(1);
 
 		/**
 		 * Listagem dos Funcionarios
 		 */
-		//List<Produto> lProduto = Produto_Service.listarProduto();
-		//for (Produto prod : lProduto) {
-		//	imprimirProduto(prod);
-		//}
+		// List<Produto> lProduto = Produto_Service.listarProduto();
+		// for (Produto prod : lProduto) {
+		// imprimirProduto(prod);
 	}
 
 	private static void imprimirProduto(Produto prod) {
-		System.out.println("Codígo: "+prod.getCodigo()+"\nNome: "+prod.getNome()+"\nMargem de Lucro: "+prod.getMargemLucro()+"\nPreço: "+prod.getPreco());
+		System.out.println("Codígo: " + prod.getCodigo() + "\nNome: " + prod.getNome() + "\nMargem de Lucro: "
+				+ prod.getMargemLucro() + "\nPreço: " + prod.getPreco());
 	}
 }
