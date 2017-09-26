@@ -1,0 +1,74 @@
+
+body{
+    margin: 0px;
+	font-variant: small-caps;
+}
+
+
+
+
+th, tr{
+	width: 19%;
+    vertical-align: baseline;
+}
+
+table{
+    border: 1px solid rgb(44,62,80);
+}
+
+
+.buttonOp{
+    width: 100%;
+    background-color: #18bc9c;
+    color: #fff;
+    border: 1px solid rgb(44,62,80);
+    height: 40px;
+}
+
+button{
+    color: #fff;
+    border: 1px solid rgb(44,62,80);
+    height: 40px;
+}
+
+
+
+
+.titleSec{
+	color: rgb(44,62,80); 
+	font-weight: 600; 
+	font-size: 30px; 
+}
+
+.div{
+    background-color: #18bc9c;
+    float: left;
+    width: 80%;
+    height: 1px;
+    color: #18bc9c;
+} 
+
+
+
+.table{
+    width: 100%;
+    height: auto;
+    border: 1px solid #fff;
+    text-align: left; 
+}
+
+.l1{
+    background-color: #18bc9c;
+    height: auto;
+}
+
+.ls{
+    height: auto;
+    text-align: left;
+}
+
+button{
+    background-color: #18bc9c;
+    color: #fff;
+    border: 1px solid #18bc9c;
+}

@@ -30,7 +30,6 @@ public class MarcaService {
 	public void inserir(MarcaDTO marcaDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			Marca marca = new Marca();
-			marca.setCodigo(marcaDTO.getCodigoMarca());
 			marca.setNome(marcaDTO.getNomeMarca());
 			new MarcaDAO(conex).inserir(marca);
 		}

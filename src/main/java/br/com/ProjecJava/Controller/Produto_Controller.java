@@ -16,18 +16,16 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import br.com.ProjecJava.dto.ProdutoDTO;
-import br.com.ProjecJava.service.Produto_Service;
-
+import br.com.ProjecJava.service.ProdutoService;
 
 @Path("produto")
 public class Produto_Controller {
-	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public List<ProdutoDTO> listProduto() {
-		Produto_Service produtoService = new Produto_Service();
+		ProdutoService produtoService = new ProdutoService();
 		try {
 			return produtoService.listarProduto();
 		} catch (SQLException e) {
@@ -40,9 +38,9 @@ public class Produto_Controller {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public Response create(ProdutoDTO produto) {
-		Produto_Service produtoService = new Produto_Service();
+		ProdutoService produtoService = new ProdutoService();
 		try {
-			produtoService.inserir(produto.toProduto());
+			produtoService.inserir(produto, null);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -54,7 +52,7 @@ public class Produto_Controller {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public Response update(ProdutoDTO produto) {
-		Produto_Service produtoService = new Produto_Service();
+		ProdutoService produtoService = new ProdutoService();
 		try {
 			produtoService.alterar(produto.toProduto());
 			return Response.status(Response.Status.OK).build();
@@ -67,7 +65,7 @@ public class Produto_Controller {
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		Produto_Service produtoService = new Produto_Service();
+		ProdutoService produtoService = new ProdutoService();
 		try {
 			produtoService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
@@ -75,5 +73,5 @@ public class Produto_Controller {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-}
+	}
 }

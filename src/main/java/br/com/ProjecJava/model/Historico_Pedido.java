@@ -3,6 +3,9 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.Historico_PedidoDTO;
+import br.com.ProjecJava.utils.DateUtils;
+
 /**
  * Esta é a classe resposanvel pelo Histórico do Pedido
  * 
@@ -16,7 +19,7 @@ public class Historico_Pedido {
 	 * Este são os atributos do Histórico do Pedido
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private Pedido pedido;
 	private Funcionario funcionario;
 	private Status_Pedido statusPedido;
@@ -29,24 +32,28 @@ public class Historico_Pedido {
 	 * @param pedido
 	 *            implementação da Classe Pedido para registrar os pedidos
 	 * @param funcionario
-	 *            implementação da Classe Funcionário para registrar o funcionário
-	 *            que executou o pedido
+	 *            implementação da Classe Funcionário para registrar o
+	 *            funcionário que executou o pedido
 	 * @param statusPedido
-	 *            implementação da Classe Status_Pedido para registrar o status do
-	 *            pedido
+	 *            implementação da Classe Status_Pedido para registrar o status
+	 *            do pedido
 	 */
-	public Historico_Pedido(int codigo, Pedido pedido, Funcionario funcionario, Status_Pedido statusPedido) {
+	public Historico_Pedido() {
+
+	}
+
+	public Historico_Pedido(Integer codigo, Pedido pedido, Funcionario funcionario, Status_Pedido statusPedido) {
 		this.codigo = codigo;
 		this.pedido = pedido;
 		this.funcionario = funcionario;
 		this.statusPedido = statusPedido;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -74,4 +81,11 @@ public class Historico_Pedido {
 		this.statusPedido = statusPedido;
 	}
 
+	public Historico_PedidoDTO toDTO() {
+		return new Historico_PedidoDTO(this.getCodigo(), this.getPedido().getCodigo(), DateUtils.formatData(this.getPedido().getDataPedido(), DateUtils.PATTERN_DATA_PADRAO),
+				this.getPedido().getTipoOperacao().getCodigo(), this.getPedido().getTipoOperacao().getNomeOPeracao(),
+				this.getPedido().getValor(), this.getFuncionario().getCodigo(), this.getFuncionario().getNome(),
+				this.getFuncionario().getFuncao().getCodigo(), this.getFuncionario().getFuncao().getNome(),
+				this.getStatusPedido().getCodigo(), this.getStatusPedido().getNome());
+	}
 }

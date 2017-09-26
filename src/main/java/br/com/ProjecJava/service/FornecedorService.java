@@ -99,6 +99,7 @@ public class FornecedorService {
 			
 			Endereco endereco = new Endereco();
 			endereco.setCodigo(fornecedorDTO.getCodigoEndereco());
+			endereco.setRua(fornecedorDTO.getRua());
 			endereco.setCidade(cidade);
 			
 			Fornecedor fornecedor = new Fornecedor();
@@ -132,7 +133,7 @@ public class FornecedorService {
 	 * @return - retorna todos os fornecedores cadastrados
 	 * @throws SQLException
 	 */
-	public static List<FornecedorDTO> listarFornecedores() throws SQLException {
+	public List<FornecedorDTO> listarFornecedores() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new FornecedorDAO(conex).listarFornecedores();
 		}

@@ -2,31 +2,31 @@ package br.com.ProjecJava.dto;
 
 public class Status_PedidoDTO {
 
-	private int codigo;
-	private String nome;
+	private Integer codigoStatusPedido;
+	private String nomeStatusPedido;
 
 	public Status_PedidoDTO() {
 	}
 
-	public Status_PedidoDTO(int codigo, String nome) {
-		this.codigo = codigo;
-		this.nome = nome;
+	public Status_PedidoDTO(Integer codigoStatusPedido, String nomeStatusPedido) {
+		super();
+		this.codigoStatusPedido = codigoStatusPedido;
+		this.nomeStatusPedido = nomeStatusPedido;
 	}
 
-	public int getCodigo() {
-		return codigo;
+	public Integer getCodigoStatusPedido() {
+		return codigoStatusPedido;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigoStatusPedido(Integer codigoStatusPedido) {
+		this.codigoStatusPedido = codigoStatusPedido;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeStatusPedido() {
+		return nomeStatusPedido;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeStatusPedido(String nomeStatusPedido) {
+		this.nomeStatusPedido = nomeStatusPedido;
 	}
-
 }

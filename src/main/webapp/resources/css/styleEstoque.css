@@ -1,0 +1,41 @@
+body{    
+	font-variant: small-caps;
+}
+
+
+.titleSec{
+	color: rgb(44,62,80); 
+	font-weight: 600; 
+	font-size: 30px; 
+}
+
+.div{
+    background-color: #18bc9c;
+    float: left;
+    width: 80%;
+    height: 1px;
+    color: #18bc9c;
+} 
+
+.table{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(44,62,80);
+    text-align: left; 
+}
+
+.l1{
+    background-color: #18bc9c;
+    height: auto;
+}
+.ls{
+    height: auto;
+    text-align: left;
+    border: 1px solid rgb(44,62,80);
+}
+
+button{
+    background-color: #18bc9c;
+    color: #fff;
+    border: 1px solid #18bc9c;
+}

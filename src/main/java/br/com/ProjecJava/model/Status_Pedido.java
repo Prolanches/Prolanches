@@ -3,6 +3,8 @@
  */
 package br.com.ProjecJava.model;
 
+import br.com.ProjecJava.dto.Status_PedidoDTO;
+
 /**
  * Esta é a classe do Status_Pedido
  * 
@@ -15,7 +17,7 @@ public class Status_Pedido {
 	 * Este são os atributos do Status do Pedido
 	 */
 
-	private int codigo;
+	private Integer codigo;
 	private String nome;
 
 	/**
@@ -26,16 +28,20 @@ public class Status_Pedido {
 	 * @param nome
 	 *            nome do Status do Pedido
 	 */
-	public Status_Pedido(int codigo, String nome) {
+	public Status_Pedido() {
+
+	}
+
+	public Status_Pedido(Integer codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;
 	}
 
-	public int getCodigo() {
+	public Integer getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
 
@@ -47,4 +53,7 @@ public class Status_Pedido {
 		this.nome = nome;
 	}
 
+	public Status_PedidoDTO toDTO() {
+		return new Status_PedidoDTO(this.getCodigo(), this.getNome());
+	}
 }

@@ -119,7 +119,7 @@ public class SuprimentoDAO {
 					int supriCod = rs.getInt("SUPRI_COD");
 					String supriNome = rs.getString("SUPRI_NOME");
 					int supriQuant = rs.getInt("SUPRI_QUANTIDADE");
-					int supriCusto = rs.getInt("SUPRI_CUSTO");
+					double supriCusto = rs.getDouble("SUPRI_CUSTO");
 					Suprimento supri = new Suprimento(supriCod, supriNome, tipoUnid, supriQuant, supriCusto, marca);
 					lSuprimento.add(supri.toDTO());
 				}

@@ -8,8 +8,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.Status_PedidoDAO;
+import br.com.ProjecJava.dto.Status_PedidoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
-import br.com.ProjecJava.model.Status_Pedido;
+
 /**
  * 
  * Esta classe é responsavel pela Classe Status_PedidoService
@@ -22,7 +23,7 @@ public class Status_PedidoService {
 	 * @return - retorna os tipos de status do pedido
 	 * @throws SQLException
 	 */
-		public static List<Status_Pedido> listarStatus_Pedido() throws SQLException {
+		public List<Status_PedidoDTO> listarStatus_Pedido() throws SQLException {
 			try(Connection conex = new ConnectionPoolOracle().getConnection()){
 				return new Status_PedidoDAO(conex).listarStatus_Pedido();
 			}

@@ -8,15 +8,17 @@ public class ProdutoDTO {
 	private String nome;
 	private Double margemLucro;
 	private Double preco;
+	private String nomeCliente;
 
 	public ProdutoDTO() {
 	}
 
-	public ProdutoDTO(Integer codigo, String nome, double margemLucro, double preco) {
+	public ProdutoDTO(Integer codigo, String nome, double margemLucro, double preco,String nomeCliente) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.margemLucro = margemLucro;
 		this.preco = preco;
+		this.nomeCliente=nomeCliente;
 	}
 
 	public Integer getCodigo() {
@@ -50,6 +52,15 @@ public class ProdutoDTO {
 	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
+	
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
 	public Produto toProduto() {
 		return new Produto(this.codigo, this.nome, this.margemLucro, this.preco);
 	}

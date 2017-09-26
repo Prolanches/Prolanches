@@ -23,7 +23,7 @@ public class Tipo_OperacaoService {
 	 * @return - retorna os tipos de operações
 	 * @throws SQLException
 	 */
-		public static List<Tipo_OperacaoDTO> listarTipo_Operacao() throws SQLException {
+		public List<Tipo_OperacaoDTO> listarTipo_Operacao() throws SQLException {
 			try(Connection conex = new ConnectionPoolOracle().getConnection()){
 				return new Tipo_OperacaoDAO(conex).listarTipo_Operacao();
 			}

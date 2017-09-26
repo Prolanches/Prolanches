@@ -77,7 +77,7 @@ public class Produto {
 	}
 
 	public ProdutoDTO toDTO() {
-		return new ProdutoDTO(this.getCodigo(), this.getNome(), this.getMargemLucro(), this.getPreco());
+		return new ProdutoDTO(this.getCodigo(), this.getNome(), this.getMargemLucro(), this.getPreco(),"");
 		
 	}
 }

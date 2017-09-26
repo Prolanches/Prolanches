@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import br.com.ProjecJava.dto.Contas_PagarDTO;
 import br.com.ProjecJava.model.Cidade;
 import br.com.ProjecJava.model.Contas_Pagar;
 import br.com.ProjecJava.model.Endereco;
@@ -38,16 +39,16 @@ public class Contas_Pagar_Teste {
 		Contas_Pagar contasP = new Contas_Pagar(0, 151, forSup, sdf.parse("05/05/2005"));
 		conPagaService.inserir(contasP);		
 
-		List<Contas_Pagar> lContPag = Contas_PagarService.listarContasPagar();
-		for (Contas_Pagar contas_Pagar : lContPag) {
+		List<Contas_PagarDTO> lContPag = conPagaService.listarContasPagar();
+		for (Contas_PagarDTO contas_Pagar : lContPag) {
 			imprimeContasPagar(contas_Pagar);
 		}
 	}
 
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 
-	private static void imprimeContasPagar(Contas_Pagar contPag) {
-		System.out.println("Fornecedor: " + contPag.getForneSupri().getFornecedor().getNome() + " CNPJ: "
+	private static void imprimeContasPagar(Contas_PagarDTO contPag) {
+		System.out.println("Fornecedor: " + contPag.getForneSupri() + " CNPJ: "
 				+ contPag.getForneSupri().getFornecedor().getCnpj() + "                                       "
 				+ sdf.format(contPag.getData()) + " \n Telefone: "
 				+ contPag.getForneSupri().getFornecedor().getTelefone() + " E-mail: "

@@ -32,12 +32,26 @@ public class ProdutoDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Produto produto) throws SQLException{
-		String sql = "INSERT INTO PRODUTO (PROD_COD, PROD_NOME, PROD_MARGEM_LUCRO, PROD_PRECO) VALUES (SEQ_PRODUTO.nextval, ?,?,?)";
+		String sqlsequence = "SELECT SEQ_PRODUTO.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					produto.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		
+		String sql = "INSERT INTO PRODUTO (PROD_COD, PROD_NOME, PROD_MARGEM_LUCRO, PROD_PRECO) VALUES (?,?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setString(1, produto.getNome());
-		statement.setDouble(2, produto.getMargemLucro());
-		statement.setDouble(3, produto.getPreco());
+		statement.setInt(1,produto.getCodigo());
+		statement.setString(2, produto.getNome());
+		statement.setDouble(3, produto.getMargemLucro());
+		statement.setDouble(4, produto.getPreco());
 		
 	
 		return statement.executeUpdate() > 0;
