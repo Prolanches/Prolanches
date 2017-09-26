@@ -1,21 +1,22 @@
 angular.module("projecJava", [])
 	   .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-	   .controller("PerfilController", function($http, urlBase) {
-		   var self = this;
-		   self.perfis = [];
-		   self.perfil = undefined;
+	   .controller("Tipo_OperacaoController", function($http, urlBase) {
 		   
-		   self.novo = function () {
-			   self.perfil = {};
+		   var self = this;
+		   self.tipoOperacoes = [];
+		   self.tipoOperaco = undefined;
+		   
+		   self.novotip = function () {
+			   self.tipoOperacao = {};
 		   };
 	   
 		   self.atualizarTabela = function () {
                $http({
                    method: 'GET',
-                   url: urlBase + 'perfil/'
+                   url: urlBase + 'tipoOperacao/'
                }).then(function successCallback(response) {
-            	   self.perfis = response.data;
-                   self.perfil = undefined;
+            	   self.tipoOperacoes = response.data;
+                   self.tipoOperacao = undefined;
                }, function errorCallback(response) {
                    self.ocorreuErro();
                });

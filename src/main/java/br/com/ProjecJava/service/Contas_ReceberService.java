@@ -6,10 +6,7 @@ package br.com.ProjecJava.service;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
-
 
 import br.com.ProjecJava.DAO.Contas_ReceberDAO;
 import br.com.ProjecJava.dto.Contas_ReceberDTO;
@@ -17,6 +14,7 @@ import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Contas_Receber;
 import br.com.ProjecJava.model.Pedido;
 import br.com.ProjecJava.model.Tipo_Operacao;
+import br.com.ProjecJava.utils.DateUtils;
 
 /**
  * Esta classe é responsável pela service do contas Receber
@@ -36,9 +34,7 @@ public class Contas_ReceberService {
 	public void inserir(Contas_ReceberDTO contas_receberDTO) throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
-			GregorianCalendar gc=new GregorianCalendar();
-			Date d1=gc.getTime();
-			gc.setTime(d1);
+		
 			
 			Tipo_Operacao tipo_operacao = new Tipo_Operacao();
 			tipo_operacao.setCodigo(contas_receberDTO.getCodigoTipoOP());
@@ -48,8 +44,8 @@ public class Contas_ReceberService {
 			pedido.setTipoOperacao(tipo_operacao);
 			
 			Contas_Receber contas_receber = new Contas_Receber();
-			gc.setTime((sdf.format(contas_receberDTO.getDataContasReceber())));
 			contas_receber.setPedido(pedido);
+			contas_receber.setData(DateUtils.parseData(contas_receberDTO.getDataPedido(), DateUtils.PATTERN_DATA_PADRAO));
 			contas_receber.setValor(contas_receberDTO.getValorContasReceber());
 			
 			new Contas_ReceberDAO(conex).inserir(contas_receber);
