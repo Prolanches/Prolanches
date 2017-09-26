@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.empresas = [];
             self.empresa = undefined;
 
-            self.novo = function () {
+            self.novoemp = function () {
                 self.empresa = {};
             };
 
-            self.salvar = function () {
+            self.salvaremp = function () {
                 var metodo = 'POST';
                 if (self.empresa.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (empresa) {
+            self.alteraremp = function (empresa) {
                 self.empresa = empresa;
             };
 
-            self.deletar = function (empresa) {
+            self.deletaremp = function (empresa) {
                 self.empresa = empresa;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (empresa) {
+            self.concluiremp = function (empresa) {
                 self.empresa = empresa;
 
                 $http({

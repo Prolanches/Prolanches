@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.pedidos = [];
             self.pedido = undefined;
 
-            self.novo = function () {
+            self.novoped = function () {
                 self.pedido = {};
             };
 
-            self.salvar = function () {
+            self.salvarped = function () {
                 var metodo = 'POST';
                 if (self.pedido.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (pedido) {
+            self.alterarped = function (pedido) {
                 self.pedido = pedido;
             };
 
-            self.deletar = function (pedido) {
+            self.deletarped = function (pedido) {
                 self.pedido = pedido;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (pedido) {
+            self.concluirped = function (pedido) {
                 self.pedido = pedido;
 
                 $http({

@@ -6,11 +6,11 @@ angular.module("projecJava", []).value('urlBase',
 			self.marcas = [];
 			self.marca = undefined;
 
-			self.novo = function() {
+			self.novomar = function() {
 				self.marca = {};
 			};
 
-			self.salvar = function() {
+			self.salvarmar = function() {
 				var metodo = 'POST';
 				if (self.marca.codigo) {
 					metodo = 'PUT';
@@ -27,7 +27,7 @@ angular.module("projecJava", []).value('urlBase',
 					self.ocorreuErro();
 				});
 			};
-			self.deletar = function(marca) {
+			self.deletarmar = function(marca) {
 				self.marca = marca;
 
 				$http({

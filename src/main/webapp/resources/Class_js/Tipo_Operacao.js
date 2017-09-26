@@ -6,7 +6,7 @@ angular.module("projecJava", [])
 		   self.tipoOperacoes = [];
 		   self.tipoOperaco = undefined;
 		   
-		   self.novo = function () {
+		   self.novotip = function () {
 			   self.tipoOperacao = {};
 		   };
 	   

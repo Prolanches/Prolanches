@@ -5,7 +5,7 @@ angular.module("projecJava", [])
 		   self.tipoUnidades = [];
 		   self.tipoUnidade = undefined;
 		   
-		   self.novo = function () {
+		   self.novouni = function () {
 			   self.tipoUnidade = {};
 		   };
 	   

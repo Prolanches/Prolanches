@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.pagaras = [];
             self.pagar = undefined;
 
-            self.novo = function () {
+            self.novopag = function () {
                 self.pagar = {};
             };
 
-            self.salvar = function () {
+            self.salvarpag = function () {
                 var metodo = 'POST';
                 if (self.pagar.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (pagar) {
+            self.alterarpag = function (pagar) {
                 self.pagar = pagar;
             };
 
-            self.deletar = function (pagar) {
+            self.deletarpag = function (pagar) {
                 self.pagar = pagar;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (pagar) {
+            self.concluirpag = function (pagar) {
                 self.pagar = pagar;
 
                 $http({

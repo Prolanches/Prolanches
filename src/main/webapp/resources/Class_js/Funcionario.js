@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.funcionarios = [];
             self.funcionario = undefined;
 
-            self.novo = function () {
+            self.novofunc = function () {
                 self.funcionario = {};
             };
 
-            self.salvar = function () {
+            self.salvarfunc = function () {
                 var metodo = 'POST';
                 if (self.funcionario.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (funcionario) {
+            self.alterarfunc = function (funcionario) {
                 self.funcionario = funcionario;
             };
 
-            self.deletar = function (funcionario) {
+            self.deletarfunc = function (funcionario) {
                 self.funcionario = funcionario;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (funcionario) {
+            self.concluirfunc = function (funcionario) {
                 self.funcioanrio = funcionario;
 
                 $http({

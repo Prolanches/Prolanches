@@ -59,7 +59,7 @@
                 <label class="titleSec" for="" style="">Tabela de Produtos</label>
                 <div class="div"></div>
                 <br><br><br>
-                
+               
                 <table border="1">
                     <tr class="l1">
                         <th> Código</th>
@@ -70,11 +70,11 @@
                         <th> Opções</th>
                        
                     </tr>
-                    <tr >
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
+                    <tr data-ng-repeat="produto in controller.produtos">
+                        <td>{{produto.codigo}}</td>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.margemLucro}}</td>
+                        <td>{{produto.preco}}</td>
                         <td>    </td>
                         <td>
                             <button class="buttonOp" type="button" data-ng-click="controller.alterar(produto)">Alterar</button>

@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.produtos = [];
             self.produto = undefined;
 
-            self.novo = function () {
+            self.novopro = function () {
                 self.produto = {};
             };
 
-            self.salvar = function () {
+            self.salvarpro = function () {
                 var metodo = 'POST';
                 if (self.produto.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (produto) {
+            self.alterarpro = function (produto) {
                 self.produto = produto;
             };
 
-            self.deletar = function (produto) {
+            self.deletarpro = function (produto) {
                 self.produto = produto;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (produto) {
+            self.concluirpro = function (produto) {
                 self.produto = produto;
 
                 $http({

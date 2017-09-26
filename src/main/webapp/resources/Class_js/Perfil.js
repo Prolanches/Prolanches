@@ -5,7 +5,7 @@ angular.module("projecJava", [])
 		   self.perfis = [];
 		   self.perfil = undefined;
 		   
-		   self.novo = function () {
+		   self.novoperf = function () {
 			   self.perfil = {};
 		   };
 	   

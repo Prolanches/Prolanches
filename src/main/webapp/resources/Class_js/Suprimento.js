@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.suprimentos = [];
             self.suprimento = undefined;
 
-            self.novo = function () {
+            self.novosup = function () {
                 self.suprimento = {};
             };
 
-            self.salvar = function () {
+            self.salvarsup = function () {
                 var metodo = 'POST';
                 if (self.suprimento.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (suprimento) {
+            self.alterarsup = function (suprimento) {
                 self.suprimento = suprimento;
             };
 
-            self.deletar = function (suprimento) {
+            self.deletarsup = function (suprimento) {
                 self.suprimento = suprimento;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (suprimento) {
+            self.concluirsup = function (suprimento) {
                 self.suprimento = suprimento;
 
                 $http({

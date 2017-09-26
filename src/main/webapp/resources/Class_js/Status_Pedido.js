@@ -5,7 +5,7 @@ angular.module("projecJava", [])
 		   self.statuspedidos = [];
 		   self.statuspedido = undefined;
 		   
-		   self.novo = function () {
+		   self.novosta = function () {
 			   self.statuspedido = {};
 		   };
 	   

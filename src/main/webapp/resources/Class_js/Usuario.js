@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.usuarios = [];
             self.usuario = undefined;
 
-            self.novo = function () {
+            self.novousu = function () {
                 self.usuario = {};
             };
 
-            self.salvar = function () {
+            self.salvarusu = function () {
                 var metodo = 'POST';
                 if (self.usuario.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (usuario) {
+            self.alterarusu = function (usuario) {
                 self.usuario = usuario;
             };
 
-            self.deletar = function (usuario) {
+            self.deletarusu = function (usuario) {
                 self.usuario = usuario;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (usuario) {
+            self.concluirusu = function (usuario) {
                 self.usuario = usuario;
 
                 $http({

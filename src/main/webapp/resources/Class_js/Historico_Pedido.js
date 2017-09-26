@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.historicos = [];
             self.historico = undefined;
 
-            self.novo = function () {
+            self.novohis = function () {
                 self.historico = {};
             };
 
-            self.salvar = function () {
+            self.salvarhis = function () {
                 var metodo = 'POST';
                 if (self.historico.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (historico) {
+            self.alterarhis = function (historico) {
                 self.historico = historico;
             };
 
-            self.deletar = function (historico) {
+            self.deletarhis = function (historico) {
                 self.historico = historico;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (historico) {
+            self.concluirhis = function (historico) {
                 self.historico = historico;
 
                 $http({

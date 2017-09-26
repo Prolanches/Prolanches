@@ -6,11 +6,11 @@ angular.module("projecJava", [])
             self.fornecedores = [];
             self.fornecedor = undefined;
 
-            self.novo = function () {
+            self.novofor = function () {
                 self.fornecedor = {};
             };
 
-            self.salvar = function () {
+            self.salvarfor = function () {
                 var metodo = 'POST';
                 if (self.fornecedor.codigo) {
                     metodo = 'PUT';
@@ -28,11 +28,11 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (fornecedor) {
+            self.alterarfor = function (fornecedor) {
                 self.fornecedor = fornecedor;
             };
 
-            self.deletar = function (fornecedor) {
+            self.deletarfor = function (fornecedor) {
                 self.fornecedor = fornecedor;
 
                 $http({
@@ -45,7 +45,7 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (fornecedor) {
+            self.concluirfor = function (fornecedor) {
                 self.fornecedor = fornecedor;
 
                 $http({
