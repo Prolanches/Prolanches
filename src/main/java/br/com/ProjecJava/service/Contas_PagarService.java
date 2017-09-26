@@ -39,7 +39,7 @@ public class Contas_PagarService {
 	 * @return - retornara todas as contas inseridas no banco
 	 * @throws SQLException
 	 */
-	public static List<Contas_PagarDTO> listarContasPagar() throws SQLException {
+	public List<Contas_PagarDTO> listarContasPagar() throws SQLException {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			return new Contas_PagarDAO(conex).listarContasPagar();
 		}

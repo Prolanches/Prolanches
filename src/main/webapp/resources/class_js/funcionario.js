@@ -1,25 +1,25 @@
 angular.module("projecJava", [])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("Historico_PedidoController", function ($http, urlBase) {
+        .controller("FuncionarioController", function ($http, urlBase) {
             var self = this;
 
-            self.historicos = [];
-            self.historico = undefined;
+            self.funcionarios = [];
+            self.funcionario = undefined;
 
-            self.novo = function () {
-                self.historico = {};
+            self.novofunc = function () {
+                self.funcionario = {};
             };
 
-            self.salvar = function () {
+            self.salvarfunc = function () {
                 var metodo = 'POST';
-                if (self.historico.codigo) {
+                if (self.funcionario.codigo) {
                     metodo = 'PUT';
                 }
 
                 $http({
                     method: metodo,
-                    url: urlBase + 'historicopedido/',
-                    data: self.historico
+                    url: urlBase + 'funcionario/',
+                    data: self.funcionario
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -28,16 +28,16 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (historico) {
-                self.historico = historico;
+            self.alterarfunc = function (funcionario) {
+                self.funcionario = funcionario;
             };
 
-            self.deletar = function (historico) {
-                self.historico = historico;
+            self.deletarfunc = function (funcionario) {
+                self.funcionario = funcionario;
 
                 $http({
                     method: 'DELETE',
-                    url: urlBase + 'historicopedido/' + self.historico.codigo + '/'
+                    url: urlBase + 'funcionario/' + self.funcionario.codigo + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -45,12 +45,12 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (historico) {
-                self.historico = historico;
+            self.concluirfunc = function (funcionario) {
+                self.funcioanrio = funcionario;
 
                 $http({
                     method: 'PUT',
-                    url: urlBase + 'historicopedido/' + self.historico.id + '/'
+                    url: urlBase + 'funcionario/' + self.funcionario.id + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -65,10 +65,10 @@ angular.module("projecJava", [])
             self.atualizarTabela = function () {
                 $http({
                     method: 'GET',
-                    url: urlBase + 'produto/'
+                    url: urlBase + 'funcionario/'
                 }).then(function successCallback(response) {
-                    self.historicos = response.data;
-                    self.historico = undefined;
+                    self.funcionarios = response.data;
+                    self.funcionario = undefined;
                 }, function errorCallback(response) {
                     self.ocorreuErro();
                 });

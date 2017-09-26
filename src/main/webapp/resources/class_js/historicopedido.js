@@ -1,25 +1,25 @@
 angular.module("projecJava", [])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("FornecedorController", function ($http, urlBase) {
+        .controller("Historico_PedidoController", function ($http, urlBase) {
             var self = this;
 
-            self.fornecedores = [];
-            self.fornecedor = undefined;
+            self.historicos = [];
+            self.historico = undefined;
 
-            self.novo = function () {
-                self.fornecedor = {};
+            self.novohis = function () {
+                self.historico = {};
             };
 
-            self.salvar = function () {
+            self.salvarhis = function () {
                 var metodo = 'POST';
-                if (self.fornecedor.codigo) {
+                if (self.historico.codigo) {
                     metodo = 'PUT';
                 }
 
                 $http({
                     method: metodo,
-                    url: urlBase + 'fornecedor/',
-                    data: self.fornecedor
+                    url: urlBase + 'historicopedido/',
+                    data: self.historico
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -28,16 +28,16 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (fornecedor) {
-                self.fornecedor = fornecedor;
+            self.alterarhis = function (historico) {
+                self.historico = historico;
             };
 
-            self.deletar = function (fornecedor) {
-                self.fornecedor = fornecedor;
+            self.deletarhis = function (historico) {
+                self.historico = historico;
 
                 $http({
                     method: 'DELETE',
-                    url: urlBase + 'fornecedor/' + self.fornecedor.codigo + '/'
+                    url: urlBase + 'historicopedido/' + self.historico.codigo + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -45,12 +45,12 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (fornecedor) {
-                self.fornecedor = fornecedor;
+            self.concluirhis = function (historico) {
+                self.historico = historico;
 
                 $http({
                     method: 'PUT',
-                    url: urlBase + 'fornecedor/' + self.fornecedor.id + '/'
+                    url: urlBase + 'historicopedido/' + self.historico.id + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -65,10 +65,10 @@ angular.module("projecJava", [])
             self.atualizarTabela = function () {
                 $http({
                     method: 'GET',
-                    url: urlBase + 'fornecedor/'
+                    url: urlBase + 'produto/'
                 }).then(function successCallback(response) {
-                    self.fornecedores = response.data;
-                    self.fornecedor = undefined;
+                    self.historicos = response.data;
+                    self.historico = undefined;
                 }, function errorCallback(response) {
                     self.ocorreuErro();
                 });

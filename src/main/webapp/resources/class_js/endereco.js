@@ -1,25 +1,25 @@
 angular.module("projecJava", [])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("FuncionarioController", function ($http, urlBase) {
+        .controller("EnderecoController", function ($http, urlBase) {
             var self = this;
 
-            self.funcionarios = [];
-            self.funcionario = undefined;
+            self.enderecos = [];
+            self.endereco = undefined;
 
-            self.novo = function () {
-                self.funcionario = {};
+            self.novoend = function () {
+                self.endereco = {};
             };
 
-            self.salvar = function () {
+            self.salvarend = function () {
                 var metodo = 'POST';
-                if (self.funcionario.codigo) {
+                if (self.endereco.codigo) {
                     metodo = 'PUT';
                 }
 
                 $http({
                     method: metodo,
-                    url: urlBase + 'funcionario/',
-                    data: self.funcionario
+                    url: urlBase + 'endereco/',
+                    data: self.endereco
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -28,16 +28,16 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (funcionario) {
-                self.funcionario = funcionario;
+            self.alterarend = function (endereco) {
+                self.endereco = endereco;
             };
 
-            self.deletar = function (funcionario) {
-                self.funcionario = funcionario;
+            self.deletarend = function (endereco) {
+                self.endereco = endereco;
 
                 $http({
                     method: 'DELETE',
-                    url: urlBase + 'funcionario/' + self.funcionario.codigo + '/'
+                    url: urlBase + 'endereco/' + self.endereco.codigo + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -45,12 +45,12 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (funcionario) {
-                self.funcioanrio = funcionario;
+            self.concluirend = function (endereco) {
+                self.endereco = endereco;
 
                 $http({
                     method: 'PUT',
-                    url: urlBase + 'funcionario/' + self.funcionario.id + '/'
+                    url: urlBase + 'endereco/' + self.endereco.id + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -65,10 +65,10 @@ angular.module("projecJava", [])
             self.atualizarTabela = function () {
                 $http({
                     method: 'GET',
-                    url: urlBase + 'funcionario/'
+                    url: urlBase + 'endereco/'
                 }).then(function successCallback(response) {
-                    self.funcionarios = response.data;
-                    self.funcionario = undefined;
+                    self.enderecos = response.data;
+                    self.endereco = undefined;
                 }, function errorCallback(response) {
                     self.ocorreuErro();
                 });

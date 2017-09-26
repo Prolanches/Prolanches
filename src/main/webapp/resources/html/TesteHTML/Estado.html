@@ -5,33 +5,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
      </head>
      <body data-ng-app="projecJava">
-	   <div data-ng-controller="EstadoController as controller">
-		  <h1>Snack Time</h1>
-		 <table border="1">
-			<tr>
-				<th>Código</th>
-				<th>Nome</th>
-				<th>UF</th>
-				<th>Nome País</th>
-				<th>Codigo País</th>
-				<th>sigla País</th>
-			</tr>
-			<tr data-ng-repeat="estado in controller.estados">
-				<td>{{estado.codigoUF}}</td>
-				<td>{{estado.nomeUF}}</td>
-				<td>{{estado.siglaUF}}</td>
-				<td>{{estado.nomePais}}</td>
-				<td>{{estado.codigoPais}}</td>
-				<td>{{estado.siglaPais}}</td>
-				<td>
-					<button type="button" data-ng-click="controller.alterar(pais)">Alterar</button>
-					<button type="button" data-ng-click="controller.deletar(pais)">Excluir</button>
-				</td>
-			</tr>
-		</table>
-	</div>
+		 
+	 <label for="">Estado:   </label>
+                 <select data-ng-controller="EstadoController as controller" >
+                  <option ></option>
+                  <option data-ng-repeat="estado in controller.estados">{{estado.nomeUF}}</option>
+                </select><br>
 
 	<script src="../../angular.js"></script>
-	<script src="../../Class_js/Estado.js"></script>
+	<script src="../../class_js/estado.js"></script>
 </body>
 </html>

@@ -1,25 +1,25 @@
 angular.module("projecJava", [])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("Contas_ReceberController", function ($http, urlBase) {
+        .controller("EmpresaController", function ($http, urlBase) {
             var self = this;
 
-            self.recebes = [];
-            self.recebe = undefined;
+            self.empresas = [];
+            self.empresa = undefined;
 
-            self.novo = function () {
-                self.recebe = {};
+            self.novoemp = function () {
+                self.empresa = {};
             };
 
-            self.salvar = function () {
+            self.salvaremp = function () {
                 var metodo = 'POST';
-                if (self.recebe.codigo) {
+                if (self.empresa.codigo) {
                     metodo = 'PUT';
                 }
 
                 $http({
                     method: metodo,
-                    url: urlBase + 'contasreceber/',
-                    data: self.recebe
+                    url: urlBase + 'empresa/',
+                    data: self.empresa
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -28,16 +28,16 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterar = function (recebe) {
-                self.recebe = recebe;
+            self.alteraremp = function (empresa) {
+                self.empresa = empresa;
             };
 
-            self.deletar = function (recebe) {
-                self.recebe = recebe;
+            self.deletaremp = function (empresa) {
+                self.empresa = empresa;
 
                 $http({
                     method: 'DELETE',
-                    url: urlBase + 'contasreceber/' + self.recebe.codigo + '/'
+                    url: urlBase + 'empresa/' + self.empresa.codigo + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -45,12 +45,12 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluir = function (recebe) {
-                self.recebe = recebe;
+            self.concluiremp = function (empresa) {
+                self.empresa = empresa;
 
                 $http({
                     method: 'PUT',
-                    url: urlBase + 'contasreceber/' + self.recebe.id + '/'
+                    url: urlBase + 'empresa/' + self.empresa.id + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -65,10 +65,10 @@ angular.module("projecJava", [])
             self.atualizarTabela = function () {
                 $http({
                     method: 'GET',
-                    url: urlBase + 'contasreceber/'
+                    url: urlBase + 'empresa/'
                 }).then(function successCallback(response) {
-                    self.recebes = response.data;
-                    self.recebe = undefined;
+                    self.empresas = response.data;
+                    self.empresa = undefined;
                 }, function errorCallback(response) {
                     self.ocorreuErro();
                 });
