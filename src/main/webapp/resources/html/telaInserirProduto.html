@@ -75,7 +75,15 @@
                   <option data-ng-repeat="fornecedor in controller.fornecedores">{{fornecedor.nome}}</option>                
               </select><br><br><br>
                 
+
+                
+                
+                <button class="buttonSave">
+                    <a>Salvar Suprimento</a>  
+                </button>
+
                <input class="buttonSave" type="submit"  data-ng-click="controller.salvarsup()" value="Salvar Suprimento">
+
 
             </div> 
            </div>
@@ -142,11 +150,11 @@
             </div> 
             <div class="span12 selSup">
                 <label class="titleSec" for="" style="">Selecione <br>os Suprimentos</label>
-                <div class="div"></div>
+                <div class="div" style="width: 90%"></div>
                 <br><br>
                 <table class="table">
                     <tr class="l1">
-                        <th style="color: #18bc9c;"  class="check">......++... </th>
+                        <th style="color: #18bc9c;"  class="check"></th>
                         <th>Nome</th>
                        
                     </tr>

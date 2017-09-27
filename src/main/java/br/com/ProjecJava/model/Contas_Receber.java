@@ -4,7 +4,6 @@
 package br.com.ProjecJava.model;
 
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import br.com.ProjecJava.dto.Contas_ReceberDTO;
 import br.com.ProjecJava.utils.DateUtils;
@@ -17,7 +16,6 @@ import br.com.ProjecJava.utils.DateUtils;
  *
  */
 public class Contas_Receber {
-	GregorianCalendar gc=new GregorianCalendar();
 	/**
 	 * Este são os atributos de Contas à Receber
 	 */
@@ -25,7 +23,7 @@ public class Contas_Receber {
 	private Pedido pedido;
 	private Date data;
 	private double valor;
-	Date d1=gc.getTime();
+	
 	
 
 	/**

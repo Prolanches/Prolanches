@@ -15,8 +15,8 @@ public class Suprimento_Teste {
 		SuprimentoService suprimentoService = new SuprimentoService();
 
 		// inserindo Suprimento FUNCIONANDO
-		SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100,10, 1.35, 2);
-		suprimentoService.inserir(suprimento);
+		//SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100,10, 1.35, 2);
+		//suprimentoService.inserir(suprimento);
 
 		// alterando Suprimento FUNCIONANDO
 		// Suprimento suprimento1 = new Suprimento(2, "Frango", tipoUnidade, 50, 1.05,

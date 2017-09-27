@@ -8,16 +8,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.Fornecedor_SuprimentoDAO;
-import br.com.ProjecJava.DAO.ProdutoDAO;
-import br.com.ProjecJava.DAO.Produto_SuprimentoDAO;
 import br.com.ProjecJava.DAO.SuprimentoDAO;
 import br.com.ProjecJava.dto.FornecedorDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Contas_Pagar;
 import br.com.ProjecJava.model.Fornecedor;
 import br.com.ProjecJava.model.Fornecedor_Suprimento;
 import br.com.ProjecJava.model.Marca;
-import br.com.ProjecJava.model.Produto_Suprimento;
 import br.com.ProjecJava.model.Suprimento;
 import br.com.ProjecJava.model.Tipo_Unidade;
 
@@ -60,6 +58,7 @@ public class SuprimentoService {
 			for (FornecedorDTO fornecedorDTO : lFornecedores) {
 				Fornecedor_Suprimento fornecedor_Suprimento = new Fornecedor_Suprimento();
 				Fornecedor fornecedor = new Fornecedor();
+				Contas_Pagar contas_pagar = new Contas_Pagar();
 				fornecedor.setCodigo(fornecedorDTO.getCodigo());
 				fornecedor.setNome(fornecedorDTO.getNome());
 				fornecedor.setCnpj(fornecedorDTO.getCnpj());
@@ -70,8 +69,14 @@ public class SuprimentoService {
 				fornecedor_Suprimento.setFornecedor(fornecedor);
 				fornecedor_Suprimento.setSuprimento(suprimento);
 				fornecedor_SuprimentoDAO.inserir(fornecedor_Suprimento);
+				contas_pagar.setCusto(suprimentoDTO.getCusto());
+				contas_pagar.setForneSupri(fornecedor_Suprimento);
+				
+				
+				
 			}
-		}
+	
+		}   
 		
 	}
 
