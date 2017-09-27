@@ -1,0 +1,101 @@
+
+body{
+    background-color: #fff; 
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    text-align: center;
+    font-variant: small-caps;
+    
+}
+
+
+
+.titleSec{
+    color: rgb(255,255,255); 
+    font-weight: 600; 
+    font-size: 30px; 
+}
+
+.div{
+    background-color: #18bc9c;
+    float: right;
+    width: 80%;
+    height: 1px;
+}
+
+#div1{
+    width: 110%;
+}
+
+#div3{
+    width: 50%;
+    margin-right: 11%;
+}
+
+label{
+
+}
+
+input{
+    width: 300px; 
+    height: 30px;
+}
+
+button{
+    background-color: #18bc9c;
+    color: #fff;
+    border: 1px solid #18bc9c;
+    width: 45%;
+    height: 50px;
+    margin: 2%;
+    float: right;
+    margin-right: 0;
+}
+
+
+.secaoEmp{
+    margin-top: 0px; 
+    font-variant: small-caps;
+    color: #fff;
+    text-align: center; 
+    padding: 50px;
+    height: auto;
+}
+
+.DGer {  
+    text-align: right; 
+    float: left;
+    background-color: rgb(44,62,80);
+    padding: 45px;
+    padding-left: 13%;
+    height: inherit;
+    margin-bottom: 50px;
+}
+.usAdm{
+    text-align: right; 
+    float: right;
+    background-color: rgb(44,62,80);
+    padding-top: 50px;
+	padding-bottom: 45px;
+	padding-right: 50px;
+    height: inherit;
+    
+}
+
+.botoes{
+    width: 100%;
+    height: auto;
+    align-items: right;
+    padding: 10%;
+    padding-right: 0;
+    margin-right: 50px;
+}
+
+select{
+    width: 300px; 
+    height: 30px; 
+}
+
+option{
+    color: rgb(44,62,80);
+}
+    

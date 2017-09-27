@@ -1,51 +1,33 @@
 body{
-    margin: 0px;
 	font-variant: small-caps;
 }
 
-th, tr{
-	width: 19%;
-    vertical-align: baseline;
+nav{
+    margin-bottom: 100px;
 }
 
-table{
-    border: 1px solid rgb(44,62,80);
-}
-
-.buttonOp{
-    width: 100%;
-    background-color: #18bc9c;
-    color: #fff;
-    border: 1px solid rgb(44,62,80);
-    height: 40px;
-}
-
-button{
-    color: #fff;
-    border: 1px solid rgb(44,62,80);
-    height: 40px;
+.tabela{
+    margin-top: 150px;
 }
 
 .titleSec{
-	color: rgb(44,62,80); 
-	font-weight: 600; 
-	font-size: 30px; 
+    color: rgb(44,62,80); 
+    font-weight: 600; 
+    font-size: 30px; 
     float: right;
 }
 
 .div{
     background-color: #18bc9c;
-    float: left;
+    float: right;
     width: 80%;
     height: 1px;
     color: #18bc9c;
-    float: right;
 } 
 
 .table{
     width: 100%;
     height: auto;
-    border: 1px solid #fff;
     text-align: left; 
 }
 
@@ -53,7 +35,6 @@ button{
     background-color: #18bc9c;
     height: auto;
 }
-
 .ls{
     height: auto;
     text-align: left;
