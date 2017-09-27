@@ -24,7 +24,7 @@
 
   </head>
  
-  <body       data-ng-app="projecJava" >
+  <body data-ng-app="projecJava" >
       <div class="container-fluid" >
         <!-- Navigation -->
         <!-- Navigation -->
@@ -49,7 +49,8 @@
           
             <!-- =============== SUPRIMENTOS =================== -->
 
-          <div  class="row-fluid secaoSupr"  data-ng-controller="SuprimentoController as controller">
+          <div class="row-fluid secaoSupr">
+          <div data-ng-controller="SuprimentoController as controller">
             
             <div class="span6 cadSupr">
               <label class="titleSec" for="" style="">Inserir Suprimento</label>
@@ -58,15 +59,15 @@
               <label class="labelSup" for="">Nome:   </label>
               <input class="inputSup" type="text"  name="nomeSuprimento" data-ng-model="controller.suprimento.nome"><br>
               <label class="labelSup" for="">Quantidade:   </label>
-              <input class="inputSup" type="text"  name="quantidade" data-ng-model="controller.suprimento.quantidade"><br>
+              <input class="inputSup" type="number"  name="quantidade" data-ng-model="controller.suprimento.quantidade"><br>
               <label class="labelSup" for="">Custo:   </label>
-              <input class="inputSup" type="text"  name="custo" data-ng-model="controller.suprimento.custo"><br>
+              <input class="inputSup" type="number"  name="custo" data-ng-model="controller.suprimento.custo"><br>
               <label class="labelSup" for="">Tipo Unidade:   </label>
               <input class="inputSup" type="text"  name="" data-ng-model="controller.suprimento.nomeTipo_Unidade"><br>
               <label class="labelSup" for="">Marca:   </label>
               <input class="inputSup" type="text"  name="marca" data-ng-model="controller.suprimento.nomemarca"><br>
               <label class="labelSup" for="">Quantidade Utilizada:   </label>
-              <input class="inputSup" type="text"  name="marca" data-ng-model="controller.suprimento.quantidadeutilizada"><br>
+              <input class="inputSup" type="number"  name="marca" data-ng-model="controller.suprimento.quantidadeutilizada"><br>
               
               <label class="labelSup" for="">Fornecedor:   </label>
               <select data-ng-controller="FornecedorController as controller">
@@ -74,10 +75,18 @@
                   <option data-ng-repeat="fornecedor in controller.fornecedores">{{fornecedor.nome}}</option>                
               </select><br><br><br>
                 
+
+                
+                
+                <button class="buttonSave">
+                    <a>Salvar Suprimento</a>  
+                </button>
+
                <input class="buttonSave" type="submit"  data-ng-click="controller.salvarsup()" value="Salvar Suprimento">
 
+
             </div> 
-           
+           </div>
              <!-- =============== FORNECEDOR =================== -->
              
             <div class="span6 cadForn" >
@@ -141,11 +150,11 @@
             </div> 
             <div class="span12 selSup">
                 <label class="titleSec" for="" style="">Selecione <br>os Suprimentos</label>
-                <div class="div"></div>
+                <div class="div" style="width: 90%"></div>
                 <br><br>
                 <table class="table">
                     <tr class="l1">
-                        <th style="color: #18bc9c;"  class="check">......++... </th>
+                        <th style="color: #18bc9c;"  class="check"></th>
                         <th>Nome</th>
                        
                     </tr>
@@ -162,11 +171,11 @@
         </div>     
       
      <script src="../angular.js"></script>
-     <script src="../class_js/suprimento.js"></script>
-     <script src="../class_js/fornecedor.js"></script>
-     <script src="../class_js/produto.js"></script>
-     <script src="../class_js/pais.js"></script>
-     <script src="../class_js/cidade.js"></script>
-     <script src="../class_js/estado.js"></script>
+     <script src="../js/suprimento.js"></script>
+     <script src="../js/fornecedor.js"></script>
+     <script src="../js/produto.js"></script>
+     <script src="../js/pais.js"></script>
+     <script src="../js/cidade.js"></script>
+     <script src="../js/estado.js"></script>
 </body>
 </html>

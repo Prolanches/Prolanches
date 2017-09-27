@@ -62,14 +62,14 @@ button{
     float: left;
 	background-color: rgb(44,62,80);
     padding: 50px;
-    padding-left: 150px;
+    padding-left: 26%;
 }
 .cadForn{
     text-align: right; 
     float: right;
 	background-color: rgb(44,62,80);
     padding: 50px;
-    padding-left: 150px;
+    padding-left: 26%;
     
 }
 
