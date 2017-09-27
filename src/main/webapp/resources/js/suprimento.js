@@ -1,8 +1,7 @@
-angular.module("projecJava", [])
+angular.module("projecJava",[])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("SuprimentoController", function ($http, urlBase) {
+        .controller("SuprimentoController", function ($http, urlBase){
             var self = this;
-
             self.suprimentos = [];
             self.suprimento = undefined;
 
@@ -23,7 +22,7 @@ angular.module("projecJava", [])
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
-                	console.log(response);
+                	
                     self.ocorreuErro();
                 });
             };
@@ -66,7 +65,7 @@ angular.module("projecJava", [])
                 $http({
                     method: 'GET',
                     url: urlBase + 'suprimento/'
-                }).then(function successCallback(response) {
+                }).then(function successCallback(response){
                     self.suprimentos = response.data;
                     self.suprimento = undefined;
                 }, function errorCallback(response) {
@@ -74,8 +73,8 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.activate = function () {
+            self.active = function() {
                 self.atualizarTabela();
             };
-            self.activate();
+            self.active();
         });
