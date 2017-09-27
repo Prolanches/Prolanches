@@ -13,6 +13,28 @@ Metodo alterar na PedidoService
 Pedido Teste
 
 
+insert into PERFIL (PERFIL_COD,PERFIL_NIVEIS) VALUES (SEQ_PERFIL.nextval,'Funcionário');
+
+
+insert into PERFIL (PERFIL_COD,PERFIL_NIVEIS) VALUES (SEQ_PERFIL.nextval,'Funcionário');
+
+Suprimento
+Quando vou inserir um suprimento, da erro ao inserir for_suprimento, porém inseri suprimento.
+Quando cadastro um suprimento não estão inserindo no contas a pagar. 
+
+Produto
+Quando vou inserir um produto, da erro ao inserir suprimento, porém inseri produto.
+
+Pedido
+Quando cadastro um pedido da erro ao inserir produto, porém inseri pedido. 
+O Valor do Pedido não está vindo
+Quando insiro um pedido não deduz do estoque. 
+Quando insiro um pedido não está inserindo em contas a receber. 
+Quando insiro um pedido não está inserindo hitorico do pedido. 
+
+Sobre apresentação. 
+
+
 
 
 

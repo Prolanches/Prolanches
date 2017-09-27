@@ -36,21 +36,21 @@ public class Produto_Teste {
 		SuprimentoDTO suprimento = new SuprimentoDTO(1, "Pão", 1, 100, 10, 100.0, 2);
 		lSuprimentos.add(suprimento);
 
-		ProdutoDTO produto = new ProdutoDTO(null, "X-Teste", 1.50, 0);
+		ProdutoDTO produto = new ProdutoDTO(null, "X-Bacon", 1.50, 0,"Cliente");
 		produtoService.inserir(produto, lSuprimentos);
 
 		/**
 		 * alterando o Produto
 		 */
-		// produtoService.alterar(new Produto(1, "X-Tudo",2.0,20.00));
+		//produtoService.alterar(new ProdutoDTO(1, "X-Tudo",2.0,0,"Cliente"));
 
 		/**
 		 * excluindo a Produto
 		 */
-		// produtoService.excluir(1);
+		 //produtoService.excluir(61);
 
 		/**
-		 * Listagem dos Funcionarios
+		 * Listagem dos Produtos
 		 */
 
 		// List<Produto> lProduto = Produto_Service.listarProduto();

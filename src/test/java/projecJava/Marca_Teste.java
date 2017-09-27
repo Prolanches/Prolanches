@@ -12,11 +12,11 @@ public class Marca_Teste {
 		MarcaService marcaService = new MarcaService();
 		
 		//inserindo marca FUNCIONANDO
-		//MarcaDTO marca = new MarcaDTO(null,"Thabrulai");
+		//MarcaDTO marca = new MarcaDTO(null,"Perdigão");
 		//marcaService.inserir(marca);
 		
 		//excluindo marca FUNCIONANDO
-		//marcaService.excluir(1);
+		//marcaService.excluir(21);
 		
 		//listando as marcas FUNCIONANDO
 		List<MarcaDTO> lMarca = MarcaService.listarMarca();

@@ -18,6 +18,7 @@ import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
 import br.com.ProjecJava.model.Produto;
 import br.com.ProjecJava.model.Produto_Suprimento;
 import br.com.ProjecJava.model.Suprimento;
+import br.com.ProjecJava.model.Tipo_Unidade;
 
 
 
@@ -61,8 +62,10 @@ public class ProdutoService {
 			for (SuprimentoDTO suprimentoDTO : lSuprimentos) {
 				Produto_Suprimento produto_Suprimento = new Produto_Suprimento();
 				Suprimento suprimento = new Suprimento();
+				Tipo_Unidade tipo_unidade = new Tipo_Unidade();
 				suprimento.setCodigo(suprimentoDTO.getCodigo());
 				suprimento.setNome(suprimentoDTO.getNome());
+				suprimento.setTipoUnidade(tipo_unidade);
 				suprimento.setQuantidade(suprimentoDTO.getQuantidade());
 				suprimento.setCusto(suprimentoDTO.getCusto());
 				

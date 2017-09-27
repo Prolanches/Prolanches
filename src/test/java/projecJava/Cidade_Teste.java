@@ -7,10 +7,14 @@ import br.com.ProjecJava.dto.CidadeDTO;
 
 import br.com.ProjecJava.service.CidadeService;
 
+/**
+ * @author Noturno
+ *
+ */
 public class Cidade_Teste {
 
 
-	public  void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException {
 
 		CidadeService cidadeService = new CidadeService();
 		
@@ -21,7 +25,7 @@ public class Cidade_Teste {
 
 	}
 
-	private  void imprimirCidade(CidadeDTO cidade) {
+	private static void imprimirCidade(CidadeDTO cidade) {
 		System.out.println("codigo: " + cidade.getCodigo() + " Nome: " + cidade.getNomeCidade());
 	}
 }

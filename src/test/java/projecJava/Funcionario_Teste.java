@@ -26,18 +26,18 @@ public class Funcionario_Teste {
 		/**
 		 * inserindo o funcionario
 		 */
-		FuncionarioDTO funcionario = new FuncionarioDTO(null, "Lucas Braz", 24, 55);
-		funcionarioService.inserir(funcionario);
+		//FuncionarioDTO funcionario = new FuncionarioDTO(null, "Alisson", 62, 82);
+		//funcionarioService.inserir(funcionario);
 
 		/**
 		 * alterando o funcionario
 		 */
-		// funcionarioService.alterar(new Funcionario(7, "Lucas Braz",funcao,empresa));
+		 //funcionarioService.alterar(new FuncionarioDTO(61, "Itamar",24,82));
 
 		/**
 		 * excluindo a empresa
 		 */
-		// funcionarioService.excluir(7);
+		 //funcionarioService.excluir(61);
 
 		/**
 		 * Listagem dos Funcionarios

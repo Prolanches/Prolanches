@@ -5,8 +5,10 @@ package br.com.ProjecJava.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
+import br.com.ProjecJava.DAO.Contas_PagarDAO;
 import br.com.ProjecJava.DAO.Fornecedor_SuprimentoDAO;
 import br.com.ProjecJava.DAO.SuprimentoDAO;
 import br.com.ProjecJava.dto.FornecedorDTO;
@@ -38,6 +40,7 @@ public class SuprimentoService {
 		try (Connection conex = new ConnectionPoolOracle().getConnection()) {
 			SuprimentoDAO suprimentoDAO = new SuprimentoDAO(conex);
 			Fornecedor_SuprimentoDAO fornecedor_SuprimentoDAO = new Fornecedor_SuprimentoDAO(conex);
+			Contas_PagarDAO contas_pagarDAO = new Contas_PagarDAO(conex);
 			
 			Tipo_Unidade tipounidade = new Tipo_Unidade();
 			tipounidade.setCodigo(suprimentoDTO.getCodigoTipo_Unidade());
@@ -71,6 +74,8 @@ public class SuprimentoService {
 				fornecedor_SuprimentoDAO.inserir(fornecedor_Suprimento);
 				contas_pagar.setCusto(suprimentoDTO.getCusto());
 				contas_pagar.setForneSupri(fornecedor_Suprimento);
+				contas_pagar.setData(new Date());
+				contas_pagarDAO.inserir(contas_pagar);
 				
 				
 				

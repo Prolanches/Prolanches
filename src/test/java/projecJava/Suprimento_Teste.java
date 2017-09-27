@@ -2,8 +2,11 @@ package projecJava;
 
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ProjecJava.dto.FornecedorDTO;
+import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.service.SuprimentoService;
 
@@ -15,9 +18,15 @@ public class Suprimento_Teste {
 		SuprimentoService suprimentoService = new SuprimentoService();
 
 		// inserindo Suprimento FUNCIONANDO
-		//SuprimentoDTO suprimento = new SuprimentoDTO(null, "Pão", 1, 100,10, 1.35, 2);
-		//suprimentoService.inserir(suprimento);
+		
+		List<FornecedorDTO> lFornecedores = new ArrayList<>();
 
+		FornecedorDTO fornecedor = new FornecedorDTO(42,"Vale da Web","123.456.789/0001-10",141,"Aquidabam",4449, "3030-6597", "testando@hotmail.com");
+		lFornecedores.add(fornecedor);
+
+		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Margarina",21,10000,1,1,22);
+		suprimentoService.inserir(suprimento, lFornecedores);
+		
 		// alterando Suprimento FUNCIONANDO
 		// Suprimento suprimento1 = new Suprimento(2, "Frango", tipoUnidade, 50, 1.05,
 		// fornecedor, marca);

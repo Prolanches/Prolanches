@@ -15,14 +15,14 @@ public class Fornecedor_Teste {
 	
 		
 		//inserindo fornecedor FUNCIONANDO
-		//FornecedorDTO fornecedor = new FornecedorDTO(null,"forne2", "1235.356.326/589",124,"Fides Deeke",4449, "3333-2325", "forne2@gmail.com.br");
+		//FornecedorDTO fornecedor = new FornecedorDTO(null,"Fornecedor Teste", "123.456.789/0001-10",141,"Aquidabam",4449, "3333-2325", "teste@gmail.com.br");
 		//fornecedorService.inserir(fornecedor);
 		
 		//alterar fornecedor FUNCIONANDO
-	    //fornecedorService.alterar(new FornecedorDTO(22,"Mascada","123.456.789/0001-10",124,"Max Weise",4449, "3030-6598", "forne1@hotmail.com"));
+	    //fornecedorService.alterar(new FornecedorDTO(41,"Vale da Web","123.456.789/0001-10",141,"Aquidabam",4449, "3030-6597", "testando@hotmail.com"));
 		
 		//excluindo fornecedor FUNCIONANDO
-		//fornecedorService.excluir(21);
+		//fornecedorService.excluir(41);
 		
 		//listando fornecedores FUNCIONANDO
 		List<FornecedorDTO> lfornecedor = fornecedorService.listarFornecedores();
@@ -32,7 +32,7 @@ public class Fornecedor_Teste {
 	}
 	
 		private static void imprimeFornecedor(FornecedorDTO fornecedor){
-			System.out.println("codigo: " + fornecedor.getCodigo()+" \nNome: "+fornecedor.getNome()
+			System.out.println("Codigo: " + fornecedor.getCodigo()+" \nNome: "+fornecedor.getNome()
 					+ " \ncnpj: " + fornecedor.getCnpj()+"\ntelefone: "+fornecedor.getTelefone()+"\nE-mail: "+fornecedor.getEmail()
 					+ " \nEndereço \nRua: "+fornecedor.getRua()+"\nCidade: "+fornecedor.getNomeCidade()
 					+ " \nEstado: "+fornecedor.getSiglaUF()
