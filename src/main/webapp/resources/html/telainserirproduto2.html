@@ -3,11 +3,6 @@
 
   <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Snack Time</title>
 
     <!-- Bootstrap core CSS -->
@@ -35,10 +30,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="estoque.html">PÃ gina de Estoque</a>
+                      <a class="nav-link js-scroll-trigger" href="estoque.html">Pàgina de Estoque</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link js-scroll-trigger" href="produtos.html">PÃ¡gina de Produtos</a>
+                      <a class="nav-link js-scroll-trigger" href="produtos.html">Página de Produtos</a>
                     </li>
                   </ul>
                 </div>
@@ -50,10 +45,7 @@
             <!-- =============== SUPRIMENTOS =================== -->
 
           <div class="row-fluid secaoSupr">
-          <div data-ng-controller="SuprimentoController as controller" data-ng-controller="FornecedorController as controller"
-          data-ng-controller="CidadeController as controller" data-ng-controller="PaisController as controller"
-          data-ng-controller="EstadoController as controller" data-ng-controller="MarcaController as controller"
-          data-ng-controller="Tipo_UnidadeController as controller">
+          <div data-ng-controller="SuprimentoController as controller" >
           
             
             <div class="span6 cadSupr">
@@ -108,7 +100,7 @@
                   
                 
                  <!--COMBOBOX PAIS -->
-                <label for="">PaÃ­s:   </label>
+                <label for="">País:   </label>
                  <select >
                   <option ></option>
                   <option data-ng-repeat=" pais in controller.paises">{{pais.nomePais}}</option>
@@ -176,12 +168,6 @@
       </div>
      <script src="../angular.js"></script>
      <script src="../js/suprimento.js"></script>
-     <script src="../js/fornecedor.js"></script>
-     <script src="../js/produto.js"></script>
-     <script src="../js/pais.js"></script>
-     <script src="../js/cidade.js"></script>
-     <script src="../js/estado.js"></script>
-     <script src="../js/marca.js"></script>
-     <script src="../js/tipounidade.js"></script>
+     
 </body>
 </html>
