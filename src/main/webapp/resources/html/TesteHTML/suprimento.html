@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Snack Time</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+	<body data-ng-app="projecJava">
+		<div data-ng-controller="SuprimentoController as controller">
+			<h1>Snack Time</h1>
+			
+			<div style="border: 1px solid black;" data-ng-show="controller.suprimento">
+                <label for="suprimentoCod">Código: </label>
+                <input type="number" 
+                       id="produtoCod" 
+                       data-ng-model="controller.suprimento.codigo"
+                       disabled><br>
+
+                <label for="assunto">Nome: </label>
+                <input type="text" id="nomeProduto" data-ng-model="controller.suprimento.nome"><br>
+                
+                <label for="assunto">Margem de Lucro:  </label>
+                <input type="number" step="0.01" id="margemLucro" data-ng-model="controller.suprimento.custo"><br>
+                
+                 <label for="assunto">Preço:  </label>
+                <input type="number" step="0.01" id="preco" data-ng-model="controller.suprimento.nomeMarca"><br>
+
+
+                <button type="button" data-ng-click="controller.salvarsup()">Salvar</button>
+                <button type="button" data-ng-click="controller.suprimento = undefined">Cancelar</button>
+            </div>
+            
+            <div style="border: 1px solid black;"
+                 data-ng-show="!controller.suprimento">
+                <button type="button" data-ng-click="controller.novosup()">Novo produto</button><br>
+                <br>
+                <table border="1">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Margem de Lucro</th>
+                        <th>Preço</th>
+                       
+                    </tr>
+                    <tr data-ng-repeat="suprimento in controller.suprimentos">
+                        <td>{{produto.codigo}}</td>
+                        <td>{{produto.nome}}</td>
+                        <td>{{produto.custo}}</td>
+                        <td>{{produto.nomeMarca}}</td>
+                        <td>
+                            <button type="button" data-ng-click="controller.alterarsup(suprimento)">Alterar</button>
+                            <button type="button" data-ng-click="controller.deletarsup(suprimento)">Excluir</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+		
+		
+		<script src="../../angular.js"></script>
+		<script src="../../js/suprimento.js"></script>
+	</body>
+</html>

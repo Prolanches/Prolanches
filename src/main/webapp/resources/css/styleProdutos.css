@@ -1,11 +1,7 @@
-
 body{
     margin: 0px;
 	font-variant: small-caps;
 }
-
-
-
 
 th, tr{
 	width: 19%;
@@ -15,7 +11,6 @@ th, tr{
 table{
     border: 1px solid rgb(44,62,80);
 }
-
 
 .buttonOp{
     width: 100%;
@@ -31,13 +26,11 @@ button{
     height: 40px;
 }
 
-
-
-
 .titleSec{
 	color: rgb(44,62,80); 
 	font-weight: 600; 
 	font-size: 30px; 
+    float: right;
 }
 
 .div{
@@ -46,9 +39,8 @@ button{
     width: 80%;
     height: 1px;
     color: #18bc9c;
+    float: right;
 } 
-
-
 
 .table{
     width: 100%;

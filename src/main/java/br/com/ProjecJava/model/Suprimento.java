@@ -91,6 +91,6 @@ public class Suprimento {
 	public SuprimentoDTO toDTO() {
 		return new SuprimentoDTO(this.getCodigo(), this.getNome(), this.getTipoUnidade().getCodigo(),
 				this.getTipoUnidade().getNome(), this.getTipoUnidade().getUnidade(), this.getQuantidade()
-				,this.getQuantidadeutilizada(),this.getCusto(), this.getMarca().getCodigo(), this.getMarca().getNome());
+				,0,this.getCusto(), this.getMarca().getCodigo(), this.getMarca().getNome());
 	}
 }

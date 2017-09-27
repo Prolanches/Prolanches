@@ -26,17 +26,17 @@ public class Funcao_Teste {
 		 *  inserindo a Função 
 		 */
 		//FuncaoDTO funcao = new FuncaoDTO(null,"Balconista");
-		//funcaoService.inserir(funcao);
+	    //funcaoService.inserir(funcao);
 		
 		/**
 		 * alterando a Função 
 		 */
-		//funcaoService.alterar(new FuncaoDTO(24,"Gerente"));
+		//funcaoService.alterar(new FuncaoDTO(61,"Chapeiro"));
 		
 		/**
 		 * excluindo a Função 
 		 */
-		//funcaoService.excluir(41);
+		//funcaoService.excluir(61);
 
 		/**
 		 *  Listagem das Funções

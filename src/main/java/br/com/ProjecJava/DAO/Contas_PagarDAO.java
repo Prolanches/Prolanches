@@ -45,13 +45,26 @@ public class Contas_PagarDAO {
 	 * @throws SQLException
 	 */
 	public boolean inserir(Contas_Pagar contasPagar) throws SQLException {
-		String sql = " INSERT INTO CONTAS_PAGAR (CONT_PAG_COD,CONT_PAG_CUSTO,CONT_PAG_FOR_SUPRI_COD,CONT_PAG_DATA) "
-				+ " VALUES(SEQ_CONTAS_PAGAR.NEXTVAL,?,?,?)";
+	String sqlsequence = "SELECT SEQ_CONTAS_PAGAR.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					contasPagar.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		String sql = " INSERT INTO CONTAS_PAGAR (CONT_PAG_COD,CONT_PAG_CUSTO,CONT_PAG_SUPRI_COD,CONT_PAG_DATA) "
+				+ " VALUES(?,?,?,?)";
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setDouble(1, contasPagar.getCusto());
-		statement.setInt(2, contasPagar.getForneSupri().getCodigo());		
+		statement.setInt(1,contasPagar.getCodigo());
+		statement.setDouble(2, contasPagar.getCusto());
+		statement.setInt(3, contasPagar.getForneSupri().getCodigo());		
 		java.sql.Date sqlDate = new java.sql.Date(contasPagar.getData().getTime());
-		statement.setDate(3, sqlDate);
+		statement.setDate(4, sqlDate);
 
 		return statement.executeUpdate() > 0;
 	}

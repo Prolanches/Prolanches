@@ -28,6 +28,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body data-ng-app="projecJava">
 	<div class="container-fluid">
 		<!-- Navigation -->
@@ -37,6 +38,17 @@
 			<div class="container-fluid">
 				<a class="navbar-brand js-scroll-trigger" href="#page-top">Snack
 					Time</a>
+=======
+  </head>
+ 
+  <body data-ng-app="projecJava" >
+      <div class="container-fluid" >
+        <!-- Navigation -->
+        <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="position: fixed;">
+              <div class="container-fluid">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time</a>
+>>>>>>> branch 'master' of https://github.com/Prolanches/Prolanches.git
 
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
@@ -51,42 +63,91 @@
 	</div>
 	<div class="container-fluid">
 
+<<<<<<< HEAD
 		<!-- =============== SUPRIMENTOS =================== -->
+=======
+          <div class="row-fluid secaoSupr">
+          <div data-ng-controller="SuprimentoController as controller" data-ng-controller="FornecedorController as controller"
+          data-ng-controller="CidadeController as controller" data-ng-controller="PaisController as controller"
+          data-ng-controller="EstadoController as controller" data-ng-controller="MarcaController as controller"
+          data-ng-controller="Tipo_UnidadeController as controller">
+          
+            
+            <div class="span6 cadSupr">
+              <label class="titleSec" for="" style="">Inserir Suprimento</label>
+                <div id="" class="div"></div>
+                <br><br>
+              <label class="labelSup" for="">Nome:   </label>
+              <input class="inputSup" type="text"  name="nomeSuprimento" data-ng-model="controller.suprimento.nome"><br>
+              <label class="labelSup" for="">Quantidade:   </label>
+              <input class="inputSup" type="number"  name="quantidade" data-ng-model="controller.suprimento.quantidade"><br>
+              <label class="labelSup" for="">Custo:   </label>
+              <input class="inputSup" type="number"  name="custo" data-ng-model="controller.suprimento.custo"><br>
+              <label class="labelSup" for="">Tipo Unidade:   </label>
+              <input class="inputSup" type="text"  name="" data-ng-model="controller.suprimento.nomeTipo_Unidade"><br>
+              <label class="labelSup" for="">Marca:   </label>
+              <input class="inputSup" type="text"  name="marca" data-ng-model="controller.suprimento.nomemarca"><br>
+              <label class="labelSup" for="">Quantidade Utilizada:   </label>
+              <input class="inputSup" type="number"  name="marca" data-ng-model="controller.suprimento.quantidadeutilizada"><br>
+              
+              <label class="labelSup" for="">Fornecedor:   </label>
+              <select >
+                  <option> </option>
+                  <option data-ng-repeat="fornecedor in controller.fornecedores">{{fornecedor.nome}}</option>                
+              </select><br><br><br>
+                
 
+                
+                
+                <button class="buttonSave">
+                    <a>Salvar Suprimento</a>  
+                </button>
+
+               <input class="buttonSave" type="submit"  data-ng-click="controller.salvarsup()" value="Salvar Suprimento">
+
+>>>>>>> branch 'master' of https://github.com/Prolanches/Prolanches.git
+
+<<<<<<< HEAD
 		<div class="row-fluid secaoSupr"
 			data-ng-controller="SuprimentoController as controller">
+=======
+            </div> 
+           
+             <!-- =============== FORNECEDOR =================== -->
+             
+            <div class="span6 cadForn" >
+                <label class="titleSec" for="">Inserir Fornecedor</label>
+                <div id="div2" class="div"></div>  
+                <br><br>
+                <label class="labelSup" for="">Nome Social:   </label>
+                  <input type="text"  name="nomeEmpresa" style="" data-ng-model="controller.fornecedor.nome"><br>
+                  <label for="">CNPJ:   </label>
+                  <input type="text"  name="cnpj" style="" data-ng-model="controller.fornecedor.cnpj"><br>
+                  <label for="">Telefone:   </label>
+                  <input type="text"  name="telefone" style="" data-ng-model="controller.fornecedor.telefone"><br>
+                  <label for="">E-mail:   </label>
+                  <input type="text"  name="email" style="" data-ng-model="controller.fornecedor.email"><br>
+                  
+                
+                 <!--COMBOBOX PAIS -->
+                <label for="">País:   </label>
+                 <select >
+                  <option ></option>
+                  <option data-ng-repeat=" pais in controller.paises">{{pais.nomePais}}</option>
+                </select><br>
 
-			<div class="span6 cadSupr">
-				<label class="titleSec" for="" style="">Inserir Suprimento</label>
-				<div id="" class="div"></div>
-				<br> <br> <label class="labelSup" for="">Nome: </label> <input
-					class="inputSup" type="text" name="nomeSuprimento"
-					data-ng-model="controller.suprimento.nome"><br> <label
-					class="labelSup" for="">Quantidade: </label> <input
-					class="inputSup" type="text" name="quantidade"
-					data-ng-model="controller.suprimento.quantidade"><br>
-				<label class="labelSup" for="">Custo: </label> <input
-					class="inputSup" type="text" name="custo"
-					data-ng-model="controller.suprimento.custo"><br> <label
-					class="labelSup" for="">Tipo Unidade: </label> <input
-					class="inputSup" type="text" name=""
-					data-ng-model="controller.suprimento.nomeTipo_Unidade"><br>
-				<label class="labelSup" for="">Marca: </label> <input
-					class="inputSup" type="text" name="marca"
-					data-ng-model="controller.suprimento.nomemarca"><br> <label
-					class="labelSup" for="">Quantidade Utilizada: </label> <input
-					class="inputSup" type="text" name="marca"
-					data-ng-model="controller.suprimento.quantidadeutilizada"><br>
-
-				<label class="labelSup" for="">Fornecedor: </label> <select
-					data-ng-controller="FornecedorController as controller">
-					<option> </option>
-					<option data-ng-repeat="fornecedor in controller.fornecedores">{{fornecedor.nome}}</option>
-				</select><br> <br> <br> <input class="buttonSave"
-					type="submit" data-ng-click="controller.salvarsup()"
-					value="Salvar Suprimento">
-
-			</div>
+                <!--COMBOBOX ESTADO -->
+                <label for="">Estado:   </label>
+                 <select >
+                  <option ></option>
+                  <option data-ng-repeat="estado in controller.estados">{{estado.nomeUF}}</option>
+                </select><br>
+                
+                 <!--COMBOBOX CIDADE -->
+                <label for="">Cidade:   </label>
+                <select  >
+                  <option ></option>
+                  <option  data-ng-repeat="cidade in controller.cidades"> {{cidade.nomeCidade}}</option>
 
 			<!-- =============== FORNECEDOR =================== -->
 
@@ -181,5 +242,3 @@
 	<script src="../js/pais.js"></script>
 	<script src="../js/cidade.js"></script>
 	<script src="../js/estado.js"></script>
-</body>
-</html>

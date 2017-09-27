@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import br.com.ProjecJava.dto.PedidoDTO;
+import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.service.PedidoService;
 
 @Path("pedido")
@@ -37,10 +38,10 @@ public class Pedido_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(PedidoDTO pedido) {
+	public Response create(PedidoDTO pedido, List<ProdutoDTO> lProdutos) {
 		PedidoService pedidoService = new PedidoService();
 		try {
-			pedidoService.inserir(pedido);
+			pedidoService.inserir(pedido, lProdutos);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();

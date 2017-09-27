@@ -1,6 +1,7 @@
 angular.module("projecJava",[])
 	   .value('urlBase', 'http://localhost:9080/projecJava/rest/')
 	   .controller("CidadeController", function ($http, urlBase){
+
 		   var self = this;
 		   self.cidades = [];
 		   self.cidade = undefined;

@@ -13,13 +13,13 @@ public class Endereco_Teste {
 		EnderecoService enderecoService = new EnderecoService();
 
 		// inserindo o endereço funcionando
-		//EnderecoDTO endereco = new EnderecoDTO(null,"Fides Deeke",4449);
+		//EnderecoDTO endereco = new EnderecoDTO(null,"Amazonas",4449);
 		
 		//enderecoService.inserir(endereco);
 
 		
 		//alterando a rua funcionando
-		//enderecoService.alterar(new EnderecoDTO(121, "11 de Setembro",4449));
+		//enderecoService.alterar(new EnderecoDTO(141, "Gaspar",4449));
 
 		// listando os endereços funcionando
 		List<EnderecoDTO> lendereco = enderecoService.listarEnderecos();
@@ -28,7 +28,7 @@ public class Endereco_Teste {
 		}
 
 		// excluindo o endereço funcionando
-		//enderecoService.excluir(121);
+		//enderecoService.excluir(124);
 	}
 
 	private static void imprimirEndereco(EnderecoDTO endereco) {

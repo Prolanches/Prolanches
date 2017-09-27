@@ -15,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.ProjecJava.dto.FornecedorDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.service.SuprimentoService;
 
@@ -37,10 +38,10 @@ public class Suprimento_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(SuprimentoDTO suprimento) {
+	public Response create(SuprimentoDTO suprimento, List<FornecedorDTO> lFornecedores) {
 		SuprimentoService suprimentoService = new SuprimentoService();
 		try {
-			suprimentoService.inserir(suprimento);
+			suprimentoService.inserir(suprimento, lFornecedores);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();

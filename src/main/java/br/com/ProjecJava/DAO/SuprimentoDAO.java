@@ -41,14 +41,26 @@ public class SuprimentoDAO {
 	 * @throws SQLException
 	 */
 	public boolean inserir(Suprimento suprimento) throws SQLException {
-		String sql = "INSERT INTO SUPRIMENTO(SUPRI_COD,SUPRI_NOME,SUPRI_TIPO_UND_COD,SUPRI_QUANTIDADE,SUPRI_CUSTO,SUPRI_MARCA_COD) VALUES(SEQ_SUPRIMENTO.nextval,?,?,?,?,?)";
+	String sqlsequence = "SELECT SEQ_SUPRIMENTO.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					suprimento.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		String sql = "INSERT INTO SUPRIMENTO(SUPRI_COD,SUPRI_NOME,SUPRI_TIPO_UND_COD,SUPRI_QUANTIDADE,SUPRI_CUSTO,SUPRI_MARCA_COD) VALUES(?,?,?,?,?,?)";
 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setString(1, suprimento.getNome());
-		statement.setInt(2, suprimento.getTipoUnidade().getCodigo());
-		statement.setInt(3, suprimento.getQuantidade());
-		statement.setDouble(4, suprimento.getCusto());
-		statement.setInt(5, suprimento.getMarca().getCodigo());
+		statement.setInt(1, suprimento.getCodigo());
+		statement.setString(2, suprimento.getNome());
+		statement.setInt(3, suprimento.getTipoUnidade().getCodigo());
+		statement.setInt(4, suprimento.getQuantidade());
+		statement.setDouble(5, suprimento.getCusto());
+		statement.setInt(6, suprimento.getMarca().getCodigo());
 
 		return statement.executeUpdate() > 0;
 	}
@@ -119,7 +131,7 @@ public class SuprimentoDAO {
 					int supriCod = rs.getInt("SUPRI_COD");
 					String supriNome = rs.getString("SUPRI_NOME");
 					int supriQuant = rs.getInt("SUPRI_QUANTIDADE");
-					int supriCusto = rs.getInt("SUPRI_CUSTO");
+					double supriCusto = rs.getDouble("SUPRI_CUSTO");
 					Suprimento supri = new Suprimento(supriCod, supriNome, tipoUnid, supriQuant, supriCusto, marca);
 					lSuprimento.add(supri.toDTO());
 				}

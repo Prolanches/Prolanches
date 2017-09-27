@@ -42,10 +42,23 @@ public class Fornecedor_SuprimentoDAO {
 	 * @throws SQLException
 	 */
 	public boolean inserir(Fornecedor_Suprimento forneSupri) throws SQLException {
-		String sql = "INSERT INTO FORNECEDOR_SUPRIMENTOS (FOR_SUP_COD,FOR_SUP_FORNECEDOR_COD,FOR_SUP_SUPRIMENTO_COD)VALUES(SEQ_FORNECEDOR_SUPRIMENTOS.nextval,?,?)";
+	String sqlsequence = "SELECT SEQ_FORNECEDOR_SUPRIMENTOS.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					forneSupri.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		String sql = "INSERT INTO FORNECEDOR_SUPRIMENTOS (FOR_SUP_COD,FOR_SUP_FORNECEDOR_COD,FOR_SUP_SUPRIMENTO_COD)VALUES(?,?,?)";
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setInt(1, forneSupri.getFornecedor().getCodigo());
-		statement.setInt(2, forneSupri.getSuprimento().getCodigo());
+		statement.setInt(1, forneSupri.getCodigo());
+		statement.setInt(2, forneSupri.getFornecedor().getCodigo());
+		statement.setInt(3, forneSupri.getSuprimento().getCodigo());
 
 		return statement.executeUpdate() > 0;
 	}

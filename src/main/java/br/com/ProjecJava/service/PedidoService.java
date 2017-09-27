@@ -8,19 +8,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.ProjecJava.DAO.PedidoDAO;
-import br.com.ProjecJava.DAO.ProdutoDAO;
 import br.com.ProjecJava.DAO.Produto_PedidoDAO;
-import br.com.ProjecJava.DAO.Produto_SuprimentoDAO;
 import br.com.ProjecJava.dto.PedidoDTO;
 import br.com.ProjecJava.dto.ProdutoDTO;
-import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Contas_Receber;
+import br.com.ProjecJava.model.Historico_Pedido;
 import br.com.ProjecJava.model.Pedido;
 import br.com.ProjecJava.model.Produto;
 import br.com.ProjecJava.model.Produto_Pedido;
-import br.com.ProjecJava.model.Produto_Suprimento;
-import br.com.ProjecJava.model.Suprimento;
 import br.com.ProjecJava.model.Tipo_Operacao;
+import br.com.ProjecJava.utils.DateUtils;
 
 /**
  * 
@@ -53,7 +51,7 @@ public class PedidoService {
 			tipo_op.setCodigo(pedidoDTO.getCodigoTipoOP());
 			
 			Pedido pedido = new Pedido();
-			pedido.setDataPedido(pedidoDTO.getDataPedido());
+			pedido.setDataPedido(DateUtils.parseData(pedidoDTO.getDataPedido(), DateUtils.PATTERN_DATA_PADRAO));
 			pedido.setTipoOperacao(tipo_op);
 			pedido.setValor(pedidoDTO.getValorPedido());
 			pedidoDAO.inserir(pedido);
@@ -69,18 +67,30 @@ public class PedidoService {
 				
 				produto_pedido.setProduto(produto);
 				produto_pedido.setPedido(pedido);
-				produto_pedido.setNomeCliente(pedidoDTO.);
+				produto_pedido.setNomeCliente(produtoDTO.getNomeCliente());
 				produto_pedidoDAO.inserir(produto_pedido);
-				pedidoTotal += produtoDTO.getMargemLucro()*produtoDTO.getPreco();
+				pedidoTotal += produtoDTO.getPreco();
 			}
 		
 			
 			//realizar o calculo do valor do produto
-			double valorPedido = pedidoTotal + pedido.getValor();
 			
-			pedido.setValor(valorPedido);
+			
+			pedido.setValor(pedidoTotal);
 			
 			pedidoDAO.alterar(pedido);
+			
+			Contas_Receber contas_receber = new Contas_Receber();
+			contas_receber.setPedido(pedido);
+			contas_receber.setData(DateUtils.parseData(pedidoDTO.getDataPedido(), DateUtils.PATTERN_DATA_PADRAO));
+			contas_receber.setValor(pedidoDTO.getValorPedido());
+			
+			Historico_Pedido hit_pedido = new Historico_Pedido();
+			hit_pedido.setPedido(pedido);
+			hit_pedido.setStatusPedido(null);
+			hit_pedido.setFuncionario(null);
+			
+			
 		}
 	}
 
@@ -96,7 +106,7 @@ public class PedidoService {
 			
 			Pedido pedido = new Pedido();
 			pedido.setCodigo(pedidoDTO.getCodigoPedido());
-			pedido.setDataPedido(pedidoDTO.getDataPedido());
+			pedido.setDataPedido(DateUtils.parseData(pedidoDTO.getDataPedido(), DateUtils.PATTERN_DATA_PADRAO));
 			pedido.setTipoOperacao(tipo_op);
 			pedido.setValor(pedidoDTO.getValorPedido());
 			
@@ -104,6 +114,7 @@ public class PedidoService {
 			new PedidoDAO(conex).alterar(pedido);
 		}
 	}
+
 	/**
 	 * Metodo excluir 
 	 * @param pedido
