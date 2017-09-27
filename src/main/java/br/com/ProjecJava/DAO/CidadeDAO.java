@@ -23,6 +23,7 @@ import br.com.ProjecJava.model.Pais;
  */
 public class CidadeDAO {
 	/**
+	 * 
 	 * confi guração da conexao
 	 */
 	private final Connection conex;
