@@ -1,6 +1,6 @@
 angular.module("projecJava", [])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("SuprimentoController", function ($http, urlBase) {
+        .controller("Suprimento_Controller", function ($http, urlBase) {
             var self = this;
 
             self.suprimentos = [];
