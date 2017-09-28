@@ -57,7 +57,7 @@ public class Contas_PagarDAO {
 			}
 		}
 		
-		String sql = " INSERT INTO CONTAS_PAGAR (CONT_PAG_COD,CONT_PAG_CUSTO,CONT_PAG_SUPRI_COD,CONT_PAG_DATA) "
+		String sql = " INSERT INTO CONTAS_PAGAR (CONT_PAG_COD,CONT_PAG_CUSTO,CONT_PAG_FOR_SUPRI_COD,CONT_PAG_DATA) "
 				+ " VALUES(?,?,?,?)";
 		PreparedStatement statement = conex.prepareStatement(sql);
 		statement.setInt(1,contasPagar.getCodigo());

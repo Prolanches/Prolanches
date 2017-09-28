@@ -24,7 +24,7 @@ public class Suprimento_Teste {
 		FornecedorDTO fornecedor = new FornecedorDTO(42,"Vale da Web","123.456.789/0001-10",141,"Aquidabam",4449, "3030-6597", "testando@hotmail.com");
 		lFornecedores.add(fornecedor);
 
-		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Margarina",21,10000,1,1,22);
+		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Hamburgue",21,10000,1,1,22);
 		suprimentoService.inserir(suprimento, lFornecedores);
 		
 		// alterando Suprimento FUNCIONANDO

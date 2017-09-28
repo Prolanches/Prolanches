@@ -40,13 +40,26 @@ public class Produto_SuprimentoDAO {
 	 * @throws SQLException
 	 */
 	public boolean inserir(Produto_Suprimento produSupri) throws SQLException {
-		String sql = " INSERT INTO PRODUTO_SUPRIMENTO(PS_COD,PS_SUPRIMENTO_COD,PS_PRODUTO_COD,PS_QUANTIDADE,PS_CUSTO) VALUES (SEQ_PRODUTO_SUPRIMENTO.NEXTVAL,?,?,?,?)";
+String sqlsequence = "SELECT SEQ_PRODUTO_SUPRIMENTO.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					produSupri.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		String sql = " INSERT INTO PRODUTO_SUPRIMENTO(PS_COD,PS_SUPRIMENTO_COD,PS_PRODUTO_COD,PS_QUANTIDADE,PS_CUSTO) VALUES (?,?,?,?,?)";
 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setInt(1, produSupri.getSuprimento().getCodigo());
-		statement.setInt(2, produSupri.getProduto().getCodigo());
-		statement.setDouble(3, produSupri.getQuantidade());
-		statement.setDouble(4, produSupri.getCusto());
+		statement.setInt(1, produSupri.getCodigo());
+		statement.setInt(2, produSupri.getSuprimento().getCodigo());
+		statement.setInt(3, produSupri.getProduto().getCodigo());
+		statement.setDouble(4, produSupri.getQuantidade());
+		statement.setDouble(5, produSupri.getCusto());
 
 		return statement.executeUpdate() > 0;
 	}
