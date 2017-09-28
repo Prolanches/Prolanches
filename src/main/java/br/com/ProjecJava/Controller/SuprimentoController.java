@@ -15,19 +15,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.UsuarioDTO;
-import br.com.ProjecJava.service.UsuarioService;
+import br.com.ProjecJava.dto.FornecedorDTO;
+import br.com.ProjecJava.dto.SuprimentoDTO;
+import br.com.ProjecJava.service.SuprimentoService;
 
-@Path("usuario")
-public class Usuario_Controller {
-
+@Path("suprimento")
+public class SuprimentoController {
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<UsuarioDTO> listusuario() {
-		UsuarioService usuarioService = new UsuarioService();
+	public List<SuprimentoDTO> listSuprimento() {
+		SuprimentoService suprimentoService = new SuprimentoService();
 		try {
-			return usuarioService.listarUsuario();
+			return suprimentoService.listarSuprimentos();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -37,10 +38,10 @@ public class Usuario_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(UsuarioDTO usuario) {
-		UsuarioService usuarioService = new UsuarioService();
+	public Response create(SuprimentoDTO suprimento, List<FornecedorDTO> lFornecedores) {
+		SuprimentoService suprimentoService = new SuprimentoService();
 		try {
-			usuarioService.inserir(usuario);
+			suprimentoService.inserir(suprimento, lFornecedores);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,10 +52,10 @@ public class Usuario_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(UsuarioDTO usuario) {
-		UsuarioService usuarioService = new UsuarioService();
+	public Response update(SuprimentoDTO suprimento) {
+		SuprimentoService suprimentoService = new SuprimentoService();
 		try {
-			usuarioService.alterar(usuario);
+			suprimentoService.alterar(suprimento);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,13 +66,14 @@ public class Usuario_Controller {
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		UsuarioService usuarioService = new UsuarioService();
+		SuprimentoService suprimentoService = new SuprimentoService();
 		try {
-			usuarioService.excluir(codigo);
+			suprimentoService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-	}
+}
+
 }

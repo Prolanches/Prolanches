@@ -9,19 +9,19 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.ProjecJava.dto.PaisDTO;
-import br.com.ProjecJava.service.PaisService;
+import br.com.ProjecJava.dto.PerfilDTO;
+import br.com.ProjecJava.service.PerfilService;
 
-@Path("pais")
-public class Pais_Controller {
+@Path("perfil")
+public class PerfilController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<PaisDTO> listaPais() {
-		PaisService paisService = new PaisService();
+	public List<PerfilDTO> listPerfil() {
+		PerfilService perfilService = new PerfilService();
 		try {
-			return paisService.listarPais();
+			return perfilService.listarPerfil();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();

@@ -15,20 +15,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.PedidoDTO;
 import br.com.ProjecJava.dto.ProdutoDTO;
-import br.com.ProjecJava.service.PedidoService;
+import br.com.ProjecJava.service.ProdutoService;
 
-@Path("pedido")
-public class Pedido_Controller {
-	
+@Path("produto")
+public class ProdutoController {
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<PedidoDTO> listProduto() {
-		PedidoService pedidoService = new PedidoService();
+	public List<ProdutoDTO> listProduto() {
+		ProdutoService produtoService = new ProdutoService();
 		try {
-			return pedidoService.listarPedido();
+			return produtoService.listarProduto();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -38,10 +37,10 @@ public class Pedido_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(PedidoDTO pedido, List<ProdutoDTO> lProdutos) {
-		PedidoService pedidoService = new PedidoService();
+	public Response create(ProdutoDTO produto) {
+		ProdutoService produtoService = new ProdutoService();
 		try {
-			pedidoService.inserir(pedido, lProdutos);
+			produtoService.inserir(produto, null);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -52,10 +51,10 @@ public class Pedido_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(PedidoDTO pedido) {
-		PedidoService pedidoService = new PedidoService();
+	public Response update(ProdutoDTO produto) {
+		ProdutoService produtoService = new ProdutoService();
 		try {
-			pedidoService.alterar(pedido);
+			produtoService.alterar(produto.toProduto());
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -65,14 +64,14 @@ public class Pedido_Controller {
 
 	@DELETE
 	@Path("{codigo}/")
-	public Response delete(@PathParam("codigo1,codigo2") int codigo1, int codigo2) {
-		PedidoService pedidoService = new PedidoService();
+	public Response delete(@PathParam("codigo") int codigo) {
+		ProdutoService produtoService = new ProdutoService();
 		try {
-			pedidoService.excluir(codigo1, codigo2);
+			produtoService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-}
+	}
 }

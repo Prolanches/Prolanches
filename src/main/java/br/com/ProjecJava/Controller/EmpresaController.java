@@ -19,7 +19,7 @@ import br.com.ProjecJava.dto.EmpresaDTO;
 import br.com.ProjecJava.service.EmpresaService;
 
 @Path("empresa")
-public class Empresa_Controller {
+public class EmpresaController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

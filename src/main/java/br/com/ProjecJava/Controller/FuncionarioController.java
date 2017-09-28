@@ -20,7 +20,7 @@ import br.com.ProjecJava.service.FuncionarioService;
 
 
 @Path("funcionario")
-public class Funcionario_Controller {
+public class FuncionarioController {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

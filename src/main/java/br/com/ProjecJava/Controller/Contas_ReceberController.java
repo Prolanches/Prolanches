@@ -12,33 +12,33 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.Historico_PedidoDTO;
-import br.com.ProjecJava.service.Historico_PedidoService;
+import br.com.ProjecJava.dto.Contas_ReceberDTO;
+import br.com.ProjecJava.service.Contas_ReceberService;
 
 
-@Path("historicopedido")
-public class Historico_Pedido_Controller {
+@Path("contasreceber")
+public class Contas_ReceberController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Historico_PedidoDTO> listProduto() {
-		Historico_PedidoService historicoPedidoService = new Historico_PedidoService();
+	public List<Contas_ReceberDTO> listContasReceber() {
+		Contas_ReceberService contasreceberService = new Contas_ReceberService();
 		try {
-			return historicoPedidoService.listarHistorico_Pedido();
+			return contasreceberService.listarContas_Receber();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
 		}
 	}
-	
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(Historico_PedidoDTO historicoPedido) {
-		Historico_PedidoService historicoPedidoService = new Historico_PedidoService();
+	public Response create(Contas_ReceberDTO contas_receber) {
+		Contas_ReceberService contasreceberService = new Contas_ReceberService();
 		try {
-			historicoPedidoService.inserir(historicoPedido);
+			contasreceberService.inserir(contas_receber);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
