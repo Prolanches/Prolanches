@@ -23,7 +23,8 @@
 
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-servlet</artifactId>
+			<!-- coloquei 0 (-core) caso nao for so remover -->
+			<artifactId>jersey-container-servlet-core</artifactId>
 			<version>2.23</version>
 		</dependency>
 

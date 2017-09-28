@@ -9,19 +9,19 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.ProjecJava.dto.Tipo_OperacaoDTO;
-import br.com.ProjecJava.service.Tipo_OperacaoService;
+import br.com.ProjecJava.dto.Status_PedidoDTO;
+import br.com.ProjecJava.service.Status_PedidoService;
 
-@Path("tipoOperacao")
-public class Tipo_Operacao_Controller {
+@Path("statusPedido")
+public class Status_PedidoController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Tipo_OperacaoDTO> listTipoOperacao() {
-		Tipo_OperacaoService tipoOperacaoService = new Tipo_OperacaoService();
+	public List<Status_PedidoDTO> listStatusPedido() {
+		Status_PedidoService statusPedidoService = new Status_PedidoService();
 		try {
-			return tipoOperacaoService.listarTipo_Operacao();
+			return statusPedidoService.listarStatus_Pedido();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();

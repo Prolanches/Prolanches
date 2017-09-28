@@ -8,26 +8,25 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.EnderecoDTO;
-import br.com.ProjecJava.service.EnderecoService;
+import br.com.ProjecJava.dto.FuncaoDTO;
+import br.com.ProjecJava.service.FuncaoService;
 
+@Path("funcao")
+public class FuncaoController {
 
-@Path("endereco")
-public class Endereco_Controller {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<EnderecoDTO> listProduto() {
-		EnderecoService enderecoService = new EnderecoService();
+	public List<FuncaoDTO> listFuncao() {
+		FuncaoService funcaoService = new FuncaoService();
 		try {
-			return enderecoService.listarEnderecos();
+			return funcaoService.listarFuncao();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -37,42 +36,26 @@ public class Endereco_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(EnderecoDTO endereco) {
-		EnderecoService enderecoService = new EnderecoService();
+	public Response create(FuncaoDTO funcao) {
+		FuncaoService funcaoService = new FuncaoService();
 		try {
-			enderecoService.inserir(endereco);
+			funcaoService.inserir(funcao);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 	}
-
-	@PUT
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/")
-	public Response update(EnderecoDTO endereco) {
-		EnderecoService enderecoService = new EnderecoService();
-		try {
-			enderecoService.alterar(endereco);
-			return Response.status(Response.Status.OK).build();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
-		}
-	}
-
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		EnderecoService enderecoService = new EnderecoService();
+		FuncaoService funcaoService = new FuncaoService();
 		try {
-			enderecoService.excluir(codigo);
+			funcaoService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
-}
-
+	}
 }

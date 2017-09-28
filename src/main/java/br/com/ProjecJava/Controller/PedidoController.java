@@ -15,19 +15,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.FornecedorDTO;
-import br.com.ProjecJava.service.FornecedorService;
+import br.com.ProjecJava.dto.PedidoDTO;
+import br.com.ProjecJava.dto.ProdutoDTO;
+import br.com.ProjecJava.service.PedidoService;
 
-@Path("fornecedor")
-public class Fornecedor_Controller {
+@Path("pedido")
+public class PedidoController {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<FornecedorDTO> listProduto() {
-		FornecedorService fornecedorService = new FornecedorService();
+	public List<PedidoDTO> listProduto() {
+		PedidoService pedidoService = new PedidoService();
 		try {
-			return fornecedorService.listarFornecedores();
+			return pedidoService.listarPedido();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -37,10 +38,10 @@ public class Fornecedor_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(FornecedorDTO fornecedor) {
-		FornecedorService fornecedorService = new FornecedorService();
+	public Response create(PedidoDTO pedido, List<ProdutoDTO> lProdutos) {
+		PedidoService pedidoService = new PedidoService();
 		try {
-			fornecedorService.inserir(fornecedor);
+			pedidoService.inserir(pedido, lProdutos);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,10 +52,10 @@ public class Fornecedor_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(FornecedorDTO fornecedor) {
-		FornecedorService fornecedorService = new FornecedorService();
+	public Response update(PedidoDTO pedido) {
+		PedidoService pedidoService = new PedidoService();
 		try {
-			fornecedorService.alterar(fornecedor);
+			pedidoService.alterar(pedido);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -64,15 +65,14 @@ public class Fornecedor_Controller {
 
 	@DELETE
 	@Path("{codigo}/")
-	public Response delete(@PathParam("codigo") int codigo) {
-		FornecedorService fornecedorService = new FornecedorService();
+	public Response delete(@PathParam("codigo1,codigo2") int codigo1, int codigo2) {
+		PedidoService pedidoService = new PedidoService();
 		try {
-		    fornecedorService.excluir(codigo);
+			pedidoService.excluir(codigo1, codigo2);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
 		}
 }
-
 }

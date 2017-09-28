@@ -1,25 +1,25 @@
 angular.module("projecJava", [])
         .value('urlBase', 'http://localhost:9080/projecJava/rest/')
-        .controller("FuncaoController", function ($http, urlBase) {
+        .controller("Suprimento_Controller", function ($http, urlBase) {
             var self = this;
 
-            self.funcoes = [];
-            self.funcao = undefined;
+            self.suprimentos = [];
+            self.suprimento = undefined;
 
-            self.novofun = function () {
-                self.funcao = {};
+            self.novosup = function () {
+                self.suprimento = {};
             };
 
-            self.salvarfun = function () {
+            self.salvarsup = function () {
                 var metodo = 'POST';
-                if (self.funcao.codigo) {
+                if (self.suprimento.codigo) {
                     metodo = 'PUT';
                 }
 
                 $http({
                     method: metodo,
-                    url: urlBase + 'funcao/',
-                    data: self.funcao
+                    url: urlBase + 'suprimento/',
+                    data: self.suprimento
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -28,16 +28,16 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.alterarfun = function (funcao) {
-                self.funcao = funcao;
+            self.alterarsup = function (suprimento) {
+                self.suprimento = suprimento;
             };
 
-            self.deletarfun = function (funcao) {
-                self.funcao = funcao;
+            self.deletarsup = function (suprimento) {
+                self.suprimento = suprimento;
 
                 $http({
                     method: 'DELETE',
-                    url: urlBase + 'funcao/' + self.funcao.codigo + '/'
+                    url: urlBase + 'suprimento/' + self.suprimento.codigo + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -45,12 +45,12 @@ angular.module("projecJava", [])
                 });
             };
 
-            self.concluirfun = function (funcao) {
-                self.funcao = funcao;
+            self.concluirsup = function (suprimento) {
+                self.suprimento = suprimento;
 
                 $http({
                     method: 'PUT',
-                    url: urlBase + 'funcao/' + self.funcao.id + '/'
+                    url: urlBase + 'suprimento/' + self.suprimento.id + '/'
                 }).then(function successCallback(response) {
                     self.atualizarTabela();
                 }, function errorCallback(response) {
@@ -65,10 +65,10 @@ angular.module("projecJava", [])
             self.atualizarTabela = function () {
                 $http({
                     method: 'GET',
-                    url: urlBase + 'funcao/'
+                    url: urlBase + 'suprimento/'
                 }).then(function successCallback(response) {
-                    self.funcoes = response.data;
-                    self.funcao = undefined;
+                    self.suprimentos = response.data;
+                    self.suprimento = undefined;
                 }, function errorCallback(response) {
                     self.ocorreuErro();
                 });
