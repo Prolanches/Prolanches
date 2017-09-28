@@ -11,7 +11,9 @@ angular.module("projecJava", [])
             };
 
             self.salvarfun = function () {
-                var metodo = 'POST';               
+                var metodo = 'POST';
+                if (self.funcao.codigo) {
+                    metodo = 'PUT';
                 }
 
                 $http({
@@ -24,7 +26,7 @@ angular.module("projecJava", [])
                 	console.log(response);
                     self.ocorreuErro();
                 });
-            
+            };
 
             self.alterarfun = function (funcao) {
                 self.funcao = funcao;
@@ -44,7 +46,16 @@ angular.module("projecJava", [])
             };
 
             self.concluirfun = function (funcao) {
-                self.funcao = funcao;            
+                self.funcao = funcao;
+
+                $http({
+                    method: 'PUT',
+                    url: urlBase + 'funcao/' + self.funcao.id + '/'
+                }).then(function successCallback(response) {
+                    self.atualizarTabela();
+                }, function errorCallback(response) {
+                    self.ocorreuErro();
+                });
             };
 
             self.ocorreuErro = function () {
