@@ -15,6 +15,7 @@ import br.com.ProjecJava.DAO.SuprimentoDAO;
 import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 import br.com.ProjecJava.jdbc.ConnectionPoolOracle;
+import br.com.ProjecJava.model.Marca;
 import br.com.ProjecJava.model.Produto;
 import br.com.ProjecJava.model.Produto_Suprimento;
 import br.com.ProjecJava.model.Suprimento;
@@ -63,11 +64,20 @@ public class ProdutoService {
 				Produto_Suprimento produto_Suprimento = new Produto_Suprimento();
 				Suprimento suprimento = new Suprimento();
 				Tipo_Unidade tipo_unidade = new Tipo_Unidade();
+				tipo_unidade.setCodigo(suprimentoDTO.getCodigoTipo_Unidade());
+				tipo_unidade.setNome(suprimentoDTO.getNomeTipo_Unidade());
+				tipo_unidade.setUnidade(suprimentoDTO.getUnidadeTipo_Unidade());
+				
+				Marca marca = new Marca();
+				marca.setCodigo(suprimentoDTO.getCodigoMarca());
+				marca.setNome(suprimentoDTO.getNomeMarca());
 				suprimento.setCodigo(suprimentoDTO.getCodigo());
 				suprimento.setNome(suprimentoDTO.getNome());
 				suprimento.setTipoUnidade(tipo_unidade);
 				suprimento.setQuantidade(suprimentoDTO.getQuantidade());
 				suprimento.setCusto(suprimentoDTO.getCusto());
+				suprimento.setMarca(marca);
+				
 				
 				produto_Suprimento.setSuprimento(suprimento);
 				produto_Suprimento.setProduto(produto);
