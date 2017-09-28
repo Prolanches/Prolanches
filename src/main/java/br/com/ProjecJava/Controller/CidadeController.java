@@ -9,21 +9,21 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.ProjecJava.dto.EstadoDTO;
-import br.com.ProjecJava.service.EstadoService;
+import br.com.ProjecJava.dto.CidadeDTO;
+import br.com.ProjecJava.service.CidadeService;
 
 
 
-@Path("estado")
-public class Estado_Controller {
+@Path("cidade")
+public class CidadeController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<EstadoDTO>  listaEstado() {
-		EstadoService estadoService = new EstadoService();
+	public List<CidadeDTO>  listaCidade() {
+		CidadeService cidadeService = new CidadeService();
 		try {
-			return estadoService.listarEstado();
+			return cidadeService.listarCidades();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();

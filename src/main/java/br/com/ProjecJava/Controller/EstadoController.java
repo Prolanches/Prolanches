@@ -9,19 +9,21 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import br.com.ProjecJava.dto.Tipo_UnidadeDTO;
-import br.com.ProjecJava.service.Tipo_UnidadeService;
+import br.com.ProjecJava.dto.EstadoDTO;
+import br.com.ProjecJava.service.EstadoService;
 
-@Path("tipoUnidade")
-public class Tipo_Unidade_Controller {
+
+
+@Path("estado")
+public class EstadoController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Tipo_UnidadeDTO> listtipoUnidade() {
-		Tipo_UnidadeService tipoUnidadeService = new Tipo_UnidadeService();
+	public List<EstadoDTO>  listaEstado() {
+		EstadoService estadoService = new EstadoService();
 		try {
-			return tipoUnidadeService.listarTiposUnidades();
+			return estadoService.listarEstado();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();

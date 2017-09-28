@@ -33,7 +33,9 @@ public class Produto_Teste {
 		 */
 		List<SuprimentoDTO> lSuprimentos = new ArrayList<>();
 
-		SuprimentoDTO suprimento = new SuprimentoDTO(1, "Pão", 1, 100, 10, 100.0, 2);
+		SuprimentoDTO suprimento = new SuprimentoDTO(62, "Pão", 21, 1000, 10,1, 2);
+		SuprimentoDTO suprimento1 = new SuprimentoDTO(63,"Hamburguer",21,1000,10,1,22);
+		lSuprimentos.add(suprimento1);
 		lSuprimentos.add(suprimento);
 
 		ProdutoDTO produto = new ProdutoDTO(null, "X-Bacon", 1.50, 0,"Cliente");

@@ -17,7 +17,7 @@ import br.com.ProjecJava.service.Contas_PagarService;
 
 
 @Path("contaspagar")
-public class Contas_Pagar_Controller {
+public class Contas_PagarController {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)

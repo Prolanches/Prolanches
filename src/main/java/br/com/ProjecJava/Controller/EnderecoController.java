@@ -15,20 +15,19 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.ProjecJava.dto.FornecedorDTO;
-import br.com.ProjecJava.dto.SuprimentoDTO;
-import br.com.ProjecJava.service.SuprimentoService;
+import br.com.ProjecJava.dto.EnderecoDTO;
+import br.com.ProjecJava.service.EnderecoService;
 
-@Path("suprimento")
-public class Suprimento_Controller {
-	
+
+@Path("endereco")
+public class EnderecoController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<SuprimentoDTO> listSuprimento() {
-		SuprimentoService suprimentoService = new SuprimentoService();
+	public List<EnderecoDTO> listProduto() {
+		EnderecoService enderecoService = new EnderecoService();
 		try {
-			return suprimentoService.listarSuprimentos();
+			return enderecoService.listarEnderecos();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
@@ -38,10 +37,10 @@ public class Suprimento_Controller {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response create(SuprimentoDTO suprimento, List<FornecedorDTO> lFornecedores) {
-		SuprimentoService suprimentoService = new SuprimentoService();
+	public Response create(EnderecoDTO endereco) {
+		EnderecoService enderecoService = new EnderecoService();
 		try {
-			suprimentoService.inserir(suprimento, lFornecedores);
+			enderecoService.inserir(endereco);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -52,10 +51,10 @@ public class Suprimento_Controller {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public Response update(SuprimentoDTO suprimento) {
-		SuprimentoService suprimentoService = new SuprimentoService();
+	public Response update(EnderecoDTO endereco) {
+		EnderecoService enderecoService = new EnderecoService();
 		try {
-			suprimentoService.alterar(suprimento);
+			enderecoService.alterar(endereco);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -66,9 +65,9 @@ public class Suprimento_Controller {
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		SuprimentoService suprimentoService = new SuprimentoService();
+		EnderecoService enderecoService = new EnderecoService();
 		try {
-			suprimentoService.excluir(codigo);
+			enderecoService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();
 		} catch (SQLException e) {
 			e.printStackTrace();

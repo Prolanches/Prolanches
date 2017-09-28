@@ -72,6 +72,7 @@ public class SuprimentoService {
 				fornecedor_Suprimento.setFornecedor(fornecedor);
 				fornecedor_Suprimento.setSuprimento(suprimento);
 				fornecedor_SuprimentoDAO.inserir(fornecedor_Suprimento);
+				
 				contas_pagar.setCusto(suprimentoDTO.getCusto());
 				contas_pagar.setForneSupri(fornecedor_Suprimento);
 				contas_pagar.setData(new Date());

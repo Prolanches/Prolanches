@@ -14,7 +14,7 @@ import br.com.ProjecJava.dto.MarcaDTO;
 import br.com.ProjecJava.service.MarcaService;
 
 @Path("marca")
-public class Marca_Controller {
+public class MarcaController {
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
