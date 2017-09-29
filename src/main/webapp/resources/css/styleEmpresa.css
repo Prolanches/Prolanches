@@ -99,3 +99,38 @@ option{
     color: rgb(44,62,80);
 }
     
+
+.table{
+    width: 100%;
+    height: auto;
+    border: 1px solid #fff;
+    text-align: left; 
+}
+
+.l1{
+    background-color: #18bc9c;
+    height: auto;
+    text-align: left; 
+    border: 1px solid #fff;
+}
+
+.ls{
+    height: auto;
+    text-align: left;
+    border: 1px solid #fff;
+    
+}
+.buttonOp{
+	height: 10%;
+	width: 100%;
+}
+
+.listFunc{
+	background-color: rgb(44,62,80);
+    padding-top: 50px;
+	padding-bottom: 45px;
+	padding-right: 25px;
+    height: inherit;
+    margin-top: 600px;
+    padding-left: 25px;
+}

@@ -1,24 +1,44 @@
-body{
-	margin: 0px;
-}
-
-header{
-	width: 100%;
-	background-color: rgb(150,60,205);
-}
-
-.meio{
-	height: 800px;
-	background-color: rgb(255,60,205);
-	margin-top: 200px;
-	margin-top: 50px;
+body{    
+    margin: 0px;
+    padding: 0px; 
+	font-variant: small-caps;
 }
 
 
-th, tr{
-	width: 19%;
+.titleSec{
+	color: rgb(44,62,80); 
+	font-weight: 600; 
+	font-size: 30px; 
+    float: right;
 }
 
-.botao{
-	width: 100%;
+.div{
+    background-color: #18bc9c;
+    float: right;
+    width: 80%;
+    height: 1px;
+    color: #18bc9c;
+} 
+
+.table{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(44,62,80);
+    text-align: left; 
+}
+
+.l1{
+    background-color: #18bc9c;
+    height: auto;
+}
+.ls{
+    height: auto;
+    text-align: left;
+    border: 1px solid rgb(44,62,80);
+}
+
+button{
+    background-color: #18bc9c;
+    color: #fff;
+    border: 1px solid #18bc9c;
 }

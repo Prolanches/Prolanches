@@ -9,6 +9,7 @@
     <meta name="author" content="">
 
     <title>Snack Time</title>
+     <link rel="icon" type="imagem/png" href="favicon.ico" />
 
     <!-- Bootstrap core CSS -->
     
@@ -34,71 +35,63 @@
   </head>
 
   <body id="page-top" style="background-color: #fff; ">
-<div class="container-fluid">
-  <div class="row-fluid">
-    
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" >
-          <div class="container-fluid">
-            <a class="navbar-brand js-scroll-trigger" >Produtos</a>
-            
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="telaAdministracao.html">Página ADM</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    </div>
-      <br><br><br><br><br><br>
-    <div class="row-fluid secTabProd" >
-      <div class="span12">
-                <label class="titleSec" for="" style="">Tabela de Produtos</label><br>
-                <div class="div"></div>
-                <br><br><br>
-               
-                <table border="1" class="table">
-                    <tr class="l1">
-                        <th> Código</th>
-                        <th> Nome</th>   
-                        <th> Margem de Lucro</th>
-                        <th> Preço Final</th>
-                        <th> Descrição</th>  <!-- PRODUTOS DO PEDIDO -->
-                        <th> Opções</th>
-                       
-                    </tr>
-                    <tr data-ng-repeat="produto in controller.produtos" class="ls">
-                        <td>{{produto.codigo}}</td>
-                        <td>{{produto.nome}}</td>
-                        <td>{{produto.margemLucro}}</td>
-                        <td>{{produto.preco}}</td>
-                        <td>    </td>
-                        <td>
-                            <button class="buttonOp" type="button" data-ng-click="controller.alterar(produto)">Alterar</button>
-                            <button class="buttonOp" type="button" data-ng-click="controller.deletar(produto)">Excluir</button>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <br>
-                <button type="button" style="color: #fff;">
-                    <a href="telaInserirProduto.html" style="color: #fff;">
-                        Inserir Produto
-                    </a>
-                </button>
-
-              
-
-
-      </div>
-    </div>
-
-
-</div>
-
-
+	<div class="container-fluid">
+	  <div class="row-fluid">
+	    
+	
+	        <!-- Navigation -->
+	        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" >
+	          <div class="container-fluid">
+	            <a class="navbar-brand js-scroll-trigger" >Produtos</a>
+	            
+	            <div class="collapse navbar-collapse" id="navbarResponsive">
+	              <ul class="navbar-nav ml-auto">
+	                <li class="nav-item">
+	                  <a class="nav-link js-scroll-trigger" href="telaInicial.html">Página ADM</a>
+	                </li>
+	              </ul>
+	            </div>
+	          </div>
+	        </nav>
+	    </div>
+	      <br><br><br><br><br><br>
+	    <div class="row-fluid secTabProd" >
+	      <div class="span12">
+	                <label class="titleSec" for="" style="">Tabela de Produtos</label><br>
+	                <div class="div"></div>
+	                <br><br><br>
+	               
+	                <table border="1" class="table">
+	                    <tr class="l1">
+	                        <th> Código</th>
+	                        <th> Nome</th>   
+	                        <th> Margem de Lucro</th>
+	                        <th> Preço Final</th>
+	                        <th> Descrição</th>  <!-- PRODUTOS DO PEDIDO -->
+	                        <th> Opções</th>
+	                       
+	                    </tr>
+	                    <tr data-ng-repeat="produto in controller.produtos" class="ls">
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td>    </td>
+	                        <td>
+	                            <button class="buttonOp" type="button" data-ng-click="controller.alterar(produto)">Alterar</button>
+	                            <button class="buttonOp" type="button" data-ng-click="controller.deletar(produto)">Excluir</button>
+	                        </td>
+	                    </tr>
+	                </table>
+	                <br>
+	                <br>
+	                <button type="button" style="color: #fff;">
+	                    <a href="telaInserirProduto.html" style="color: #fff;">
+	                        Inserir Produto
+	                    </a>
+	                </button>
+			</div>
+	    </div>
+	</div>
   </body>
 </html>

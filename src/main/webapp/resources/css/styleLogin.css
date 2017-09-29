@@ -34,6 +34,7 @@ label{
     text-align: center; 
     padding: 50px;
     height: auto;
+
 }
 
 input{
@@ -44,11 +45,9 @@ input{
 button{
     background-color: #18bc9c;
     color: #fff;
-
     border: 1px solid #18bc9c;
     width: 45%;
     height: 50px;
-    margin: 2%;
 }
 
 .log{
@@ -58,13 +57,13 @@ button{
     padding: 50px;
     padding-left: 22%;
     height: inherit;
+    width: 100%;
     
 }
 
 .botoes{
-    width: 120%;
+    width: 60%;
     height: 15%;
-    align-items: center;
-    padding: 10%;
-    padding-right: 80px;
+    align-items: right;
+    margin-top: 5%;
 }

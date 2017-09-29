@@ -9,6 +9,9 @@
     <meta name="author" content="">
 
     <title>Snack Time</title>
+	
+     <link rel="icon" type="imagem/png" href="favicon.ico" />
+
 
     <!-- Bootstrap core CSS -->
     
@@ -39,57 +42,50 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="position: relative; ">
           <div class="container-fluid">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time</a>
-            
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Snack Time</a>            
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="../../index.html">Home</a>
-                </li>
+                  <a class="nav-link js-scroll-trigger" href="telaInicial.html">Home</a>
               </ul>
             </div>
           </div>
         </nav>
-
     </header>
-    
-
-    
-
   </div>
-   
-   <container class="meio">
 
-    <div class="row-fluid">
-      <div class="span12">
-          <div style="border: 1px solid black;">
-                
-                <table border="1">
-                    <tr>
+   <div class="row-fluid" style="padding: 50px 25px 0 25px;">
+      <div class="span12 tabela">
+          <div >
+                <label class="titleSec" for="" style="">Tabela de Pedidos</label><br>
+                <div class="div"></div>
+                <br><br><br>
+                <table class="table">
+                    <tr class="l1">
                         <th>Código</th>
-                        <th>Descrição</th>    <!-- PRODUTOS DO PEDIDO -->
-                        <th>Nome do Cliente</th>
+                        <th>Descrição</th>
+                        <th>Nome do Clilente</th>
                         <th>Valor</th>
                         <th>Status</th>
                         <th>Opções</th>
-                       
                     </tr>
-                    <tr >
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
-                        <td>    </td>
+                    <tr class="ls">
+                        <td > </td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
+                        <td ></td>
                         <td>
-                            <button class="botao" type="button" data-ng-click="controller.alterar(produto)">Alterar</button>
-                            <button class="botao" type="button" data-ng-click="controller.deletar(produto)">Excluir</button>
-                        </td>
+                            <button type="button" data-ng-click="controller.alterar(produto)">Alterar</button>
+                            <button  type="button" data-ng-click="controller.deletar(produto)">Excluir</button>
+                        </td>    
                     </tr>
                 </table>
                 <br>
                 <br>
-                <button type="button" >
-                  <a href="TelaInserirPedido.html">Novo</a>
+                <br>
+                <button type="button" style="height: auto;">
+                  <a style="color: #fff;" href="telaInserirPedido.html">Novo Pedido</a>
                 </button>
             </div>
 
@@ -98,7 +94,6 @@
 
       </div>
     </div>
-  </container>
 
 
 </div>

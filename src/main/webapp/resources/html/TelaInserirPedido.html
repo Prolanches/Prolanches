@@ -1,7 +1,7 @@
 <head>
 	<meta charset="utf-8"/>
 		<title>Snack Time </title>
-		<link rel="faviicon" href="favicon.ico" />
+     <link rel="icon" type="imagem/png" href="favicon.ico" />
 
 		<meta name="description" content="snackTime"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />		
@@ -20,7 +20,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="../css/stylePedidos.css" rel="stylesheet">
+    <link href="../css/styleInsProdSup.css" rel="stylesheet">
   </head>
   <body>
 
@@ -58,33 +58,43 @@
                 <div class="span4" style="">
                   
                   <div class="row-fluid" style="">
-                      <input type="text" placeholder="Nome do Cliente" />
+
                     </div>
                     <br>
                      <div class="row-fluid" style="border: 1px solid black;"
                  data-ng-show="!controller.produto">
                
-                <table border="1">
-                    <tr>
-                        <th>Selecione</th>
-                        <th>Código</th>
-                        <th>Nome</th>
-                       
-                    </tr>
-                    <tr data-ng-repeat="produto in controller.produtos">
-                        <td> <form action=""><input type="checkbox" name="vehicle" value= "{{produto.codigo}}"><br></form></td>
-                        <td>{{produto.codigo}}</td>
-                        <td>{{produto.nome}}</td>
-                        
-                    </tr>
-                </table>
-            </div>
+                <div class="span12 selSup"><br><br>
+                    <label class="titleSec" for="" style="">Inserir Pedidos
+                    </label>
+                    <div class="div"></div>
+                    <br> <br>
+                    <input type="text" placeholder="Nome do Cliente" style="float: left; width: 200px;" /><br><br><br>
+                    <table class="table">
+                      <tr class="l1">
+                        <th style="color: #18bc9c;" class="check"></th>
+                        <th style="color: #fff;">Nome</th>
+
+                      </tr>
+                      <tr class="ls">
+                        <td class="check">
+                          <form action="">
+                            <input type="checkbox" name="vehicle" value="">
+                          </form>
+                        </td>
+                        <td class="nomeSup"></td>
+                      </tr>
+                    </table>
+                    <br>
+                    <div class="row-fluid" style="text-align: center; width: 100px; height: 30px;">
+                      <a class="btn btn-success btn-sm" style="color: #fff;" href="Pedidos.html">Salvar Pedido</a>
+                     </div>                
+                       </div>
+                </div>
                 
 
                     </div>
-                     <div class="row-fluid" style="text-align: center;">
-                      <a class="btn btn-success btn-sm" style="color: #fff;" href="Pedidos.html">Salvar Pedido</a>
-                     </div>
+                     
               </div>
               
               </div>

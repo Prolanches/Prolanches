@@ -117,7 +117,7 @@ option{
 .table{
     width: 100%;
     height: auto;
-    border: 1px solid #fff;
+    border: 1px solid #fff);
     text-align: left; 
 }
 
@@ -130,7 +130,6 @@ option{
 .ls{
     height: auto;
     text-align: left;
-    
 }
 
 
