@@ -16,7 +16,7 @@ import br.com.ProjecJava.service.CidadeService;
 
 @Path("cidades")
 public class CidadeController {
-
+//ola
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
