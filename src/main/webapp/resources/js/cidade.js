@@ -12,16 +12,16 @@ angular.module("projecJava",[])
 		   self.atualizarTabela = function () {
 			   $http({
 				   method: 'GET',
-				   url: urlBase + 'cidade/'
-			   }).then(function sucessCallback(response){
+				   url: urlBase + 'cidades/'
+			   }).then(function successCallback(response){
 				   self.cidades = response.data;
 				   self.cidade = undefined;
 			   }, function errorCallback(response){
 				   self.ocorreuErro();
 			   });
 		   };
-		   self.active = function() {
+		   self.activate = function() {
 			   self.atualizarTabela();
 		   };
-		   self.active();
+		   self.activate();
 	   });

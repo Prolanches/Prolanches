@@ -14,7 +14,7 @@ import br.com.ProjecJava.service.CidadeService;
 
 
 
-@Path("cidade")
+@Path("cidades")
 public class CidadeController {
 
 	@GET
