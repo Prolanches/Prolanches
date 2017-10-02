@@ -15,13 +15,12 @@ body{
 
 .div{
     background-color: #18bc9c;
-    float: right;
     width: 80%;
     height: 1px;
 }
 
 #div1{
-    width: 85%;
+    width: 100%;
 }
 
 label{
@@ -35,6 +34,7 @@ label{
     text-align: center; 
     padding: 20px;
     height: auto;
+    align-items: center;
 
 }
 
@@ -47,7 +47,7 @@ button{
     background-color: #18bc9c;
     color: #fff;
     border: 1px solid #18bc9c;
-    width: 45%;
+    width: 20%;
     height: 50px;
 }
 
@@ -61,8 +61,8 @@ button{
 }
 
 .botoes{
-    width: 60%;
     height: 15%;
-    align-items: right;
     margin-top: 5%;
+    width: 100%; 
+    align-items: center;
 }
