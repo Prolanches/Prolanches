@@ -44,7 +44,7 @@ public class Produto_Teste {
 		produtoService.inserir(produto, lSuprimentos);
 
 		/**
-		 * alterando o Produto
+		 * alterando o Produto n
 		 */
 		//produtoService.alterar(new ProdutoDTO(1, "X-Tudo",2.0,0,"Cliente"));
 
