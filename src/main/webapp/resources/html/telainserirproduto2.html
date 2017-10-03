@@ -41,15 +41,15 @@
               </div>
             </nav>
       </div>
-      <div class="container-fluid" >
+      <div class="container-fluid" style="padding-bottom: 20px;">
           
             <!-- =============== SUPRIMENTOS =================== -->
 
-          <div class="row-fluid secaoSupr">
+         
           <div data-ng-controller="SuprimentoController as controller" >
           
             
-            <div class="span6 cadSupr">
+            <div class="row-fluid cadSupr " >
               <label class="titleSec" for="" style="">Inserir Suprimento</label>
                 <div id="" class="div"></div>
                 <br><br>
@@ -75,10 +75,7 @@
 
                 
                 
-                <button class="buttonSave">
-                    <a>Salvar Suprimento</a>  
-                </button>
-
+                
                <input class="buttonSave" type="submit"  data-ng-click="controller.salvarsup()" value="Salvar Suprimento">
 
 
@@ -86,7 +83,7 @@
            
              <!-- =============== FORNECEDOR =================== -->
              
-            <div class="span6 cadForn" >
+            <div class="row-fluid cadForn " >
                 <label class="titleSec" for="">Inserir Fornecedor</label>
                 <div id="div2" class="div"></div>  
                 <br><br>
@@ -128,12 +125,11 @@
                    <input class="buttonSave" type="submit"  data-ng-click="controller.salvarfor()" value="Salvar Fornecedor">                                                            
              
               </div>   
-            </div>                                             
-        </div>
+            </div> 
 
-        <div  class="row-fluid secaoProd">
+     
             
-            <div class="span12 cadProd">
+            <div class="row-fluid cadProd">
               <label class="titleSec" for="" style="">Inserir Produto</label>
                 <div class="div"></div>
                 <br><br>
@@ -141,11 +137,10 @@
               <input  type="text"  name="nomeSuprimento"><br>
               <label  for="">Margem De lucro:   </label>
               <input  type="text"  name="nomeSuprimento"><br>
-                
+            </div>    
                 
 
-            </div> 
-            <div class="span12 selSup">
+            <div class="row-fluid selSup">
                 <label class="titleSec" for="" style="">Selecione <br>os Suprimentos</label>
                 <div class="div" style="width: 90%"></div>
                 <br><br>
@@ -164,7 +159,6 @@
                     <a>Salvar Produto</a>  
                 </button>
             </div>   
-        </div>     
       </div>
      <script src="../angular.js"></script>
      <script src="../js/suprimento.js"></script>
