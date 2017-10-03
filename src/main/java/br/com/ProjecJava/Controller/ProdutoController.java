@@ -16,7 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import br.com.ProjecJava.dto.ProdutoDTO;
-import br.com.ProjecJava.service.ProdutoService;
+import br.com.ProjecJava.service.Produto_Service;
 
 @Path("produto")
 public class ProdutoController {
@@ -25,7 +25,7 @@ public class ProdutoController {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public List<ProdutoDTO> listProduto() {
-		ProdutoService produtoService = new ProdutoService();
+		Produto_Service produtoService = new Produto_Service();
 		try {
 			return produtoService.listarProduto();
 		} catch (SQLException e) {
@@ -38,7 +38,7 @@ public class ProdutoController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public Response create(ProdutoDTO produto) {
-		ProdutoService produtoService = new ProdutoService();
+		Produto_Service produtoService = new Produto_Service();
 		try {
 			produtoService.inserir(produto, null);
 			return Response.status(Response.Status.OK).build();
@@ -52,7 +52,7 @@ public class ProdutoController {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/")
 	public Response update(ProdutoDTO produto) {
-		ProdutoService produtoService = new ProdutoService();
+		Produto_Service produtoService = new Produto_Service();
 		try {
 			produtoService.alterar(produto.toProduto());
 			return Response.status(Response.Status.OK).build();
@@ -65,7 +65,7 @@ public class ProdutoController {
 	@DELETE
 	@Path("{codigo}/")
 	public Response delete(@PathParam("codigo") int codigo) {
-		ProdutoService produtoService = new ProdutoService();
+		Produto_Service produtoService = new Produto_Service();
 		try {
 			produtoService.excluir(codigo);
 			return Response.status(Response.Status.OK).build();

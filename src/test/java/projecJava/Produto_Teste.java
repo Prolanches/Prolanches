@@ -10,7 +10,7 @@ import java.util.List;
 import br.com.ProjecJava.dto.ProdutoDTO;
 import br.com.ProjecJava.dto.SuprimentoDTO;
 
-import br.com.ProjecJava.service.ProdutoService;
+import br.com.ProjecJava.service.Produto_Service;
 
 /**
  * Esta classe é responsavel pelos Testes dos Produtos
@@ -26,7 +26,7 @@ public class Produto_Teste {
 		 * Instância da classe Service
 		 */
 
-		ProdutoService produtoService = new ProdutoService();
+		Produto_Service produtoService = new Produto_Service();
 
 		/**
 		 * inserindo o Produto
@@ -35,10 +35,12 @@ public class Produto_Teste {
 
 		SuprimentoDTO suprimento = new SuprimentoDTO(62, "Pão", 21, 1000, 10,1, 2);
 		SuprimentoDTO suprimento1 = new SuprimentoDTO(63,"Hamburguer",21,1000,10,1,22);
+		SuprimentoDTO suprimento2 = new SuprimentoDTO(81,"Embalagem",21,1000,500,1,2);
+		lSuprimentos.add(suprimento2);
 		lSuprimentos.add(suprimento1);
 		lSuprimentos.add(suprimento);
 
-		ProdutoDTO produto = new ProdutoDTO(null, "X-Bacon", 1.50, 0,"Cliente");
+		ProdutoDTO produto = new ProdutoDTO(null, "X-Tudo", 1.50, 0,"Cliente");
 		produtoService.inserir(produto, lSuprimentos);
 
 		/**

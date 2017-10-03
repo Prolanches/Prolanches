@@ -116,7 +116,7 @@ public class Contas_PagarDAO {
 
 					double contPag = rs.getDouble("CONT_PAG_CUSTO");
 					Date data = rs.getDate("CONT_PAG_DATA");
-					Contas_Pagar contasPag = new Contas_Pagar(0, contPag, forneSupri, data);
+					Contas_Pagar contasPag = new Contas_Pagar(null, contPag, forneSupri, data);
 					lConPagar.add(contasPag.toDTO());
 				}
 			}

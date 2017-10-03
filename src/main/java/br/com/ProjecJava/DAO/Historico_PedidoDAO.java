@@ -34,12 +34,25 @@ public class Historico_PedidoDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Historico_Pedido historico_pedido) throws SQLException{
-		String sql = "INSERT INTO HISTORICO_PEDIDO (HIT_PED_COD, HIT_PED_STATUS_COD, HIT_PED_PEDIDO_COD, HIT_PED_FUNCIONARIO_COD) VALUES (SEQ_HISTORICO_PEDIDO.nextval, ?,?,?)";
+String sqlsequence = "SELECT SEQ__HISTORICO_PEDIDO.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					historico_pedido.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		String sql = "INSERT INTO HISTORICO_PEDIDO (HIT_PED_COD, HIT_PED_STATUS_COD, HIT_PED_PEDIDO_COD, HIT_PED_FUNCIONARIO_COD) VALUES (?,?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setInt(1, historico_pedido.getStatusPedido().getCodigo());
-		statement.setInt(2, historico_pedido.getPedido().getCodigo());
-		statement.setInt(3, historico_pedido.getFuncionario().getCodigo());
+		statement.setInt(1, historico_pedido.getCodigo());
+		statement.setInt(2, historico_pedido.getStatusPedido().getCodigo());
+		statement.setInt(3, historico_pedido.getPedido().getCodigo());
+		statement.setInt(4, historico_pedido.getFuncionario().getCodigo());
 		
 	
 		return statement.executeUpdate() > 0;

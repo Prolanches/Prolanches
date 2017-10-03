@@ -19,13 +19,13 @@ public class Suprimento_Teste {
 
 		// inserindo Suprimento FUNCIONANDO
 		
-		List<FornecedorDTO> lFornecedores = new ArrayList<>();
+		//List<FornecedorDTO> lFornecedores = new ArrayList<>();
 
-		FornecedorDTO fornecedor = new FornecedorDTO(42,"Vale da Web","123.456.789/0001-10",141,"Aquidabam",4449, "3030-6597", "testando@hotmail.com");
-		lFornecedores.add(fornecedor);
+		//FornecedorDTO fornecedor = new FornecedorDTO(22,"Mascada","123.456.789/0001-10",124,"Fides Deek",4449, "3030-6597", "testando@hotmail.com");
+		//lFornecedores.add(fornecedor);
 
-		SuprimentoDTO suprimento = new SuprimentoDTO(null,"Hamburgue",21,10000,1,1,22);
-		suprimentoService.inserir(suprimento, lFornecedores);
+		//SuprimentoDTO suprimento = new SuprimentoDTO(null,"Embalagem",21,1000,1,500,2);
+		//suprimentoService.inserir(suprimento, lFornecedores);
 		
 		// alterando Suprimento FUNCIONANDO
 		// Suprimento suprimento1 = new Suprimento(2, "Frango", tipoUnidade, 50, 1.05,

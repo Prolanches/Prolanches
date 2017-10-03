@@ -27,18 +27,18 @@ public class Empresa_Teste {
 		/**
 		 * inserindo a empresa
 		 */
-		//EmpresaDTO empresa = new EmpresaDTO(null, "Vale da Web", 141, "Gaspar",4449, "77.666.555/0002-15", "(47) 3333-7777", "lucas.brazbr@bol.com.br");
+		//EmpresaDTO empresa = new EmpresaDTO(null, "Senior Sistemas", 142, "Altenburg",4449, "77.666.555/0002-66", "(47) 3333-7777", "lucas.brazbr@bol.com.br");
 		//empresaService.inserir(empresa);
 
 		/**
 		 * alterando a empresa
 		 */
-		//empresaService.alterar(new EmpresaDTO(81, "Teste Empresa", 141,"11 de Setembro",4449,"77.666.555/0002-99", "(47) 3333-7777", "lucas.brazbr@bol.com.br"));
+		//empresaService.alterar(new EmpresaDTO(101, "Testando Empresa", 142,"21 de Setembro",4449,"77.666.555/0002-67", "(47) 3333-5555", "lucas.brazbr@gmail.com"));
 
 		/**
 		 * excluindo a empresa
 		 */
-	   //empresaService.excluir(81);
+	   //empresaService.excluir(101);
 
 		/**
 		 * Listagem das Empresas

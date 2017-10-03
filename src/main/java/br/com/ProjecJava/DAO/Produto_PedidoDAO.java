@@ -33,12 +33,24 @@ public class Produto_PedidoDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Produto_Pedido produto_pedido) throws SQLException{
-		String sql = "INSERT INTO PRODUTO_PEDIDO (PROD_PED_COD, PROD_PED_PEDIDO_COD, PROD_PED_PRODUTO_COD, PROD_PED_NOME_CLIENTE) VALUES (SEQ_PRODUTO_PEDIDO.nextval, ?,?,?)";
+String sqlsequence = "SELECT SEQ_PRODUTO_PEDIDO.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					produto_pedido.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		String sql = "INSERT INTO PRODUTO_PEDIDO (PROD_PED_COD, PROD_PED_PEDIDO_COD, PROD_PED_PRODUTO_COD, PROD_PED_NOME_CLIENTE) VALUES (?,?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setInt(1, produto_pedido.getPedido().getCodigo());
-		statement.setInt(2, produto_pedido.getProduto().getCodigo());
-		statement.setString(3, produto_pedido.getNomeCliente());
+		statement.setInt(1, produto_pedido.getCodigo());
+		statement.setInt(2, produto_pedido.getPedido().getCodigo());
+		statement.setInt(3, produto_pedido.getProduto().getCodigo());
+		statement.setString(4, produto_pedido.getNomeCliente());
 		
 	
 		return statement.executeUpdate() > 0;

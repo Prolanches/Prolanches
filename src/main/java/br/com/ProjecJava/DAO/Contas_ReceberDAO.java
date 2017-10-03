@@ -33,13 +33,27 @@ public class Contas_ReceberDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Contas_Receber contas_receber) throws SQLException{
-		String sql = "INSERT INTO CONTAS_RECEBER (CONT_REC_COD, CONT_REC_PEDIDO_COD, CONT_REC_DATA, CONT_REC_VALOR) VALUES (SEQ_CONTAS_RECEBER.nextval, ?,?,?)";
+    String sqlsequence = "SELECT SEQ_CONTAS_RECEBER.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					contas_receber.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		String sql = "INSERT INTO CONTAS_RECEBER (CONT_REC_COD, CONT_REC_PEDIDO_COD, CONT_REC_DATA, CONT_REC_VALOR) VALUES (?,?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
-		statement.setInt(1, contas_receber.getPedido().getCodigo());
+		statement.setInt(1, contas_receber.getCodigo());
+		statement.setInt(2, contas_receber.getPedido().getCodigo());
 		java.sql.Date sqlDate = new java.sql.Date(contas_receber.getData().getTime());
-		statement.setDouble(3, contas_receber.getValor());
-		statement.setDate(2, sqlDate);
+		statement.setDate(3, sqlDate);
+		statement.setDouble(4, contas_receber.getValor());
+		
 
 		
 	

@@ -24,18 +24,18 @@ public class Usuario_Teste {
 		/**
 		 *  inserindo o Usuário 
 		 */
-		//UsuarioDTO usuario = new UsuarioDTO(null,"alisson", 62,"vale123", 1);
+		//UsuarioDTO usuario = new UsuarioDTO(null,"itamarzinho", 82,"senha", 1);
 		//usuarioService.inserir(usuario);
 		
 		/**
 		 * alterando o Usuário 
 		 */
-	    //usuarioService.alterar(new UsuarioDTO(42, "lucas",25,"vale456",1));
+	    //usuarioService.alterar(new UsuarioDTO(62, "lucas",82,"vale456",1));
 		
 		/**
 		 * excluindo o Usuário 
 		 */
-		//usuarioService.excluir(42);
+		//usuarioService.excluir(62);
 
 		/**
 		 * Listagem dos Funcionarios

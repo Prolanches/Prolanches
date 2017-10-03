@@ -35,10 +35,10 @@ public class Pedido_Teste {
 		 */
 		List<ProdutoDTO> lProdutos = new ArrayList<>();
 
-		ProdutoDTO produto = new ProdutoDTO(62, "X-Teste", 1.50,0,"Cliente");
+		ProdutoDTO produto = new ProdutoDTO(102, "X-Teste", 1.50,0,"Clientes");
 		lProdutos.add(produto);
 
-		PedidoDTO pedido = new PedidoDTO(null,"26/09/2017",1, 0);
+		PedidoDTO pedido = new PedidoDTO(null,"04/10/2017",1, 0);
 		pedidoService.inserir(pedido, lProdutos);
 
 		
@@ -62,7 +62,7 @@ public class Pedido_Teste {
 	static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
 	private static void imprimirPedido(PedidoDTO ped) {
-		System.out.println("Codígo: " + ped.getCodigoPedido() + "\nData: " + sdf.format(ped.getDataPedido())
+		System.out.println("Codígo: " + ped.getCodigoPedido() + "\nData: " +sdf.format(ped.getDataPedido())
 				+ "\nTipo de Operação: " + ped.getNomeTipoOP() + "\nValor: " + ped.getValorPedido());
 	}
 }

@@ -33,13 +33,26 @@ public class PedidoDAO {
 		this.conex = con;
 	}
 	public boolean inserir(Pedido pedido) throws SQLException{
-		String sql = "INSERT INTO PEDIDO (PED_COD, PED_DATA, PED_TIPO_OP_COD, PED_VALOR) VALUES (SEQ_PEDIDO.nextval, ?,?,?)";
+    String sqlsequence = "SELECT SEQ_PEDIDO.nextval FROM DUAL";
+		
+		try (PreparedStatement stmt = conex.prepareStatement(sqlsequence)) {
+			stmt.execute();
+			try (ResultSet rs = stmt.getResultSet()) {
+				while (rs.next()) {
+					pedido.setCodigo(rs.getInt(1));
+					
+				}
+			}
+		}
+		
+		String sql = "INSERT INTO PEDIDO (PED_COD, PED_DATA, PED_TIPO_OP_COD, PED_VALOR) VALUES (?,?,?,?)";
 		 
 		PreparedStatement statement = conex.prepareStatement(sql);
+		statement.setInt(1, pedido.getCodigo());
 		java.sql.Date sqlDate = new java.sql.Date(pedido.getDataPedido().getTime());
-		statement.setDate(1, sqlDate);
-		statement.setInt(2, pedido.getTipoOperacao().getCodigo());
-		statement.setDouble(3, pedido.getValor());
+		statement.setDate(2, sqlDate);
+		statement.setInt(3, pedido.getTipoOperacao().getCodigo());
+		statement.setDouble(4, pedido.getValor());
 		
 	
 		return statement.executeUpdate() > 0;
